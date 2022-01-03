@@ -41,6 +41,12 @@ docker-compose up -d --build
 で簡易サーバーを立ち上げ、表示確認してください。
 
 
+## ブランチ
+mainブランチからdevelopブランチを切り、開発したものはdevelopにマージする。
+各Issueはdevelopブランチから切ることとする。
+ブランチ名は、feature/{issue/number} で統一する。
+
+
 ## 参考
 [ドキュメント](https://qiita.com/hiroto_husqy/items/f87ca0bdb4b23f0449e9)
 [GitHub](https://github.com/Hiroto-Iizuka/Tamari-Ba)
