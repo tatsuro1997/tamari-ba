@@ -14,4 +14,15 @@ class RoadController extends Controller
 
         return view('user.roads.index', compact('roads'));
     }
+
+
+    public function create()
+    {
+        return view('user.roads.create');
+    }
+
+
+    public function store($request)
+    {
+    }
 }
