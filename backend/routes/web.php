@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComponentTestController;
 use App\Http\Controllers\LifeCycleTestController;
+use App\Http\Controllers\User\RoadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,9 @@ use App\Http\Controllers\LifeCycleTestController;
 Route::get('/', function () {
     return view('user.welcome');
 });
+
+Route::resource('roads', RoadController::class)
+    ->middleware('auth:users');
 
 Route::get('/dashboard', function () {
     return view('user.dashboard');
