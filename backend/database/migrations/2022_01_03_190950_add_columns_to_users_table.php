@@ -16,7 +16,7 @@ class AddColumnsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->integer('age');
             $table->integer('gender');
-            $table->string('prefecture');
+            $table->integer('prefecture');
             $table->string('bike_type');
             $table->string('bike_name');
             $table->string('engine_size');
