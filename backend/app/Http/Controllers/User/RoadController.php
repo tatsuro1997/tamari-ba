@@ -45,4 +45,10 @@ class RoadController extends Controller
     {
 
     }
+
+
+    public function destroy()
+    {
+        
+    }
 }
