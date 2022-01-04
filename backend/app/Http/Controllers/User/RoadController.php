@@ -27,6 +27,12 @@ class RoadController extends Controller
     }
 
 
+    public function show()
+    {
+        return view('user.roads.show');
+    }
+
+
     public function edit()
     {
 
