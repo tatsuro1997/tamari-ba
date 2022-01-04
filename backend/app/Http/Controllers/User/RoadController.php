@@ -25,4 +25,18 @@ class RoadController extends Controller
     public function store($request)
     {
     }
+
+
+    public function edit()
+    {
+
+        return view('user.roads.edit');
+
+    }
+
+
+    public function update()
+    {
+
+    }
 }
