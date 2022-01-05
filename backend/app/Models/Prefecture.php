@@ -10,8 +10,12 @@ class Prefecture extends Model
 {
     use HasFactory;
 
-    public function user()
+    protected $fillable = [
+        'name',
+    ];
+
+    public function users()
     {
-        return BelongsTo(User::class);
+        return hasMany(User::class);
     }
 }

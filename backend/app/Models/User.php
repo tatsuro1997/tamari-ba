@@ -46,6 +46,6 @@ class User extends Authenticatable
 
     public function prefecture()
     {
-        return hasOne(Prefecture::class);
+        return belongsTo(Prefecture::class);
     }
 }
