@@ -43,7 +43,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function road(){
+    public function roads(){
         return hasMany(Road::class);
     }
 }
