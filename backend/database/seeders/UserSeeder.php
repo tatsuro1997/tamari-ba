@@ -24,11 +24,9 @@ class UserSeeder extends Seeder
                 'age' => 21,
                 'gender' => 0,
                 'prefecture' => 1,
-                'bike_type' => 'スポーツ',
-                'bike_name' => 'CBR',
-                'engine_size' => '650cc',
                 'years_of_experience' => 3,
                 'through' => true,
+                'bike_id' => 1,
             ],
             [
                 'name' => 'test2',
@@ -38,11 +36,9 @@ class UserSeeder extends Seeder
                 'age' => 32,
                 'gender' => 1,
                 'prefecture' => 28,
-                'bike_type' => 'ネイキッド',
-                'bike_name' => 'CB',
-                'engine_size' => '650cc',
                 'years_of_experience' => 10,
                 'through' => false,
+                'bike_id' => 2,
             ],
             [
                 'name' => 'test3',
@@ -52,11 +48,9 @@ class UserSeeder extends Seeder
                 'age' => 23,
                 'gender' => 0,
                 'prefecture' => 32,
-                'bike_type' => 'スポーツ',
-                'bike_name' => 'CBR',
-                'engine_size' => '650cc',
                 'years_of_experience' => 3,
                 'through' => true,
+                'bike_id' => 3,
             ],
         ]);
     }
