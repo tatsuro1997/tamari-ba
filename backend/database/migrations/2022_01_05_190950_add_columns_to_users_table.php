@@ -17,11 +17,12 @@ class AddColumnsToUsersTable extends Migration
             $table->integer('age');
             $table->integer('gender');
             $table->integer('prefecture');
-            $table->string('bike_type');
-            $table->string('bike_name');
-            $table->string('engine_size');
             $table->integer('years_of_experience');
             $table->boolean('through');
+            $table->foreignId('bike_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
