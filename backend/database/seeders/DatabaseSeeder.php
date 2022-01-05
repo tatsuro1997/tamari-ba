@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             OwnerSeeder::class,
             BikeSeeder::class,
             UserSeeder::class,
+            BikeUserSeeder::class,
         ]);
     }
 }

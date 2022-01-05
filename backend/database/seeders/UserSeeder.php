@@ -26,7 +26,6 @@ class UserSeeder extends Seeder
                 'prefecture' => 1,
                 'years_of_experience' => 3,
                 'through' => true,
-                'bike_id' => 1,
             ],
             [
                 'name' => 'test2',
@@ -38,7 +37,6 @@ class UserSeeder extends Seeder
                 'prefecture' => 28,
                 'years_of_experience' => 10,
                 'through' => false,
-                'bike_id' => 2,
             ],
             [
                 'name' => 'test3',
@@ -50,7 +48,6 @@ class UserSeeder extends Seeder
                 'prefecture' => 32,
                 'years_of_experience' => 3,
                 'through' => true,
-                'bike_id' => 3,
             ],
         ]);
     }
