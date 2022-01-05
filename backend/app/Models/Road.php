@@ -10,6 +10,14 @@ class Road extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'latitude',
+        'longitude',
+        'description',
+        'user_id',
+    ];
+
     public function user(){
         return belongsTo(User::class);
     }
