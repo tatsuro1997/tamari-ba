@@ -11,6 +11,6 @@ class Bike extends Model
 
     public function user()
     {
-        return belongsTo(User::class);
+        return belongsToMany(User::class);
     }
 }

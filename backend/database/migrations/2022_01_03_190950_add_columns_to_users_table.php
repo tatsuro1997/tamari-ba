@@ -19,10 +19,6 @@ class AddColumnsToUsersTable extends Migration
             $table->integer('prefecture');
             $table->integer('years_of_experience');
             $table->boolean('through');
-            $table->foreignId('bike_id')
-                ->constrained()
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
         });
     }
 
