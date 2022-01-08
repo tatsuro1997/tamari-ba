@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Road;
+use App\Models\Prefecture;
 
 class User extends Authenticatable
 {
@@ -45,5 +46,10 @@ class User extends Authenticatable
 
     public function roads(){
         return hasMany(Road::class);
+    }
+
+    public function prefecture()
+    {
+        return belongsTo(Prefecture::class);
     }
 }

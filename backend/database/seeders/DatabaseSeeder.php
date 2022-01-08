@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             OwnerSeeder::class,
             RoadSeeder::class,
+            PrefectureSeeder::class,
             UserSeeder::class,
         ]);
     }
