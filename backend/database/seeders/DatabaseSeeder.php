@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             OwnerSeeder::class,
             BikeSeeder::class,
+            RoadSeeder::class,
+            PrefectureSeeder::class,
             UserSeeder::class,
             BikeUserSeeder::class,
         ]);
