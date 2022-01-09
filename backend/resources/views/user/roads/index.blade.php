@@ -22,7 +22,7 @@
                                                 <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
                                                 <div class="p-6">
                                                     <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $road->title }}</h1>
-                                                    <p class="leading-relaxed mb-3">{{ $road->description }}</p>
+                                                    <p class="leading-relaxed mb-3">{{ Str::limit($road->description, 100, ' ...続きを読む') }}</p>
                                                     <div class="flex justify-between">
                                                         <div class="flex">
                                                             <button  onclick="location.href='{{ route('user.roads.edit', ['road' => $road->id ]) }}'" class="text-black bg-yellow-400 border-0 py-2 px-4 mr-2 focus:outline-none hover:bg-yellow-500 rounded">編集</button>
@@ -47,6 +47,7 @@
                             </div>
                         </div>
                     </section>
+                    {{ $roads->links() }}
                 </div>
             </div>
         </div>

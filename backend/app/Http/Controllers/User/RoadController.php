@@ -10,7 +10,7 @@ class RoadController extends Controller
 {
     public function index()
     {
-        $roads = Road::all();
+        $roads = Road::orderBy('created_at', 'desc')->paginate(12);
 
         return view('user.roads.index', compact('roads'));
     }
@@ -49,6 +49,6 @@ class RoadController extends Controller
 
     public function destroy()
     {
-        
+
     }
 }
