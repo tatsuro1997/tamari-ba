@@ -17,9 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminSeeder::class,
             OwnerSeeder::class,
+            BikeSeeder::class,
             RoadSeeder::class,
             PrefectureSeeder::class,
             UserSeeder::class,
+            BikeUserSeeder::class,
         ]);
     }
 }

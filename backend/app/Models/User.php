@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Bike;
 use App\Models\Road;
 use App\Models\Prefecture;
 
@@ -44,6 +45,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function bikes()
+    {
+        return belongsToMany(Bike::class);
+    }
+    
     public function roads(){
         return hasMany(Road::class);
     }
