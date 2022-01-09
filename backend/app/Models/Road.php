@@ -23,7 +23,7 @@ class Road extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function roadimages()
+    public function roadImages()
     {
         return $this->hasMany(RoadImage::class);
     }
