@@ -18,9 +18,6 @@ class AddColumnsToUsersTable extends Migration
             $table->integer('gender');
             $table->foreignId('prefecture_id')
             ->constrained();
-            $table->string('bike_type');
-            $table->string('bike_name');
-            $table->string('engine_size');
             $table->integer('years_of_experience');
             $table->boolean('through');
         });
