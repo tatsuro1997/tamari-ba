@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\DB;
 use Throwable;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\RoadRequest;
+use App\Services\ImageService;
+use App\Models\RoadImage;
+
 
 
 class RoadController extends Controller
@@ -32,23 +35,27 @@ class RoadController extends Controller
 
     public function store(RoadRequest $request)
     {
-
-
-        // dd($road);
-
+        // dd($request);
         try {
             DB::transaction(function () use ($request) {
-                Road::create([
+                $road = Road::create([
                     'title' => $request->title,
                     'latitude' => $request->latitude,
                     'longitude' => $request->longitude,
                     'description' => $request->description,
                     'user_id' => 1, // TODO:authからuser_idを取得する
-                    // 'image1' => $request->image1,
-                    // 'image2' => $request->image2,
-                    // 'image3' => $request->image3,
-                    // 'image4' => $request->image4,
                 ]);
+
+                $imageFiles = $request->file('files');
+                if (!is_null($imageFiles)) {
+                    foreach ($imageFiles as $imageFile) {
+                        $fileNameToStore = ImageService::upload($imageFile, 'roads');
+                        RoadImage::create([
+                            'road_id' => $road->id,
+                            'filename' => $fileNameToStore,
+                        ]);
+                    }
+                }
             }, 2);
         } catch (Throwable $e) {
             Log::error($e);

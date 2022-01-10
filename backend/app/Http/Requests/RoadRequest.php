@@ -29,6 +29,17 @@ class RoadRequest extends FormRequest
             'longitude' => ['required', 'numeric', 'regex:/^[-]?(((([1][0-7][0-9])|([0-9]?[0-9]))(\.[0-9]{6}))|180(\.0{6})?)$/'], // 経度 ex)179.999999
             'description' => ['required', 'string', 'max:1000'],
             // 'user_id' => ['required', 'exists:shops,id'], //storeをauthで管理するまではコメントアウト
+            'image' => 'image|mimes:jpg, jpeg, png|max:2048',
+            // 'files.*.image' => 'required|image|mimes:jpg, jpeg, png|max:2048',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'image' => '指定されたファイルが画像ではありません。',
+            'mimes' => '指定された拡張子(jpg/jpeg/png)でありません。',
+            'max' => 'ファイルサイズは2MB以内にしてください。',
         ];
     }
 }
