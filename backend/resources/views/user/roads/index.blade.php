@@ -17,7 +17,7 @@
                             <div class="flex flex-wrap -m-4">
                                 @foreach ($roads as $road)
                                     <div class="p-4 lg:w-1/3 md:w-1/3">
-                                        <a href="#">
+                                        <a href="{{ route('user.roads.show', ['road' => $road->id]) }}">
                                             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                                 <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
                                                 <div class="p-6">
