@@ -49,13 +49,13 @@ class User extends Authenticatable
     {
         return belongsToMany(Bike::class);
     }
-    
+
     public function roads(){
         return hasMany(Road::class);
     }
 
     public function prefecture()
     {
-        return belongsTo(Prefecture::class);
+        return $this->belongsTo(Prefecture::class);
     }
 }

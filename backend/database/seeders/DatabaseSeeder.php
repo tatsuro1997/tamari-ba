@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Road;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,8 +21,9 @@ class DatabaseSeeder extends Seeder
             BikeSeeder::class,
             PrefectureSeeder::class,
             UserSeeder::class,
-            RoadSeeder::class,
+            // RoadSeeder::class,
             BikeUserSeeder::class,
         ]);
+        Road::factory(30)->create();
     }
 }
