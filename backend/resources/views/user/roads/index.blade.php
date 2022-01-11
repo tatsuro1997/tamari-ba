@@ -20,7 +20,10 @@
                                     <div class="p-4 lg:w-1/3 md:w-1/3">
                                         <a href="#">
                                             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                                                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
+                                                @foreach ($road->roadImages as $image)
+                                                    <x-thumbnail filename="{{ $image->filename ?? ''}}" type="roads" />
+                                                    @break
+                                                @endforeach
                                                 <div class="p-6">
                                                     <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $road->title }}</h1>
                                                     <p class="leading-relaxed mb-3">{{ Str::limit($road->description, 100, ' ...続きを読む') }}</p>
