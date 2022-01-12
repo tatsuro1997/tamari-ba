@@ -65,9 +65,11 @@ class RoadController extends Controller
     }
 
 
-    public function show()
+    public function show($id)
     {
-        return view('user.roads.show');
+        $road = Road::findOrFail($id);
+
+        return view('user.roads.show', compact('road'));
     }
 
 
@@ -83,7 +85,12 @@ class RoadController extends Controller
     }
 
 
-    public function destroy()
+    public function destroy($id)
     {
+        Road::findOrFail($id)->delete();
+
+        return redirect()
+            ->route('user.roads.index')
+            ->with(['message' => '道の投稿を削除しました。', 'status' => 'alert']);
     }
 }
