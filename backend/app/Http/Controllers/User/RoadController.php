@@ -49,9 +49,11 @@ class RoadController extends Controller
     }
 
 
-    public function show()
+    public function show($id)
     {
-        return view('user.roads.show');
+        $road = Road::findOrFail($id);
+
+        return view('user.roads.show', compact('road'));
     }
 
 
