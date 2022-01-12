@@ -5,6 +5,12 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Road;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Throwable;
+use Illuminate\Support\Facades\Log;
+use App\Http\Requests\RoadRequest;
+
 
 class RoadController extends Controller
 {
@@ -22,8 +28,24 @@ class RoadController extends Controller
     }
 
 
-    public function store($request)
+    public function store(RoadRequest $request)
     {
+        try {
+            Road::create([
+                'title' => $request->title,
+                'latitude' => $request->latitude,
+                'longitude' => $request->longitude,
+                'description' => $request->description,
+                'user_id' => 1, // TODO:authからuser_idを取得する
+            ]);
+        } catch (Throwable $e) {
+            Log::error($e);
+            throw $e;
+        }
+
+        return redirect()
+            ->route('user.roads.index')
+            ->with(['message' => '道を登録しました。', 'status' => 'info']);
     }
 
 
@@ -39,18 +61,20 @@ class RoadController extends Controller
     {
 
         return view('user.roads.edit');
-
     }
 
 
     public function update()
     {
-
     }
 
 
-    public function destroy()
+    public function destroy($id)
     {
+        Road::findOrFail($id)->delete();
 
+        return redirect()
+            ->route('user.roads.index')
+            ->with(['message' => '道の投稿を削除しました。', 'status' => 'alert']);
     }
 }
