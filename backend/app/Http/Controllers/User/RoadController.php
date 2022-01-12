@@ -44,7 +44,7 @@ class RoadController extends Controller
                 ]);
 
                 $imageFiles = $request->file('files');
-                if (!is_null($imageFiles)) {
+                if ($imageFiles) {
                     foreach ($imageFiles as $imageFile) {
                         $fileNameToStore = ImageService::upload($imageFile, 'roads');
                         RoadImage::create([
