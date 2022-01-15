@@ -16,7 +16,13 @@
                             </div>
                             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                 <div class="flex">
-                                    <img class="lg:h-120 md:h-80 w-1/2 object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
+                                    <div class="p-2 w-1/2 mx-auto">
+                                        <div class="relative">
+                                            <div class="w-32">
+                                                <x-thumbnail :filename="$road->roadImages[0]->filename" type="roads"/>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="w-1/2 text-center">TODO:画像一覧</div>
                                 </div>
                                 <div class="p-6">
