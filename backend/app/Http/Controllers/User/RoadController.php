@@ -27,7 +27,8 @@ class RoadController extends Controller
 
     public function create()
     {
-        return view('user.roads.create');
+        $road = new Road;
+        return view('user.roads.create', compact('road'));
     }
 
 
