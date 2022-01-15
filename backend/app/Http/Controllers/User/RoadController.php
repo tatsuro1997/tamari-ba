@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Requests\RoadRequest;
 use App\Services\ImageService;
 use App\Models\RoadImage;
-
+use Illuminate\Support\Facades\Storage;
 
 
 class RoadController extends Controller
@@ -27,33 +27,32 @@ class RoadController extends Controller
 
     public function create()
     {
-        return view('user.roads.create');
+        $road = new Road;
+        return view('user.roads.create', compact('road'));
     }
 
 
     public function store(RoadRequest $request)
     {
         try {
-            DB::transaction(function () use ($request) {
-                $road = Road::create([
-                    'title' => $request->title,
-                    'latitude' => $request->latitude,
-                    'longitude' => $request->longitude,
-                    'description' => $request->description,
-                    'user_id' => 1, // TODO:authからuser_idを取得する
-                ]);
+            $road = Road::create([
+                'title' => $request->title,
+                'latitude' => $request->latitude,
+                'longitude' => $request->longitude,
+                'description' => $request->description,
+                'user_id' => 1, // TODO:authからuser_idを取得する
+            ]);
 
-                $imageFiles = $request->file('files');
-                if ($imageFiles) {
-                    foreach ($imageFiles as $imageFile) {
-                        $fileNameToStore = ImageService::upload($imageFile, 'roads');
-                        RoadImage::create([
-                            'road_id' => $road->id,
-                            'filename' => $fileNameToStore,
-                        ]);
-                    }
+            $imageFiles = $request->file('files');
+            if ($imageFiles) {
+                foreach ($imageFiles as $imageFile) {
+                    $fileNameToStore = ImageService::upload($imageFile, 'roads');
+                    RoadImage::create([
+                        'road_id' => $road->id,
+                        'filename' => $fileNameToStore,
+                    ]);
                 }
-            }, 2);
+            }
         } catch (Throwable $e) {
             Log::error($e);
             throw $e;
@@ -73,15 +72,42 @@ class RoadController extends Controller
     }
 
 
-    public function edit()
+    public function edit($id)
     {
+        $road = Road::findOrFail($id);
 
-        return view('user.roads.edit');
+        return view('user.roads.edit', compact('road'));
     }
 
 
-    public function update()
+    public function update(RoadRequest $request, $id)
     {
+        $road = Road::findOrFail($id);
+        $road->title = $request->title;
+        $road->latitude = $request->latitude;
+        $road->longitude = $request->longitude;
+        $road->description = $request->description;
+        $road->user_id = 1; // TODO:authからuser_idを取得する
+        $road->save();
+
+        $imageFiles = $request->file('files');
+
+        if ($imageFiles) {
+            foreach ($road->roadImages as $image ) {
+                Storage::delete('public/roads/' . $image->filename); //以前の画像を削除
+            }
+            foreach ($imageFiles as $imageFile) {
+                $fileNameToStore = ImageService::upload($imageFile, 'roads');
+                $roadImage = RoadImage::findOrFail($id);
+                $roadImage->road_id = $road->id;
+                $roadImage->filename = $fileNameToStore;
+                $roadImage->save();
+            }
+        }
+
+        return redirect()
+            ->route('user.roads.index')
+            ->with(['message' => '道の投稿を更新しました。', 'status' => 'info']);
     }
 
 

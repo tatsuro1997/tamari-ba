@@ -2,7 +2,6 @@
 if($type === 'roads'){
     $path = 'storage/roads/';
 }
-
 @endphp
 
 <div>
