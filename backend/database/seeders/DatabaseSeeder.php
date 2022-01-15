@@ -21,9 +21,12 @@ class DatabaseSeeder extends Seeder
             BikeSeeder::class,
             PrefectureSeeder::class,
             UserSeeder::class,
-            // RoadSeeder::class,
             BikeUserSeeder::class,
         ]);
-        Road::factory(30)->create();
+        Road::factory(20)->create();
+
+        $this->call([
+            RoadImageSeeder::class,
+        ]);
     }
 }
