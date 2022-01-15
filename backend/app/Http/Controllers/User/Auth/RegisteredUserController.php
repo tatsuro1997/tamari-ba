@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Models\Prefecture;
 
 class RegisteredUserController extends Controller
 {
@@ -20,7 +21,9 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('user.auth.register');
+        $prefectures = Prefecture::all();
+
+        return view('user.auth.register', compact('prefectures'));
     }
 
     /**
@@ -43,6 +46,11 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'age' => $request->age,
+            'gender' => $request->gender,
+            'prefecture_id' => $request->prefecture_id,
+            'years_of_experience' => $request->years_of_experience,
+            'through' => $request->through,
         ]);
 
         event(new Registered($user));
