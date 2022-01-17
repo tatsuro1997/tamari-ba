@@ -20,9 +20,8 @@ Route::get('/', function () {
     return view('user.welcome');
 });
 
-Route::resource('roads', RoadController::class);
-    // User登録でage等が入力できないので一時的にコメントアウト
-    // ->middleware('auth:users');
+Route::resource('roads', RoadController::class)
+    ->middleware('auth:users');
 
 Route::get('/dashboard', function () {
     return view('user.dashboard');
