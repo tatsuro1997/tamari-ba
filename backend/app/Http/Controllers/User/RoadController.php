@@ -13,6 +13,7 @@ use App\Http\Requests\RoadRequest;
 use App\Services\ImageService;
 use App\Models\RoadImage;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 
 class RoadController extends Controller
@@ -40,7 +41,7 @@ class RoadController extends Controller
                 'latitude' => $request->latitude,
                 'longitude' => $request->longitude,
                 'description' => $request->description,
-                'user_id' => 1, // TODO:authからuser_idを取得する
+                'user_id' => Auth::id(),
             ]);
 
             $imageFiles = $request->file('files');
@@ -87,7 +88,6 @@ class RoadController extends Controller
         $road->latitude = $request->latitude;
         $road->longitude = $request->longitude;
         $road->description = $request->description;
-        $road->user_id = 1; // TODO:authからuser_idを取得する
         $road->save();
 
         $imageFiles = $request->file('files');
