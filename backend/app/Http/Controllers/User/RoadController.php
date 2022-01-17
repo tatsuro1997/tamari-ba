@@ -73,17 +73,21 @@ class RoadController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Road $road)
     {
-        $road = Road::findOrFail($id);
+        $this->authorize('edit', $road);
+
+        $road = Road::findOrFail($road->id);
 
         return view('user.roads.edit', compact('road'));
     }
 
 
-    public function update(RoadRequest $request, $id)
+    public function update(RoadRequest $request, Road $road)
     {
-        $road = Road::findOrFail($id);
+        $this->authorize('update', $road);
+
+        $road = Road::findOrFail($road->id);
         $road->title = $request->title;
         $road->latitude = $request->latitude;
         $road->longitude = $request->longitude;
@@ -98,7 +102,7 @@ class RoadController extends Controller
             }
             foreach ($imageFiles as $imageFile) {
                 $fileNameToStore = ImageService::upload($imageFile, 'roads');
-                $roadImage = RoadImage::findOrFail($id);
+                $roadImage = RoadImage::findOrFail($road->id);
                 $roadImage->road_id = $road->id;
                 $roadImage->filename = $fileNameToStore;
                 $roadImage->save();
@@ -111,9 +115,11 @@ class RoadController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(Road $road)
     {
-        Road::findOrFail($id)->delete();
+        $this->authorize('delete', $road);
+
+        Road::findOrFail($road->id)->delete();
 
         return redirect()
             ->route('user.roads.index')
