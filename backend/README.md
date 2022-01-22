@@ -12,14 +12,24 @@ git clone ブランチ名 git@github.com:tatsuro1997/tamari-ba.git
 
 ## インストール方法
 
+```php
 cd tamari-ba/backend
-composer install  # これをしないとphp artisan コマンドが使えない
+# php artisan コマンドろ使えるようにする
+composer install
+
+##インターベンションイメージを使えるようにする
+composer require intervention/image
+
+##シンボリックリンクを張り、public/storageから画像にアクセス
+php artisan storage:link
+
 cp .env.example .env
 php artisan key:generate
 cd ..  # tamari-baに移動
 npm install swiper@6.7.0
 npm run dev
 docker-compose up -d --build
+```
 
 
 .envファイルの中身は下記をご利用の環境に合わせて変更してください。
