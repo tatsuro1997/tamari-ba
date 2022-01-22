@@ -26,7 +26,8 @@ php artisan storage:link
 cp .env.example .env
 php artisan key:generate
 cd ..  # tamari-baに移動
-
+npm install swiper@6.7.0
+npm run dev
 docker-compose up -d --build
 ```
 
