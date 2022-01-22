@@ -44,16 +44,20 @@
                                 <div class="p-6 relative">
                                     <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $road->title }}</h1>
                                     <p class="leading-relaxed mb-3">{{ $road->description }}</p>
-                                    <div class="flex justify-between absolute bottom-2">
-                                        <div class="flex mr-5">
-                                            <button  onclick="location.href='{{ route('user.roads.edit', ['road' => $road->id ]) }}'" class="text-black bg-yellow-400 border-0 py-2 px-6 mr-2 focus:outline-none hover:bg-yellow-500 rounded">編集</button>
-                                            <form id="delete_{{ $road->id }}" method="post" action="{{ route('user.roads.destroy', ['road' => $road->id ]) }}">
-                                                @csrf
-                                                @method('delete')
-                                                <div class="w-full flex justify-around">
-                                                    <a href="#" data-id="{{ $road->id }}" onclick="deletePost(this)" class="text-white bg-red-400 border-0 py-4 px-6 focus:outline-none hover:bg-red-500 rounded">削除</a>
-                                                </div>
-                                            </form>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            @can('update', $road)
+                                                <button  onclick="location.href='{{ route('user.roads.edit', ['road' => $road->id ]) }}'" class="text-black bg-yellow-400 border-0 py-2 px-6 mr-2 focus:outline-none hover:bg-yellow-500 rounded">編集</button>
+                                            @endcan
+                                            @can('delete', $road)
+                                                <form id="delete_{{ $road->id }}" method="post" action="{{ route('user.roads.destroy', ['road' => $road->id ]) }}">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <div class="w-full flex justify-around">
+                                                        <a href="#" data-id="{{ $road->id }}" onclick="deletePost(this)" class="text-white bg-red-400 border-0 py-4 px-6 focus:outline-none hover:bg-red-500 rounded">削除</a>
+                                                    </div>
+                                                </form>
+                                            @endcan
                                         </div>
                                         <div>
                                             <p class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</p>
@@ -68,5 +72,13 @@
             </div>
         </div>
     </div>
-    <script src="{{ mix('js/swiper.js') }}"></script>
+<script>
+  'use strict'
+  function deletePost(e){
+    'use strict';
+    if (confirm('本当に削除しても良いですか？')){
+      document.getElementById('delete_'+ e.dataset.id).submit();
+    }
+  }
+</script>
 </x-app-layout>

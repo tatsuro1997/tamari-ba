@@ -13,6 +13,7 @@ use App\Http\Requests\RoadRequest;
 use App\Services\ImageService;
 use App\Models\RoadImage;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 
 class RoadController extends Controller
@@ -40,7 +41,7 @@ class RoadController extends Controller
                 'latitude' => $request->latitude,
                 'longitude' => $request->longitude,
                 'description' => $request->description,
-                'user_id' => 1, // TODO:authからuser_idを取得する
+                'user_id' => Auth::id(),
             ]);
 
             $imageFiles = $request->file('files');
@@ -72,22 +73,25 @@ class RoadController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Road $road)
     {
-        $road = Road::findOrFail($id);
+        $this->authorize('edit', $road);
+
+        $road = Road::findOrFail($road->id);
 
         return view('user.roads.edit', compact('road'));
     }
 
 
-    public function update(RoadRequest $request, $id)
+    public function update(RoadRequest $request, Road $road)
     {
-        $road = Road::findOrFail($id);
+        $this->authorize('update', $road);
+
+        $road = Road::findOrFail($road->id);
         $road->title = $request->title;
         $road->latitude = $request->latitude;
         $road->longitude = $request->longitude;
         $road->description = $request->description;
-        $road->user_id = 1; // TODO:authからuser_idを取得する
         $road->save();
 
         $imageFiles = $request->file('files');
@@ -99,10 +103,10 @@ class RoadController extends Controller
             RoadImage::where('road_id', $id)->delete(); //DBから以前の画像を削除
             foreach ($imageFiles as $imageFile) {
                 $fileNameToStore = ImageService::upload($imageFile, 'roads');
-                RoadImage::create([
-                    'road_id' => $road->id,
-                    'filename' => $fileNameToStore,
-                ]);
+                $roadImage = RoadImage::findOrFail($road->id);
+                $roadImage->road_id = $road->id;
+                $roadImage->filename = $fileNameToStore;
+                $roadImage->save();
             }
         }
 
@@ -112,9 +116,11 @@ class RoadController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(Road $road)
     {
-        Road::findOrFail($id)->delete();
+        $this->authorize('delete', $road);
+
+        Road::findOrFail($road->id)->delete();
 
         return redirect()
             ->route('user.roads.index')
