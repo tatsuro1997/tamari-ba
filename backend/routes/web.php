@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::resource('roads', RoadController::class)
     ->middleware('auth:users');
 
-Route::resource('roadcomment', RoadCommentsController::class)
+Route::resource('road.comment', RoadCommentsController::class)
     ->middleware('auth:users')
     ->only(['store', 'destroy']);
 
