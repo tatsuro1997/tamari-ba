@@ -31,6 +31,6 @@ class Road extends Model
 
     public function roadComments()
     {
-        return hasMany(RoadComment::class);
+        return $this->hasMany(RoadComment::class);
     }
 }

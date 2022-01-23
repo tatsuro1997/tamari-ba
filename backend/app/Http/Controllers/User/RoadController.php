@@ -67,7 +67,7 @@ class RoadController extends Controller
 
     public function show($id)
     {
-        $road = Road::findOrFail($id);
+        $road = Road::with('roadComments')->findOrFail($id);
 
         return view('user.roads.show', compact('road'));
     }

@@ -67,6 +67,6 @@ class User extends Authenticatable
 
     public function roadComments()
     {
-        return hasMany(RoadComment::class);
+        return $this->hasMany(RoadComment::class);
     }
 }
