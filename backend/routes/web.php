@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComponentTestController;
 use App\Http\Controllers\LifeCycleTestController;
 use App\Http\Controllers\User\RoadController;
+use App\Http\Controllers\User\RoadCommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,10 @@ Route::get('/', function () {
 
 Route::resource('roads', RoadController::class)
     ->middleware('auth:users');
+
+Route::resource('roadcomment', RoadCommentsController::class)
+    ->middleware('auth:users')
+    ->only(['store', 'destroy']);
 
 Route::get('/dashboard', function () {
     return view('user.dashboard');
