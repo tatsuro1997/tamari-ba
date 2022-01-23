@@ -30,6 +30,11 @@ class RoadCommentsController extends Controller
 
     public function destroy(Request $request)
     {
+        // TODO
+        // Policyで削除制限
+        // 現在は投稿者のみ削除ボタン出現
+        // $this->authorize('delete', $comment);
+
         RoadComment::findOrFail($request->comment_id)->delete();
 
         return redirect()
