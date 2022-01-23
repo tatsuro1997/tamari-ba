@@ -100,13 +100,13 @@ class RoadController extends Controller
             foreach ($road->roadImages as $image ) {
                 Storage::delete('public/roads/' . $image->filename); //Storageから以前の画像を削除
             }
-            RoadImage::where('road_id', $id)->delete(); //DBから以前の画像を削除
+            RoadImage::where('road_id', $road->id)->delete(); //DBから以前の画像を削除
             foreach ($imageFiles as $imageFile) {
                 $fileNameToStore = ImageService::upload($imageFile, 'roads');
-                $roadImage = RoadImage::findOrFail($road->id);
-                $roadImage->road_id = $road->id;
-                $roadImage->filename = $fileNameToStore;
-                $roadImage->save();
+                RoadImage::create([
+                    'road_id' => $road->id,
+                    'filename' => $fileNameToStore,
+                ]);
             }
         }
 
