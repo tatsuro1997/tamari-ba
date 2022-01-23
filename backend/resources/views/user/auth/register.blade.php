@@ -9,7 +9,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('user.register') }}">
+        <form method="POST" action="{{ route('user.register') }}" enctype="multipart/form-data">
             @csrf
 
             <!-- Name -->
@@ -17,6 +17,13 @@
                 <x-label for="name" :value="__('名前 ※必須')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            </div>
+
+            <!-- Avatar -->
+            <div>
+                <x-label for="name" :value="__('プロフィール画像 ※必須')" />
+
+                <x-input id="avatar" type="file" name="avatar" autofocus class="block mt-1 w-full" />
             </div>
 
             <!-- Email Address -->
