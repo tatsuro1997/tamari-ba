@@ -12,7 +12,7 @@ class RoadCommentsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('user:auth');
+        $this->middleware('auth:users');
     }
 
     public function store(Request $request)
@@ -30,10 +30,10 @@ class RoadCommentsController extends Controller
 
     public function destroy(Request $request)
     {
-        RoadComment::find($request->comment_id)->delete();
+        RoadComment::findOrFail($request->comment_id)->delete();
 
         return redirect()
-            ->route('user.roads.index')
-            ->with(['message' => '道の投稿を削除しました。', 'status' => 'alert']);
+            ->route('user.roads.show', ['road' => $request->road_id])
+            ->with(['message' => 'コメントを削除しました。', 'status' => 'alert']);
     }
 }
