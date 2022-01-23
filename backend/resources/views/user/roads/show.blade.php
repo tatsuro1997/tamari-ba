@@ -72,7 +72,7 @@
             </div>
         </div>
     </div>
-<script>
+<script src="{{ mix('js/swiper.js') }}">
   'use strict'
   function deletePost(e){
     'use strict';
