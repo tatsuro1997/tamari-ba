@@ -23,7 +23,7 @@
                                                 <x-thumbnail filename="{{ $road->roadImages->first()->filename ?? ''}}" type="roads" />
                                                 <div class="p-6">
                                                     <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $road->title }}</h1>
-                                                    <p class="leading-relaxed mb-3">{{ Str::limit($road->description, 100, ' ...続きを読む') }}</p>
+                                                    <p class="leading-relaxed mb-3 h-24">{{ Str::limit($road->description, 100, ' ...続きを読む') }}</p>
                                                     <div class="flex justify-between">
                                                         <div class="flex">
                                                             @can('update', $road)
