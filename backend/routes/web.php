@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComponentTestController;
 use App\Http\Controllers\LifeCycleTestController;
 use App\Http\Controllers\User\RoadController;
+use App\Http\Controllers\User\BoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ Route::get('/', function () {
 
 Route::resource('roads', RoadController::class)
     ->middleware('auth:users');
+
+Route::resource('boards', BoardController::class)
+->middleware('auth:users');
 
 Route::get('/dashboard', function () {
     return view('user.dashboard');
