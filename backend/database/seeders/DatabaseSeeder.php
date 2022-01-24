@@ -27,11 +27,12 @@ class DatabaseSeeder extends Seeder
         ]);
         Road::factory(20)->create();
         Board::factory(20)->create();
-        BoardUser::factory(20)->create();
 
+        
         $this->call([
             RoadImageSeeder::class,
             BoardImageSeeder::class,
+            BoardUserSeeder::class,
         ]);
     }
 }

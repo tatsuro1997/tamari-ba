@@ -13,9 +13,11 @@ class BoardUserFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'board_id' => $this->faker->numberBetween(1, 20),
-            'user_id' => $this->faker->numberBetween(1, 3),
-        ];
+        for ($i = 1; $i < 20; $i++){
+            return [
+                'board_id' => $i,
+                'user_id' => $this->faker->numberBetween(1, 3),
+            ];
+        }
     }
 }
