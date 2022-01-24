@@ -12,6 +12,7 @@ use Throwable;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use App\Services\ImageService;
+use App\Http\Requests\BoardRequest;
 
 
 class BoardController extends Controller
@@ -31,7 +32,7 @@ class BoardController extends Controller
         return view('user.boards.create', compact('board', 'prefectures'));
     }
 
-    public function store(Request $request)
+    public function store(BoardRequest $request)
     {
         try {
             $board = Board::create([
