@@ -15,6 +15,7 @@ class Board extends Model
         'title',
         'date',
         'location',
+        'destination',
         'description',
         'deadline',
         'prefecture_id'

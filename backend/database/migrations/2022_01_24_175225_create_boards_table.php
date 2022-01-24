@@ -18,8 +18,9 @@ class CreateBoardsTable extends Migration
             $table->string('title');
             $table->dateTime('date');
             $table->string('location');
+            $table->string('destination');
             $table->text('description');
-            $table->boolean('deadline');
+            $table->boolean('deadline')->default(0);
             $table->foreignId('prefecture_id')
             ->constrained();
             $table->timestamps();
