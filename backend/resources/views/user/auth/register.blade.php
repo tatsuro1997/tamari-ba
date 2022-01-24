@@ -20,8 +20,8 @@
             </div>
 
             <!-- Avatar -->
-            <div>
-                <x-label for="name" :value="__('プロフィール画像 ※必須')" />
+            <div class="mt-4">
+                <x-label for="avatar" :value="__('プロフィール画像 ※必須')" />
 
                 <x-input id="avatar" type="file" name="avatar" autofocus class="block mt-1 w-full" />
             </div>
