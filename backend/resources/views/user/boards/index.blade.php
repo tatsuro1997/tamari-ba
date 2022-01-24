@@ -23,7 +23,7 @@
                                                 <x-thumbnail filename="{{ $board->boardImages->first()->filename ?? ''}}" type="boards" />
                                                 <div class="p-6">
                                                     <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $board->title }}</h1>
-                                                    <p class="leading-relaxed mb-3">{{ Str::limit($board->description, 100, ' ...続きを読む') }}</p>
+                                                    <p class="leading-relaxed mb-3 h-24">{{ Str::limit($board->description, 100, ' ...続きを読む') }}</p>
                                                     <div class="flex justify-between">
                                                         <div class="flex">
                                                             @can('update', $board)
@@ -41,7 +41,7 @@
                                                         </div>
                                                         <div>
                                                             <p class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</p>
-                                                            <p class="leading-relaxed text-right">{{ $board->user->name }}</p>
+                                                            <p class="leading-relaxed text-right">{{ $board->boardUsers->first()->user->name}}</p>
                                                         </div>
                                                     </div>
                                                 </div>
