@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Road;
 use App\Models\Board;
+use App\Models\BoardUser;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Road::factory(20)->create();
         Board::factory(20)->create();
+        BoardUser::factory(20)->create();
 
         $this->call([
             RoadImageSeeder::class,
