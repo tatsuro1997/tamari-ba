@@ -23,6 +23,9 @@
                                                 <x-thumbnail filename="{{ $board->boardImages->first()->filename ?? ''}}" type="boards" />
                                                 <div class="p-6">
                                                     <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $board->title }}</h1>
+                                                    <p class="leading-relaxed mb-1"><i class="far fa-clock mr-2 w-4"></i>{{ date('Y/m/d H:i', strtotime($board->date)) }}</p>
+                                                    <p class="leading-relaxed mb-1"><i class="fas fa-motorcycle mr-2 w-4"></i>{{ $board->location }}</p>
+                                                    <p class="leading-relaxed mb-3"><i class="fas fa-map-marker-alt mr-2 w-4"></i>{{ $board->destination }}</p>
                                                     <p class="leading-relaxed mb-3 h-24">{{ Str::limit($board->description, 100, ' ...続きを読む') }}</p>
                                                     <div class="flex justify-between">
                                                         <div class="flex">
