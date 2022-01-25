@@ -71,7 +71,7 @@ class BoardController extends Controller
             ->with(['message' => '募集を登録しました。', 'status' => 'info']);
     }
 
-    
+
     public function show($id)
     {
         $board = Board::findOrFail($id);
@@ -82,6 +82,8 @@ class BoardController extends Controller
 
     public function edit(Board $board)
     {
+        $this->authorize('edit', $board);
+
         $board = Board::findOrFail($board->id);
         $prefectures = Prefecture::all();
 
@@ -89,9 +91,11 @@ class BoardController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(BoardRequest $request, Board $board)
     {
-        $board = Board::findOrFail($id);
+        $this->authorize('update', $board);
+
+        $board = Board::findOrFail($board->id);
         $board->title = $request->title;
         $board->date = $request->date;
         $board->location = $request->location;
@@ -120,5 +124,17 @@ class BoardController extends Controller
         return redirect()
             ->route('user.boards.index')
             ->with(['message' => '募集を更新しました。', 'status' => 'info']);
+    }
+
+
+    public function destroy(Board $board)
+    {
+        $this->authorize('delete', $board);
+
+        Board::findOrFail($board->id)->delete();
+
+        return redirect()
+            ->route('user.boards.index')
+            ->with(['message' => '募集を削除しました。', 'status' => 'alert']);
     }
 }
