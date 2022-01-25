@@ -29,11 +29,10 @@
                                                     <p class="leading-relaxed mb-3 h-24">{{ Str::limit($board->description, 100, ' ...続きを読む') }}</p>
                                                     <div class="flex justify-between">
                                                         <div class="flex">
-                                                            {{-- Policyを付けるまでコメント --}}
-                                                            {{-- @can('update', $board) --}}
+                                                            @can('update', $board)
                                                                 <button  onclick="location.href='{{ route('user.boards.edit', ['board' => $board->id ]) }}'" class="text-black bg-yellow-400 border-0 py-2 px-4 mr-2 focus:outline-none hover:bg-yellow-500 rounded">編集</button>
-                                                            {{-- @endcan
-                                                            @can('delete', $board) --}}
+                                                            @endcan
+                                                            @can('delete', $board)
                                                                 <form id="delete_{{ $board->id }}" method="post" action="{{ route('user.boards.destroy', ['board' => $board->id ]) }}">
                                                                     @csrf
                                                                     @method('delete')
@@ -41,7 +40,7 @@
                                                                         <a href="#" data-id="{{ $board->id }}" onclick="deletePost(this)" class="text-white bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-500 rounded">削除</a>
                                                                     </div>
                                                                 </form>
-                                                            {{-- @endcan --}}
+                                                            @endcan
                                                         </div>
                                                         <div>
                                                             <p class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</p>
