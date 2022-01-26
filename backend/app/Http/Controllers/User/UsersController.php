@@ -33,13 +33,18 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $imageFile = $request->file('image');
 
+        $avatar = $request->file('avatar')->hashName();
+        $request->file('avatar')->storeAs('public/images', $avatar);
+        $user->avatar = $avatar;
+
+        $imageFile = $request->file('image');
         if ($imageFile) {
             Storage::delete('public/users/' . $user->background_image); //Storageから以前の画像を削除
             $fileNameToStore = ImageService::upload($imageFile, 'users');
             $user->background_image = $fileNameToStore;
         }
+
         $user->name = $request->name;
         $user->profile = $request->profile;
         $user->url = $request->url;
