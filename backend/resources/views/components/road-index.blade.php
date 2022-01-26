@@ -1,4 +1,7 @@
 @php
+    if($type == 'index'){
+        $style = "h-24";
+    }
     if($type == 'profile'){
         $style = "h-44";
     }
