@@ -4,12 +4,12 @@
         <div class="border-b border-blue-500 my-2">
             <input value="{{ $road->id }}" type="hidden" name="road_id" />
             <input value="{{ Auth::id() }}" type="hidden" name="user_id" />
-            <input id="commentForm" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="コメント入力 ..." type="text" name="comment" />
+            <textarea id="comment" name="comment" placeholder="コメント入力 ..." type="text" rows="10" required class="w-full h-20 rounded border-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200 ease-in-out"></textarea>
         </div>
         <button type="submit" class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded" >
             コメント
         </button>
-        <button type="button" onclick="cancelComment(this)" class="flex-shrink-0 border-transparent border-4 text-gray-500 hover:text-gray-800 text-sm py-1 px-2 rounded">
+        <button type="button" onClick="cancelComment()" class="flex-shrink-0 border-transparent border-4 text-gray-500 hover:text-gray-800 text-sm py-1 px-2 rounded">
             キャンセル
         </button>
     </form>
@@ -30,7 +30,7 @@
                         @endcan
                     </form>
                 </div>
-                <div class="text-xl my-1">{{$comment->comment}}</div>
+                <div class="text-xl my-1">{!!nl2br(e($comment->comment))!!}</div>
             </div>
         </div>
     @endforeach
@@ -47,7 +47,9 @@
 
   function cancelComment(){
     'use strict';
-    let inputComemnt = document.getElementById('commentForm');
-    inputComment.value = ""
+    let inputComemnt = document.getElementById('comment');
+    if ( inputComemnt.value ) {
+        inputComemnt.value = '';
+    }
   }
 </script>
