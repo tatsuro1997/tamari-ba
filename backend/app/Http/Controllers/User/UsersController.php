@@ -15,7 +15,7 @@ use App\Services\ImageService;
 class UsersController extends Controller
 {
     public function profile(){
-        $user = User::findOrFail(Auth::id());
+        $user = User::with('roadComments')->findOrFail(Auth::id());
         $roads = Road::where('user_id', $user->id)
                         ->orderBy('created_at', 'desc')
                         ->paginate(10);
