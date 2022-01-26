@@ -2,6 +2,9 @@
 if($type === 'roads'){
     $path = 'storage/roads/';
 }
+if($type === 'users'){
+    $path = 'storage/users/';
+}
 @endphp
 
 <div>

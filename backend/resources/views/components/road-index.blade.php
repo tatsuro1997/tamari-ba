@@ -1,12 +1,3 @@
-@php
-    if($type == 'index'){
-        $style = "h-24";
-    }
-    if($type == 'profile'){
-        $style = "h-44";
-    }
-@endphp
-
 <div class="flex flex-wrap -m-4">
     @foreach ($roads as $road)
         <div class="p-4 lg:w-1/3 md:w-1/3">
@@ -31,7 +22,9 @@
                                 @endcan
                             </div>
                         </div>
-                        <p class="leading-relaxed mb-3 {{ $style ?? "" }}">{{ Str::limit($road->description, 100, ' ...続きを読む') }}</p>
+                        @if ($type=='index')
+                            <p class="leading-relaxed mb-3 h-24">{{ Str::limit($road->description, 100, ' ...続きを読む') }}</p>
+                        @endif
                         <div class="flex justify-between">
                                 <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
                                 <div class="leading-relaxed text-right">{{ $road->user->name }}</div>

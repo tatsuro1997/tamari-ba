@@ -32,8 +32,8 @@ Route::resource('road.comment', RoadCommentsController::class)
 Route::prefix('users')
     ->middleware('auth:users')->group(function () {
         Route::get('profile', [UsersController::class, 'Profile'])->name('profile');
-        Route::get('{user}/edit', [UsersController::class, 'UsersEdit'])->name('edit');
-        Route::put('update/{user}', [UsersController::class, 'UsersUpdate'])->name('update');
+        Route::get('{user}/edit', [UsersController::class, 'Edit'])->name('edit');
+        Route::put('update/{user}', [UsersController::class, 'Update'])->name('update');
     });
 
 Route::get('/dashboard', function () {
