@@ -15,7 +15,7 @@
     </form>
     @foreach ($road->roadComments as $comment)
         <div class="flex mt-4">
-            <x-avatar avatar="{{ $comment->user->avatar ?? '' }}" />
+            <x-avatar avatar="{{ $comment->user->avatar ?? '' }}" type="nav" />
             <div class="ml-4 w-3/4">
                 <div class="flex">
                     <div class="font-medium mr-4">{{$comment->user->name}}</div>
