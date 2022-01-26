@@ -3,22 +3,22 @@
     <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
       <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
         <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-indigo-900" onclick="changeAtiveTab(event,'tab-comment')">
-           Comment
+           Comments
         </a>
       </li>
       <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
         <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-bike')">
-           Bike
+           Bikes
         </a>
       </li>
       <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
         <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-road')">
-           Road
+           Roads
         </a>
       </li>
       <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
         <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-board')">
-           Board
+           Boards
         </a>
       </li>
     </ul>
