@@ -34,9 +34,11 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id);
 
-        $avatar = $request->file('avatar')->hashName();
-        $request->file('avatar')->storeAs('public/images', $avatar);
-        $user->avatar = $avatar;
+        if ($request->file('avatar')) {
+            $avatar = $request->file('avatar')->hashName();
+            $request->file('avatar')->storeAs('public/images', $avatar);
+            $user->avatar = $avatar;
+        }
 
         $imageFile = $request->file('image');
         if ($imageFile) {

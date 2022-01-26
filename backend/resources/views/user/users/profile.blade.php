@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="p-6 relative">
                                     <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $user->name }}</h1>
-                                    <p class="leading-relaxed mb-3">{{ $user->profile }}</p>
+                                    <p class="leading-relaxed mb-3">{!!nl2br(e($user->profile))!!}</p>
                                     <div class="flex justify-between">
                                         @if ($user->url)
                                             <a href="{{ $user->url }}" class="leading-relaxed text-right" target="_blank" rel="noopener noreferrer"><i class="fas fa-link mr-2"></i>{{ $user->url }}</a>
