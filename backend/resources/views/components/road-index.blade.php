@@ -27,8 +27,8 @@
                             <p class="leading-relaxed mb-3 h-24">{{ Str::limit($road->description, 100, ' ...続きを読む') }}</p>
                         @endif
                         <div class="flex justify-between">
-                                <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
-                                <div class="leading-relaxed text-right">{{ $road->user->name }}</div>
+                            <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
+                            <div class="leading-relaxed text-right">{{ $road->user->name }}</div>
                         </div>
                     </div>
                 </div>

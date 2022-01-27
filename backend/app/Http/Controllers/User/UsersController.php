@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Road;
+use App\Models\RoadLike;
 use App\Models\Prefecture;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -19,8 +20,9 @@ class UsersController extends Controller
         $roads = Road::where('user_id', $user->id)
                         ->orderBy('created_at', 'desc')
                         ->paginate(10);
+        $like = new RoadLike;
 
-        return view('user.users.profile', compact('user', 'roads'));
+        return view('user.users.profile', compact('user', 'roads', 'like'));
     }
 
     public function edit($id){

@@ -29,7 +29,7 @@ class RoadController extends Controller
             'like_model' => $like,
         ];
 
-        return view('user.roads.index', compact('roads', 'like', 'data'));
+        return view('user.roads.index', compact('roads', 'like'));
     }
 
 
