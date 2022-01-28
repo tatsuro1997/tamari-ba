@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Auth;
 
 class RoadController extends Controller
 {
-    public function index($tagSlug = null)
+    public function index()
     {
         $roads = Road::with('tags')->withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
 
