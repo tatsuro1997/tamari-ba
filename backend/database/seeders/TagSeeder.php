@@ -22,24 +22,38 @@ class TagSeeder extends Seeder
                 'slug' => 'rcafe',
                 'created_at' => now(),
                 'updated_at' => now()
-            ], [
+            ],
+            [
                 'name' => '峠',
                 'slug' => 'touge',
                 'created_at' => now(),
                 'updated_at' => now()
-            ], [
+            ],
+            [
                 'name' => 'スカイライン',
                 'slug' => 'skyline',
                 'created_at' => now(),
                 'updated_at' => now()
-            ]
+            ],
+            [
+                'name' => '改造',
+                'slug' => 'remodeling',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => '有料道路',
+                'slug' => 'tollway',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ]);
 
         $faker = Faker::create();
         for ($i = 1; $i <= 20; $i++) {
             DB::table('road_tag')->insert([
                 'road_id' => $i,
-                'tag_id' => $faker->numberBetween(1, 3)
+                'tag_id' => $faker->numberBetween(1, 5)
             ]);
         }
     }

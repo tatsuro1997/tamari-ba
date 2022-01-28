@@ -1,14 +1,7 @@
-<ul class="nav nav-pills mb-2">
-    {{-- <li class="nav-item">
-        {{ link_to_route('user.roads.index', 'すべて', null, [
-            'class' => 'nav-link'.
-            (request()->segment(3) === null ? ' active' : '')
-        ]) }}
-    </li> --}}
+<ul class="flex flex-wrap">
     @foreach($tags as $tag)
-        <li class="nav-item">
+        <li class="mb-2 ml-2 text-sm shadow-sm bg-gray-200 rounded hover:text-white hover:bg-gray-500">
             {{ link_to_route('user.roads.index.tag', "#$tag->name", $tag->slug, [
-                'class' => 'nav-link'.
                 (request()->segment(3) === $tag->slug ? ' active' : '')
             ]) }}
         </li>
