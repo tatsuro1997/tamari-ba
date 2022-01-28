@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComponentTestController;
 use App\Http\Controllers\LifeCycleTestController;
 use App\Http\Controllers\User\RoadController;
+use App\Http\Controllers\User\BoardController;
 use App\Http\Controllers\User\RoadCommentsController;
 use App\Http\Controllers\User\UsersController;
 
@@ -25,6 +26,8 @@ Route::get('/', function () {
 Route::resource('roads', RoadController::class)
     ->middleware('auth:users');
 
+Route::resource('boards', BoardController::class)
+->middleware('auth:users');
 Route::resource('road.comment', RoadCommentsController::class)
     ->middleware('auth:users')
     ->only(['store', 'destroy']);
