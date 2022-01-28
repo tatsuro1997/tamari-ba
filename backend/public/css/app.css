@@ -839,6 +839,9 @@ select {
 .w-3\/4 {
   width: 75%;
 }
+.w-3\/4 {
+  width: 75%;
+}
 .w-28 {
   width: 7rem;
 }
@@ -971,6 +974,9 @@ select {
 }
 .rounded {
   border-radius: 0.25rem;
+}
+.rounded-full {
+  border-radius: 9999px;
 }
 .rounded-lg {
   border-radius: 0.5rem;
