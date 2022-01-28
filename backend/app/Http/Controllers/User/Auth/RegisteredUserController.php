@@ -38,12 +38,18 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'avatar' => ['required', 'image'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'avatar'=>['required', 'image'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $avatar = $request->file('avatar')->hashName();
+        $request->file('avatar')->storeAs('public/images', $avatar);
+
         $user = User::create([
             'name' => $request->name,
+            'avatar' => $avatar,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'age' => $request->age,

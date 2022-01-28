@@ -11,6 +11,7 @@ use App\Models\Bike;
 use App\Models\Road;
 use App\Models\Prefecture;
 use App\Models\BoardUser;
+use App\Models\RoadComment;
 
 class User extends Authenticatable
 {
@@ -23,6 +24,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'avatar',
         'email',
         'password',
         'age',
@@ -68,5 +70,10 @@ class User extends Authenticatable
     public function boardUsers()
     {
         return $this->hasMany(BoardUser::class);
+    }
+    
+    public function roadComments()
+    {
+        return $this->hasMany(RoadComment::class);
     }
 }
