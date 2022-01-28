@@ -40,6 +40,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('like', [RoadController::class, 'Like'])->name('road.like');
 });
 
+Route::get('posts/tag/{tagSlug}', [RoadController::class,'Index'])->where('tagSlug', '[a-z]+')->name('roads.index.tag');
+
 Route::get('/dashboard', function () {
     return view('user.dashboard');
 })->middleware(['auth:users'])->name('dashboard');

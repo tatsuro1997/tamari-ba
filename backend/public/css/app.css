@@ -734,6 +734,9 @@ select {
 .mb-12 {
   margin-bottom: 3rem;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .block {
   display: block;
 }
@@ -787,6 +790,9 @@ select {
 }
 .h-2 {
   height: 0.5rem;
+}
+.h-80 {
+  height: 20rem;
 }
 .min-h-screen {
   min-height: 100vh;

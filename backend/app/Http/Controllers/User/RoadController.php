@@ -13,21 +13,19 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Requests\RoadRequest;
 use App\Services\ImageService;
 use App\Models\RoadImage;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 
 class RoadController extends Controller
 {
-    public function index()
+    public function index($tagSlug = null)
     {
-        $roads = Road::withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
-        $data = [];
+        $roads = Road::with('tags')->withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
+
+        # Like
         $like = new RoadLike;
-        $data = [
-            'roads' => $roads,
-            'like_model' => $like,
-        ];
 
         return view('user.roads.index', compact('roads', 'like'));
     }
@@ -36,7 +34,9 @@ class RoadController extends Controller
     public function create()
     {
         $road = new Road;
-        return view('user.roads.create', compact('road'));
+        $tags = Tag::pluck('name', 'id')->toArray();
+
+        return view('user.roads.create', compact('road', 'tags'));
     }
 
 
@@ -50,6 +50,7 @@ class RoadController extends Controller
                 'description' => $request->description,
                 'user_id' => Auth::id(),
             ]);
+            $road->tags()->attach($request->tags);
 
             $imageFiles = $request->file('files');
             if ($imageFiles) {
@@ -85,8 +86,9 @@ class RoadController extends Controller
         $this->authorize('edit', $road);
 
         $road = Road::findOrFail($road->id);
+        $tags = Tag::pluck('name', 'id')->toArray();
 
-        return view('user.roads.edit', compact('road'));
+        return view('user.roads.edit', compact('road', 'tags'));
     }
 
 
@@ -100,6 +102,8 @@ class RoadController extends Controller
         $road->longitude = $request->longitude;
         $road->description = $request->description;
         $road->save();
+
+        $road->tags()->sync($request->tags);
 
         $imageFiles = $request->file('files');
 
@@ -128,6 +132,7 @@ class RoadController extends Controller
         $this->authorize('delete', $road);
 
         Road::findOrFail($road->id)->delete();
+        $road->tags()->detach();
 
         return redirect()
             ->route('user.roads.index')

@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\RoadImage;
 use App\Models\RoadComment;
 use App\Models\RoadLike;
+use App\Models\Tag;
 
 class Road extends Model
 {
@@ -38,5 +39,10 @@ class Road extends Model
     public function roadLikes()
     {
         return $this->hasMany(RoadLike::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }
