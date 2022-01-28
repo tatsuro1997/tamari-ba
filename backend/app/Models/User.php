@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Bike;
 use App\Models\Road;
 use App\Models\Prefecture;
+use App\Models\RoadComment;
 
 class User extends Authenticatable
 {
@@ -62,5 +63,10 @@ class User extends Authenticatable
     public function prefecture()
     {
         return $this->belongsTo(Prefecture::class);
+    }
+
+    public function roadComments()
+    {
+        return $this->hasMany(RoadComment::class);
     }
 }
