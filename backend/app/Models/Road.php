@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\RoadImage;
+use App\Models\RoadComment;
 
 class Road extends Model
 {
@@ -26,5 +27,10 @@ class Road extends Model
     public function roadImages()
     {
         return $this->hasMany(RoadImage::class);
+    }
+
+    public function roadComments()
+    {
+        return $this->hasMany(RoadComment::class);
     }
 }

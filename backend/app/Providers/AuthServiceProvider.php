@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Policies\RoadPolicy;
+use App\Policies\RoadCommentPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -16,6 +17,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
         Road::class => RoadPolicy::class,
+        RoadComment::class => RoadCommentPolicy::class,
     ];
 
     /**
