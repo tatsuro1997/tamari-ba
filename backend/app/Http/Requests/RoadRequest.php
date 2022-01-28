@@ -31,6 +31,7 @@ class RoadRequest extends FormRequest
             // 'user_id' => ['required', 'exists:shops,id'], //storeをauthで管理するまではコメントアウト
             'image' => 'image|mimes:jpg, jpeg, png|max:2048',
             'files.*.image' => 'required|image|mimes:jpg, jpeg, png|max:2048',
+            'tags.*' => 'numeric|exists:tags,id'
         ];
     }
 
@@ -40,6 +41,7 @@ class RoadRequest extends FormRequest
             'image' => '指定されたファイルが画像ではありません。',
             'mimes' => '指定された拡張子(jpg/jpeg/png)でありません。',
             'max' => 'ファイルサイズは2MB以内にしてください。',
+            'tags.*' => 'タグ'
         ];
     }
 }

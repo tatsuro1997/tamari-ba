@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             RoadImageSeeder::class,
+            TagSeeder::class,
             BoardImageSeeder::class,
             BoardUserSeeder::class,
         ]);
