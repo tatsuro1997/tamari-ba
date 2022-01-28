@@ -71,6 +71,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(BoardUser::class);
     }
+
     public function roadComments()
     {
         return $this->hasMany(RoadComment::class);
