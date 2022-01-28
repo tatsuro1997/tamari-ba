@@ -71,6 +71,14 @@ class BoardController extends Controller
             ->with(['message' => '募集を登録しました。', 'status' => 'info']);
     }
 
+    
+    public function show($id)
+    {
+        $board = Board::findOrFail($id);
+
+        return view('user.boards.show', compact('board'));
+    }
+
 
     public function edit(Board $board)
     {
