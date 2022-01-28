@@ -16,6 +16,16 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('user.roads.index')" :active="request()->routeIs('user.roads.index')">
+                        {{ __('道の投稿') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('user.boards.index')" :active="request()->routeIs('user.boards.index')">
+                        {{ __('ツーリング掲示板') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <div class="flex">
@@ -71,6 +81,16 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('user.dashboard')" :active="request()->routeIs('user.dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('user.roads.index')" :active="request()->routeIs('user.road.index')">
+                {{ __('道の投稿') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('user.boards.index')" :active="request()->routeIs('user.boards.index')">
+                {{ __('ツーリング掲示板') }}
             </x-responsive-nav-link>
         </div>
 
