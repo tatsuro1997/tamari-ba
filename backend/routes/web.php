@@ -39,6 +39,10 @@ Route::prefix('users')
         Route::put('update/{user}', [UsersController::class, 'Update'])->name('update');
     });
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('like', [RoadController::class, 'Like'])->name('road.like');
+});
+
 Route::get('/dashboard', function () {
     return view('user.dashboard');
 })->middleware(['auth:users'])->name('dashboard');

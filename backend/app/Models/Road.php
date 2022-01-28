@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\RoadImage;
 use App\Models\RoadComment;
+use App\Models\RoadLike;
 
 class Road extends Model
 {
@@ -32,5 +33,10 @@ class Road extends Model
     public function roadComments()
     {
         return $this->hasMany(RoadComment::class);
+    }
+
+    public function roadLikes()
+    {
+        return $this->hasMany(RoadLike::class);
     }
 }

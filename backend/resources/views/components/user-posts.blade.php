@@ -34,7 +34,7 @@
             </p>
           </div>
           <div class="hidden" id="tab-road">
-            <x-road-index :roads="$roads" type="profile" />
+            <x-road-index :roads="$roads" :like="$like" type="profile" />
           </div>
           <div class="hidden" id="tab-board">
             <p>

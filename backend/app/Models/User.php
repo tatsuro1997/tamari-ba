@@ -12,6 +12,7 @@ use App\Models\Road;
 use App\Models\Prefecture;
 use App\Models\BoardUser;
 use App\Models\RoadComment;
+use App\Models\RoadLike;
 
 class User extends Authenticatable
 {
@@ -78,5 +79,10 @@ class User extends Authenticatable
     public function roadComments()
     {
         return $this->hasMany(RoadComment::class);
+    }
+
+    public function roadLikes()
+    {
+        return $this->hasMany(RoadLike::class);
     }
 }

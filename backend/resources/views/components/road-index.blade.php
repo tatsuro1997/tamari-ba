@@ -8,6 +8,7 @@
                         <div class="flex justify-between">
                             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $road->title }}</h1>
                             <div class="flex">
+                                <x-like :road="$road" :like="$like" />
                                 @can('update', $road)
                                     <a onclick="location.href='{{ route('user.roads.edit', ['road' => $road->id ]) }}'" class="py-2 px-2"><i class="far fa-edit"></i></a>
                                 @endcan
@@ -26,8 +27,8 @@
                             <p class="leading-relaxed mb-3 h-24">{{ Str::limit($road->description, 100, ' ...続きを読む') }}</p>
                         @endif
                         <div class="flex justify-between">
-                                <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
-                                <div class="leading-relaxed text-right">{{ $road->user->name }}</div>
+                            <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
+                            <div class="leading-relaxed text-right">{{ $road->user->name }}</div>
                         </div>
                     </div>
                 </div>
