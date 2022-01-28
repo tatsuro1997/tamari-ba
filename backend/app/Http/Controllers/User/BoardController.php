@@ -11,6 +11,7 @@ use App\Models\Prefecture;
 use Throwable;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Services\ImageService;
 use App\Http\Requests\BoardRequest;
 
@@ -68,5 +69,48 @@ class BoardController extends Controller
         return redirect()
             ->route('user.boards.index')
             ->with(['message' => '募集を登録しました。', 'status' => 'info']);
+    }
+
+
+    public function edit(Board $board)
+    {
+        $board = Board::findOrFail($board->id);
+        $prefectures = Prefecture::all();
+
+        return view('user.boards.edit', compact('board', 'prefectures'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $board = Board::findOrFail($id);
+        $board->title = $request->title;
+        $board->date = $request->date;
+        $board->location = $request->location;
+        $board->destination = $request->destination;
+        $board->description = $request->description;
+        $board->prefecture_id = $request->prefecture_id;
+        $board->deadline = $request->deadline;
+        $board->save();
+
+        $imageFiles = $request->file('files');
+
+        if ($imageFiles) {
+            foreach ($board->boardImages as $image) {
+                Storage::delete('public/boards/' . $image->filename); //Storageから以前の画像を削除
+            }
+            BoardImage::where('board_id', $board->id)->delete(); //DBから以前の画像を削除
+            foreach ($imageFiles as $imageFile) {
+                $fileNameToStore = ImageService::upload($imageFile, 'boards');
+                BoardImage::create([
+                    'board_id' => $board->id,
+                    'filename' => $fileNameToStore,
+                ]);
+            }
+        }
+
+        return redirect()
+            ->route('user.boards.index')
+            ->with(['message' => '募集を更新しました。', 'status' => 'info']);
     }
 }

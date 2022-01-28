@@ -26,7 +26,7 @@
   <div class="p-2 w-1/2 mx-auto">
       <div class="relative">
         <label for="location" class="leading-7 text-sm text-gray-600">集合場所 ※必須</label>
-        <input type="text" id="location" name="location" value="{{ old('location') ?? $board->longitude }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <input type="text" id="location" name="location" value="{{ old('location') ?? $board->location }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
       </div>
   </div>
   <div class="p-2 w-1/2 mx-auto">
@@ -41,15 +41,15 @@
         <textarea id="description" name="description" rows="10" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">{{ old('description') ?? $board->description }}</textarea>
       </div>
   </div>
-  {{-- @if (explode('.', Route::currentRouteName())[2]==='edit')
+  @if (explode('.', Route::currentRouteName())[2]==='edit')
     <div class="p-2 w-1/2 mx-auto">
         <div class="relative">
             <div class="w-32">
-                <x-thumbnail :filename="$board->roadImages[0]->filename" type="roads"/>
+                <x-thumbnail :filename="$board->boardImages[0]->filename" type="boards"/>
             </div>
         </div>
     </div>
-  @endif --}}
+  @endif
   <div class="p-2 w-1/2 mx-auto">
       <div class="relative">
       <label for="image" class="leading-7 text-sm text-gray-600">画像（複数可）※目的地のイメージ画像があると募集が集まりやすいです</label>
@@ -57,8 +57,16 @@
       </div>
   </div>
 
-  {{-- hiddenValue --}}
-  <input type="hidden" name="deadline" value="0">
+  @if (explode('.', Route::currentRouteName())[2]==='edit')
+    <div class="p-2 w-1/2 mx-auto">
+      <div class="relative">
+        <label for="deadline" class="leading-7 text-sm text-gray-600">募集状況</label>
+        <div class="relative flex justify-around">
+            <div><input type="radio" name="deadline" value="0" class="mr-2" checked>募集中</div>
+            <div><input type="radio" name="deadline" value="1" class="mr-2">募集を終了</div>
+        </div>
+    </div>
+  @endif
 
   <div class="p-2 w-full flex justify-around mt-4">
       <button type="button" onclick="location.href='{{ route('user.boards.index') }}'" class="bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg">戻る</button>
