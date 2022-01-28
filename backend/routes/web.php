@@ -6,6 +6,7 @@ use App\Http\Controllers\LifeCycleTestController;
 use App\Http\Controllers\User\RoadController;
 use App\Http\Controllers\User\BoardController;
 use App\Http\Controllers\User\RoadCommentsController;
+use App\Http\Controllers\User\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,13 @@ Route::resource('boards', BoardController::class)
 Route::resource('road.comment', RoadCommentsController::class)
     ->middleware('auth:users')
     ->only(['store', 'destroy']);
+
+Route::prefix('users')
+    ->middleware('auth:users')->group(function () {
+        Route::get('profile', [UsersController::class, 'Profile'])->name('profile');
+        Route::get('{user}/edit', [UsersController::class, 'Edit'])->name('edit');
+        Route::put('update/{user}', [UsersController::class, 'Update'])->name('update');
+    });
 
 Route::get('/dashboard', function () {
     return view('user.dashboard');

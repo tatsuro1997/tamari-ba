@@ -739,6 +739,15 @@ select {
 .mb-6 {
   margin-bottom: 1.5rem;
 }
+.mb-0 {
+  margin-bottom: 0px;
+}
+.-mb-px {
+  margin-bottom: -1px;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -828,6 +837,7 @@ select {
 }
 .w-auto {
   width: auto;
+}
 .w-32 {
   width: 8rem;
 }
@@ -990,9 +1000,6 @@ select {
 .rounded {
   border-radius: 0.25rem;
 }
-.rounded-full {
-  border-radius: 9999px;
-}
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1141,6 +1148,10 @@ select {
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+.bg-indigo-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 46 129 / var(--tw-bg-opacity));
 }
 .bg-indigo-400 {
   --tw-bg-opacity: 1;
@@ -1548,8 +1559,15 @@ select {
 }
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+.hover\:bg-gray-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+.hover\:bg-gray-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
@@ -1874,6 +1892,11 @@ select {
   }
 }
 @media (min-width: 1280px) {
+
+  .xl\:w-3\/4 {
+    width: 75%;
+  }
+}
 
   .xl\:w-3\/4 {
     width: 75%;

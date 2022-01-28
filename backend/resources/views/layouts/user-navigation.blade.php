@@ -30,7 +30,7 @@
 
             <div class="flex">
                 <!-- Avatar -->
-                <x-avatar />
+                <x-avatar type="nav" />
 
                 <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
