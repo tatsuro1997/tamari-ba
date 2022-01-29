@@ -1,4 +1,4 @@
-<div id="map" style="height:500px"></div>
+<div id="map" class="w-1/2 h-80 mx-auto"></div>
 
 {{-- GoogleMap --}}
 <div class="p-2 w-1/2 mx-auto">
