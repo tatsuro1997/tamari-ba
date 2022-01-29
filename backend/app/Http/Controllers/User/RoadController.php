@@ -26,10 +26,15 @@ class RoadController extends Controller
     }
 
 
-    public function create()
+    public function create(Request $request)
     {
         $road = new Road;
-        return view('user.roads.create', compact('road'));
+
+        # Mapでデフォルトを東京タワーに指定
+        $lat = '35.6585769';
+        $lng = '139.7454506';
+
+        return view('user.roads.create', compact('road', 'lat', 'lng'));
     }
 
 
