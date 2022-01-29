@@ -11,7 +11,7 @@
         <label for="addressInput" class="leading-7 text-sm text-gray-600">住所検索</label>
         <input type="text" id="addressInput" name="addressInput" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
       </div>
-      <button id="searchGeo" class="h-10 mt-2 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">住所検索</button>
+      <button id="searchGeo" onclick="cLocation()" class="h-10 mt-2 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">住所検索</button>
     </div>
   <div class="flex w-1/2 mx-auto">
     <div class="p-2 ">
