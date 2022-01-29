@@ -4,12 +4,6 @@
 <div class="p-2 w-1/2 mx-auto">
   <a id="cLocation" onclick="cLocation()" disabled class="leading-7 text-lg text-red-600 font-bold">▼現在地を取得</a>
 </div>
-{{-- <input type="text" id="addressInput">
-<button id="searchGeo">緯度経度変換</button>
-<div>
-  緯度: <input type="text" id="latitude" name="latitude" value="" required >
-  経度: <input type="text" id="longitude" name="longitude" value="" required >
-</div> --}}
 
 <div class="-m-2">
     <div class="p-2 w-1/2 mx-auto">
