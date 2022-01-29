@@ -4,8 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use App\Models\User;
 use App\Models\RoadImage;
+use App\Models\RoadComment;
+use App\Models\RoadLike;
+use App\Models\Tag;
 
 class Road extends Model
 {
@@ -26,5 +30,20 @@ class Road extends Model
     public function roadImages()
     {
         return $this->hasMany(RoadImage::class);
+    }
+
+    public function roadComments()
+    {
+        return $this->hasMany(RoadComment::class);
+    }
+
+    public function roadLikes()
+    {
+        return $this->hasMany(RoadLike::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }

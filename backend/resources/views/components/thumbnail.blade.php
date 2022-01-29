@@ -1,6 +1,11 @@
 @php
 if($type === 'roads'){
     $path = 'storage/roads/';
+} elseif ($type === 'boards'){
+    $path = 'storage/boards/';
+}
+if($type === 'users'){
+    $path = 'storage/users/';
 }
 @endphp
 

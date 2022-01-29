@@ -10,6 +10,9 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Bike;
 use App\Models\Road;
 use App\Models\Prefecture;
+use App\Models\BoardUser;
+use App\Models\RoadComment;
+use App\Models\RoadLike;
 
 class User extends Authenticatable
 {
@@ -22,6 +25,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'avatar',
+        'background_image',
+        'prolife',
+        'url',
         'email',
         'password',
         'age',
@@ -62,5 +69,20 @@ class User extends Authenticatable
     public function prefecture()
     {
         return $this->belongsTo(Prefecture::class);
+    }
+
+    public function boardUsers()
+    {
+        return $this->hasMany(BoardUser::class);
+    }
+
+    public function roadComments()
+    {
+        return $this->hasMany(RoadComment::class);
+    }
+
+    public function roadLikes()
+    {
+        return $this->hasMany(RoadLike::class);
     }
 }
