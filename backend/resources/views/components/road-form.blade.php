@@ -3,7 +3,9 @@
 {{-- GoogleMap --}}
 <input type="hidden" id="latitude" name="latitude" value="" required >
 <input type="hidden" id="longitude" name="longitude" value="" required >
-<label id="cLocation" onclick="cLocation()" disabled>現在地を取得</label>
+<div class="p-2 w-1/2 mx-auto">
+  <a id="cLocation" onclick="cLocation()" disabled class="leading-7 text-lg text-red-600 font-bold">▼現在地を取得</a>
+</div>
 
 <div class="-m-2">
   <div class="p-2 w-1/2 mx-auto">
