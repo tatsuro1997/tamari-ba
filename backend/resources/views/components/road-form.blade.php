@@ -39,8 +39,8 @@
   </div>
 </div>
 <script>
-    let lat = {{ $lat }};
-    let lng = {{ $lng }};
+    let lat = {{ $lat ?? $road->latitude }};
+    let lng = {{ $lng ?? $road->longitude }};
 
     function cLocation(){
       lat = document.getElementById('latitude').value;
