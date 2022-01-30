@@ -13,7 +13,7 @@
                     <form method="post" action="{{ route('user.update', ['user' => $user->id]) }}" enctype="multipart/form-data" >
                         @csrf
                         @method('put')
-                        <x-user-form :user="$user" :prefectures="$prefectures" />
+                        <x-user.form :user="$user" :prefectures="$prefectures" />
                     </form>
                 </div>
             </div>

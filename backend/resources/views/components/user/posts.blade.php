@@ -26,7 +26,7 @@
       <div class="px-4 py-5 flex-auto">
         <div class="tab-content tab-space">
           <div class="block" id="tab-comment">
-            <x-comment-index :user="$user" :roads="$roads" />
+            <x-comment.index :user="$user" :roads="$roads" />
           </div>
           <div class="block" id="tab-bike">
             <p>
@@ -34,7 +34,7 @@
             </p>
           </div>
           <div class="hidden" id="tab-road">
-            <x-road-index :roads="$roads" :like="$like" type="profile" />
+            <x-road.index :roads="$roads" :like="$like" type="profile" />
           </div>
           <div class="hidden" id="tab-board">
             <p>

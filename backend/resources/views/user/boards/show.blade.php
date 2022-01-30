@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <x-comment-form :original="$board" type="board" />
+                            <x-comment.form :original="$board" type="board" />
                         </div>
                     </section>
                 </div>

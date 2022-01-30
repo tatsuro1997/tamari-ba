@@ -12,7 +12,7 @@
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     <form method="post" action="{{ route('user.boards.store') }}" enctype="multipart/form-data">
                         @csrf
-                        <x-board-form :board="$board" :prefectures="$prefectures" />
+                        <x-board.form :board="$board" :prefectures="$prefectures" />
                     </form>
                 </div>
             </div>
