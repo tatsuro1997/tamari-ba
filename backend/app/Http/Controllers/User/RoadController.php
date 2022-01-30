@@ -24,33 +24,15 @@ class RoadController extends Controller
     {
         $roads = Road::with('tags')->withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
 
-        # Like
+        // Like
         $like = new RoadLike;
 
         // 検索フォームで入力された値を取得する
         $search = $request->input('search');
 
-        // クエリビルダ
-        $query = Road::query();
-
+        // フォームに値が入力されたら、検索した結果を返す
         if ($search !== null) {
-
-            // 全角スペースを半角に変換
-            $spaceConversion = mb_convert_kana($search, 's');
-            // 単語を半角スペースで区切り、配列にする（例："山田 翔" → ["山田", "翔"]）
-            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
-
-            // 単語をループで回し、タグ名、投稿のタイトル、説明と部分一致するものがあれば、$queryとして保持される
-            foreach($wordArraySearched as $value) {
-                $query->whereHas('tags', function ($q) use ($value) {
-                    $q->where('name', 'like', '%' . $value . '%');
-                })
-                    ->orWhere('title', 'LIKE','%' . $value . '%')
-                    ->orWhere('description', 'like', '%' . $value . '%');
-            }
-
-            // 上記で取得した$queryを投稿日降順、ページネートにし、roadsに代入
-            $roads = $query->orderBy('created_at', 'desc')->paginate(12);
+            $roads = Road::Search($search);
         }
 
         return view('user.roads.index', compact('roads', 'like'));
