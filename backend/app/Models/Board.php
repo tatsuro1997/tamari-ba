@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\BoardUser;
 use App\Models\BoardImage;
+use App\Models\BoardComment;
 
 class Board extends Model
 {
@@ -29,5 +30,10 @@ class Board extends Model
     public function boardImages()
     {
         return $this->hasMany(BoardImage::class);
+    }
+
+    public function boardComments()
+    {
+        return $this->hasMany(BoardComment::class);
     }
 }
