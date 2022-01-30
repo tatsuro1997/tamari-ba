@@ -6,6 +6,7 @@ use App\Http\Controllers\LifeCycleTestController;
 use App\Http\Controllers\User\RoadController;
 use App\Http\Controllers\User\BoardController;
 use App\Http\Controllers\User\RoadCommentsController;
+use App\Http\Controllers\User\BoardCommentsController;
 use App\Http\Controllers\User\UsersController;
 
 /*
@@ -28,9 +29,14 @@ Route::resource('roads', RoadController::class)
 
 Route::resource('boards', BoardController::class)
 ->middleware('auth:users');
+
 Route::resource('road.comment', RoadCommentsController::class)
     ->middleware('auth:users')
     ->only(['store', 'destroy']);
+
+Route::resource('board.comment', BoardCommentsController::class)
+->middleware('auth:users')
+->only(['store', 'destroy']);
 
 Route::prefix('users')
     ->middleware('auth:users')->group(function () {

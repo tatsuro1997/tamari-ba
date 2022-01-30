@@ -2,10 +2,12 @@
     if ($type==='road') {
         $action = route('user.road.comment.store', ['road' => $original->id]);
         $Comments = $original->roadComments;
+        $input_name = 'road_id';
     }
     if ($type==='board') {
         $action = route('user.board.comment.store', ['board' => $original->id]);
         $Comments = $original->boardComments;
+        $input_name = 'board_id';
     }
 @endphp
 
@@ -13,7 +15,7 @@
         <form method="post" action="{{ $action }}" class="w-1/2" >
         @csrf
         <div class="border-b border-blue-500 my-2">
-            <input value="{{ $original->id }}" type="hidden" name="road_id" />
+            <input value="{{ $original->id }}" type="hidden" name="{{$input_name}}" />
             <input value="{{ Auth::id() }}" type="hidden" name="user_id" />
             <textarea id="comment" name="comment" placeholder="コメント入力 ..." type="text" rows="10" required class="w-full h-20 rounded border-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200 ease-in-out"></textarea>
         </div>
@@ -31,11 +33,16 @@
                 <div class="flex">
                     <div class="font-medium mr-4">{{$comment->user->name}}</div>
                     <div>{{$comment->created_at->format('Y-m-d')}}</div>
-                    <form id="delete_comment_{{$comment->id}}" method="post" action="{{ route('user.road.comment.destroy', ['road' => $comment->road_id, 'comment' => $comment->id ]) }}">
+                    @if ($type==='road')
+                        <form id="delete_comment_{{$comment->id}}" method="post" action="{{ route('user.road.comment.destroy', ['road' => $comment->road_id, 'comment' => $comment->id ]) }}">
+                    @endif
+                    @if ($type==='board')
+                        <form id="delete_comment_{{$comment->id}}" method="post" action="{{ route('user.board.comment.destroy', ['board' => $comment->board_id, 'comment' => $comment->id ]) }}">
+                    @endif
                         @csrf
                         @method('delete')
-                        <input value="{{ $comment->id }}" type="hidden" name="comment_id" />
-                        <input value="{{ $comment->road->id }}" type="hidden" name="road_id" />
+                        <input type="hidden" value="{{ $comment->id }}" name="comment_id" />
+                        <input type="hidden" value="{{ $comment->road->id ?? $comment->board->id }}" name="{{$input_name}}" />
                         @can('delete', $comment)
                             <a href="#" data-id="{{ $comment->id }}" onclick="deleteComment(this)" class="border-0 px-4"><i class="far fa-trash-alt"></i></a>
                         @endcan
