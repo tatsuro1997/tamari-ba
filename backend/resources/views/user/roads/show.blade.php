@@ -17,32 +17,7 @@
                             </div>
                             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                 <div class="flex">
-                                    <div class="w-1/2 text-center">
-                                        <!-- Slider main container -->
-                                        <div class="swiper-container">
-                                            <!-- Additional required wrapper -->
-                                            <div class="swiper-wrapper">
-                                                @foreach ($road->roadImages as $image)
-                                                    <div class="swiper-slide">
-                                                        @if ($image->filename !== null)
-                                                            <img src="{{ asset('storage/roads/' . $image->filename) }}" class="h-80" >
-                                                        @else
-                                                            <img src="">
-                                                        @endif
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                            <!-- If we need pagination -->
-                                            <div class="swiper-pagination"></div>
-
-                                            <!-- If we need navigation buttons -->
-                                            <div class="swiper-button-prev"></div>
-                                            <div class="swiper-button-next"></div>
-
-                                            <!-- If we need scrollbar -->
-                                            <div class="swiper-scrollbar"></div>
-                                        </div>
-                                    </div>
+                                    <x-swiper :images="$road->roadImages" type="road" />
                                     <div class="w-1/2">
                                         <div id="map" class="w-full h-80">
                                     </div>
