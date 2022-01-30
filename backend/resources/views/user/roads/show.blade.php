@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <x-comment-form :road="$road" />
+                            <x-comment-form :original="$road" type="road" />
                         </div>
                     </section>
                 </div>

@@ -1,8 +1,19 @@
+@php
+    if ($type==='road') {
+        $action = route('user.road.comment.store', ['road' => $original->id]);
+        $Comments = $original->roadComments;
+    }
+    if ($type==='board') {
+        $action = route('user.board.comment.store', ['board' => $original->id]);
+        $Comments = $original->boardComments;
+    }
+@endphp
+
 <div class="w-full ml-2">
-    <form method="post" action="{{ route('user.road.comment.store', ['road' => $road->id]) }}" class="w-1/2" >
+        <form method="post" action="{{ $action }}" class="w-1/2" >
         @csrf
         <div class="border-b border-blue-500 my-2">
-            <input value="{{ $road->id }}" type="hidden" name="road_id" />
+            <input value="{{ $original->id }}" type="hidden" name="road_id" />
             <input value="{{ Auth::id() }}" type="hidden" name="user_id" />
             <textarea id="comment" name="comment" placeholder="コメント入力 ..." type="text" rows="10" required class="w-full h-20 rounded border-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 leading-8 transition-colors duration-200 ease-in-out"></textarea>
         </div>
@@ -13,7 +24,7 @@
             キャンセル
         </button>
     </form>
-    @foreach ($road->roadComments as $comment)
+    @foreach ($Comments as $comment)
         <div class="flex mt-4">
             <x-avatar avatar="{{ $comment->user->avatar ?? '' }}" type="nav" />
             <div class="ml-4 w-3/4">
