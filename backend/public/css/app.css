@@ -743,6 +743,12 @@ select {
 .mr-3 {
   margin-right: 0.75rem;
 }
+.mr-5 {
+  margin-right: 1.25rem;
+}
+.ml-5 {
+  margin-left: 1.25rem;
+}
 .block {
   display: block;
 }
@@ -1037,6 +1043,9 @@ select {
 .border-l-4 {
   border-left-width: 4px;
 }
+.border-dotted {
+  border-style: dotted;
+}
 .border-none {
   border-style: none;
 }
@@ -1066,6 +1075,10 @@ select {
 .border-blue-500 {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
+}
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 .border-opacity-60 {
   --tw-border-opacity: 0.6;
