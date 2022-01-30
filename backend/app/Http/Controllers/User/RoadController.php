@@ -20,12 +20,36 @@ use Illuminate\Support\Facades\Auth;
 
 class RoadController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $roads = Road::with('tags')->withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
 
         # Like
         $like = new RoadLike;
+
+             // 検索フォームで入力された値を取得する
+        $search = $request->input('search');
+
+        // クエリビルダ
+        $query = Road::query();
+
+       // もし検索フォームにキーワードが入力されたら
+        if ($search !== null) {
+
+            // 全角スペースを半角に変換
+            $spaceConversion = mb_convert_kana($search, 's');
+            // 単語を半角スペースで区切り、配列にする（例："山田 翔" → ["山田", "翔"]）
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+
+            // 単語をループで回し、ユーザーネームと部分一致するものがあれば、$queryとして保持される
+            foreach($wordArraySearched as $value) {
+                $query->where('title', 'LIKE', "%{$value}%")
+                      ->orWhere('description', 'LIKE', "%{$value}%");
+            }
+
+            // 上記で取得した$queryをページネートにし、変数$usersに代入
+            $roads = $query->paginate(12);
+        }
 
         return view('user.roads.index', compact('roads', 'like'));
     }
