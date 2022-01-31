@@ -25,7 +25,7 @@
                         <p class="leading-relaxed mb-1"><i class="far fa-clock mr-2 w-4"></i>{{ date('Y/m/d H:i', strtotime($board->date)) }}</p>
                         <p class="leading-relaxed mb-1"><i class="fas fa-map-marker-alt mr-2 w-4"></i>{{ $board->location }}</p>
                         <p class="leading-relaxed mb-3"><i class="fas fa-motorcycle mr-2 w-4"></i>{{ $board->destination }}</p>
-                        <p class="leading-relaxed mb-3 h-24">{{ Str::limit($board->description, 100, ' ...続きを読む') }}</p>
+                        <p class="leading-relaxed h-24 relative">{{ Str::limit($board->description, 100, '...') }}</p>
                         <div class="flex justify-between">
                             <p class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</p>
                             <p class="leading-relaxed text-right">{{ $board->boardUsers->first()->user->name }}</p>
@@ -36,3 +36,13 @@
         </div>
     @endforeach
 </div>
+
+<script>
+  'use strict'
+  function deletePost(e){
+    'use strict';
+    if (confirm('本当に削除しても良いですか？')){
+      document.getElementById('delete_'+ e.dataset.id).submit();
+    }
+  }
+</script>
