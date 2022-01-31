@@ -30,7 +30,7 @@ class BoardRequest extends FormRequest
             'destination' => ['required', 'string', 'max:50'],
             'description' => ['required', 'string', 'max:1000'],
             'prefecture_id' => ['required'],
-            'deadline' => ['required'],
+            // 'deadline' => ['required'],
             'image' => 'image|mimes:jpg, jpeg, png|max:2048',
             'files.*.image' => 'required|image|mimes:jpg, jpeg, png|max:2048',
         ];

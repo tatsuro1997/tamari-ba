@@ -13,12 +13,14 @@
                     <section class="text-gray-600 body-font">
                         <div class="container px-5 py-8 mx-auto">
                             <div class="flex justify-end mb-4">
+                                <x-search-form :search="isset($search)" type="board" />
                                 <button onclick="location.href='{{ route('user.boards.create') }}'"  class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">募集作成する</button>
                             </div>
                             <x-board.index :boards="$boards" />
                         </div>
                     </section>
-                    {{ $boards->links() }}
+                    {{-- 検索後ページネイトで遷移しても検索結果を保持 --}}
+                    {{ $boards->appends(request()->input())->links() }}
                 </div>
             </div>
         </div>
