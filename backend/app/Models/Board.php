@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 use App\Models\BoardUser;
 use App\Models\Prefecture;
 use App\Models\BoardImage;
@@ -33,7 +32,10 @@ class Board extends Model
 
         // 単語をループで回し、タグ名、投稿のタイトル、説明と部分一致するものがあれば、$queryとして保持される
         foreach ($wordArraySearched as $value) {
-            $query->where('title', 'LIKE', '%' . $value . '%')
+            $query->whereHas('prefecture', function ($q) use ($value) {
+                $q->where('name', 'like', '%' . $value . '%');
+            })
+                ->orWhere('title', 'LIKE', '%' . $value . '%')
                 ->orWhere('location', 'LIKE', '%' . $value . '%')
                 ->orWhere('destination', 'LIKE', '%' . $value . '%')
                 ->orWhere('description', 'like', '%' . $value . '%');
@@ -46,6 +48,11 @@ class Board extends Model
     public function boardUsers()
     {
         return $this->hasMany(BoardUser::class);
+    }
+
+    public function prefecture()
+    {
+        return $this->belongsTo(Prefecture::class);
     }
 
     public function boardImages()
