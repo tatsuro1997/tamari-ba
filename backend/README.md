@@ -55,6 +55,23 @@ php artisan migrate:fresh --seed
 docker-compose up -d --build
 で簡易サーバーを立ち上げ、表示確認してください。
 
+## コマンド
+  本番用DB
+db:
+  docker-compose exec db /bin/bash
+
+### テスト
+テストDBように.envをコピーし、.env.testingを作成してください
+
+テストDBでコマンドを実行する場合は、--env=testingのオプションを選択してください。
+
+  テスト用DB
+test_db:
+  docker-compose exec db-test /bin/bash
+
+mysql:
+  mysql -u root -p
+
 
 ## ブランチ
 mainブランチからdevelopブランチを切り、開発したものはdevelopにマージする。
