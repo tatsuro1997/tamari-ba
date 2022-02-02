@@ -72,6 +72,17 @@ test_db:
 mysql:
   mysql -u root -p
 
+### テスト実行方法
+キャッシュのクリア
+  php artisan config:clear
+
+すべてのテストを実行
+  vendor/bin/phpunit
+  php artisan test
+
+ファイルを指定してテストを実行する
+  vendor/bin/phpunit tests/Feature/UserTest.php
+
 
 ## ブランチ
 mainブランチからdevelopブランチを切り、開発したものはdevelopにマージする。
