@@ -69,8 +69,8 @@ class UserTest extends TestCase
 
     // 異常系
 
-   public function test_ログインしていれば登録ページに遷移できない()
-   {
+    public function test_ログインしていれば登録ページに遷移できない()
+    {
         $user = User::factory()->create();
 
         $response = $this->actingAs($user)
@@ -81,5 +81,5 @@ class UserTest extends TestCase
 
         $response->assertStatus(302);
         $response->assertRedirect('/roads');
-   }
+    }
 }
