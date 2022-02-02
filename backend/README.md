@@ -73,6 +73,9 @@ mysql:
   mysql -u root -p
 
 ### テスト実行方法
+テストデータの用意
+  php artisan migrate:fresh --seed --env=testing
+
 キャッシュのクリア
   php artisan config:clear
 
