@@ -75,6 +75,7 @@ mysql:
 ### テスト実行方法
 キャッシュのクリア
   php artisan config:clear
+  php artisan migrate:fresh --seed --env=testing
 
 すべてのテストを実行
   vendor/bin/phpunit
