@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\BoardUser;
+use App\Models\User;
 use App\Models\BoardImage;
 
 class Board extends Model
@@ -21,9 +21,9 @@ class Board extends Model
         'prefecture_id'
     ];
 
-    public function boardUsers()
+    public function user()
     {
-        return $this->hasMany(BoardUser::class);
+        return $this->belongsTo(User::class);
     }
 
     public function boardImages()

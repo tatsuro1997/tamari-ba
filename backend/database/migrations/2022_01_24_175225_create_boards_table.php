@@ -23,6 +23,10 @@ class CreateBoardsTable extends Migration
             $table->boolean('deadline')->default(0);
             $table->foreignId('prefecture_id')
             ->constrained();
+            $table->foreignId('user_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
