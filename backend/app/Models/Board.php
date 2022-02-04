@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\BoardUser;
-use App\Models\Prefecture;
+use App\Models\User;
 use App\Models\BoardImage;
 use App\Models\BoardComment;
 
@@ -20,7 +19,8 @@ class Board extends Model
         'destination',
         'description',
         'deadline',
-        'prefecture_id'
+        'prefecture_id',
+        'user_id'
     ];
 
     public function scopeSearch($query, $search)
@@ -45,9 +45,9 @@ class Board extends Model
         return $query->orderBy('created_at', 'desc')->paginate(12);
     }
 
-    public function boardUsers()
+    public function user()
     {
-        return $this->hasMany(BoardUser::class);
+        return $this->belongsTo(User::class);
     }
 
     public function prefecture()

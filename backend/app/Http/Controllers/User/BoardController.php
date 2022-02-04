@@ -52,11 +52,7 @@ class BoardController extends Controller
                 'description' => $request->description,
                 'deadline' => 0,
                 'prefecture_id' => $request->prefecture_id,
-            ]);
-
-            BoardUser::create([
-                'board_id' => $board->id,
-                'user_id' => Auth::id()
+                'user_id' => Auth::id(),
             ]);
 
             $imageFiles = $request->file('files');

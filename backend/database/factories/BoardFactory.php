@@ -21,6 +21,7 @@ class BoardFactory extends Factory
             'description' => $this->faker->text,
             'deadline' => $this->faker->numberBetween(0, 1),
             'prefecture_id' => $this->faker->numberBetween(1, 47),
+            'user_id' => $this->faker->numberBetween(1,3),
         ];
     }
 }

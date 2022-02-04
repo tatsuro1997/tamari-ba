@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-            AdminSeeder::class,
-            OwnerSeeder::class,
+            // AdminSeeder::class,
+            // OwnerSeeder::class,
             BikeSeeder::class,
             PrefectureSeeder::class,
             UserSeeder::class,
@@ -35,7 +35,6 @@ class DatabaseSeeder extends Seeder
             RoadImageSeeder::class,
             TagSeeder::class,
             BoardImageSeeder::class,
-            BoardUserSeeder::class,
         ]);
     }
 }
