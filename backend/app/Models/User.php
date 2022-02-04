@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Bike;
 use App\Models\Road;
 use App\Models\Prefecture;
-use App\Models\BoardUser;
+use App\Models\Board;
 use App\Models\RoadComment;
 use App\Models\RoadLike;
 
@@ -71,9 +71,9 @@ class User extends Authenticatable
         return $this->belongsTo(Prefecture::class);
     }
 
-    public function boardUsers()
+    public function boards()
     {
-        return $this->hasMany(BoardUser::class);
+        return $this->hasMany(Board::class);
     }
 
     public function roadComments()
