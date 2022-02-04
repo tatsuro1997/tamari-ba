@@ -64,7 +64,7 @@
                                         </div>
                                         <div>
                                             <p class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</p>
-                                            <p class="leading-relaxed text-right">{{ $board->boardUsers->first()->user->name }}</p>
+                                            <p class="leading-relaxed text-right">{{ $board->user->name }}</p>
                                         </div>
                                     </div>
                                 </div>

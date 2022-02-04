@@ -6,20 +6,19 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
-use App\Models\Road;
+use App\Models\Board;
 use Database\Seeders\PrefectureSeeder;
 use Illuminate\Http\UploadedFile;
 
-class RoadTest extends TestCase
+class BoardTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function setUp(): void
+    public function setUp() :void
     {
         parent::setUp();
         $this->seed(PrefectureSeeder::class);
     }
-
     // 正常系
 
     public function test_ログインしていると一覧が見れる()
@@ -28,7 +27,7 @@ class RoadTest extends TestCase
 
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get('/roads');
+            ->get('/boards');
 
         $response->assertStatus(200);
     }
@@ -38,36 +37,39 @@ class RoadTest extends TestCase
         $user = User::factory()->create();
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("roads");
+            ->get("boards");
 
         $file = UploadedFile::fake()->image('avatar.jpg');
         $path = $file->store('public');
         $read_temp_path = str_replace('public/', '/storage/', $path);
 
-        $road_data = [
-            'title' => 'Test Road',
-            'latitude' => '34.123456',
-            'longitude' => '134.123456',
+        $board_data = [
+            'title' => 'Test Board',
+            'date' => '2022-03-22 23:33:00',
+            'location' => '東京',
+            'destination' => '北海道',
             'description' => '説明が入ります',
+            'deadline' => true,
+            'prefecture_id' => 1,
             'images' => $read_temp_path,
         ];
-        $first_path = route('user.roads.store');
+        $first_path = route('user.boards.store');
 
-        $response = $this->post($first_path, $road_data);
+        $response = $this->post($first_path, $board_data);
 
         $response->assertStatus(302);
         // エラーメッセージがないこと
         $response->assertSessionHasNoErrors();
-        $response->assertRedirect('/roads');
+        $response->assertRedirect('/boards');
     }
 
     public function test_詳細()
     {
         $user = User::factory()->create();
-        $road = Road::factory()->create(['user_id' => $user->id]);
+        $board = Board::factory()->create(['user_id' => $user->id]);
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("roads/$road->id");
+            ->get("boards/$board->id");
 
         $response->assertStatus(200);
         // エラーメッセージがないこと
@@ -79,42 +81,49 @@ class RoadTest extends TestCase
         $user = User::factory()->create();
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("roads");
+            ->get("boards");
 
         $file = UploadedFile::fake()->image('avatar.jpg');
         $path = $file->store('public');
         $read_temp_path = str_replace('public/', '/storage/', $path);
 
         // 更新前
-        $road_data = [
-            'title' => 'Test Road',
-            'latitude' => '34.123456',
-            'longitude' => '134.123456',
+        $board_data = [
+            'title' => 'Test Board',
+            'date' => '2022-03-22 23:33:00',
+            'location' => '東京',
+            'destination' => '北海道',
             'description' => '説明が入ります',
+            'deadline' => true,
+            'prefecture_id' => 1,
             'images' => $read_temp_path,
         ];
-        $first_path = route('user.roads.store');
-        $response = $this->post($first_path, $road_data);
+        $first_path = route('user.boards.store');
+        $response = $this->post($first_path, $board_data);
+
 
         // 更新
-        $road_data = [
-            'title' => 'Update Road',
-            'latitude' => '34.654321',
-            'longitude' => '134.654321',
-            'description' => '更新されました。',
+        $board_data = [
+            'title' => 'Update Board',
+            'date' => '2022-03-26 23:33:00',
+            'location' => '三重',
+            'destination' => '東京',
+            'description' => '説明が入ります説明が入ります',
+            'deadline' => false,
+            'prefecture_id' => 2,
             'images' => $read_temp_path,
         ];
 
         // 最新の投稿を指定
-        $road = Road::latest()->first();
-        $first_path = route('user.roads.update', ['road' => $road->id]);
+        $board = Board::latest()->first();
+        $first_path = route('user.boards.update', ['board' => $board->id]);
 
-        $response = $this->put($first_path, $road_data);
+        $response = $this->put($first_path, $board_data);
 
         $response->assertStatus(302);
         // エラーメッセージがないこと
         $response->assertSessionHasNoErrors();
-        $response->assertRedirect('/roads');
+        $response->assertRedirect('/boards');
     }
 
     public function test_削除()
@@ -122,39 +131,41 @@ class RoadTest extends TestCase
         $user = User::factory()->create();
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("roads");
+            ->get("boards");
 
         $file = UploadedFile::fake()->image('avatar.jpg');
         $path = $file->store('public');
         $read_temp_path = str_replace('public/', '/storage/', $path);
 
-        $road_data = [
-            'title' => 'Test Road',
-            'latitude' => '34.123456',
-            'longitude' => '134.123456',
+        $board_data = [
+            'title' => 'Test Board',
+            'date' => '2022-03-22 23:33:00',
+            'location' => '東京',
+            'destination' => '北海道',
             'description' => '説明が入ります',
+            'deadline' => true,
+            'prefecture_id' => 1,
             'images' => $read_temp_path,
         ];
-        $first_path = route('user.roads.store');
-        $response = $this->post($first_path, $road_data);
+        $first_path = route('user.boards.store');
+        $response = $this->post($first_path, $board_data);
 
         // 削除
-        $road = Road::latest()->first();
-        $first_path = route('user.roads.destroy', ['road' => $road->id]);
+        $board = Board::latest()->first();
+        $first_path = route('user.boards.destroy', ['board' => $board->id]);
 
         $response = $this->delete($first_path);
 
         $response->assertStatus(302);
         // エラーメッセージがないこと
         $response->assertSessionHasNoErrors();
-        $response->assertRedirect('/roads');
+        $response->assertRedirect('/boards');
     }
-
 
     // 異常系
     public function test_ログインしていなければ新規投稿できない()
     {
-        $response = $this->get(route("user.roads.create"));
+        $response = $this->get(route("user.boards.create"));
 
         $response->assertStatus(302);
         // エラーメッセージがないこと
@@ -167,80 +178,119 @@ class RoadTest extends TestCase
         $user = User::factory()->create();
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("roads");
+            ->get("boards");
 
         $file = UploadedFile::fake()->image('avatar.jpg');
         $path = $file->store('public');
         $read_temp_path = str_replace('public/', '/storage/', $path);
 
-        $road_data = [
+        $board_data = [
             'title' => '',
-            'latitude' => '34.123456',
-            'longitude' => '134.123456',
+            'date' => '2022-03-22 23:33:00',
+            'location' => '東京',
+            'destination' => '北海道',
             'description' => '説明が入ります',
+            'deadline' => true,
+            'prefecture_id' => 1,
             'images' => $read_temp_path,
         ];
-        $first_path = route('user.roads.store');
+        $first_path = route('user.boards.store');
 
-        $response = $this->post($first_path, $road_data);
+        $response = $this->post($first_path, $board_data);
 
         $response->assertSessionHasErrorsIn("titleは必須です。");
         $response->assertStatus(302);
-        $response->assertRedirect(route('user.roads.index'));
+        $response->assertRedirect('/boards');
     }
 
-    public function test_緯度がないと新規投稿できない()
+    public function test_日付がないと新規投稿できない()
     {
         $user = User::factory()->create();
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("roads");
+            ->get("boards");
 
         $file = UploadedFile::fake()->image('avatar.jpg');
         $path = $file->store('public');
         $read_temp_path = str_replace('public/', '/storage/', $path);
 
-        $road_data = [
-            'title' => 'テスト',
-            'latitude' => '',
-            'longitude' => '134.123456',
+        $board_data = [
+            'title' => 'Test Title',
+            'date' => '',
+            'location' => '東京',
+            'destination' => '北海道',
             'description' => '説明が入ります',
+            'deadline' => true,
+            'prefecture_id' => 1,
             'images' => $read_temp_path,
         ];
-        $first_path = route('user.roads.store');
+        $first_path = route('user.boards.store');
 
-        $response = $this->post($first_path, $road_data);
+        $response = $this->post($first_path, $board_data);
 
-        $response->assertSessionHasErrorsIn("latitudeは必須です。");
+        $response->assertSessionHasErrorsIn("dateは必須です。");
         $response->assertStatus(302);
-        $response->assertRedirect(route('user.roads.index'));
+        $response->assertRedirect('/boards');
     }
 
-    public function test_経度がないと新規投稿できない()
+    public function test_待ち合わせ場所がないと新規投稿できない()
     {
         $user = User::factory()->create();
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("roads");
+            ->get("boards");
 
         $file = UploadedFile::fake()->image('avatar.jpg');
         $path = $file->store('public');
         $read_temp_path = str_replace('public/', '/storage/', $path);
 
-        $road_data = [
-            'title' => 'テスト',
-            'latitude' => '34.123456',
-            'longitude' => '',
+        $board_data = [
+            'title' => 'Test Title',
+            'date' => '2022-03-22 23:33:00',
+            'location' => '',
+            'destination' => '北海道',
             'description' => '説明が入ります',
+            'deadline' => true,
+            'prefecture_id' => 1,
             'images' => $read_temp_path,
         ];
-        $first_path = route('user.roads.store');
+        $first_path = route('user.boards.store');
 
-        $response = $this->post($first_path, $road_data);
+        $response = $this->post($first_path, $board_data);
 
-        $response->assertSessionHasErrorsIn("longitudeは必須です。");
+        $response->assertSessionHasErrorsIn("locationは必須です。");
         $response->assertStatus(302);
-        $response->assertRedirect(route('user.roads.index'));
+        $response->assertRedirect('/boards');
+    }
+
+    public function test_目的地がないと新規投稿できない()
+    {
+        $user = User::factory()->create();
+        $response = $this->actingAs($user)
+            ->withSession(['banned' => false])
+            ->get("boards");
+
+        $file = UploadedFile::fake()->image('avatar.jpg');
+        $path = $file->store('public');
+        $read_temp_path = str_replace('public/', '/storage/', $path);
+
+        $board_data = [
+            'title' => 'Test Title',
+            'date' => '2022-03-22 23:33:00',
+            'location' => '東京',
+            'destination' => '',
+            'description' => '説明が入ります',
+            'deadline' => true,
+            'prefecture_id' => 1,
+            'images' => $read_temp_path,
+        ];
+        $first_path = route('user.boards.store');
+
+        $response = $this->post($first_path, $board_data);
+
+        $response->assertSessionHasErrorsIn("destinationは必須です。");
+        $response->assertStatus(302);
+        $response->assertRedirect('/boards');
     }
 
     public function test_説明がないと新規投稿できない()
@@ -248,25 +298,28 @@ class RoadTest extends TestCase
         $user = User::factory()->create();
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("roads");
+            ->get("boards");
 
         $file = UploadedFile::fake()->image('avatar.jpg');
         $path = $file->store('public');
         $read_temp_path = str_replace('public/', '/storage/', $path);
 
-        $road_data = [
-            'title' => 'テスト',
-            'latitude' => '34.123456',
-            'longitude' => '134.123456',
+        $board_data = [
+            'title' => 'Test Title',
+            'date' => '2022-03-22 23:33:00',
+            'location' => '東京',
+            'destination' => '北海道',
             'description' => '',
+            'deadline' => true,
+            'prefecture_id' => 1,
             'images' => $read_temp_path,
         ];
-        $first_path = route('user.roads.store');
+        $first_path = route('user.boards.store');
 
-        $response = $this->post($first_path, $road_data);
+        $response = $this->post($first_path, $board_data);
 
         $response->assertSessionHasErrorsIn("descriptionは必須です。");
         $response->assertStatus(302);
-        $response->assertRedirect(route('user.roads.index'));
+        $response->assertRedirect('/boards');
     }
 }

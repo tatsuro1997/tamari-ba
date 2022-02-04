@@ -6,10 +6,19 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
+use Database\Seeders\PrefectureSeeder;
 use Illuminate\Http\UploadedFile;
 
 class UserTest extends TestCase
 {
+    use RefreshDatabase;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->seed(PrefectureSeeder::class);
+    }
+
     // 正常系
     public function testUserProfile()
     {
