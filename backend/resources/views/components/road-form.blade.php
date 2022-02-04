@@ -1,21 +1,37 @@
+<div id="map" class="w-1/2 h-80 mx-auto"></div>
+
+{{-- GoogleMap --}}
+<div class="p-2 w-1/2 mx-auto">
+  <a id="cLocation" onclick="cLocation()" disabled class="leading-7 text-lg text-red-600 font-bold">▼現在地を取得</a>
+</div>
+
 <div class="-m-2">
+    <div class="p-2 w-1/2 mx-auto">
+      <div class="relative">
+        <label for="addressInput" class="leading-7 text-sm text-gray-600">住所検索</label>
+        <input type="text" id="addressInput" name="addressInput" placeholder="東京都△△区○○1-1-1" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+      <button id="searchGeo" onclick="cLocation()" class="h-10 mt-2 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">住所検索</button>
+    </div>
+  <div class="flex w-1/2 mx-auto">
+    <div class="p-2 ">
+      <div class="relative">
+        <label for="latitude" class="leading-7 text-sm text-gray-600">緯度</label>
+        <input type="text" id="latitude" name="latitude" required readonly class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
+      </div>
+    </div>
+    <div class="p-2">
+      <div class="relative">
+        <label for="longitude" class="leading-7 text-sm text-gray-600">経度</label>
+        <input type="text" id="longitude" name="longitude" required readonly class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
+      </div>
+    </div>
+  </div>
   <div class="p-2 w-1/2 mx-auto">
     <div class="relative">
       <label for="title" class="leading-7 text-sm text-gray-600">道の名前 ※必須</label>
       <input type="text" id="title" name="title" value="{{ old('title') ?? $road->title }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
     </div>
-  </div>
-  <div class="p-2 w-1/2 mx-auto">
-      <div class="relative">
-        <label for="latitude" class="leading-7 text-sm text-gray-600">緯度 ※必須</label>
-        <input type="text" id="latitude" name="latitude" value="{{ old('latitude') ?? $road->latitude }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-      </div>
-  </div>
-  <div class="p-2 w-1/2 mx-auto">
-      <div class="relative">
-        <label for="longitude" class="leading-7 text-sm text-gray-600">経度 ※必須</label>
-        <input type="text" id="longitude" name="longitude" value="{{ old('longitude') ?? $road->longitude }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-      </div>
   </div>
   <div class="p-2 w-1/2 mx-auto">
       <div class="relative">
@@ -44,3 +60,18 @@
       <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">登録する</button>
   </div>
 </div>
+<script>
+    let lat = {{ $lat ?? $road->latitude }};
+    let lng = {{ $lng ?? $road->longitude }};
+
+    function cLocation(){
+      lat = document.getElementById('latitude').value;
+      lng = document.getElementById('longitude').value;
+      initMap();
+    }
+</script>
+
+<script src="{{ asset('/js/setLocation.js') }}"></script>
+<script src="{{ asset('/js/currentLocation.js') }}"></script>
+<script src="{{ asset('/js/getLatLng.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key={{env('GOOGLE_MAP_API_KEY')}}&callback=initMap" async defer></script>

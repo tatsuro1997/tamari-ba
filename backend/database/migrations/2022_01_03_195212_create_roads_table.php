@@ -16,8 +16,8 @@ class CreateRoadsTable extends Migration
         Schema::create('roads', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->float('latitude');
-            $table->float('longitude');
+            $table->double('latitude', 9, 7);
+            $table->double('longitude',10, 7);
             $table->text('description');
             $table->foreignId('user_id')
                 ->constrained()
