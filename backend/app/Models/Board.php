@@ -18,7 +18,8 @@ class Board extends Model
         'destination',
         'description',
         'deadline',
-        'prefecture_id'
+        'prefecture_id',
+        'user_id'
     ];
 
     public function user()
