@@ -28,7 +28,7 @@
                         <p class="leading-relaxed h-24 relative">{{ Str::limit($board->description, 100, '...') }}</p>
                         <div class="flex justify-between">
                             <p class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</p>
-                            <p class="leading-relaxed text-right">{{ $board->boardUsers->first()->user->name }}</p>
+                            <p class="leading-relaxed text-right">{{ $board->user->name }}</p>
                         </div>
                     </div>
                 </div>
