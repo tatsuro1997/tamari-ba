@@ -18,9 +18,17 @@ use App\Http\Requests\BoardRequest;
 
 class BoardController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $boards = Board::orderBy('created_at', 'desc')->paginate(12);
+
+        // 検索フォームで入力された値を取得する
+        $search = $request->input('search');
+
+        // フォームに値が入力されたら、検索した結果を返す
+        if ($search !== null) {
+            $boards = Board::Search($search);
+        }
 
         return view('user.boards.index', compact('boards'));
     }
@@ -42,7 +50,7 @@ class BoardController extends Controller
                 'location' => $request->location,
                 'destination' => $request->destination,
                 'description' => $request->description,
-                'deadline' => $request->deadline,
+                'deadline' => 0,
                 'prefecture_id' => $request->prefecture_id,
                 'user_id' => Auth::id(),
             ]);
