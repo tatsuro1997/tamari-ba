@@ -7,10 +7,18 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Board;
+use Database\Seeders\PrefectureSeeder;
 use Illuminate\Http\UploadedFile;
 
 class BoardTest extends TestCase
 {
+    use RefreshDatabase;
+
+    public function setUp() :void
+    {
+        parent::setUp();
+        $this->seed(PrefectureSeeder::class);
+    }
     // 正常系
 
     public function test_ログインしていると一覧が見れる()
@@ -58,9 +66,10 @@ class BoardTest extends TestCase
     public function test_詳細()
     {
         $user = User::factory()->create();
+        $board = Board::factory()->create(['user_id' => $user->id]);
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("boards/1");
+            ->get("boards/$board->id");
 
         $response->assertStatus(200);
         // エラーメッセージがないこと
