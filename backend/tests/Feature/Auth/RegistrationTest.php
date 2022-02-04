@@ -5,11 +5,20 @@ namespace Tests\Feature\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Database\Seeders\PrefectureSeeder;
 use Illuminate\Http\UploadedFile;
 use App\Models\User;
 
 class RegistrationTest extends TestCase
 {
+    use RefreshDatabase;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->seed(PrefectureSeeder::class);
+    }
+
     //正常系
 
     public function test_registration_screen_can_be_rendered()

@@ -7,10 +7,18 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Road;
+use Database\Seeders\PrefectureSeeder;
 use Illuminate\Http\UploadedFile;
 
 class RoadTest extends TestCase
 {
+    use RefreshDatabase;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->seed(PrefectureSeeder::class);
+    }
 
     // 正常系
 
@@ -56,9 +64,10 @@ class RoadTest extends TestCase
     public function test_詳細()
     {
         $user = User::factory()->create();
+        $road = Road::factory()->create(['user_id' => $user->id]);
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("roads/1");
+            ->get("roads/$road->id");
 
         $response->assertStatus(200);
         // エラーメッセージがないこと
