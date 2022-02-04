@@ -17,13 +17,13 @@
     <div class="p-2 ">
       <div class="relative">
         <label for="latitude" class="leading-7 text-sm text-gray-600">緯度</label>
-        <input type="text" id="latitude" name="latitude" required readonly class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
+        <input type="text" id="latitude" name="latitude" required readonly value="{{ old('latitude') ?? $road->latitude }}" class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
       </div>
     </div>
     <div class="p-2">
       <div class="relative">
         <label for="longitude" class="leading-7 text-sm text-gray-600">経度</label>
-        <input type="text" id="longitude" name="longitude" required readonly class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
+        <input type="text" id="longitude" name="longitude" required readonly value="{{ old('longitude') ?? $road->longitude }}" class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
       </div>
     </div>
   </div>

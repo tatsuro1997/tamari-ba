@@ -20,12 +20,20 @@ use Illuminate\Support\Facades\Auth;
 
 class RoadController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $roads = Road::with('tags')->withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
 
-        # Like
+        // Like
         $like = new RoadLike;
+
+        // 検索フォームで入力された値を取得する
+        $search = $request->input('search');
+
+        // フォームに値が入力されたら、検索した結果を返す
+        if ($search !== null) {
+            $roads = Road::Search($search);
+        }
 
         return view('user.roads.index', compact('roads', 'like'));
     }

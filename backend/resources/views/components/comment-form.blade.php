@@ -1,4 +1,4 @@
-<div class="w-full">
+<div class="w-full ml-2">
     <form method="post" action="{{ route('user.road.comment.store', ['road' => $road->id]) }}" class="w-1/2" >
         @csrf
         <div class="border-b border-blue-500 my-2">
