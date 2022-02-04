@@ -45,7 +45,7 @@
     <div class="p-2 w-1/2 mx-auto">
         <div class="relative">
             <div class="w-32">
-                <x-thumbnail :filename="$board->boardImages[0]->filename" type="boards"/>
+                <x-thumbnail :filename="$board->boardImages->first()->filename ?? ''" type="boards"/>
             </div>
         </div>
     </div>
@@ -66,6 +66,8 @@
             <div><input type="radio" name="deadline" value="1" class="mr-2">募集を終了</div>
         </div>
     </div>
+  @else
+    <input value="0" type="hidden" name="deadline" />
   @endif
 
   <div class="p-2 w-full flex justify-around mt-4">
