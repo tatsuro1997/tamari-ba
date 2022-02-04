@@ -14,11 +14,7 @@
         <div class="swiper-wrapper">
             @foreach ($images as $image)
                 <div class="swiper-slide">
-                    @if ($image->filename !== null)
-                        <img src="{{ asset($path . $image->filename) }}">
-                    @else
-                        <img src="">
-                    @endif
+                    <img src="{{ asset($path . $image->filename) }}">
                 </div>
             @endforeach
         </div>
@@ -32,4 +28,7 @@
         <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div>
     </div>
+    @if (empty($images->first()->filename))
+        <img src="{{ asset('images/no_image.jpg') }}">
+    @endif
 </div>
