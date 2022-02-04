@@ -12,18 +12,18 @@ class BoardPolicy
 
     public function edit(User $user, Board $board)
     {
-        return $user->id == $board-> boardUsers->first()->user_id;
+        return $user->id == $board->boardUsers->first()->user_id;
     }
 
 
     public function update(User $user, Board $board)
     {
-        return $user->id == $board-> boardUsers->first()->user_id;
+        return $user->id == $board->boardUsers->first()->user_id;
     }
 
 
     public function delete(User $user, Board $board)
     {
-        return $user->id == $board-> boardUsers->first()->user_id;
+        return $user->id == $board->boardUsers->first()->user_id;
     }
 }
