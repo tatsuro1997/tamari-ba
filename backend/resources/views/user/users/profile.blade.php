@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <x-user-posts :user="$user" :roads="$roads" :like="$like" />
+                                    <x-user.posts :user="$user" :roads="$roads" :like="$like" />
                                 </div>
                             </div>
                         </div>

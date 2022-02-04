@@ -12,7 +12,7 @@
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     <form method="post" action="{{ route('user.roads.store') }}" enctype="multipart/form-data">
                         @csrf
-                        <x-road-form :road="$road" :lat="$lat" :lng="$lng" :tags="$tags" />
+                        <x-road.form :road="$road" :lat="$lat" :lng="$lng" :tags="$tags" />
                     </form>
                 </div>
             </div>

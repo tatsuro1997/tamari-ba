@@ -23,7 +23,7 @@
                                 @endcan
                             </div>
                         </div>
-                        <x-tag-list :tags="$road->tags" />
+                        <x-tag.list :tags="$road->tags" />
                         @if ($type=='index')
                             <p class="leading-relaxed mb-3 h-24">{{ Str::limit($road->description, 100, ' ...続きを読む') }}</p>
                         @endif
