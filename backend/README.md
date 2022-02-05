@@ -37,13 +37,6 @@ docker-compose up -d --build
 
 .envファイルの中身は下記をご利用の環境に合わせて変更してください。
 
-DB_CONNECTION=mysql
-DB_HOST=db
-DB_PORT=3306
-DB_DATABASE=laravel_local
-DB_USERNAME=phper
-DB_PASSWORD=secret
-
 
 MAMPまたは他の開発環境でDBを起動した後に
 
