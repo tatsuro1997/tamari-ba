@@ -740,6 +740,9 @@ select {
 .mb-12 {
   margin-bottom: 3rem;
 }
+.ml-8 {
+  margin-left: 2rem;
+}
 .block {
   display: block;
 }

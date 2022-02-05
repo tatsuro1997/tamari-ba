@@ -42,8 +42,13 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
+                @if (Route::has('user.register'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('user.register') }}">
+                        {{ __('新規登録') }}
+                    </a>
+                @endif
                 @if (Route::has('user.password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('user.password.request') }}">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900 ml-8" href="{{ route('user.password.request') }}">
                         {{ __('パスワードを忘れた場合') }}
                     </a>
                 @endif
