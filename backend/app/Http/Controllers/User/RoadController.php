@@ -89,8 +89,9 @@ class RoadController extends Controller
     public function show($id)
     {
         $road = Road::with('roadComments')->findOrFail($id);
+        $like = new RoadLike;
 
-        return view('user.roads.show', compact('road'));
+        return view('user.roads.show', compact('road', 'like'));
     }
 
 
