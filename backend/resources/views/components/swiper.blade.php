@@ -7,7 +7,7 @@
     }
 @endphp
 
-<div class="w-1/2 text-center">
+<div class="lg:w-1/2 sm:w-full text-center border-b-4">
     <!-- Slider main container -->
     <div class="swiper-container">
         <!-- Additional required wrapper -->

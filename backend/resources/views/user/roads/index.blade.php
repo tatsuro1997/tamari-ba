@@ -12,9 +12,11 @@
                     <x-flash-message status="session('status')" />
                     <section class="text-gray-600 body-font">
                         <div class="container px-5 py-8 mx-auto">
-                            <div class="flex justify-end mb-4">
-                                <x-search-form :search="isset($search)" type="board" />
-                                <button onclick="location.href='{{ route('user.roads.create') }}'"  class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録する</button>
+                            <div class="flex justify-end mb-2">
+                                <button onclick="location.href='{{ route('user.roads.create') }}'" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録</button>
+                            </div>
+                            <div class="flex justify-end mr-auto">
+                                <x-search-form :search="isset($search)" type="road" />
                             </div>
                             <x-road.index :roads="$roads" :like="$like" type="index" />
                         </div>

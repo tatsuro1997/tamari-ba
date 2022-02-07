@@ -6,7 +6,7 @@
 @endphp
 
 @if (session('message'))
-  <div class="{{ $bgColor }} w-1/2 mx-auto p-2 text-white text-center font-bold">
+  <div class="{{ $bgColor }} lg:w-1/2 sm:w-full mx-auto p-2 text-white text-center font-bold">
     {{ session('message') }}
   </div>
 @endif
