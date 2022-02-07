@@ -35,7 +35,7 @@
   <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
       <div class="relative">
         <label for="url" class="leading-7 text-sm text-gray-600">URL</label>
-        <input type="text" id="url" name="url" value="{{ old('url') ?? $user->url }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <input type="text" id="url" name="url" value="{{ old('url') ?? $user->url }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
       </div>
   </div>
   <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
