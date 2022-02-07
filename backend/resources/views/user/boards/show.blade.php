@@ -16,7 +16,7 @@
                             </div>
                             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden lg:flex">
                                 <x-swiper :images="$board->boardImages" type="board" />
-                                <div class="p-6 relative">
+                                <div class="p-6 relative lg:w-1/2">
                                     <div class="flex justify-between">
                                         <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $board->title }}</h1>
                                         <div class="flex">
