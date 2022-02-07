@@ -45,7 +45,7 @@
     <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
         <div class="relative">
             <div class="w-32">
-                <x-thumbnail :filename="$board->boardImages->first()->filename ?? ''" type="boards"/>
+                <x-thumbnail :filename="$board->boardImages->first()->filename ?? ''" :board="$board" type="boards"/>
             </div>
         </div>
     </div>
