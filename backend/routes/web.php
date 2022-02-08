@@ -8,6 +8,7 @@ use App\Http\Controllers\User\BoardController;
 use App\Http\Controllers\User\RoadCommentsController;
 use App\Http\Controllers\User\BoardCommentsController;
 use App\Http\Controllers\User\UsersController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,7 @@ use App\Http\Controllers\User\UsersController;
 |
 */
 
-Route::get('/', function () {
-    return view('user.welcome');
-});
+Route::get('/', [WelcomeController::class, 'welcome']);
 
 Route::resource('roads', RoadController::class)
     ->middleware('auth:users');
