@@ -12,7 +12,7 @@
 @endphp
 
 <div class="w-full ml-2">
-        <form method="post" action="{{ $action }}" class="w-1/2" >
+    <form method="post" action="{{ $action }}" class="lg:w-1/2 sm:w-full" >
         @csrf
         <div class="border-b border-blue-500 my-2">
             <input value="{{ $original->id }}" type="hidden" name="{{$input_name}}" />
@@ -30,7 +30,7 @@
         <div class="flex mt-4">
             <x-avatar avatar="{{ $comment->user->avatar ?? '' }}" type="nav" />
             <div class="ml-4 w-3/4">
-                <div class="flex">
+                <div class="lg:flex">
                     <div class="font-medium mr-4">{{$comment->user->name}}</div>
                     <div>{{$comment->created_at->format('Y-m-d')}}</div>
                     @if ($type==='road')
@@ -48,7 +48,7 @@
                         @endcan
                     </form>
                 </div>
-                <div class="text-xl my-1">{!!nl2br(e($comment->comment))!!}</div>
+                <div class="text-xl my-1 h-auto">{!!nl2br(e($comment->comment))!!}</div>
             </div>
         </div>
     @endforeach

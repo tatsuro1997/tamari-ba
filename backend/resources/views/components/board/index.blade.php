@@ -1,9 +1,9 @@
 <div class="flex flex-wrap -m-4">
     @foreach ($boards as $board)
-        <div class="p-4 lg:w-1/3 md:w-1/3">
+        <div class="p-4 lg:w-1/3 md:w-1/2">
             <a href="{{ route('user.boards.show', ['board' => $board->id]) }}">
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                    <x-thumbnail filename="{{ $board->boardImages->first()->filename ?? ''}}" type="boards" />
+                    <x-thumbnail filename="{{ $board->boardImages->first()->filename ?? ''}}" :board="$board" type="boards" />
                     <div class="p-6">
                         <div class="flex justify-between">
                             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $board->title }}</h1>
@@ -25,7 +25,9 @@
                         <p class="leading-relaxed mb-1"><i class="far fa-clock mr-2 w-4"></i>{{ date('Y/m/d H:i', strtotime($board->date)) }}</p>
                         <p class="leading-relaxed mb-1"><i class="fas fa-map-marker-alt mr-2 w-4"></i>{{ $board->location }}</p>
                         <p class="leading-relaxed mb-3"><i class="fas fa-motorcycle mr-2 w-4"></i>{{ $board->destination }}</p>
-                        <p class="leading-relaxed h-24 relative">{{ Str::limit($board->description, 100, '...') }}</p>
+                        @if ($type=='index')
+                            <p class="leading-relaxed h-24 relative">{{ Str::limit($board->description, 100, '...') }}</p>
+                        @endif
                         <div class="flex justify-between">
                             <p class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</p>
                             <p class="leading-relaxed text-right">{{ $board->user->name }}</p>

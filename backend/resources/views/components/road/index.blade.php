@@ -1,6 +1,6 @@
 <div class="flex flex-wrap -m-4">
     @foreach ($roads as $road)
-        <div class="p-4 lg:w-1/3 md:w-1/3">
+        <div class="p-4 lg:w-1/3 md:w-1/2">
             <a href="{{ route('user.roads.show', ['road' => $road->id]) }}">
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                     <x-thumbnail filename="{{ $road->roadImages->first()->filename ?? ''}}" type="roads" />

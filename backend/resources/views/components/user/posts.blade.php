@@ -1,23 +1,23 @@
 <div class="flex flex-wrap" id="tabs-id">
   <div class="w-full">
     <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-indigo-900" onclick="changeAtiveTab(event,'tab-comment')">
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center w-1/5">
+        <a class="text-xs font-bold uppercase lg:px-5 py-3 shadow-lg rounded block leading-normal text-white bg-indigo-900" onclick="changeAtiveTab(event,'tab-comment')">
            Comments
         </a>
       </li>
-      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-bike')">
+      {{-- <li class="-mb-px mr-2 last:mr-0 flex-auto text-center w-1/5">
+        <a class="text-xs font-bold uppercase lg:px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-bike')">
            Bikes
         </a>
-      </li>
-      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-road')">
+      </li> --}}
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center w-1/5">
+        <a class="text-xs font-bold uppercase lg:px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-road')">
            Roads
         </a>
       </li>
-      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-board')">
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center w-1/5">
+        <a class="text-xs font-bold uppercase lg:px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-board')">
            Boards
         </a>
       </li>
@@ -26,20 +26,30 @@
       <div class="px-4 py-5 flex-auto">
         <div class="tab-content tab-space">
           <div class="block" id="tab-comment">
-            <x-comment.index :user="$user" :roads="$roads" />
+            @if (empty($user->roadComments->first()))
+                <p>まだ投稿はありません</p>
+            @else
+              <x-comment.index :user="$user" :roads="$roads" />
+            @endif
           </div>
-          <div class="block" id="tab-bike">
+          {{-- <div class="hidden" id="tab-bike">
             <p>
-                TODO:バイク一覧が入る
+                ※作成中
             </p>
-          </div>
+          </div> --}}
           <div class="hidden" id="tab-road">
-            <x-road.index :roads="$roads" :like="$like" type="profile" />
+            @if (empty($roads->first()))
+                <p>まだ投稿はありません</p>
+            @else
+              <x-road.index :roads="$roads" :like="$like" type="profile" />
+            @endif
           </div>
           <div class="hidden" id="tab-board">
-            <p>
-                TODO:掲示板一覧が入る
-            </p>
+            @if (empty($roads->first()))
+                <p>まだ投稿はありません</p>
+            @else
+              <x-board.index :boards="$boards" type="profile" />
+            @endif
           </div>
         </div>
       </div>

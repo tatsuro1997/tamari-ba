@@ -1,4 +1,4 @@
-<div id="map" class="w-1/2 h-80 mx-auto"></div>
+<div id="map" class="lg:w-1/2 sm:w-full h-80 mx-auto"></div>
 
 {{-- GoogleMap --}}
 <div class="p-2 w-1/2 mx-auto">
@@ -6,14 +6,14 @@
 </div>
 
 <div class="-m-2">
-    <div class="p-2 w-1/2 mx-auto">
+    <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
       <div class="relative">
         <label for="addressInput" class="leading-7 text-sm text-gray-600">住所検索</label>
         <input type="text" id="addressInput" name="addressInput" placeholder="東京都△△区○○1-1-1" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
       </div>
       <button id="searchGeo" onclick="cLocation()" class="h-10 mt-2 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">住所検索</button>
     </div>
-  <div class="flex w-1/2 mx-auto">
+  <div class="flex lg:w-1/2 sm:w-full mx-auto">
     <div class="p-2 ">
       <div class="relative">
         <label for="latitude" class="leading-7 text-sm text-gray-600">緯度</label>
@@ -27,28 +27,28 @@
       </div>
     </div>
   </div>
-  <div class="p-2 w-1/2 mx-auto">
+  <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
     <div class="relative">
       <label for="title" class="leading-7 text-sm text-gray-600">道の名前 ※必須</label>
       <input type="text" id="title" name="title" value="{{ old('title') ?? $road->title }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
     </div>
   </div>
-  <div class="p-2 w-1/2 mx-auto">
+  <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
       <div class="relative">
         <label for="description" class="leading-7 text-sm text-gray-600">道の情報 ※必須</label>
         <textarea id="description" name="description" rows="10" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">{{ old('description') ?? $road->description }}</textarea>
       </div>
   </div>
   @if (explode('.', Route::currentRouteName())[2]==='edit')
-    <div class="p-2 w-1/2 mx-auto">
+    <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
         <div class="relative">
             <div class="w-32">
-                <x-thumbnail :filename="$road->roadImages[0]->filename" type="roads"/>
+                <x-thumbnail :filename="$road->roadImages[0]->filename ?? ''" type="roads"/>
             </div>
         </div>
     </div>
   @endif
-  <div class="p-2 w-1/2 mx-auto">
+  <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
       <div class="relative">
       <label for="image" class="leading-7 text-sm text-gray-600">画像（複数可）</label>
       <input type="file" id="image" name="files[][image]" multiple accept="image/png, image/jpeg, image/jpg" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
