@@ -3,10 +3,18 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div>
-                        {{-- トップイメージ
-                        TODO：スライダーにする --}}
-                        <img src="{{ asset('images/no_image.jpg') }}">
+                    <div class="w-full text-center">
+                        <!-- Slider main container -->
+                        <div class="swiper-container">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="{{ asset('images/main_1.jpg') }}"></div>
+                                <div class="swiper-slide"><img src="{{ asset('images/other.jpg') }}"></div>
+                                <div class="swiper-slide"><img src="{{ asset('images/enjoy.jpg') }}"></div>
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
                     <section class="text-gray-600 body-font">
                         <div class="container px-5 py-24 mx-auto">
@@ -125,4 +133,5 @@
             </div>
         </div>
     </div>
+<script src="{{ mix('js/auto-swiper.js') }}"></script>
 </x-app-layout>
