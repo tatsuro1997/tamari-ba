@@ -12,7 +12,7 @@
             </div>
 
             <!-- Login/Logout -->
-            <div class="flex fixed top-0 right-0 px-4 py-4 sm:block">
+            <div class="flex fixed top-0 right-0 px-4 py-4 sm:block z-10">
                 <a href="{{ route('user.login') }}" class="inline-block mr-4 mt-4 text-sm text-black underline">ログイン</a>
                 <a href="{{ route('user.register') }}" class="inline-block font-normal mx-auto text-black bg-orange-400 border-0 py-2 px-4 focus:outline-none hover:bg-orange-500 rounded-full text-sm">Tamari-Baに参加</a>
             </div>
