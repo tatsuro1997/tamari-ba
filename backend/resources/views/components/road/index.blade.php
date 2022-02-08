@@ -27,7 +27,7 @@
                         </div>
                         <x-tag.list :tags="$road->tags" />
                         @if ($type=='index' || $type=='welcome')
-                            <p class="leading-relaxed mb-3 h-24">{{ Str::limit($road->description, 100, ' ...') }}</p>
+                            <p class="leading-relaxed text-left mb-3 h-24">{{ Str::limit($road->description, 100, ' ...') }}</p>
                         @endif
                         <div class="flex justify-between">
                             <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
