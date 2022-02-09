@@ -688,6 +688,10 @@ select {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
