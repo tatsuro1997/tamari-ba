@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
+            BikeImageSeeder::class,
             RoadImageSeeder::class,
             TagSeeder::class,
             BoardImageSeeder::class,
