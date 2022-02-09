@@ -1,4 +1,7 @@
 @php
+    if($type==='bike'){
+        $path = 'storage/bikes/';
+    }
     if($type==='road'){
         $path = 'storage/roads/';
     }

@@ -66,6 +66,15 @@ class BikeController extends Controller
     }
 
 
+    public function show($id)
+    {
+        $bike = Bike::findOrFail($id);
+        // $like = new RoadLike;
+
+        return view('user.bikes.show', compact('bike'));
+    }
+
+
     public function edit(Bike $bike)
     {
         $this->authorize('edit', $bike);
