@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Bike;
+use App\Models\BikeComment;
 use App\Models\Road;
 use App\Models\Prefecture;
 use App\Models\Board;
@@ -64,6 +65,11 @@ class User extends Authenticatable
     public function bikes()
     {
         return hasMany(Bike::class);
+    }
+
+    public function bikeComments()
+    {
+        return $this->hasMany(BikeComment::class);
     }
 
     public function roads(){

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\BikeImage;
+use App\Models\BikeComment;
 
 class Bike extends Model
 {
@@ -29,5 +30,10 @@ class Bike extends Model
     public function bikeImages()
     {
         return $this->hasMany(BikeImage::class);
+    }
+
+    public function bikeComments()
+    {
+        return $this->hasMany(BikeComment::class);
     }
 }
