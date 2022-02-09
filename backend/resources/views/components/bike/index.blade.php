@@ -3,7 +3,7 @@
         <div class="p-4 lg:w-1/3 md:w-1/2">
             <a href="{{ route('user.bikes.show', ['bike' => $bike->id]) }}">
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                    {{-- <x-thumbnail filename="{{ $bike->roadImages->first()->filename ?? ''}}" type="bikes" /> --}}
+                    <x-thumbnail filename="{{ $bike->bikeImages->first()->filename ?? ''}}" type="bikes" />
                     <div class="p-6">
                         <div class="flex justify-between">
                             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $bike->title }}</h1>

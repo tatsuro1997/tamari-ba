@@ -1,9 +1,13 @@
 @php
 use Carbon\Carbon;
 
+if($type === 'bikes'){
+    $path = 'storage/bikes/';
+}
 if($type === 'roads'){
     $path = 'storage/roads/';
-} elseif ($type === 'boards'){
+}
+if ($type === 'boards'){
     $path = 'storage/boards/';
 }
 if($type === 'users'){
