@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Road;
 use App\Models\Board;
-use App\Models\BoardUser;
+use App\Models\Bike;
 use App\Models\RoadComment;
 
 class DatabaseSeeder extends Seeder
@@ -21,11 +21,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // AdminSeeder::class,
             // OwnerSeeder::class,
-            BikeSeeder::class,
+            // BikeSeeder::class,
             PrefectureSeeder::class,
             UserSeeder::class,
-            BikeUserSeeder::class,
         ]);
+        Bike::factory(20)->create();
         Road::factory(20)->create();
         Board::factory(20)->create();
         RoadComment::factory(30)->create();
