@@ -28,7 +28,7 @@ class BikeRequest extends FormRequest
             'bike_brand' => ['required', 'string', 'max:20'],
             'bike_type' => ['required', 'string', 'max:20'],
             'bike_name' => ['required', 'string', 'max:20'],
-            'engine_size' => ['required', 'integer', 'max:4'],
+            'engine_size' => ['required', 'integer', 'max:1500'],
             'description' => ['required', 'string', 'max:1000'],
             'image' => 'image|mimes:jpg, jpeg, png|max:2048',
             'files.*.image' => 'required|image|mimes:jpg, jpeg, png|max:2048',
