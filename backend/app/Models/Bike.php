@@ -11,10 +11,13 @@ class Bike extends Model
     use HasFactory;
 
     protected $fillable = [
+        'title',
         'bike_brand',
         'bike_type',
         'bike_name',
         'engine_size',
+        'description',
+        'user_id',
     ];
 
     public function users()
