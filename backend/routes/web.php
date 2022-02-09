@@ -9,6 +9,7 @@ use App\Http\Controllers\User\RoadCommentsController;
 use App\Http\Controllers\User\BoardCommentsController;
 use App\Http\Controllers\User\UsersController;
 use App\Http\Controllers\User\BikeController;
+use App\Http\Controllers\User\BikeCommentsController;
 use App\Http\Controllers\WelcomeController;
 
 /*
@@ -32,6 +33,10 @@ Route::resource('roads', RoadController::class)
 
 Route::resource('boards', BoardController::class)
 ->middleware('auth:users');
+
+Route::resource('bike.comment', BikeCommentsController::class)
+    ->middleware('auth:users')
+    ->only(['store', 'destroy']);
 
 Route::resource('road.comment', RoadCommentsController::class)
     ->middleware('auth:users')
