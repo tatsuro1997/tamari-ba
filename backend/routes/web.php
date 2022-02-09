@@ -8,6 +8,7 @@ use App\Http\Controllers\User\BoardController;
 use App\Http\Controllers\User\RoadCommentsController;
 use App\Http\Controllers\User\BoardCommentsController;
 use App\Http\Controllers\User\UsersController;
+use App\Http\Controllers\User\BikeController;
 use App\Http\Controllers\WelcomeController;
 
 /*
@@ -22,6 +23,9 @@ use App\Http\Controllers\WelcomeController;
 */
 
 Route::get('/', [WelcomeController::class, 'welcome']);
+
+Route::resource('bikes', BikeController::class)
+    ->middleware('auth:users');
 
 Route::resource('roads', RoadController::class)
     ->middleware('auth:users');
