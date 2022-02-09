@@ -1,4 +1,9 @@
 @php
+    if ($type==='bike') {
+        $action = route('user.bike.comment.store', ['bike' => $original->id]);
+        $Comments = $original->bikeComments;
+        $input_name = 'bike_id';
+    }
     if ($type==='road') {
         $action = route('user.road.comment.store', ['road' => $original->id]);
         $Comments = $original->roadComments;
@@ -33,6 +38,9 @@
                 <div class="lg:flex">
                     <div class="font-medium mr-4">{{$comment->user->name}}</div>
                     <div>{{$comment->created_at->format('Y-m-d')}}</div>
+                    @if ($type==='bike')
+                        <form id="delete_comment_{{$comment->id}}" method="post" action="{{ route('user.bike.comment.destroy', ['bike' => $comment->bike_id, 'comment' => $comment->id ]) }}">
+                    @endif
                     @if ($type==='road')
                         <form id="delete_comment_{{$comment->id}}" method="post" action="{{ route('user.road.comment.destroy', ['road' => $comment->road_id, 'comment' => $comment->id ]) }}">
                     @endif
@@ -42,7 +50,8 @@
                         @csrf
                         @method('delete')
                         <input type="hidden" value="{{ $comment->id }}" name="comment_id" />
-                        <input type="hidden" value="{{ $comment->road->id ?? $comment->board->id }}" name="{{$input_name}}" />
+                        {{-- <input type="hidden" value="{{ $comment->bike->id }}" name="{{$input_name}}" /> --}}
+                        <input type="hidden" value="{{ $comment->road->id ?? $comment->board->id ?? $comment->bike->id }}" name="{{$input_name}}" />
                         @can('delete', $comment)
                             <a href="#" data-id="{{ $comment->id }}" onclick="deleteComment(this)" class="border-0 px-4"><i class="far fa-trash-alt"></i></a>
                         @endcan

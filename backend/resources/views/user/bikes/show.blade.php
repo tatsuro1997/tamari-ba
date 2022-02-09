@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- <x-comment.form :original="$bike" type="bike" /> --}}
+                            <x-comment.form :original="$bike" type="bike" />
                         </div>
                     </section>
                 </div>
