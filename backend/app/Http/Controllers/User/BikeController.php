@@ -112,4 +112,17 @@ class BikeController extends Controller
             ->route('user.bikes.index')
             ->with(['message' => 'バイクの投稿を更新しました。', 'status' => 'info']);
     }
+
+
+    public function destroy(Bike $bike)
+    {
+        $this->authorize('delete', $bike);
+
+        Bike::findOrFail($bike->id)->delete();
+        // $bike->tags()->detach();
+
+        return redirect()
+            ->route('user.bikes.index')
+            ->with(['message' => 'バイクの投稿を削除しました。', 'status' => 'alert']);
+    }
 }
