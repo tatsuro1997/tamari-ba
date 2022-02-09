@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Road;
 use App\Models\Board;
 use App\Models\Bike;
+use App\Models\BikeComment;
 use App\Models\RoadComment;
 
 class DatabaseSeeder extends Seeder
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
         Bike::factory(20)->create();
         Road::factory(20)->create();
         Board::factory(20)->create();
+        BikeComment::factory(30)->create();
         RoadComment::factory(30)->create();
 
 
