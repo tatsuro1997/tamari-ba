@@ -40,8 +40,10 @@ class BikeRequest extends FormRequest
     {
         return [
             'image' => '指定されたファイルが画像ではありません。',
-            'mimes' => '指定された拡張子(jpg/jpeg/png)でありません。',
-            'max' => 'ファイルサイズは2MB以内にしてください。',
+                'image' => [
+                    'mimes' => '指定された拡張子(jpg/jpeg/png)でありません。',
+                    'max' => 'ファイルサイズは2MB以内にしてください。',
+                ],
             'tags.*' => 'タグ'
         ];
     }
