@@ -35,7 +35,7 @@ class RoadController extends Controller
             $roads = Road::Search($search);
         }
 
-        return view('user.roads.index', compact('roads', 'like'));
+        return view('user.roads.index', compact('roads', 'like', 'search'));
     }
 
 

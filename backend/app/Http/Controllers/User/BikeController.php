@@ -19,18 +19,25 @@ class BikeController extends Controller
 {
     public function index(Request $request)
     {
-        $bikes = Bike::orderBy('created_at', 'desc')->paginate(12);
+        $bikes = Bike::with('tags')->withCount('bikeLikes')->orderBy('created_at', 'desc')->paginate(12);
 
         $like = new BikeLike;
 
-        return view('user.bikes.index', compact('bikes', 'like'));
+        $search = $request->input('search');
+        if ($search !== null) {
+            $bikes = Bike::Search($search);
+        }
+
+        return view('user.bikes.index', compact('bikes', 'like', 'search'));
     }
 
     public function create(Request $request)
     {
         $bike = new Bike;
 
-        return view('user.bikes.create', compact('bike'));
+        $tags = Tag::pluck('name', 'id')->toArray();
+
+        return view('user.bikes.create', compact('bike', 'tags'));
     }
 
 
@@ -46,7 +53,7 @@ class BikeController extends Controller
                 'description' => $request->description,
                 'user_id' => Auth::id(),
             ]);
-            // $bike->tags()->attach($request->tags);
+            $bike->tags()->attach($request->tags);
 
             $imageFiles = $request->file('files');
             if ($imageFiles) {
@@ -83,9 +90,9 @@ class BikeController extends Controller
         $this->authorize('edit', $bike);
 
         $bike = Bike::findOrFail($bike->id);
-        // $tags = Tag::pluck('name', 'id')->toArray();
+        $tags = Tag::pluck('name', 'id')->toArray();
 
-        return view('user.bikes.edit', compact('bike'));
+        return view('user.bikes.edit', compact('bike', 'tags'));
     }
 
 
@@ -102,7 +109,7 @@ class BikeController extends Controller
         $bike->description = $request->description;
         $bike->save();
 
-        // $bike->tags()->sync($request->tags);
+        $bike->tags()->sync($request->tags);
 
         $imageFiles = $request->file('files');
 
@@ -131,7 +138,7 @@ class BikeController extends Controller
         $this->authorize('delete', $bike);
 
         Bike::findOrFail($bike->id)->delete();
-        // $bike->tags()->detach();
+        $bike->tags()->detach();
 
         return redirect()
             ->route('user.bikes.index')

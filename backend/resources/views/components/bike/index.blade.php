@@ -25,7 +25,7 @@
                                 @endcan
                             </div>
                         </div>
-                        {{-- <x-tag.list :tags="$bike->tags" /> --}}
+                        <x-tag.list :tags="$bike->tags" />
                         <div class="flex">
                             <i class="fas fa-motorcycle mr-2 w-4"></i>
                             <div class="leading-relaxed text-right mx-4">{{ $bike->bike_brand }}</div>
