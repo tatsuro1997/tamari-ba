@@ -17,26 +17,26 @@
     <div class="p-2 ">
       <div class="relative">
         <label for="latitude" class="leading-7 text-sm text-gray-600">緯度</label>
-        <input type="text" id="latitude" name="latitude" required readonly value="{{ old('latitude') ?? $road->latitude }}" class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
+        <input type="text" id="latitude" name="latitude" readonly value="{{ old('latitude') ?? $road->latitude }}" class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
       </div>
     </div>
     <div class="p-2">
       <div class="relative">
         <label for="longitude" class="leading-7 text-sm text-gray-600">経度</label>
-        <input type="text" id="longitude" name="longitude" required readonly value="{{ old('longitude') ?? $road->longitude }}" class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
+        <input type="text" id="longitude" name="longitude" readonly value="{{ old('longitude') ?? $road->longitude }}" class="w-full bg-gray-400 bg-opacity-50 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pointer-events-none">
       </div>
     </div>
   </div>
   <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
     <div class="relative">
       <label for="title" class="leading-7 text-sm text-gray-600">道の名前 ※必須</label>
-      <input type="text" id="title" name="title" value="{{ old('title') ?? $road->title }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      <input type="text" id="title" name="title" value="{{ old('title') ?? $road->title }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
     </div>
   </div>
   <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
       <div class="relative">
         <label for="description" class="leading-7 text-sm text-gray-600">道の情報 ※必須</label>
-        <textarea id="description" name="description" rows="10" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">{{ old('description') ?? $road->description }}</textarea>
+        <textarea id="description" name="description" rows="10" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">{{ old('description') ?? $road->description }}</textarea>
       </div>
   </div>
   @if (explode('.', Route::currentRouteName())[2]==='edit')
