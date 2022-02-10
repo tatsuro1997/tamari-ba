@@ -8,9 +8,9 @@
                         <div class="flex justify-between">
                             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $bike->title }}</h1>
                             <div class="flex">
-                                {{-- @if ($type !== 'welcome')
-                                    <x-like :bike="$bike" :like="$like" />
-                                @endif --}}
+                                @if ($type !== 'welcome')
+                                    <x-like :bike="$bike" :like="$like" type="bike" />
+                                @endif
                                 @can('update', $bike)
                                     <a onclick="location.href='{{ route('user.bikes.edit', ['bike' => $bike->id ]) }}'" class="py-2 px-2"><i class="far fa-edit"></i></a>
                                 @endcan

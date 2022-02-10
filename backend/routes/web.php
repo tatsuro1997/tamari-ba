@@ -54,7 +54,11 @@ Route::prefix('users')
     });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::post('like', [RoadController::class, 'Like'])->name('road.like');
+    Route::post('road_like', [RoadController::class, 'Like'])->name('road.like');
+});
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('bike_like', [BikeController::class, 'Like'])->name('bike.like');
 });
 
 Route::get('/dashboard', function () {

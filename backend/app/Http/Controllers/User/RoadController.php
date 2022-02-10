@@ -154,7 +154,7 @@ class RoadController extends Controller
     }
 
 
-        public function like(Request $request)
+    public function like(Request $request)
     {
         $id = Auth::user()->id;
         $road_id = $request->road_id;
@@ -178,7 +178,7 @@ class RoadController extends Controller
 
         //一つの変数にajaxに渡す値をまとめる
         $json = [
-            'roadLikesCount' => $roadLikesCount,
+            'likesCount' => $roadLikesCount,
         ];
         //下記の記述でajaxに引数の値を返す
         return response()->json($json);

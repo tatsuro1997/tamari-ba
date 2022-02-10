@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\BikeImage;
 use App\Models\BikeComment;
+use App\Models\BikeLike;
 
 class Bike extends Model
 {
@@ -35,5 +36,10 @@ class Bike extends Model
     public function bikeComments()
     {
         return $this->hasMany(BikeComment::class);
+    }
+
+    public function bikeLikes()
+    {
+        return $this->hasMany(BikeLike::class);
     }
 }

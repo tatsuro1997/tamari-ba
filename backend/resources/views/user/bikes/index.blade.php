@@ -12,7 +12,7 @@
                             <div class="flex justify-end mr-auto">
                                 {{-- <x-search-form :search="isset($search)" type="road" /> --}}
                             </div>
-                            <x-bike.index :bikes="$bikes" type="index" />
+                            <x-bike.index :bikes="$bikes" :like="$like" type="index" />
                         </div>
                     </section>
                     {{-- 検索後ページネイトで遷移しても検索結果を保持 --}}

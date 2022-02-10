@@ -36,7 +36,7 @@
             @if (empty($bikes->first()))
               <p>まだ投稿はありません</p>
             @else
-              <x-bike.index :bikes="$bikes" type="profile" />
+              <x-bike.index :bikes="$bikes" :like="$like" type="profile" />
             @endif
           </div>
           <div class="hidden" id="tab-road">

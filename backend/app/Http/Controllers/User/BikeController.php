@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Bike;
+use App\Models\BikeLike;
 use Illuminate\Support\Facades\Log;
 use Throwable;
 use App\Http\Requests\BikeRequest;
@@ -20,7 +21,9 @@ class BikeController extends Controller
     {
         $bikes = Bike::orderBy('created_at', 'desc')->paginate(12);
 
-        return view('user.bikes.index', compact('bikes'));
+        $like = new BikeLike;
+
+        return view('user.bikes.index', compact('bikes', 'like'));
     }
 
     public function create(Request $request)
@@ -69,9 +72,9 @@ class BikeController extends Controller
     public function show($id)
     {
         $bike = Bike::with('bikeComments')->findOrFail($id);
-        // $like = new RoadLike;
+        $like = new BikeLike;
 
-        return view('user.bikes.show', compact('bike'));
+        return view('user.bikes.show', compact('bike', 'like'));
     }
 
 
@@ -133,5 +136,35 @@ class BikeController extends Controller
         return redirect()
             ->route('user.bikes.index')
             ->with(['message' => 'バイクの投稿を削除しました。', 'status' => 'alert']);
+    }
+
+    public function like(Request $request)
+    {
+        $id = Auth::user()->id;
+        $bike_id = $request->bike_id;
+        $like = new BikeLike;
+        $bike = Bike::findOrFail($bike_id);
+
+        // 空でない（既にいいねしている）なら
+        if ($like->like_exist($id, $bike_id)) {
+            //likesテーブルのレコードを削除
+            $like = bikeLike::where('bike_id', $bike_id)->where('user_id', $id)->delete();
+        } else {
+            //空（まだ「いいね」していない）ならlikesテーブルに新しいレコードを作成する
+            $like = new BikeLike;
+            $like->bike_id = $request->bike_id;
+            $like->user_id = Auth::user()->id;
+            $like->save();
+        }
+
+        //loadCountとすればリレーションの数を○○_countという形で取得できる（今回の場合はいいねの総数）
+        $bikeLikesCount = $bike->bikeLikes->count();
+
+        //一つの変数にajaxに渡す値をまとめる
+        $json = [
+            'likesCount' => $bikeLikesCount,
+        ];
+        //下記の記述でajaxに引数の値を返す
+        return response()->json($json);
     }
 }

@@ -10,6 +10,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Bike;
 use App\Models\BikeComment;
+use App\Models\BikeLike;
 use App\Models\Road;
 use App\Models\Prefecture;
 use App\Models\Board;
@@ -70,6 +71,11 @@ class User extends Authenticatable
     public function bikeComments()
     {
         return $this->hasMany(BikeComment::class);
+    }
+
+    public function bikeLikes()
+    {
+        return $this->hasMany(BikeLike::class);
     }
 
     public function roads(){

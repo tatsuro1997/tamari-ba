@@ -13,6 +13,17 @@
                                 <div class="p-6 relative lg:w-1/2">
                                     <div class="flex justify-between">
                                         <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $bike->title }}</h1>
+                                        <x-like :bike="$bike" :like="$like" type="bike" />
+                                    </div>
+                                    <div class="flex">
+                                        <i class="fas fa-motorcycle mr-2 w-4"></i>
+                                        <div class="leading-relaxed mx-4">{{ $bike->bike_brand }}</div>
+                                        <div class="leading-relaxed">{{ $bike->bike_type }}</div>
+                                        <div class="leading-relaxed mx-4">{{ $bike->bike_name }}</div>
+                                        <div class="leading-relaxed">{{ $bike->engine_size }}</div>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <p class="leading-relaxed mb-3">{{ $bike->description }}</p>
                                         <div class="flex">
                                             @can('update', $bike)
                                                 <a onclick="location.href='{{ route('user.bikes.edit', ['bike' => $bike->id ]) }}'" class="py-2 px-2"><i class="far fa-edit"></i></a>
@@ -28,14 +39,6 @@
                                             @endcan
                                         </div>
                                     </div>
-                                    <div class="flex">
-                                        <i class="fas fa-motorcycle mr-2 w-4"></i>
-                                        <div class="leading-relaxed mx-4">{{ $bike->bike_brand }}</div>
-                                        <div class="leading-relaxed">{{ $bike->bike_type }}</div>
-                                        <div class="leading-relaxed mx-4">{{ $bike->bike_name }}</div>
-                                        <div class="leading-relaxed">{{ $bike->engine_size }}</div>
-                                    </div>
-                                    <p class="leading-relaxed mb-3">{{ $bike->description }}</p>
                                     <div class="justify-end">
                                         <p class="leading-relaxed text-right">{{ $bike->created_at->format('Y-m-d') }}</p>
                                         <p class="leading-relaxed text-right">{{ $bike->user->name }}</p>
