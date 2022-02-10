@@ -20,7 +20,7 @@ class BoardController extends Controller
 {
     public function index(Request $request)
     {
-        $boards = Board::orderBy('created_at', 'desc')->paginate(12);
+        $boards = Board::with('boardComments')->orderBy('created_at', 'desc')->paginate(12);
 
         // 検索フォームで入力された値を取得する
         $search = $request->input('search');

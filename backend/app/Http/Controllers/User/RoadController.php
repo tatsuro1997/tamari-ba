@@ -22,7 +22,7 @@ class RoadController extends Controller
 {
     public function index(Request $request)
     {
-        $roads = Road::with('tags')->withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
+        $roads = Road::with('tags', 'roadComments')->withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
 
         // Like
         $like = new RoadLike;
