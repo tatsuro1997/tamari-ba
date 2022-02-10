@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBikeUserTable extends Migration
+class CreateBikeLikesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateBikeUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('bike_user', function (Blueprint $table) {
+        Schema::create('bike_likes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('bike_id');
-            $table->unsignedBigInteger('user_id');
             $table->foreign('bike_id')->references('id')->on('bikes')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateBikeUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bike_user');
+        Schema::dropIfExists('bike_likes');
     }
 }

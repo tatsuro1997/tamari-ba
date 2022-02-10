@@ -9,7 +9,7 @@
                             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $road->title }}</h1>
                             <div class="flex">
                                 @if ($type !== 'welcome')
-                                    <x-like :road="$road" :like="$like" />
+                                    <x-like :road="$road" :like="$like" type="road" />
                                 @endif
                                 @can('update', $road)
                                     <a onclick="location.href='{{ route('user.roads.edit', ['road' => $road->id ]) }}'" class="py-2 px-2"><i class="far fa-edit"></i></a>

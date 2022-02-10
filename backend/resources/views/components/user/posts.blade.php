@@ -6,11 +6,11 @@
            Comments
         </a>
       </li>
-      {{-- <li class="-mb-px mr-2 last:mr-0 flex-auto text-center w-1/5">
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center w-1/5">
         <a class="text-xs font-bold uppercase lg:px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-bike')">
            Bikes
         </a>
-      </li> --}}
+      </li>
       <li class="-mb-px mr-2 last:mr-0 flex-auto text-center w-1/5">
         <a class="text-xs font-bold uppercase lg:px-5 py-3 shadow-lg rounded block leading-normal text-indigo-900 bg-white" onclick="changeAtiveTab(event,'tab-road')">
            Roads
@@ -27,26 +27,28 @@
         <div class="tab-content tab-space">
           <div class="block" id="tab-comment">
             @if (empty($user->roadComments->first()))
-                <p>まだ投稿はありません</p>
+              <p>まだ投稿はありません</p>
             @else
               <x-comment.index :user="$user" :roads="$roads" />
             @endif
           </div>
-          {{-- <div class="hidden" id="tab-bike">
-            <p>
-                ※作成中
-            </p>
-          </div> --}}
+          <div class="hidden" id="tab-bike">
+            @if (empty($bikes->first()))
+              <p>まだ投稿はありません</p>
+            @else
+              <x-bike.index :bikes="$bikes" :like="$like" type="profile" />
+            @endif
+          </div>
           <div class="hidden" id="tab-road">
             @if (empty($roads->first()))
-                <p>まだ投稿はありません</p>
+              <p>まだ投稿はありません</p>
             @else
               <x-road.index :roads="$roads" :like="$like" type="profile" />
             @endif
           </div>
           <div class="hidden" id="tab-board">
             @if (empty($roads->first()))
-                <p>まだ投稿はありません</p>
+              <p>まだ投稿はありません</p>
             @else
               <x-board.index :boards="$boards" type="profile" />
             @endif

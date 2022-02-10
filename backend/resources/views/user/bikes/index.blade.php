@@ -8,17 +8,17 @@
                         <div class="container px-5 py-8 mx-auto">
                             <div class="lg:flex lg:flex-row-reverse">
                                 <div class="flex justify-end mb-2">
-                                    <button onclick="location.href='{{ route('user.roads.create') }}'" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録</button>
+                                    <button onclick="location.href='{{ route('user.bikes.create') }}'" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録</button>
                                 </div>
                                 <div class="flex justify-end">
-                                    <x-search-form :search="isset($search)" type="road" />
+                                    <x-search-form :search="isset($search)" type="bike" />
                                 </div>
                             </div>
-                            <x-road.index :roads="$roads" :like="$like" type="index" />
+                            <x-bike.index :bikes="$bikes" :like="$like" type="index" />
                         </div>
                     </section>
                     {{-- 検索後ページネイトで遷移しても検索結果を保持 --}}
-                    {{ $roads->appends(request()->input())->links() }}
+                    {{ $bikes->appends(request()->input())->links() }}
                 </div>
             </div>
         </div>

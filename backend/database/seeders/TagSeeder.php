@@ -47,13 +47,53 @@ class TagSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'name' => 'HONDA',
+                'slug' => 'honda',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'YAMAHA',
+                'slug' => 'yamaha',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'KAWASAKI',
+                'slug' => 'kawasaki',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'SUZUKI',
+                'slug' => 'suzuki',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'BMW',
+                'slug' => 'bmw',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'DUCATI',
+                'slug' => 'ducati',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ]);
 
         $faker = Faker::create();
         for ($i = 1; $i <= 20; $i++) {
+            DB::table('bike_tag')->insert([
+                'bike_id' => $i,
+                'tag_id' => $faker->numberBetween(1, 11)
+            ]);
             DB::table('road_tag')->insert([
                 'road_id' => $i,
-                'tag_id' => $faker->numberBetween(1, 5)
+                'tag_id' => $faker->numberBetween(1, 11)
             ]);
         }
     }

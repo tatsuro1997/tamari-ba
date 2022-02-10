@@ -20,7 +20,7 @@
                             <div class="p-6 relative">
                                 <div class="flex justify-between">
                                     <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $road->title }}</h1>
-                                    <x-like :road="$road" :like="$like" />
+                                    <x-like :road="$road" :like="$like" type="road" />
                                 </div>
                                 <div class="flex justify-between">
                                     <p class="leading-relaxed mb-3">{{ $road->description }}</p>

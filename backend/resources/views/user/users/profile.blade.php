@@ -29,7 +29,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <x-user.posts :user="$user" :roads="$roads" :boards="$boards" :like="$like" />
+                                    <x-user.posts :user="$user" :bikes="$bikes" :roads="$roads" :boards="$boards" :like="$like" />
                                 </div>
                             </div>
                         </div>

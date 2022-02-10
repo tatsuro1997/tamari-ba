@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Bike;
 use App\Models\Road;
 use App\Models\Board;
 use App\Models\RoadLike;
@@ -18,15 +19,18 @@ class UsersController extends Controller
 {
     public function profile(){
         $user = User::with('roadComments')->findOrFail(Auth::id());
+        $bikes = Bike::where('user_id', $user->id)
+                        ->orderBy('created_at', 'desc')
+                        ->paginate(10);
         $roads = Road::where('user_id', $user->id)
                         ->orderBy('created_at', 'desc')
                         ->paginate(10);
         $boards = Board::where('user_id', $user->id)
-        ->orderBy('created_at', 'desc')
-        ->paginate(10);
+                        ->orderBy('created_at', 'desc')
+                        ->paginate(10);
         $like = new RoadLike;
 
-        return view('user.users.profile', compact('user', 'roads', 'boards', 'like'));
+        return view('user.users.profile', compact('user', 'bikes', 'roads', 'boards', 'like'));
     }
 
     public function edit($id){

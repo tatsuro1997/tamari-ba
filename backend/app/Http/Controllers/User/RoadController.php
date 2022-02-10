@@ -22,7 +22,7 @@ class RoadController extends Controller
 {
     public function index(Request $request)
     {
-        $roads = Road::with('tags')->withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
+        $roads = Road::with('tags', 'roadComments')->withCount('roadLikes')->orderBy('created_at', 'desc')->paginate(12);
 
         // Like
         $like = new RoadLike;
@@ -35,7 +35,7 @@ class RoadController extends Controller
             $roads = Road::Search($search);
         }
 
-        return view('user.roads.index', compact('roads', 'like'));
+        return view('user.roads.index', compact('roads', 'like', 'search'));
     }
 
 
@@ -154,7 +154,7 @@ class RoadController extends Controller
     }
 
 
-        public function like(Request $request)
+    public function like(Request $request)
     {
         $id = Auth::user()->id;
         $road_id = $request->road_id;
@@ -178,7 +178,7 @@ class RoadController extends Controller
 
         //一つの変数にajaxに渡す値をまとめる
         $json = [
-            'roadLikesCount' => $roadLikesCount,
+            'likesCount' => $roadLikesCount,
         ];
         //下記の記述でajaxに引数の値を返す
         return response()->json($json);

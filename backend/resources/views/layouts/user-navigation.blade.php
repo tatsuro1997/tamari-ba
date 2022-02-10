@@ -12,6 +12,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('user.bikes.index')" :active="request()->routeIs('user.bikes.index')">
+                        {{ __('バイクの投稿') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('user.roads.index')" :active="request()->routeIs('user.roads.index')">
                         {{ __('道の投稿') }}
                     </x-nav-link>
@@ -74,7 +79,12 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('user.roads.index')" :active="request()->routeIs('user.road.index')">
+            <x-responsive-nav-link :href="route('user.bikes.index')" :active="request()->routeIs('user.bikes.index')">
+                {{ __('バイクの投稿') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('user.roads.index')" :active="request()->routeIs('user.roads.index')">
                 {{ __('道の投稿') }}
             </x-responsive-nav-link>
         </div>
