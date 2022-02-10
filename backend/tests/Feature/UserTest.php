@@ -89,6 +89,6 @@ class UserTest extends TestCase
         $response = $this->get('/register');
 
         $response->assertStatus(302);
-        $response->assertRedirect('/roads');
+        $response->assertRedirect('/bikes');
     }
 }

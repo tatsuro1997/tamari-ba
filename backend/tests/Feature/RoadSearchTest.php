@@ -40,8 +40,8 @@ class RoadSearchTest extends TestCase
             'search' => 'Road',
         ]);
 
-        $response->assertSee('道の投稿一覧');
         $response->assertSee('検索');
+        $response->assertSee('新規登録');
         $this->assertEquals('Test Road', $road_data['title']);
         $this->assertEquals('説明が入ります', $road_data['description']);
     }
@@ -68,8 +68,8 @@ class RoadSearchTest extends TestCase
             'search' => '説明',
         ]);
 
-        $response->assertSee('道の投稿一覧');
         $response->assertSee('検索');
+        $response->assertSee('新規登録');
         $this->assertEquals('Test Road', $road_data['title']);
         $this->assertEquals('説明が入ります', $road_data['description']);
     }
