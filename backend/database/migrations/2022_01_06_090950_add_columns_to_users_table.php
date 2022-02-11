@@ -20,6 +20,7 @@ class AddColumnsToUsersTable extends Migration
             ->constrained();
             $table->integer('years_of_experience');
             $table->boolean('through');
+            $table->tinyInteger('role')->default(5);
         });
     }
 

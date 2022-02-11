@@ -10,15 +10,9 @@ class RoadCommentPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Determine whether the user can delete the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\RoadComment  $roadComment
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
     public function delete(User $user, RoadComment $roadComment)
     {
-        return $user->id == $roadComment->user_id;
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $roadComment->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');
     }
 }

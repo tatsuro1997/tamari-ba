@@ -12,18 +12,21 @@ class BoardPolicy
 
     public function edit(User $user, Board $board)
     {
-        return $user->id == $board->user_id;
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $board->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');
     }
 
 
     public function update(User $user, Board $board)
     {
-        return $user->id == $board->user_id;
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $board->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');
     }
 
 
     public function delete(User $user, Board $board)
     {
-        return $user->id == $board->user_id;
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $board->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');
     }
 }
