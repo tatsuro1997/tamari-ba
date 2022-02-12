@@ -10,18 +10,21 @@ class BikePolicy
 {
     use HandlesAuthorization;
 
-    public function edit(User $user, Bike $road)
+    public function edit(User $user, Bike $bike)
     {
-        return $user->id == $road->user_id;
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $bike->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');
     }
 
-    public function update(User $user, Bike $road)
+    public function update(User $user, Bike $bike)
     {
-        return $user->id == $road->user_id;
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $bike->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');
     }
 
-    public function delete(User $user, Bike $road)
+    public function delete(User $user, Bike $bike)
     {
-        return $user->id == $road->user_id;
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $bike->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');
     }
 }

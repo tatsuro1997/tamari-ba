@@ -57,6 +57,7 @@ class RegisteredUserController extends Controller
             'prefecture_id' => $request->prefecture_id,
             'years_of_experience' => $request->years_of_experience,
             'through' => $request->through,
+            'role' => $request->role,
         ]);
 
         event(new Registered($user));

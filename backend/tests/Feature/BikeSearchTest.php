@@ -48,7 +48,7 @@ class BikeSearchTest extends TestCase
         $this->assertEquals('説明が入ります', $bike_data['description']);
     }
 
-    public function test_ブランドでバイクの検索()
+    public function test_メーカーでバイクの検索()
     {
         $user = User::factory()->create();
         $response = $this->actingAs($user)

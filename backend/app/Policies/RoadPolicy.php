@@ -10,84 +10,18 @@ class RoadPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Determine whether the user can view any models.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
-    public function viewAny(User $user)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can view the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Road  $road
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
-    public function view(User $user, Road $road)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can create models.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
-    public function create(User $user)
-    {
-        //
-    }
-
     public function edit(User $user, Road $road)
     {
-        return $user->id == $road->user_id;
-    }
-
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $road->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');    }
 
     public function update(User $user, Road $road)
     {
-        return $user->id == $road->user_id;
-    }
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $road->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');    }
 
-    /**
-     * Determine whether the user can delete the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Road  $road
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
     public function delete(User $user, Road $road)
     {
-        return $user->id == $road->user_id;
-    }
-
-    /**
-     * Determine whether the user can restore the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Road  $road
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
-    public function restore(User $user, Road $road)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Road  $road
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
-    public function forceDelete(User $user, Road $road)
-    {
-        //
-    }
+        // ユーザーidが投稿者と同じまたは、オーナー権限かつオーナーメールアドレスが一致する場合アクション可能
+        return $user->id == $road->user_id || $user->role == 1 && $user->email == env('OWNER_EMAIL');    }
 }

@@ -199,7 +199,7 @@ class BikeTest extends TestCase
         $response->assertRedirect(route('user.bikes.index'));
     }
 
-    public function test_ブランドがないと新規投稿できない()
+    public function test_メーカーがないと新規投稿できない()
     {
         $user = User::factory()->create();
         $response = $this->actingAs($user)
