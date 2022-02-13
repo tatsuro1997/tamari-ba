@@ -9,6 +9,9 @@ use App\Models\BikeImage;
 use App\Models\BikeComment;
 use App\Models\BikeLike;
 use App\Models\Tag;
+use App\Models\Maker;
+use App\Models\Type;
+
 
 class Bike extends Model
 {
@@ -16,9 +19,9 @@ class Bike extends Model
 
     protected $fillable = [
         'title',
-        'bike_brand',
-        'bike_type',
-        'bike_name',
+        'maker_id',
+        'type_id',
+        'name',
         'engine_size',
         'description',
         'user_id',
@@ -67,5 +70,15 @@ class Bike extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function maker()
+    {
+        return $this->belongsTo(Maker::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
     }
 }

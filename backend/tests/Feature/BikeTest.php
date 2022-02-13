@@ -46,9 +46,9 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
@@ -90,9 +90,9 @@ class BikeTest extends TestCase
         // 更新前
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
@@ -103,9 +103,9 @@ class BikeTest extends TestCase
         // 更新
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR600RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR600RR',
             'engine_size' => 600,
             'description' => '更新されました。',
             'images' => $read_temp_path,
@@ -136,9 +136,9 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
@@ -183,9 +183,9 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => '',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
@@ -212,9 +212,9 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => '',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => '',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
@@ -223,7 +223,7 @@ class BikeTest extends TestCase
 
         $response = $this->post($first_path, $bike_data);
 
-        $response->assertSessionHasErrorsIn("bike_brandは必須です。");
+        $response->assertSessionHasErrorsIn("maker_idは必須です。");
         $response->assertStatus(302);
         $response->assertRedirect(route('user.bikes.index'));
     }
@@ -241,9 +241,9 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => '',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => '',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
@@ -252,7 +252,7 @@ class BikeTest extends TestCase
 
         $response = $this->post($first_path, $bike_data);
 
-        $response->assertSessionHasErrorsIn("bike_typeは必須です。");
+        $response->assertSessionHasErrorsIn("type_idは必須です。");
         $response->assertStatus(302);
         $response->assertRedirect(route('user.bikes.index'));
     }
@@ -270,9 +270,9 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => '',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => '',
             'engine_size' => 1000,
             'description' => '説明が入ります。',
             'images' => $read_temp_path,
@@ -281,7 +281,7 @@ class BikeTest extends TestCase
 
         $response = $this->post($first_path, $bike_data);
 
-        $response->assertSessionHasErrorsIn("bike_nameは必須です。");
+        $response->assertSessionHasErrorsIn("nameは必須です。");
         $response->assertStatus(302);
         $response->assertRedirect(route('user.bikes.index'));
     }
@@ -299,9 +299,9 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => '',
             'description' => '説明が入ります。',
             'images' => $read_temp_path,
@@ -328,9 +328,9 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '',
             'images' => $read_temp_path,

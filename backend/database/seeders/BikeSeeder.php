@@ -17,21 +17,21 @@ class BikeSeeder extends Seeder
     {
         DB::table('bikes')->insert([
             [
-                'bike_brand' => 'HONDA',
-                'bike_type' => 'スポーツ',
-                'bike_name' => 'CBR',
+                'maker_id' => 'HONDA',
+                'type_id' => 'スポーツ',
+                'name' => 'CBR',
                 'engine_size' => 650,
             ],
             [
-                'bike_brand' => 'KAWASAKI',
-                'bike_type' => 'スポーツ',
-                'bike_name' => 'Ninja',
+                'maker_id' => 'KAWASAKI',
+                'type_id' => 'スポーツ',
+                'name' => 'Ninja',
                 'engine_size' => 650,
             ],
             [
-                'bike_brand' => 'HONDA',
-                'bike_type' => 'ネイキッド',
-                'bike_name' => 'CB',
+                'maker_id' => 'HONDA',
+                'type_id' => 'ネイキッド',
+                'name' => 'CB',
                 'engine_size' => 650,
             ],
         ]);

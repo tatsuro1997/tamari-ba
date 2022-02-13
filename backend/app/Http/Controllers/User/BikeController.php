@@ -3,17 +3,19 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Bike;
-use App\Models\BikeLike;
-use Illuminate\Support\Facades\Log;
-use Throwable;
 use App\Http\Requests\BikeRequest;
 use App\Services\ImageService;
+use Illuminate\Http\Request;
+use App\Models\Bike;
+use App\Models\Maker;
+use App\Models\Type;
+use App\Models\BikeLike;
 use App\Models\BikeImage;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class BikeController extends Controller
 {
@@ -37,7 +39,11 @@ class BikeController extends Controller
 
         $tags = Tag::pluck('name', 'id')->toArray();
 
-        return view('user.bikes.create', compact('bike', 'tags'));
+        $makers = Maker::all();
+
+        $types = Type::all();
+
+        return view('user.bikes.create', compact('bike', 'tags', 'makers', 'types'));
     }
 
 
@@ -46,9 +52,9 @@ class BikeController extends Controller
         try {
             $bike = Bike::create([
                 'title' => $request->title,
-                'bike_brand' => $request->bike_brand,
-                'bike_type' => $request->bike_type,
-                'bike_name' => $request->bike_name,
+                'maker_id' => $request->maker_id,
+                'type_id' => $request->type_id,
+                'name' => $request->name,
                 'engine_size' => $request->engine_size,
                 'description' => $request->description,
                 'user_id' => Auth::id(),
@@ -90,9 +96,14 @@ class BikeController extends Controller
         $this->authorize('edit', $bike);
 
         $bike = Bike::findOrFail($bike->id);
+
         $tags = Tag::pluck('name', 'id')->toArray();
 
-        return view('user.bikes.edit', compact('bike', 'tags'));
+        $makers = Maker::all();
+
+        $types = Type::all();
+
+        return view('user.bikes.edit', compact('bike', 'tags', 'makers', 'types'));
     }
 
 
@@ -102,9 +113,9 @@ class BikeController extends Controller
 
         $bike = Bike::findOrFail($bike->id);
         $bike->title = $request->title;
-        $bike->bike_brand = $request->bike_brand;
-        $bike->bike_type = $request->bike_type;
-        $bike->bike_name = $request->bike_name;
+        $bike->maker_id = $request->maker_id;
+        $bike->type_id = $request->type_id;
+        $bike->name = $request->name;
         $bike->engine_size = $request->engine_size;
         $bike->description = $request->description;
         $bike->save();
