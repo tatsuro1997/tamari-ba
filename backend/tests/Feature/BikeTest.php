@@ -8,6 +8,8 @@ use Tests\TestCase;
 use App\Models\User;
 use App\Models\Bike;
 use Database\Seeders\PrefectureSeeder;
+use Database\Seeders\BikeMakerSeeder;
+use Database\Seeders\BikeTypeSeeder;
 use Illuminate\Http\UploadedFile;
 
 class BikeTest extends TestCase
@@ -18,6 +20,8 @@ class BikeTest extends TestCase
     {
         parent::setUp();
         $this->seed(PrefectureSeeder::class);
+        $this->seed(BikeMakerSeeder::class);
+        $this->seed(BikeTypeSeeder::class);
     }
 
     // 正常系
@@ -46,8 +50,8 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'maker_id' => 'HONDA',
-            'type_id' => 'スポーツ',
+            'maker_id' => 1,
+            'type_id' => 1,
             'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
@@ -90,8 +94,8 @@ class BikeTest extends TestCase
         // 更新前
         $bike_data = [
             'title' => 'Test bike',
-            'maker_id' => 'HONDA',
-            'type_id' => 'スポーツ',
+            'maker_id' => 1,
+            'type_id' => 1,
             'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
@@ -103,8 +107,8 @@ class BikeTest extends TestCase
         // 更新
         $bike_data = [
             'title' => 'Test bike',
-            'maker_id' => 'HONDA',
-            'type_id' => 'スポーツ',
+            'maker_id' => 2,
+            'type_id' => 2,
             'name' => 'CBR600RR',
             'engine_size' => 600,
             'description' => '更新されました。',
@@ -136,8 +140,8 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'maker_id' => 'HONDA',
-            'type_id' => 'スポーツ',
+            'maker_id' => 1,
+            'type_id' => 1,
             'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
@@ -183,8 +187,8 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => '',
-            'maker_id' => 'HONDA',
-            'type_id' => 'スポーツ',
+            'maker_id' => 1,
+            'type_id' => 1,
             'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
@@ -213,7 +217,7 @@ class BikeTest extends TestCase
         $bike_data = [
             'title' => 'Test bike',
             'maker_id' => '',
-            'type_id' => 'スポーツ',
+            'type_id' => 1,
             'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
@@ -241,7 +245,7 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'maker_id' => 'HONDA',
+            'maker_id' => 1,
             'type_id' => '',
             'name' => 'CBR1000RR',
             'engine_size' => 1000,
@@ -270,9 +274,38 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'maker_id' => 'HONDA',
-            'type_id' => 'スポーツ',
+            'maker_id' => 1,
+            'type_id' => 1,
             'name' => '',
+            'engine_size' => 1000,
+            'description' => '説明が入ります。',
+            'images' => $read_temp_path,
+        ];
+        $first_path = route('user.bikes.store');
+
+        $response = $this->post($first_path, $bike_data);
+
+        $response->assertSessionHasErrorsIn("nameは必須です。");
+        $response->assertStatus(302);
+        $response->assertRedirect(route('user.bikes.index'));
+    }
+
+    public function test_名前が半角英数字以外だと新規投稿できない()
+    {
+        $user = User::factory()->create();
+        $response = $this->actingAs($user)
+            ->withSession(['banned' => false])
+            ->get("bikes");
+
+        $file = UploadedFile::fake()->image('avatar.jpg');
+        $path = $file->store('public');
+        $read_temp_path = str_replace('public/', '/storage/', $path);
+
+        $bike_data = [
+            'title' => 'Test bike',
+            'maker_id' => 1,
+            'type_id' => 1,
+            'name' => 'テスト',
             'engine_size' => 1000,
             'description' => '説明が入ります。',
             'images' => $read_temp_path,
@@ -299,8 +332,8 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'maker_id' => 'HONDA',
-            'type_id' => 'スポーツ',
+            'maker_id' => 1,
+            'type_id' => 1,
             'name' => 'CBR1000RR',
             'engine_size' => '',
             'description' => '説明が入ります。',
@@ -328,8 +361,8 @@ class BikeTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'maker_id' => 'HONDA',
-            'type_id' => 'スポーツ',
+            'maker_id' => 1,
+            'type_id' => 1,
             'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '',

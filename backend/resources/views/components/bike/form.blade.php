@@ -17,18 +17,6 @@
       </select>
     </div>
   </div>
-{{--
-  <div class="mt-4">
-                <x-label for="prefecture_id" :value="__('都道府県 ※必須')" />
-                <select name="prefecture_id" id="prefecture_id" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                    @foreach($prefectures as $prefecture)
-                        <option value="{{ $prefecture->id }}">
-                            {{ $prefecture->name }}
-                        </option>
-                    @endforeach
-                </select>
-            </div> --}}
-
   <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
     <div class="relative">
       <label for="type_id" class="leading-7 text-sm text-gray-600">タイプ ※必須</label>
@@ -43,13 +31,13 @@
   </div>
   <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
     <div class="relative">
-      <label for="name" class="leading-7 text-sm text-gray-600">名前 ※必須</label>
+      <label for="name" class="leading-7 text-sm text-gray-600">名前（半角英数字） ※必須</label>
       <input type="text" id="name" name="name" value="{{ old('name') ?? $bike->name }}" placeholder="CB, YZF-R" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
     </div>
   </div>
   <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
     <div class="relative">
-      <label for="engine_size" class="leading-7 text-sm text-gray-600">排気量 ※必須</label>
+      <label for="engine_size" class="leading-7 text-sm text-gray-600">排気量（半角数字） ※必須</label>
       <input type="number" id="engine_size" name="engine_size" value="{{ old('engine_size') ?? $bike->engine_size }}" placeholder="400, 650" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
     </div>
   </div>

@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Models\Bike;
 use App\Models\BikeComment;
 use Database\Seeders\PrefectureSeeder;
+use Database\Seeders\BikeMakerSeeder;
+use Database\Seeders\BikeTypeSeeder;
 
 class BikeCommentTest extends TestCase
 {
@@ -18,6 +20,8 @@ class BikeCommentTest extends TestCase
     {
         parent::setUp();
         $this->seed(PrefectureSeeder::class);
+        $this->seed(BikeMakerSeeder::class);
+        $this->seed(BikeTypeSeeder::class);
     }
 
     // 正常系
