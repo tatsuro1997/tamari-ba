@@ -5,6 +5,7 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="{{ asset('images/main_1.jpg') }}"></div>
+                <div class="swiper-slide"><img src="{{ asset('images/main_2.jpg') }}"></div>
                 <div class="swiper-slide"><img src="{{ asset('images/other.jpg') }}"></div>
                 <div class="swiper-slide"><img src="{{ asset('images/enjoy.jpg') }}"></div>
             </div>
@@ -18,6 +19,9 @@
     </div>
     <div class="p-3 bg-white">
         <section class="text-gray-600 body-font">
+            <div class="p-2 w-full my-20">
+                <button onclick="location.href='{{ route('user.register') }}'" class="flex font-bold mx-auto text-black bg-orange-400 border-0 py-4 px-10 focus:outline-none hover:bg-orange-500 rounded-full text-lg">Tamari-Baをはじめる</button>
+            </div>
             <div class="container px-5 py-24 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
                     <div class="mx-auto">
@@ -128,7 +132,7 @@
             </div>
         </section>
         <div class="p-2 w-full mb-40">
-            <button class="flex font-bold mx-auto text-black bg-orange-400 border-0 py-4 px-10 focus:outline-none hover:bg-orange-500 rounded-full text-lg">Tamari-Baをはじめる</button>
+            <button onclick="location.href='{{ route('user.register') }}'" class="flex font-bold mx-auto text-black bg-orange-400 border-0 py-4 px-10 focus:outline-none hover:bg-orange-500 rounded-full text-lg">Tamari-Baをはじめる</button>
         </div>
     </div>
 <script src="{{ mix('js/auto-swiper.js') }}"></script>

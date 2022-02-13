@@ -672,6 +672,9 @@ select {
 .-m-4 {
   margin: -1rem;
 }
+.m-40 {
+  margin: 10rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -691,6 +694,14 @@ select {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+.my-40 {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
