@@ -18,7 +18,7 @@ use App\Services\ImageService;
 class UsersController extends Controller
 {
     public function profile(){
-        $user = User::with('roadComments')->findOrFail(Auth::id());
+        $user = User::with('bikeComments','roadComments', 'boardComments', 'bikeLikes', 'roadLikes')->findOrFail(Auth::id());
         $bikes = Bike::where('user_id', $user->id)
                         ->orderBy('created_at', 'desc')
                         ->paginate(10);

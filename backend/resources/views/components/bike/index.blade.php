@@ -26,11 +26,11 @@
                             </div>
                         </div>
                         <x-tag.list :tags="$bike->tags" />
-                        <div class="flex">
+                        <div class="flex flex-wrap">
                             <i class="fas fa-motorcycle mr-2 w-4"></i>
-                            <div class="leading-relaxed text-right mx-4">{{ $bike->bike_brand }}</div>
-                            <div class="leading-relaxed text-right">{{ $bike->bike_type }}</div>
-                            <div class="leading-relaxed text-right mx-4">{{ $bike->bike_name }}</div>
+                            <div class="leading-relaxed text-right mx-4">{{ $bike->maker->name }}</div>
+                            <div class="leading-relaxed text-right">{{ $bike->type->name }}</div>
+                            <div class="leading-relaxed text-right mx-4">{{ $bike->name }}</div>
                             <div class="leading-relaxed text-right">{{ $bike->engine_size }}</div>
                         </div>
                         @if ($type=='index' || $type=='welcome')

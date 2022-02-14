@@ -15,9 +15,9 @@ class BikeFactory extends Factory
     {
         return [
             'title' => $this->faker->name,
-            'bike_brand' => $this->faker->firstName,
-            'bike_type' => $this->faker->firstNameMale,
-            'bike_name' => $this->faker->firstNameFemale,
+            'maker_id' => $this->faker->numberBetween(1, 18),
+            'type_id' => $this->faker->numberBetween(1, 16),
+            'name' => $this->faker->firstNameFemale,
             'engine_size' => $this->faker->numberBetween(125, 1200),
             'description' => $this->faker->text,
             'user_id' => $this->faker->numberBetween(1, 3),

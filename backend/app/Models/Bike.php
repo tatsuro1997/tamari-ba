@@ -9,6 +9,9 @@ use App\Models\BikeImage;
 use App\Models\BikeComment;
 use App\Models\BikeLike;
 use App\Models\Tag;
+use App\Models\Maker;
+use App\Models\Type;
+
 
 class Bike extends Model
 {
@@ -16,9 +19,9 @@ class Bike extends Model
 
     protected $fillable = [
         'title',
-        'bike_brand',
-        'bike_type',
-        'bike_name',
+        'maker_id',
+        'type_id',
+        'name',
         'engine_size',
         'description',
         'user_id',
@@ -34,10 +37,11 @@ class Bike extends Model
         // 単語をループで回し、タグ名、投稿のタイトル、説明と部分一致するものがあれば、$queryとして保持される
         foreach ($wordArraySearched as $value) {
             $query->whereHas('tags', function ($q) use ($value) {
-                $q->where('name', 'like', '%' . $value . '%');
+                $q->where('name', 'LIKE', '%' . $value . '%');
             })
                 ->orWhere('title', 'LIKE', '%' . $value . '%')
-                ->orWhere('description', 'like', '%' . $value . '%');
+                ->orWhere('name', 'LIKE', '%' . $value . '%')
+                ->orWhere('description', 'LIKE', '%' . $value . '%');
         }
 
         // 上記で取得した$queryを投稿日降順、ページネートにし、roadsに代入
@@ -67,5 +71,15 @@ class Bike extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function maker()
+    {
+        return $this->belongsTo(Maker::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
     }
 }

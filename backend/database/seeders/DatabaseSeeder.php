@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             // OwnerSeeder::class,
             // BikeSeeder::class,
             PrefectureSeeder::class,
+            BikeMakerSeeder::class,
+            BikeTypeSeeder::class,
             UserSeeder::class,
         ]);
         Bike::factory(20)->create();
@@ -36,8 +38,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BikeImageSeeder::class,
             RoadImageSeeder::class,
-            TagSeeder::class,
             BoardImageSeeder::class,
+            TagSeeder::class,
         ]);
     }
 }

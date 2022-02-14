@@ -25,10 +25,10 @@ class BikeRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:50'],
-            'bike_brand' => ['required', 'string', 'max:20'],
-            'bike_type' => ['required', 'string', 'max:20'],
-            'bike_name' => ['required', 'string', 'max:20'],
-            'engine_size' => ['required', 'integer', 'max:1500'],
+            'maker_id' => ['required', 'max:20'],
+            'type_id' => ['required', 'max:20'],
+            'name' => ['required', 'string', 'regex:/\A([a-zA-Z0-9])+\z/u', 'max:20'],
+            'engine_size' => ['required', 'integer', 'max:2000'],
             'description' => ['required', 'string', 'max:1000'],
             'image' => 'image|mimes:jpg, jpeg, png|max:2048',
             'files.*.image' => 'required|image|mimes:jpg, jpeg, png|max:2048',
@@ -39,11 +39,12 @@ class BikeRequest extends FormRequest
     public function messages()
     {
         return [
+            'regex' => '半角英数字で入力してください',
             'image' => '指定されたファイルが画像ではありません。',
-                'image' => [
-                    'mimes' => '指定された拡張子(jpg/jpeg/png)でありません。',
-                    'max' => 'ファイルサイズは2MB以内にしてください。',
-                ],
+            'image' => [
+                'mimes' => '指定された拡張子(jpg/jpeg/png)でありません。',
+                'max' => 'ファイルサイズは2MB以内にしてください。',
+            ],
             'tags.*' => 'タグ'
         ];
     }
