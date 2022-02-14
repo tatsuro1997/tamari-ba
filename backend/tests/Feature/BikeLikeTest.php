@@ -8,6 +8,8 @@ use Tests\TestCase;
 use App\Models\User;
 use App\Models\Bike;
 use Database\Seeders\PrefectureSeeder;
+use Database\Seeders\BikeMakerSeeder;
+use Database\Seeders\BikeTypeSeeder;
 
 class BikeLikeTest extends TestCase
 {
@@ -17,6 +19,8 @@ class BikeLikeTest extends TestCase
     {
         parent::setUp();
         $this->seed(PrefectureSeeder::class);
+        $this->seed(BikeMakerSeeder::class);
+        $this->seed(BikeTypeSeeder::class);
     }
 
     public function test_ログインしていると一覧が見れる()

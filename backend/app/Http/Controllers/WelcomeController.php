@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     public function welcome()
     {
-        $roads = Road::with('tags')->orderBy('created_at', 'desc')->take(3)->get();
+        $roads = Road::with('tags', 'roadImages', 'user')->orderBy('created_at', 'desc')->take(3)->get();
 
         return view('user.welcome', compact('roads'));
     }

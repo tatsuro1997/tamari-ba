@@ -27,9 +27,9 @@ class BikeSearchTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
         ];
@@ -57,9 +57,9 @@ class BikeSearchTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
         ];
@@ -75,7 +75,7 @@ class BikeSearchTest extends TestCase
         $response->assertSee('検索');
         $response->assertSee('新規登録');
         $this->assertEquals('Test bike', $bike_data['title']);
-        $this->assertEquals('HONDA', $bike_data['bike_brand']);
+        $this->assertEquals('HONDA', $bike_data['maker_id']);
     }
 
     public function test_排気量でバイクの検索()
@@ -87,9 +87,9 @@ class BikeSearchTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
         ];
@@ -117,9 +117,9 @@ class BikeSearchTest extends TestCase
 
         $bike_data = [
             'title' => 'Test bike',
-            'bike_brand' => 'HONDA',
-            'bike_type' => 'スポーツ',
-            'bike_name' => 'CBR1000RR',
+            'maker_id' => 'HONDA',
+            'type_id' => 'スポーツ',
+            'name' => 'CBR1000RR',
             'engine_size' => 1000,
             'description' => '説明が入ります',
         ];
@@ -137,5 +137,4 @@ class BikeSearchTest extends TestCase
         $this->assertEquals('Test bike', $bike_data['title']);
         $this->assertEquals('説明が入ります', $bike_data['description']);
     }
-
 }

@@ -83,6 +83,36 @@ class TagSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'name' => 'Harley-Davidson',
+                'slug' => 'harley-davidson',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'APRILIA',
+                'slug' => 'aprilia',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'HUSQVARNA',
+                'slug' => 'husqvarna',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'KTM',
+                'slug' => 'ktm',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'TRIUMPH',
+                'slug' => 'triumph',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ]);
 
         $faker = Faker::create();

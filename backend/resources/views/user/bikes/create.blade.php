@@ -6,7 +6,7 @@
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     <form method="post" action="{{ route('user.bikes.store') }}" enctype="multipart/form-data">
                         @csrf
-                        <x-bike.form :bike="$bike" :tags="$tags" />
+                        <x-bike.form :bike="$bike" :tags="$tags" :makers="$makers" :types="$types" />
                     </form>
                 </div>
             </div>
