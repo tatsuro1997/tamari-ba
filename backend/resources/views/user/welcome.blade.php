@@ -22,7 +22,7 @@
             <div class="p-2 w-full my-20">
                 <button onclick="location.href='{{ route('user.register') }}'" class="flex font-bold mx-auto text-black bg-orange-400 border-0 py-4 px-10 focus:outline-none hover:bg-orange-500 rounded-full text-lg">Tamari-Baをはじめる</button>
             </div>
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-5 py-16 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
                     <div class="mx-auto">
                         <h1 class="text-3xl lg:text-5xl font-medium title-font mb-4 text-gray-900">Tamari-Baとは？</h1>
@@ -55,7 +55,7 @@
             </div>
         </section>
         <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-5 py-16 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
                     <div>
                         <h1 class="sm:text-3xl lg:text-5xl font-medium title-font mb-4 text-gray-900">Tamari-Baの楽しみ方</h1>
@@ -115,7 +115,7 @@
             </div>
         </section>
         <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-5 py-16 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
                     <div>
                         <h1 class="sm:text-3xl lg:text-5xl font-medium title-font mb-4 text-gray-900">最近の投稿</h1>
@@ -124,9 +124,9 @@
                     <div class="container px-5 py-8 mx-auto">
                         <x-road.index :roads="$roads" type="welcome" />
                     </div>
-                    <div class="mt-20">
-                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Tamari-Baに参加する</h1>
-                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">あなたの愛車やおすすめスポットを投稿してTamari-Baを充実させていきましょう!</p>
+                    <div class="mt-20 bg-orange-300 py-10">
+                        <h1 class="sm:text-3xl text-2xl font-bold title-font mb-4 text-gray-900">Tamari-Baに参加する</h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-black">あなたの愛車やおすすめスポットを投稿してTamari-Baを充実させていきましょう!</p>
                     </div>
                 </div>
             </div>
