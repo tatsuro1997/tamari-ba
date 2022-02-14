@@ -21,7 +21,7 @@ class BikeController extends Controller
 {
     public function index(Request $request)
     {
-        $bikes = Bike::with('tags', 'bikeComments')->withCount('bikeLikes')->orderBy('created_at', 'desc')->paginate(12);
+        $bikes = Bike::with('tags', 'maker', 'type', 'bikeLikes', 'bikeImages', 'user')->withCount('bikeLikes')->orderBy('created_at', 'desc')->paginate(12);
 
         $like = new BikeLike;
 
