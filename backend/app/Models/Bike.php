@@ -37,10 +37,11 @@ class Bike extends Model
         // 単語をループで回し、タグ名、投稿のタイトル、説明と部分一致するものがあれば、$queryとして保持される
         foreach ($wordArraySearched as $value) {
             $query->whereHas('tags', function ($q) use ($value) {
-                $q->where('name', 'like', '%' . $value . '%');
+                $q->where('name', 'LIKE', '%' . $value . '%');
             })
                 ->orWhere('title', 'LIKE', '%' . $value . '%')
-                ->orWhere('description', 'like', '%' . $value . '%');
+                ->orWhere('name', 'LIKE', '%' . $value . '%')
+                ->orWhere('description', 'LIKE', '%' . $value . '%');
         }
 
         // 上記で取得した$queryを投稿日降順、ページネートにし、roadsに代入
