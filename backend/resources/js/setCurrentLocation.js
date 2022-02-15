@@ -1,4 +1,4 @@
-const setLocation = (pos) => {
+const setCurrentLocation = (pos) => {
 
     // 緯度・経度を取得
     const lat = pos.coords.latitude;
@@ -40,7 +40,7 @@ if ("geolocation" in navigator) {
         "timeout": 10000,
         "maximumAge": 0,
     };
-    navigator.geolocation.getCurrentPosition(setLocation, showErr, opt);
+    navigator.geolocation.getCurrentPosition(setCurrentLocation, showErr, opt);
 } else {
     alert("ブラウザが位置情報取得に対応していません");
 }
