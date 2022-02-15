@@ -10923,59 +10923,58 @@ return jQuery;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!***********************************!*\
-  !*** ./resources/js/getLatLng.js ***!
-  \***********************************/
+/*!********************************************!*\
+  !*** ./resources/js/setCurrentLocation.js ***!
+  \********************************************/
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-function getLatLng() {
-  // 入力した住所を取得します。
-  var addressInput = document.getElementById('addressInput').value; // Google Maps APIのジオコーダを使います。
+var setCurrentLocation = function setCurrentLocation(pos) {
+  // 緯度・経度を取得
+  var lat = pos.coords.latitude;
+  var lng = pos.coords.longitude; // 定数lat,lng をconsoleに出力
 
-  var geocoder = new google.maps.Geocoder(); // ジオコーダのgeocodeを実行します。
-  // 第１引数のリクエストパラメータにaddressプロパティを設定します。
-  // 第２引数はコールバック関数です。取得結果を処理します。
+  console.log(lat);
+  console.log(lng);
+  document.getElementById("cLocation").addEventListener('click', function () {
+    // welcomeの中からlat_inputのclassを見つけて、そのvalueに、定数latを代入
+    $("#latitude").val(lat); //welcomeの中からlng_inputのclassを見つけて、そのvalueに、定数lngを代入
 
-  geocoder.geocode({
-    address: addressInput
-  }, function (results, status) {
-    console.log(results, status);
-    var latlng = "";
-
-    if (status == google.maps.GeocoderStatus.OK) {
-      // 取得が成功した場合
-      // 結果をループして取得します。
-      for (var i in results) {
-        if (results[i].geometry) {
-          // 緯度を取得します。
-          var lat = results[i].geometry.location.lat(); // 経度を取得します。
-
-          var lng = results[i].geometry.location.lng(); // val()メソッドを使ってvalue値を設定できる
-          // idがlat(またはlng)のvalue値に、変数lat(またはlng)を設定する
-
-          $('#latitude').val(lat);
-          $('#longitude').val(lng); // そもそも、ループを回して、検索結果にあっているものをiに入れていっているため
-          // 精度の低いものもでてきてしまう。その必要はないから、一回でbreak
-
-          break;
-        }
-      }
-    } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
-      alert("住所が見つかりませんでした。");
-    } else if (status == google.maps.GeocoderStatus.ERROR) {
-      alert("サーバ接続に失敗しました。");
-    } else if (status == google.maps.GeocoderStatus.INVALID_REQUEST) {
-      alert("リクエストが無効でした。");
-    } else if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
-      alert("リクエストの制限回数を超えました。");
-    } else if (status == google.maps.GeocoderStatus.REQUEST_DENIED) {
-      alert("サービスが使えない状態でした。");
-    } else if (status == google.maps.GeocoderStatus.UNKNOWN_ERROR) {
-      alert("原因不明のエラーが発生しました。");
-    }
+    $("#longitude").val(lng);
   });
+}; // エラー時に呼び出される関数
+
+
+var showErr = function showErr(err) {
+  switch (err.code) {
+    case 1:
+      alert("位置情報の利用が許可されていません");
+      break;
+
+    case 2:
+      alert("デバイスの位置が判定できません");
+      break;
+
+    case 3:
+      alert("タイムアウトしました");
+      break;
+
+    default:
+      alert(err.message);
+  }
+}; // geolocation に対応しているか否かを確認
+
+
+if ("geolocation" in navigator) {
+  var opt = {
+    "enableHighAccuracy": true,
+    "timeout": 10000,
+    "maximumAge": 0
+  };
+  navigator.geolocation.getCurrentPosition(setCurrentLocation, showErr, opt);
+} else {
+  alert("ブラウザが位置情報取得に対応していません");
 }
 
-$('#searchGeo').on('click', getLatLng);
+$('#cLocation').prop('disabled', false);
 })();
 
 /******/ })()
