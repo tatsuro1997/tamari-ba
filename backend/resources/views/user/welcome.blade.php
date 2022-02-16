@@ -137,4 +137,3 @@
     </div>
 <script src="{{ mix('js/auto-swiper.js') }}"></script>
 </x-app-layout>
-
