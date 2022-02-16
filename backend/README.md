@@ -53,7 +53,7 @@ docker-compose up -d --build
 db:
   docker-compose exec db /bin/bash
 
-### テスト
+## テスト環境
 テストDBように.envをコピーし、.env.testingを作成してください
 
 テストDBでコマンドを実行する場合は、--env=testingのオプションを選択してください。
@@ -76,6 +76,11 @@ mysql:
 
 ファイルを指定してテストを実行する
   vendor/bin/phpunit tests/Feature/UserTest.php
+
+## 本番環境（Heroku）
+
+### DB確認
+mysql -u DB_USERNAME -h DB_HOSTNAME -pDB_PASSWORD
 
 
 ## ブランチ
