@@ -66,6 +66,6 @@
     const lng = {{ $road->longitude }};
 </script>
 <script src="{{ mix('js/swiper.js') }}"></script>
-<script src="{{ asset('/js/currentLocation.js') }}"></script>
+<script src="{{ asset('/js/originalLocation.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key={{env('GOOGLE_MAP_API_KEY')}}&callback=initMap" async defer></script>
 </x-app-layout>
