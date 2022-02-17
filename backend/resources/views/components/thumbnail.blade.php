@@ -2,16 +2,16 @@
 use Carbon\Carbon;
 
 if($type === 'bikes'){
-    $path = 'storage/bikes/';
+    $path = '/bikes/';
 }
 if($type === 'roads'){
-    $path = 'storage/roads/';
+    $path = '/roads/';
 }
 if ($type === 'boards'){
-    $path = 'storage/boards/';
+    $path = '/boards/';
 }
 if($type === 'users'){
-    $path = 'storage/users/';
+    $path = '/users/';
 }
 $nowDate = new Carbon(Carbon::now());;
 @endphp
@@ -26,7 +26,7 @@ $nowDate = new Carbon(Carbon::now());;
         @if(empty($filename))
             <img src="{{ asset('images/no_image.jpg') }}">
         @else
-            <img src="{{ asset($path . $filename) }}">
+            <img src="{{ Storage::disk('s3')->url($path . $filename) }}">
         @endif
     </div>
 </div>

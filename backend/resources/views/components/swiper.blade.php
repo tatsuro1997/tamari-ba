@@ -1,12 +1,12 @@
 @php
     if($type==='bike'){
-        $path = 'storage/bikes/';
+        $path = '/bikes/';
     }
     if($type==='road'){
-        $path = 'storage/roads/';
+        $path = '/roads/';
     }
     if($type==='board'){
-        $path = 'storage/boards/';
+        $path = '/boards/';
     }
 @endphp
 
@@ -17,7 +17,7 @@
         <div class="swiper-wrapper">
             @foreach ($images as $image)
                 <div class="swiper-slide">
-                    <img src="{{ asset($path . $image->filename) }}">
+                    <img src="{{ Storage::disk('s3')->url($path . $image->filename) }}">
                 </div>
             @endforeach
         </div>

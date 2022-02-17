@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Storage;
-use InterventionImage;
+use Intervention\Image\Facades\Image;
 
 class ImageService
 {
@@ -17,8 +17,9 @@ class ImageService
     $fileName = uniqid(rand() . '_');
     $extension = $file->extension();
     $fileNameToStore = $fileName . '.' . $extension;
-    $resizedImage = InterventionImage::make($file)->resize(1920, 1080)->encode();
-    Storage::put('public/' . $folderName . '/' . $fileNameToStore, $resizedImage);
+    $resizedImage = Image::make($file)->resize(1920, 1080)->encode();
+
+    Storage::disk('s3')->put('/' . $folderName . '/' . $fileNameToStore, (string)$resizedImage, 'public');
 
     return $fileNameToStore;
   }
