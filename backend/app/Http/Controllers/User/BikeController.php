@@ -126,7 +126,7 @@ class BikeController extends Controller
 
         if ($imageFiles) {
             foreach ($bike->bikeImages as $image) {
-                Storage::delete('public/bikes/' . $image->filename); //Storageから以前の画像を削除
+                Storage::disk('s3')->delete('/bikes/' . $image->filename); //画像も更新する場合S3から画像を削除
             }
             BikeImage::where('bike_id', $bike->id)->delete(); //DBから以前の画像を削除
             foreach ($imageFiles as $imageFile) {
@@ -147,6 +147,12 @@ class BikeController extends Controller
     public function destroy(Bike $bike)
     {
         $this->authorize('delete', $bike);
+
+        foreach ($bike->bikeImages as $image) {
+            if ($image) {
+                Storage::disk('s3')->delete('/bikes/' . $image->filename);
+            }
+        }
 
         Bike::findOrFail($bike->id)->delete();
         $bike->tags()->detach();

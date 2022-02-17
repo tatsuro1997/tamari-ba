@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Prefecture;
 
 class RegisteredUserController extends Controller
@@ -44,12 +45,12 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $avatar = $request->file('avatar')->hashName();
-        $request->file('avatar')->storeAs('public/images', $avatar);
+        $avatarName = $request->file('avatar')->hashName();
+        Storage::disk('s3')->put('/users/', $request->file('avatar'), 'public');
 
         $user = User::create([
             'name' => $request->name,
-            'avatar' => $avatar,
+            'avatar' => $avatarName,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'age' => $request->age,

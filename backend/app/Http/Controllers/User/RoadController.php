@@ -123,7 +123,7 @@ class RoadController extends Controller
 
         if ($imageFiles) {
             foreach ($road->roadImages as $image ) {
-                Storage::delete('public/roads/' . $image->filename); //Storageから以前の画像を削除
+                Storage::disk('s3')->delete('/roads/' . $image->filename); //画像も更新する場合S3から画像を削除
             }
             RoadImage::where('road_id', $road->id)->delete(); //DBから以前の画像を削除
             foreach ($imageFiles as $imageFile) {
@@ -144,6 +144,12 @@ class RoadController extends Controller
     public function destroy(Road $road)
     {
         $this->authorize('delete', $road);
+
+        foreach ($road->roadImages as $image) {
+            if ($image) {
+                Storage::disk('s3')->delete('/roads/' . $image->filename);
+            }
+        }
 
         Road::findOrFail($road->id)->delete();
         $road->tags()->detach();
