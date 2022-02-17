@@ -46,7 +46,6 @@ class RegisteredUserController extends Controller
         ]);
 
         $avatarName = $request->file('avatar')->hashName();
-        // $request->file('avatar')->storeAs('public/images', $avatar);
         Storage::disk('s3')->put('/users/', $request->file('avatar'), 'public');
 
         $user = User::create([
