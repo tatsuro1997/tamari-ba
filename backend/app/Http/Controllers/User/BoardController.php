@@ -113,7 +113,7 @@ class BoardController extends Controller
 
         if ($imageFiles) {
             foreach ($board->boardImages as $image) {
-                Storage::delete('public/boards/' . $image->filename); //Storageから以前の画像を削除
+                Storage::disk('s3')->delete('/boards/' . $image->filename); //画像も更新する場合S3から画像を削除
             }
             BoardImage::where('board_id', $board->id)->delete(); //DBから以前の画像を削除
             foreach ($imageFiles as $imageFile) {
@@ -134,6 +134,12 @@ class BoardController extends Controller
     public function destroy(Board $board)
     {
         $this->authorize('delete', $board);
+
+        foreach ($board->boardImages as $image) {
+            if ($image) {
+                Storage::disk('s3')->delete('/boards/' . $image->filename);
+            }
+        }
 
         Board::findOrFail($board->id)->delete();
 
