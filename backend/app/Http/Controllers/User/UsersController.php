@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Services\ImageService;
 
-
 class UsersController extends Controller
 {
     public function profile(){
@@ -46,13 +45,14 @@ class UsersController extends Controller
 
         if ($request->file('avatar')) {
             $avatar = $request->file('avatar')->hashName();
-            $request->file('avatar')->storeAs('public/images', $avatar);
+            Storage::disk('s3')->delete('/users/' . $user->avatar); //画像も更新する場合S3から画像を削除
+            Storage::disk('s3')->put('/users/', $request->file('avatar'), 'public');
             $user->avatar = $avatar;
         }
 
         $imageFile = $request->file('image');
         if ($imageFile) {
-            Storage::delete('public/users/' . $user->background_image); //Storageから以前の画像を削除
+            Storage::disk('s3')->delete('/users/' . $user->background_image); //画像も更新する場合S3から画像を削除
             $fileNameToStore = ImageService::upload($imageFile, 'users');
             $user->background_image = $fileNameToStore;
         }
