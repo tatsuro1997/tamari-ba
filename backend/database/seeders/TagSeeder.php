@@ -42,6 +42,12 @@ class TagSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
+                'name' => 'こだわり',
+                'slug' => 'commitment',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
                 'name' => '有料道路',
                 'slug' => 'tollway',
                 'created_at' => now(),
@@ -115,16 +121,16 @@ class TagSeeder extends Seeder
             ],
         ]);
 
-        $faker = Faker::create();
-        for ($i = 1; $i <= 20; $i++) {
-            DB::table('bike_tag')->insert([
-                'bike_id' => $i,
-                'tag_id' => $faker->numberBetween(1, 11)
-            ]);
-            DB::table('road_tag')->insert([
-                'road_id' => $i,
-                'tag_id' => $faker->numberBetween(1, 11)
-            ]);
-        }
+        // $faker = Faker::create();
+        // for ($i = 1; $i <= 20; $i++) {
+        //     DB::table('bike_tag')->insert([
+        //         'bike_id' => $i,
+        //         'tag_id' => $faker->numberBetween(1, 11)
+        //     ]);
+        //     DB::table('road_tag')->insert([
+        //         'road_id' => $i,
+        //         'tag_id' => $faker->numberBetween(1, 11)
+        //     ]);
+        // }
     }
 }
