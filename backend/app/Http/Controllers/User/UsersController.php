@@ -10,14 +10,13 @@ use App\Models\Road;
 use App\Models\Board;
 use App\Models\RoadLike;
 use App\Models\Prefecture;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Services\ImageService;
 
 class UsersController extends Controller
 {
-    public function profile(){
-        $user = User::with('bikeComments','roadComments', 'boardComments', 'bikeLikes', 'roadLikes')->findOrFail(Auth::id());
+    public function profile($id){
+        $user = User::with('bikeComments','roadComments', 'boardComments', 'bikeLikes', 'roadLikes')->findOrFail($id);
         $bikes = Bike::where('user_id', $user->id)
                         ->orderBy('created_at', 'desc')
                         ->paginate(10);
