@@ -48,7 +48,7 @@ Route::resource('board.comment', BoardCommentsController::class)
 
 Route::prefix('users')
     ->middleware('auth:users')->group(function () {
-        Route::get('profile', [UsersController::class, 'Profile'])->name('profile');
+        Route::get('profile/{user}', [UsersController::class, 'Profile'])->name('profile');
         Route::get('{user}/edit', [UsersController::class, 'Edit'])->name('edit');
         Route::put('update/{user}', [UsersController::class, 'Update'])->name('update');
     });
