@@ -29,9 +29,11 @@
                         @if ($type=='index' || $type=='welcome')
                             <p class="leading-relaxed text-left mb-3 h-24">{{ Str::limit($road->description, 100, ' ...') }}</p>
                         @endif
-                        <div class="flex justify-between">
+                        <div class="flex justify-end">
                             <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
-                            <div class="leading-relaxed text-right">{{ $road->user->name }}</div>
+                            @if ($type=='index' || $type=='welcome')
+                                <div class="leading-relaxed text-right">{{ $road->user->name }}</div>
+                            @endif
                         </div>
                     </div>
                 </div>
