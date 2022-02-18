@@ -21,79 +21,11 @@ class RoadImageSeeder extends Seeder
             ],
             [
                 'road_id' => 2,
-                'filename' => 'sample3.jpg'
-            ],
-            [
-                'road_id' => 3,
-                'filename' => 'sample4.jpg'
-            ],
-            [
-                'road_id' => 4,
-                'filename' => 'sample4.jpg'
-            ],
-            [
-                'road_id' => 5,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 6,
                 'filename' => 'sample2.jpg'
             ],
             [
-                'road_id' => 7,
+                'road_id' => 3,
                 'filename' => 'sample3.jpg'
-            ],
-            [
-                'road_id' => 8,
-                'filename' => 'sample4.jpg'
-            ],
-            [
-                'road_id' => 9,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 10,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 11,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 12,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 13,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 14,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 15,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 16,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 17,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 18,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 19,
-                'filename' => 'sample1.jpg'
-            ],
-            [
-                'road_id' => 20,
-                'filename' => 'sample1.jpg'
             ],
         ]);
     }

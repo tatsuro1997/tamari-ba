@@ -17,22 +17,34 @@ class BikeSeeder extends Seeder
     {
         DB::table('bikes')->insert([
             [
-                'maker_id' => 'HONDA',
-                'type_id' => 'スポーツ',
+                'title' => 'CBR650R納車しました!',
+                'maker_id' => 1,
+                'type_id' => 2,
                 'name' => 'CBR',
                 'engine_size' => 650,
+                'description' => '横浜で納車して4時間かけて帰ってくるのが大変だった〜',
+                'user_id' => 1,
+                'created_at' => now(),
             ],
             [
-                'maker_id' => 'KAWASAKI',
-                'type_id' => 'スポーツ',
-                'name' => 'Ninja',
+                'title' => '初ツーリング',
+                'maker_id' => 1,
+                'type_id' => 2,
+                'name' => 'CBR',
                 'engine_size' => 650,
+                'description' => '納車日にそのまま芦ノ湖へツーリング',
+                'user_id' => 1,
+                'created_at' => now(),
             ],
             [
-                'maker_id' => 'HONDA',
-                'type_id' => 'ネイキッド',
-                'name' => 'CB',
+                'title' => 'ガソスタ映え？',
+                'maker_id' => 1,
+                'type_id' => 2,
+                'name' => 'CBR',
                 'engine_size' => 650,
+                'description' => '納車して地元に4時間かけて帰還。ナビに使っていたiPhoneのカメラがバグりだして、萎えました。',
+                'user_id' => 1,
+                'created_at' => now(),
             ],
         ]);
     }
