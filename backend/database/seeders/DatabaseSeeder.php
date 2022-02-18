@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
         $this->call([
             // AdminSeeder::class,
             // OwnerSeeder::class,
@@ -26,20 +25,19 @@ class DatabaseSeeder extends Seeder
             PrefectureSeeder::class,
             BikeMakerSeeder::class,
             BikeTypeSeeder::class,
-            UserSeeder::class,
-        ]);
-        Bike::factory(20)->create();
-        Road::factory(20)->create();
-        Board::factory(20)->create();
-        BikeComment::factory(30)->create();
-        RoadComment::factory(30)->create();
-
-
-        $this->call([
-            BikeImageSeeder::class,
-            RoadImageSeeder::class,
-            BoardImageSeeder::class,
+            // UserSeeder::class,
+            // BikeSeeder::class,
+            // RoadSeeder::class,
+            // BikeImageSeeder::class,
+            // RoadImageSeeder::class,
+            // BoardImageSeeder::class,
             TagSeeder::class,
         ]);
+
+        // Bike::factory(20)->create();
+        // Road::factory(20)->create();
+        // Board::factory(20)->create();
+        // BikeComment::factory(30)->create();
+        // RoadComment::factory(30)->create();
     }
 }
