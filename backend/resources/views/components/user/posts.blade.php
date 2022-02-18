@@ -26,10 +26,10 @@
       <div class="px-4 py-5 flex-auto">
         <div class="tab-content tab-space">
           <div class="block" id="tab-comment">
-            @if (empty($user->roadComments->first()))
-              <p>まだ投稿はありません</p>
-            @else
+            @if ($user->bikeComments->first() || $user->roadComments->first() || $user->boardComments->first())
               <x-comment.index :user="$user" :roads="$roads" />
+            @else
+              <p>まだ投稿はありません</p>
             @endif
           </div>
           <div class="hidden" id="tab-bike">
