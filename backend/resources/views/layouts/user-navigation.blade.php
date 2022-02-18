@@ -31,7 +31,7 @@
             <div class="flex">
                 <!-- Avatar -->
                 <div class="hidden lg:block">
-                    <x-avatar type="nav" />
+                    <x-avatar type="nav" avatar="{{Auth::user()->avatar}}"/>
                 </div>
 
                 <!-- Settings Dropdown -->
