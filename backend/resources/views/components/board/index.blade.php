@@ -28,9 +28,11 @@
                         @if ($type=='index')
                             <p class="leading-relaxed h-24 relative">{{ Str::limit($board->description, 100, '...') }}</p>
                         @endif
-                        <div class="flex justify-between">
-                            <p class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</p>
-                            <p class="leading-relaxed text-right">{{ $board->user->name }}</p>
+                        <div class="flex justify-end">
+                            <div class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</div>
+                            @if ($type=='index' || $type=='welcome')
+                                <div class="leading-relaxed text-right">{{ $board->user->name }}</div>
+                            @endif
                         </div>
                     </div>
                 </div>

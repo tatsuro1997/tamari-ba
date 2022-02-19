@@ -36,9 +36,11 @@
                         @if ($type=='index' || $type=='welcome')
                             <p class="leading-relaxed text-left mb-3 h-24">{{ Str::limit($bike->description, 100, ' ...') }}</p>
                         @endif
-                        <div class="flex justify-between">
+                        <div class="flex justify-end">
                             <div class="leading-relaxed text-right">{{ $bike->created_at->format('Y-m-d') }}</div>
-                            <div class="leading-relaxed text-right">{{ $bike->user->name }}</div>
+                            @if ($type=='index' || $type=='welcome')
+                                <div class="leading-relaxed text-right">{{ $bike->user->name }}</div>
+                            @endif
                         </div>
                     </div>
                 </div>
