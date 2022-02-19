@@ -48,7 +48,7 @@ class RoadTest extends TestCase
             'title' => 'Test Road',
             'latitude' => '34.123456',
             'longitude' => '134.123456',
-            'prefectire_id' => 1,
+            'prefecture_id' => 1,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
         ];
@@ -91,7 +91,7 @@ class RoadTest extends TestCase
             'title' => 'Test Road',
             'latitude' => '34.123456',
             'longitude' => '134.123456',
-            'prefectire_id' => 1,
+            'prefecture_id' => 1,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
         ];
@@ -103,7 +103,7 @@ class RoadTest extends TestCase
             'title' => 'Update Road',
             'latitude' => '34.654321',
             'longitude' => '134.654321',
-            'prefectire_id' => 2,
+            'prefecture_id' => 2,
             'description' => '更新されました。',
             'images' => $read_temp_path,
         ];
@@ -135,7 +135,7 @@ class RoadTest extends TestCase
             'title' => 'Test Road',
             'latitude' => '34.123456',
             'longitude' => '134.123456',
-            'prefectire_id' => 1,
+            'prefecture_id' => 1,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
         ];
