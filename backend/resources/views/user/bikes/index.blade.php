@@ -11,7 +11,7 @@
                                     <button onclick="location.href='{{ route('user.bikes.create') }}'" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録</button>
                                 </div>
                                 <div class="flex justify-end">
-                                    <x-search-form :search="isset($search)" type="bike" />
+                                    <x-search-form :search="$search" type="bike" />
                                 </div>
                             </div>
                             <x-bike.index :bikes="$bikes" :like="$like" type="index" />
