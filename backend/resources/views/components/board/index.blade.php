@@ -31,7 +31,7 @@
                         <div class="flex justify-end">
                             <div class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</div>
                             @if ($type=='index' || $type=='welcome')
-                                <div class="leading-relaxed text-right">{{ $board->user->name }}</div>
+                                <div class="leading-relaxed text-right ml-2">{{ $board->user->name }}</div>
                             @endif
                         </div>
                     </div>
