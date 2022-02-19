@@ -35,15 +35,15 @@ class Road extends Model
         // 単語をループで回し、タグ名、投稿のタイトル、説明と部分一致するものがあれば、$queryとして保持される
         foreach ($wordArraySearched as $value) {
             $query->whereHas('tags', function ($q) use ($value) {
-                $q->where('name', 'like', '%' . $value . '%')
-                ->orWhereIn('prefecture_id', function ($q) use ($value) {
-                    $q->select('id')
-                        ->from('prefectures')
-                        ->where('name', 'LIKE', '%' . $value . '%');
-                });
+                $q->where('name', 'like', '%' . $value . '%');
             })
-                ->orWhere('title', 'LIKE', '%' . $value . '%')
-                ->orWhere('description', 'like', '%' . $value . '%');
+            ->orWhere('title', 'LIKE', '%' . $value . '%')
+            ->orWhere('description', 'like', '%' . $value . '%')
+            ->orWhereIn('prefecture_id', function ($q) use ($value) {
+                $q->select('id')
+                    ->from('prefectures')
+                    ->where('name', 'LIKE', '%' . $value . '%');
+            });
         }
 
         // 上記で取得した$queryを投稿日降順、ページネートにし、roadsに代入
