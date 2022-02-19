@@ -21,7 +21,7 @@
 
             <!-- Avatar -->
             <div class="mt-4">
-                <x-label for="avatar" :value="__('プロフィール画像 ※必須')" />
+                <x-label for="avatar" :value="__('プロフィール画像 ※必須, 2MB以下')" />
 
                 <x-input id="avatar" type="file" name="avatar" autofocus class="block mt-1 w-full" />
             </div>
