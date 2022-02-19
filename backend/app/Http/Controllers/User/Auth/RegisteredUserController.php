@@ -39,7 +39,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'avatar' => ['required', 'image'],
+            'avatar' => ['required', 'image|mimes:jpg, jpeg, png|max:2048'],
             'uid' => ['required', 'unique:users', 'regex:/\A([a-zA-Z0-9])+\z/u', 'max:20' ],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'avatar'=>['required', 'image'],
