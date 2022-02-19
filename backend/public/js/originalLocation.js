@@ -1,4 +1,6 @@
+// このファイルを編集すると変更が反映される
 let marker;
+let path;
 
 function initMap() {
     // google map へ表示するための設定
@@ -17,9 +19,13 @@ function initMap() {
         title: '現在地',
     });
 
-    mapObj.addListener('click', function (e) {
-        getClickLatLng(e.latLng, mapObj);
-    });
+    // 道の作成ページのみでクリックでピンしてい可能
+    path = location.pathname
+    if (path == "/roads/create") {
+        mapObj.addListener('click', function (e) {
+            getClickLatLng(e.latLng, mapObj);
+        });
+    }
 }
 
 // 住所、座標を取得してマーカー設置
