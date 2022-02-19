@@ -33,7 +33,7 @@
     </form>
     @foreach ($Comments as $comment)
         <div class="flex mt-4">
-            <x-avatar avatar="{{ $comment->user->avatar ?? '' }}" uid="{{ $comment->user->id ?? '' }}" type="nav" />
+            <x-avatar avatar="{{ $comment->user->avatar ?? '' }}" uid="{{ $comment->user->uid ?? '' }}" type="nav" />
             <div class="ml-4 w-3/4">
                 <div class="lg:flex">
                     <div class="font-medium mr-4">{{$comment->user->name}}</div>
