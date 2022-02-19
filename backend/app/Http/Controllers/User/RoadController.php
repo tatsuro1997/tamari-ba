@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Road;
 use App\Models\RoadLike;
-use App\Models\User;
+use App\Models\Prefecture;
 use Illuminate\Support\Facades\DB;
 use Throwable;
 use Illuminate\Support\Facades\Log;
@@ -42,6 +42,7 @@ class RoadController extends Controller
     public function create(Request $request)
     {
         $road = new Road;
+        $prefectures = Prefecture::all();
 
         # Mapでデフォルトを東京タワーに指定
         $lat = '35.6585769';
@@ -49,7 +50,7 @@ class RoadController extends Controller
 
         $tags = Tag::pluck('name', 'id')->toArray();
 
-        return view('user.roads.create', compact('road', 'lat', 'lng', 'tags'));
+        return view('user.roads.create', compact('road', 'lat', 'lng', 'tags', 'prefectures'));
     }
 
 
@@ -60,6 +61,7 @@ class RoadController extends Controller
                 'title' => $request->title,
                 'latitude' => $request->latitude,
                 'longitude' => $request->longitude,
+                'prefecture_id' => $request->prefecture_id,
                 'description' => $request->description,
                 'user_id' => Auth::id(),
             ]);
@@ -101,8 +103,9 @@ class RoadController extends Controller
 
         $road = Road::findOrFail($road->id);
         $tags = Tag::pluck('name', 'id')->toArray();
+        $prefectures = Prefecture::all();
 
-        return view('user.roads.edit', compact('road', 'tags'));
+        return view('user.roads.edit', compact('road', 'tags', 'prefectures'));
     }
 
 
@@ -114,6 +117,7 @@ class RoadController extends Controller
         $road->title = $request->title;
         $road->latitude = $request->latitude;
         $road->longitude = $request->longitude;
+        $road->prefecture_id = $request->prefecture_id;
         $road->description = $request->description;
         $road->save();
 

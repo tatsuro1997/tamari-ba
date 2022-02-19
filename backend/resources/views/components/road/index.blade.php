@@ -32,7 +32,7 @@
                         <div class="flex justify-end">
                             <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
                             @if ($type=='index' || $type=='welcome')
-                                <div class="leading-relaxed text-right">{{ $road->user->name }}</div>
+                                <div class="leading-relaxed text-right ml-2">{{ $road->user->name }}</div>
                             @endif
                         </div>
                     </div>

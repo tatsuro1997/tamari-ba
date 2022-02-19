@@ -39,10 +39,21 @@ class Bike extends Model
             $query->whereHas('tags', function ($q) use ($value) {
                 $q->where('name', 'LIKE', '%' . $value . '%');
             })
-                ->orWhere('title', 'LIKE', '%' . $value . '%')
-                ->orWhere('name', 'LIKE', '%' . $value . '%')
-                ->orWhere('description', 'LIKE', '%' . $value . '%');
-        }
+            ->orWhere('title', 'LIKE', '%' . $value . '%')
+            ->orWhere('name', 'LIKE', '%' . $value . '%')
+            ->orWhere('engine_size', 'LIKE', '%' . $value . '%')
+            ->orWhere('description', 'LIKE', '%' . $value . '%')
+            ->orWhereIn('maker_id', function($q) use ($value){
+                $q->select('id')
+                    ->from('makers')
+                    ->where('name', 'LIKE' ,'%' . $value . '%');
+                })
+            ->orWhereIn('type_id', function ($q) use ($value) {
+                $q->select('id')
+                    ->from('types')
+                    ->where('name', 'LIKE', '%' . $value . '%');
+            });
+        };
 
         // 上記で取得した$queryを投稿日降順、ページネートにし、roadsに代入
         return $query->orderBy('created_at', 'desc')->paginate(12);

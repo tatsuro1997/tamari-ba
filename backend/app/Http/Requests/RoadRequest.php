@@ -27,6 +27,7 @@ class RoadRequest extends FormRequest
             'title' => ['required', 'string', 'max:50'],
             'latitude' => ['required', 'numeric' ,'regex:/^[-]?((([0-8]?[0-9])(\.[0-9]{1,15}))|90(\.0{1,15})?)$/'], // 緯度 ex)89.999999
             'longitude' => ['required', 'numeric', 'regex:/^[-]?(((([1][0-7][0-9])|([0-9]?[0-9]))(\.[0-9]{1,15}))|180(\.0{1,15})?)$/'], // 経度 ex)179.999999
+            'prefecture_id' => ['required'],
             'description' => ['required', 'string', 'max:1000'],
             'image' => 'image|mimes:jpg, jpeg, png|max:2048',
             'files.*.image' => 'required|image|mimes:jpg, jpeg, png|max:2048',
