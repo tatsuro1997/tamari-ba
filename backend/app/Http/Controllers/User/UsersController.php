@@ -15,8 +15,8 @@ use App\Services\ImageService;
 
 class UsersController extends Controller
 {
-    public function profile($id){
-        $user = User::with('bikeComments','roadComments', 'boardComments', 'bikeLikes', 'roadLikes')->findOrFail($id);
+    public function profile($uid){
+        $user = User::with('bikeComments','roadComments', 'boardComments', 'bikeLikes', 'roadLikes')->where('uid', $uid)->firstOrFail();
         $bikes = Bike::where('user_id', $user->id)
                         ->orderBy('created_at', 'desc')
                         ->paginate(10);
@@ -31,16 +31,16 @@ class UsersController extends Controller
         return view('user.users.profile', compact('user', 'bikes', 'roads', 'boards', 'like'));
     }
 
-    public function edit($id){
-        $user = User::findOrFail($id);
+    public function edit($uid){
+        $user = User::where('uid', $uid)->firstOrFail();
         $prefectures = Prefecture::all();
 
         return view('user.users.edit', compact('user', 'prefectures'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $uid)
     {
-        $user = User::findOrFail($id);
+        $user = User::where('uid', $uid)->firstOrFail();
 
         if ($request->file('avatar')) {
             $avatar = $request->file('avatar')->hashName();
@@ -64,7 +64,7 @@ class UsersController extends Controller
         $user->save();
 
         return redirect()
-            ->route('user.profile')
+            ->route('user.profile', ['user' => $user->uid])
             ->with(['message' => 'プロフィールを更新しました。', 'status' => 'info']);
     }
 

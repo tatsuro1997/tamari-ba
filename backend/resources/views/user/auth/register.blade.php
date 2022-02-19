@@ -28,6 +28,13 @@
 
             <!-- Email Address -->
             <div class="mt-4">
+                <x-label for="uid" :value="__('ユーザーID ※必須, 半角英数字, 変更不可')" />
+
+                <x-input id="uid" class="block mt-1 w-full" type="text" name="uid" :value="old('uid')" required />
+            </div>
+
+            <!-- Email Address -->
+            <div class="mt-4">
                 <x-label for="email" :value="__('メールアドレス ※必須')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
@@ -55,9 +62,7 @@
             <!-- Age -->
             <div class="mt-4">
                 <x-label for="age" :value="__('年齢 ※必須')" />
-                <x-input id="age" class="block mt-1 w-full"
-                                type="number"
-                                name="age" required />
+                <x-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')" required />
             </div>
 
             <!-- Gender -->
@@ -86,9 +91,7 @@
             <!-- Experience -->
             <div class="mt-4">
                 <x-label for="years_of_experience" :value="__('バイク歴(年) ※必須')" />
-                <x-input id="years_of_experience" class="block mt-1 w-full"
-                                type="number"
-                                name="years_of_experience" required />
+                <x-input id="years_of_experience" class="block mt-1 w-full" type="number" name="years_of_experience" :value="old('years_of_experience')" required />
             </div>
 
             <!-- Through -->
