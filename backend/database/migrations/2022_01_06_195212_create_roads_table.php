@@ -18,6 +18,8 @@ class CreateRoadsTable extends Migration
             $table->string('title');
             $table->double('latitude', 9, 7);
             $table->double('longitude',10, 7);
+            $table->foreignId('prefecture_id')
+            ->constrained();
             $table->text('description');
             $table->foreignId('user_id')
                 ->constrained()

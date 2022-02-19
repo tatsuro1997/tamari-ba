@@ -7,7 +7,7 @@
                     <form method="post" action="{{ route('user.roads.update', ['road' => $road->id]) }}" enctype="multipart/form-data" >
                         @csrf
                         @method('put')
-                        <x-road.form :road="$road" :tags="$tags" />
+                        <x-road.form :road="$road" :tags="$tags" :prefectures="$prefectures" />
                     </form>
                 </div>
             </div>

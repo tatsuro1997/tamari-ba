@@ -48,6 +48,7 @@ class RoadTest extends TestCase
             'title' => 'Test Road',
             'latitude' => '34.123456',
             'longitude' => '134.123456',
+            'prefectire_id' => 1,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
         ];
@@ -90,6 +91,7 @@ class RoadTest extends TestCase
             'title' => 'Test Road',
             'latitude' => '34.123456',
             'longitude' => '134.123456',
+            'prefectire_id' => 1,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
         ];
@@ -101,6 +103,7 @@ class RoadTest extends TestCase
             'title' => 'Update Road',
             'latitude' => '34.654321',
             'longitude' => '134.654321',
+            'prefectire_id' => 2,
             'description' => '更新されました。',
             'images' => $read_temp_path,
         ];
@@ -132,6 +135,7 @@ class RoadTest extends TestCase
             'title' => 'Test Road',
             'latitude' => '34.123456',
             'longitude' => '134.123456',
+            'prefectire_id' => 1,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
         ];
@@ -177,6 +181,7 @@ class RoadTest extends TestCase
             'title' => '',
             'latitude' => '34.123456',
             'longitude' => '134.123456',
+            'prefectire_id' => 1,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
         ];
@@ -204,6 +209,7 @@ class RoadTest extends TestCase
             'title' => 'テスト',
             'latitude' => '',
             'longitude' => '134.123456',
+            'prefectire_id' => 1,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
         ];
@@ -231,6 +237,7 @@ class RoadTest extends TestCase
             'title' => 'テスト',
             'latitude' => '34.123456',
             'longitude' => '',
+            'prefectire_id' => 1,
             'description' => '説明が入ります',
             'images' => $read_temp_path,
         ];
@@ -239,6 +246,34 @@ class RoadTest extends TestCase
         $response = $this->post($first_path, $road_data);
 
         $response->assertSessionHasErrorsIn("longitudeは必須です。");
+        $response->assertStatus(302);
+        $response->assertRedirect(route('user.roads.index'));
+    }
+
+    public function test_都道府県がないと新規投稿できない()
+    {
+        $user = User::factory()->create();
+        $response = $this->actingAs($user)
+            ->withSession(['banned' => false])
+            ->get("roads");
+
+        $file = UploadedFile::fake()->image('avatar.jpg');
+        $path = $file->store('public');
+        $read_temp_path = str_replace('public/', '/storage/', $path);
+
+        $road_data = [
+            'title' => 'テスト',
+            'latitude' => '34.123456',
+            'longitude' => '134.123456',
+            'prefectire_id' => '',
+            'description' => '説明が入ります',
+            'images' => $read_temp_path,
+        ];
+        $first_path = route('user.roads.store');
+
+        $response = $this->post($first_path, $road_data);
+
+        $response->assertSessionHasErrorsIn("prefecture_idは必須です。");
         $response->assertStatus(302);
         $response->assertRedirect(route('user.roads.index'));
     }
@@ -258,6 +293,7 @@ class RoadTest extends TestCase
             'title' => 'テスト',
             'latitude' => '34.123456',
             'longitude' => '134.123456',
+            'prefectire_id' => 1,
             'description' => '',
             'images' => $read_temp_path,
         ];
