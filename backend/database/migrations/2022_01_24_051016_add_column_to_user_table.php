@@ -15,6 +15,7 @@ class AddColumnToUserTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('avatar')->default('default_user.jpg')->after('name');
+            $table->string('uid')->unique();
         });
     }
 

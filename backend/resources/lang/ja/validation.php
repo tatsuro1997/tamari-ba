@@ -121,6 +121,7 @@ return [
         'email' => 'メールアドレス',
         'password' => 'パスワード',
         'avatar' => 'プロフィール画像',
+        'uid' => 'ユーザーID',
         'background_image' => '背景画像',
         'prolife' => 'プロフィール',
         'url' => 'URL',
