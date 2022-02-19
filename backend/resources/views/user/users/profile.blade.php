@@ -15,7 +15,7 @@
                                 <div class="flex justify-around h-20">
                                     <x-avatar type="profile" avatar="{{$user->avatar}}" uid="{{$user->uid}}" />
                                     @if ($user->id === Auth::user()->id)
-                                        <button  onclick="location.href='{{ route('user.edit', ['user' => $user->id ]) }}'" class="text-black bg-gray-200 border-0 py-2 px-6 mr-2 focus:outline-none hover:bg-gray400 rounded h-10 mt-4">Edit Profile</button>
+                                        <button  onclick="location.href='{{ route('user.edit', ['user' => $user->uid ]) }}'" class="text-black bg-gray-200 border-0 py-2 px-6 mr-2 focus:outline-none hover:bg-gray400 rounded h-10 mt-4">Edit Profile</button>
                                     @endif
                                 </div>
                                 <div class="p-6 relative">

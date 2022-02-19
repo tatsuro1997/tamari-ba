@@ -26,7 +26,7 @@ class UserTest extends TestCase
 
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get('/users/profile');
+            ->get("/users/profile/$user->uid");
 
         $response->assertStatus(200);
     }
@@ -37,7 +37,7 @@ class UserTest extends TestCase
 
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("/users/$user->id/edit");
+            ->get("/users/$user->uid/edit");
 
         $response->assertStatus(200);
     }
@@ -47,7 +47,7 @@ class UserTest extends TestCase
         $user = User::factory()->create();
         $response = $this->actingAs($user)
             ->withSession(['banned' => false])
-            ->get("/users/$user->id/edit");
+            ->get("/users/$user->uid/edit");
 
         $file = UploadedFile::fake()->image('avatar.jpg');
         $path = $file->store('public');
@@ -65,14 +65,13 @@ class UserTest extends TestCase
             'through' => true,
             'avatar' => $read_temp_path,
        ];
-       $first_path = route('user.update', ['user' => $user->id]);
+       $first_path = route('user.update', ['user' => $user->uid]);
 
        $response = $this->put($first_path, $user_data);
 
         $response->assertStatus(302);
         // エラーメッセージがないこと
         $response->assertSessionHasNoErrors();
-        $response->assertRedirect('/users/profile');
     }
 
 
