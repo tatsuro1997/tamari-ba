@@ -8373,7 +8373,7 @@ swiper_core__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper_core__WEBPACK_IM
 var swiper = new swiper_core__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-container', {
   // Optional parameters
   // direction: 'vertical',
-  loop: true,
+  // loop: true,
   // If we need pagination
   pagination: {
     el: '.swiper-pagination'
