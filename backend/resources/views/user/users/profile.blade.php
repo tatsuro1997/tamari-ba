@@ -13,7 +13,7 @@
                             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                 <x-thumbnail filename="{{ $user->background_image ?? ''}}" type="users" />
                                 <div class="flex justify-around h-20">
-                                    <x-avatar type="profile" avatar="{{$user->avatar}}" uid="{{$user->id}}" />
+                                    <x-avatar type="profile" avatar="{{$user->avatar}}" uid="{{$user->uid}}" />
                                     @if ($user->id === Auth::user()->id)
                                         <button  onclick="location.href='{{ route('user.edit', ['user' => $user->id ]) }}'" class="text-black bg-gray-200 border-0 py-2 px-6 mr-2 focus:outline-none hover:bg-gray400 rounded h-10 mt-4">Edit Profile</button>
                                     @endif

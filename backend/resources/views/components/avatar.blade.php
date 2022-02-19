@@ -8,7 +8,7 @@
 @endphp
 
 <div class="items-center justify-center">
-    <a href="{{ route('user.profile', ['user' => $uid ?? Auth::user()->id]) }}">
+    <a href="{{ route('user.profile', ['user' => $uid ?? Auth::user()->uid]) }}">
         @if (empty($avatar))
             <img src="{{ asset('images/default_user.jpg') }}" class="{{$style}}">
         @else
