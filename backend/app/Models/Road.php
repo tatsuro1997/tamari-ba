@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\User;
+use App\Models\Prefecture;
 use App\Models\RoadImage;
 use App\Models\RoadComment;
 use App\Models\RoadLike;
@@ -19,6 +20,7 @@ class Road extends Model
         'title',
         'latitude',
         'longitude',
+        'prefecture_id',
         'description',
         'user_id',
     ];
@@ -33,7 +35,12 @@ class Road extends Model
         // 単語をループで回し、タグ名、投稿のタイトル、説明と部分一致するものがあれば、$queryとして保持される
         foreach ($wordArraySearched as $value) {
             $query->whereHas('tags', function ($q) use ($value) {
-                $q->where('name', 'like', '%' . $value . '%');
+                $q->where('name', 'like', '%' . $value . '%')
+                ->orWhereIn('prefecture_id', function ($q) use ($value) {
+                    $q->select('id')
+                        ->from('prefectures')
+                        ->where('name', 'LIKE', '%' . $value . '%');
+                });
             })
                 ->orWhere('title', 'LIKE', '%' . $value . '%')
                 ->orWhere('description', 'like', '%' . $value . '%');
@@ -45,6 +52,11 @@ class Road extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function prefecture()
+    {
+        return $this->belongsTo(Prefecture::class);
     }
 
     public function roadImages()

@@ -28,6 +28,18 @@
     </div>
   </div>
   <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
+      <div class="relative">
+        <label for="prefecture_id" class="leading-7 text-sm text-gray-600">地域 ※必須</label>
+        <select type="text" id="prefecture_id" name="prefecture_id" value="{{ old('prefecture_id') ?? $road->prefecture_id }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          @foreach($prefectures as $prefecture)
+            <option value="{{ $prefecture->id }}">
+                {{ $prefecture->name }}
+            </option>
+          @endforeach
+        </select>
+      </div>
+  </div>
+  <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
     <div class="relative">
       <label for="title" class="leading-7 text-sm text-gray-600">道の名前 ※必須</label>
       <input type="text" id="title" name="title" value="{{ old('title') ?? $road->title }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">

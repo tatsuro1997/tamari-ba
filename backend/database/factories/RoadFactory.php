@@ -17,6 +17,7 @@ class RoadFactory extends Factory
             'title' => $this->faker->name,
             'latitude' => $this->faker->latitude,
             'longitude' => $this->faker->longitude,
+            'prefecture_id' => $this->faker->numberBetween(1, 47),
             'description' => $this->faker->text,
             'user_id' => $this->faker->numberBetween(1, 3),
             'created_at' => $this->faker->dateTime,
