@@ -11,7 +11,7 @@
                                     <button onclick="location.href='{{ route('user.boards.create') }}'"  class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">募集作成</button>
                                 </div>
                                 <div class="flex justify-end">
-                                    <x-search-form :search="isset($search)" type="board" />
+                                    <x-search-form :search="$search" type="board" />
                                 </div>
                             </div>
                             <x-board.index :boards="$boards" type="index" />

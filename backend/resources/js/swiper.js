@@ -13,7 +13,7 @@ SwiperCore.use([Navigation, Pagination]);
 const swiper = new Swiper('.swiper-container', {
   // Optional parameters
   // direction: 'vertical',
-  loop: true,
+  // loop: true,
 
   // If we need pagination
   pagination: {

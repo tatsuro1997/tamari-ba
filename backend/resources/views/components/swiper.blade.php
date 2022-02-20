@@ -32,6 +32,6 @@
         <div class="swiper-scrollbar"></div>
     </div>
     @if (empty($images->first()->filename))
-        <img src="{{ asset('images/no_image.jpg') }}">
+        <img src="{{ asset('images/no_image.webp') }}">
     @endif
 </div>

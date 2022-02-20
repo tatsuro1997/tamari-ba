@@ -25,6 +25,9 @@
         <!-- FontAwesome -->
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
+        <!-- 画像遅延読み込み -->
+        <script src="{{ asset('js/lazyload.min.js') }}" async></script>
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

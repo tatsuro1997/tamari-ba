@@ -11,7 +11,7 @@
 @endphp
 
 <form class="w-full h-12 text-center flex" method="GET" action="{{ $route }}">
-    <input type="search" placeholder="検索" name="search" value="@if (isset($search)) @endif" class="w-1/2 h-10 mr-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+    <input type="search" placeholder="検索" name="search" value="{{$search}}" class="w-1/2 h-10 mr-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
     <div class="flex h-10 justify-content-center">
         <button class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">検索</button>
         <button class="my-2 ml-2">
