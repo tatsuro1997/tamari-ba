@@ -11,7 +11,7 @@
         <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
         <!-- Fonts -->
-        <link rel="preload" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <script rel="preload" src="https://kit.fontawesome.com/39c851380d.js" crossorigin="anonymous"></script>
 
         <!-- Styles -->
         <link rel="stylesheet preload" href="{{ asset('css/app.css') }}">
