@@ -16,6 +16,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/auto-swiper.js', 'public/js')
     .js('resources/js/getLatLng.js', 'public/js')
     .js('resources/js/setCurrentLocation.js', 'public/js')
+    .js('resources/js/lazyload.min.js', 'public/js')
     .autoload({
         "jquery": ['$', 'window.jQuery'],
     })
