@@ -17,7 +17,7 @@
         <div class="swiper-wrapper">
             @foreach ($images as $image)
                 <div class="swiper-slide">
-                    <img src="{{ Storage::disk('s3')->url($path . $image->filename) }}">
+                    <img class="lazyload" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ Storage::disk('s3')->url($path . $image->filename) }}">
                 </div>
             @endforeach
         </div>
@@ -32,6 +32,6 @@
         <div class="swiper-scrollbar"></div>
     </div>
     @if (empty($images->first()->filename))
-        <img src="{{ asset('images/no_image.webp') }}">
+        <img class="lazyload" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/no_image.webp') }}">
     @endif
 </div>
