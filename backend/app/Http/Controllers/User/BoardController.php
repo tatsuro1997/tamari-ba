@@ -30,7 +30,7 @@ class BoardController extends Controller
             $boards = Board::Search($search);
         }
 
-        return view('user.boards.index', compact('boards'));
+        return view('user.boards.index', compact('boards', 'search'));
     }
 
     public function create()
