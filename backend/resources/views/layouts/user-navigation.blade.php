@@ -29,6 +29,10 @@
             </div>
 
             <div class="flex">
+                <!-- Inquiry -->
+                <div class="hidden lg:block">
+                    <a href="{{ route('user.inquiry') }}" class="inline-block mr-4 mt-6 text-sm text-black underline">お問い合わせ</a>
+                </div>
                 <!-- Avatar -->
                 <div class="hidden lg:block">
                     <x-avatar type="nav" avatar="{{Auth::user()->avatar}}" uid="{{Auth::user()->uid}}" />
@@ -98,6 +102,12 @@
                 {{ __('ツーリング掲示板') }}
             </x-responsive-nav-link>
         </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('user.inquiry')" :active="request()->routeIs('user.inquiry')">
+                {{ __('お問い合わせ') }}
+            </x-responsive-nav-link>
+        </div>
+
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
