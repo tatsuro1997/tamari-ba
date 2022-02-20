@@ -13,6 +13,7 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
+    <x-flash-message status="session('status')" />
     <div class="absolute left-10 lg:top-72 top-32 z-10">
         <h1 class="lg:text-6xl text-3xl text-white">Tamari-Ba</h1>
         <h2 class="lg:text-4xl text-xl text-white lg:mt-10 mt-4">あなたの好きが、<br>「たまり場」を創る。</h2>
