@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "ext-gd": "*",
         "aws/aws-sdk-php": "^3.209",
         "barryvdh/laravel-debugbar": "^3.6",
         "fruitcake/laravel-cors": "^2.0",
@@ -14,10 +15,10 @@
         "intervention/image": "^2.7",
         "laravel/framework": "^8.65",
         "laravel/sanctum": "^2.11",
+        "laravel/slack-notification-channel": "^2.4",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.2",
-        "league/flysystem-aws-s3-v3": "~1.0",
-        "ext-gd": "*"
+        "league/flysystem-aws-s3-v3": "~1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
