@@ -24,7 +24,7 @@ $nowDate = new Carbon(Carbon::now());;
             @endif
         @endif
         @if(empty($filename))
-            <img src="{{ asset('images/no_image.jpg') }}">
+            <img src="{{ asset('images/no_image.webp') }}">
         @else
             <img src="{{ Storage::disk('s3')->url($path . $filename) }}">
         @endif
