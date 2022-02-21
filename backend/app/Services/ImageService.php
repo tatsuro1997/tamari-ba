@@ -17,7 +17,10 @@ class ImageService
     $fileName = uniqid(rand() . '_');
     $extension = $file->extension();
     $fileNameToStore = $fileName . '.' . $extension;
-    $resizedImage = Image::make($file)->resize(1920, 1080)->encode();
+    $height = 300;
+    $resizedImage = Image::make($file)->resize(null, $height, function($constraint){
+      $constraint->aspectRatio();
+    })->encode();
 
     Storage::disk('s3')->put('/' . $folderName . '/' . $fileNameToStore, (string)$resizedImage, 'public');
 
