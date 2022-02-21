@@ -12,6 +12,7 @@ use App\Models\RoadLike;
 use App\Models\Prefecture;
 use Illuminate\Support\Facades\Storage;
 use App\Services\ImageService;
+use Intervention\Image\Facades\Image;
 
 class UsersController extends Controller
 {
@@ -45,7 +46,11 @@ class UsersController extends Controller
         if ($request->file('avatar')) {
             $avatar = $request->file('avatar')->hashName();
             Storage::disk('s3')->delete('/users/' . $user->avatar); //画像も更新する場合S3から画像を削除
-            Storage::disk('s3')->put('/users/', $request->file('avatar'), 'public');
+            $file = $request->file('avatar');
+            $resizedImage = Image::make($file)->resize(100, 100, function ($constraint) {
+                $constraint->aspectRatio();
+            })->encode();
+            Storage::disk('s3')->put('/users/'. $avatar, (string)$resizedImage, 'public');
             $user->avatar = $avatar;
         }
 

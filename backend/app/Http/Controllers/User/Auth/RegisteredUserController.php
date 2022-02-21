@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Prefecture;
+use Intervention\Image\Facades\Image;
 
 class RegisteredUserController extends Controller
 {
@@ -47,7 +48,12 @@ class RegisteredUserController extends Controller
         ]);
 
         $avatarName = $request->file('avatar')->hashName();
-        Storage::disk('s3')->put('/users/', $request->file('avatar'), 'public');
+
+        $file = $request->file('avatar');
+        $resizedImage = Image::make($file)->resize(100, 100, function ($constraint) {
+            $constraint->aspectRatio();
+        })->encode();
+        Storage::disk('s3')->put('/users/' . $avatarName, (string)$resizedImage, 'public');
 
         $user = User::create([
             'name' => $request->name,
