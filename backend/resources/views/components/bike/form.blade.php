@@ -50,7 +50,7 @@
   @if (explode('.', Route::currentRouteName())[2]==='edit')
     <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
         <div class="relative">
-            <div class="w-32">
+            <div class="w-auto">
                 <x-thumbnail :filename="$bike->bikeImages[0]->filename ?? ''" type="bikes"/>
             </div>
         </div>
