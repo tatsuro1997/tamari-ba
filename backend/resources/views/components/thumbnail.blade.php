@@ -27,8 +27,8 @@ $nowDate = new Carbon(Carbon::now());
         @endif
     @endif
     @if(empty($filename))
-        <img class="lazyload" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/no_image.webp') }}">
+        <img class="lazyload" width="350" height="240" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/no_image.webp') }}">
     @else
-        <img class="{{ $style }}" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ Storage::disk('s3')->url($path . $filename) }}">
+        <img class="{{ $style }}" width="350" height="240"  loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ Storage::disk('s3')->url($path . $filename) }}">
     @endif
 </div>
