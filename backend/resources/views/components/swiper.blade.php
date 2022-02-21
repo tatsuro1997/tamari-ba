@@ -17,7 +17,7 @@
         <div class="swiper-wrapper">
             @foreach ($images as $image)
                 <div class="swiper-slide">
-                    <img class="lazyload mx-auto bg-cover" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ Storage::disk('s3')->url($path . $image->filename) }}">
+                    <img class="lazyload w-full sm:max-h-80 max-h-52 mx-auto bg-cover" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ Storage::disk('s3')->url($path . $image->filename) }}">
                 </div>
             @endforeach
         </div>

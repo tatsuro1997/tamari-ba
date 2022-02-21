@@ -44,7 +44,7 @@
   @if (explode('.', Route::currentRouteName())[2]==='edit')
     <div class="p-2 lg:w-1/2 sm:w-full mx-auto">
         <div class="relative">
-            <div class="w-auto">
+            <div class="w-1/2 mx-auto">
                 <x-thumbnail :filename="$board->boardImages->first()->filename ?? ''" :board="$board" type="boards"/>
             </div>
         </div>
