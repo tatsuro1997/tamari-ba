@@ -4,10 +4,10 @@
         <div class="swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/main_1.webp') }}"></div>
-                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/main_2.webp') }}"></div>
-                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/other.webp') }}"></div>
-                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/enjoy.webp') }}"></div>
+                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="100%" height="100vh" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/main_1.webp') }}"></div>
+                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="100%" height="100vh" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/main_2.webp') }}"></div>
+                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="100%" height="100vh" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/other.webp') }}"></div>
+                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="100%" height="100vh" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/enjoy.webp') }}"></div>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -28,7 +28,7 @@
                     <div class="mx-auto">
                         <h1 class="text-3xl lg:text-5xl font-medium title-font mb-4 text-gray-900">Tamari-Baとは？</h1>
                         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">バイカー同士の情報共有サイトです。</p>
-                        <img class="w-full h-full mx-auto" src="{{ asset('images/map.webp') }}">
+                        <img class="w-full h-full mx-auto" width="100%" height="100%" src="{{ asset('images/map.webp') }}">
                     </div>
                     <div class="mt-20">
                         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">愛車の共有</h1>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="flex flex-wrap -m-4">
                     <div class="lg:w-1/3 sm:w-1/2 p-4">
-                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/solo.webp') }}">
+                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" width="480" height="270" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/solo.webp') }}">
                         <div class="text-center">
                             <h2 class="w-32 text-sm font-medium my-8 mx-auto py-1 border-b-2 border-orange-500">ソロ</h2>
                             <h1 class="title-font text-3xl font-medium text-gray-900 mb-3">ツーリングスポットはTamari-Baで!</h1>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="lg:w-1/3 sm:w-1/2 p-4">
-                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/touring.webp') }}">
+                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" width="480" height="270" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/touring.webp') }}">
                         <div class="text-center">
                             <h2 class="w-32 text-sm font-medium my-8 mx-auto py-1 border-b-2 border-orange-500">ツーリング</h2>
                             <h1 class="title-font text-3xl font-medium text-gray-900 mb-3">もちろんツーリングも!</h1>
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <div class="lg:w-1/3 sm:w-1/2 p-4">
-                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/custom.webp') }}">
+                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" width="480" height="270" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/custom.webp') }}">
                         <div class="text-center">
                             <h2 class="w-32 text-sm font-medium my-8 mx-auto py-1 border-b-2 border-orange-500">カスタム</h2>
                             <h1 class="title-font text-3xl font-medium text-gray-900 mb-3">あなたのバイクはこう変わる</h1>
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                     <div class="lg:w-1/3 sm:w-1/2 p-4 lg:mt-20">
-                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/communicate.webp') }}">
+                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" width="480" height="270" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/communicate.webp') }}">
                         <div class="text-center">
                             <h2 class="w-32 text-sm font-medium my-8 mx-auto py-1 border-b-2 border-orange-500">交流</h2>
                             <h1 class="title-font text-3xl font-medium text-gray-900 mb-3">バイカー専用SNS</h1>
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div class="lg:w-1/3 sm:w-1/2 p-4 lg:mt-20">
-                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/other.webp') }}">
+                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" width="480" height="270" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/other.webp') }}">
                         <div class="text-center">
                             <h2 class="w-32 text-sm font-medium my-8 mx-auto py-1 border-b-2 border-orange-500">バイク✕？？</h2>
                             <h1 class="title-font text-3xl font-medium text-gray-900 mb-3">バイクと組み合わせる</h1>
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="lg:w-1/3 sm:w-1/2 p-4 lg:mt-20">
-                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/enjoy.webp') }}">
+                        <img alt="gallery" class="w-full h-50 object-center lazyload" loading="lazy" width="480" height="270" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/enjoy.webp') }}">
                         <div class="text-center">
                             <h2 class="w-32 text-sm font-medium my-8 mx-auto py-1 border-b-2 border-orange-500">Enjoy</h2>
                             <h1 class="title-font text-3xl font-medium text-gray-900 mb-3">見るだけで楽しい!</h1>
