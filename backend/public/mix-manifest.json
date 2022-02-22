@@ -3,6 +3,7 @@
     "/js/swiper.js": "/js/swiper.js",
     "/js/auto-swiper.js": "/js/auto-swiper.js",
     "/js/getLatLng.js": "/js/getLatLng.js",
+    "/js/originalLocation.js": "/js/originalLocation.js",
     "/js/setCurrentLocation.js": "/js/setCurrentLocation.js",
     "/js/lazyload.min.js": "/js/lazyload.min.js",
     "/css/app.css": "/css/app.css"
