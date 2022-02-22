@@ -34,8 +34,10 @@
     </FilesMatch>
 
     Header append Vary Accept-Encoding env=!dont-vary
+</IfModule>
 
-    # cache維持対応
+# cache維持対応
+<IfModule mod_rewrite.c>
     ExpiresActive On
     ExpiresDefault "access plus 1 days"
     ExpiresByType image/png "access plus 1 months"
