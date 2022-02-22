@@ -10,9 +10,11 @@
       <label for="maker_id" class="leading-7 text-sm text-gray-600">メーカー ※必須</label>
       <select type="text" id="maker_id" name="maker_id" value="{{ old('maker_id') ?? $bike->maker_id }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         @foreach($makers as $maker)
-          <option value="{{ $maker->id }}">
-              {{ $maker->name }}
-          </option>
+          @if ($maker->id===$bike->maker_id)
+            <option value="{{ $maker->id }}" selected>{{ $maker->name }}</option>
+          @else
+            <option value="{{ $maker->id }}">{{ $maker->name }}</option>
+          @endif
         @endforeach
       </select>
     </div>
@@ -22,9 +24,11 @@
       <label for="type_id" class="leading-7 text-sm text-gray-600">タイプ ※必須</label>
       <select type="text" id="type_id" name="type_id" value="{{ old('type_id') ?? $bike->type_id }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         @foreach($types as $type)
-          <option value="{{ $type->id }}">
-              {{ $type->name }}
-          </option>
+          @if ($type->id===$bike->type_id)
+            <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
+          @else
+            <option value="{{ $type->id }}">{{ $type->name }}</option>
+          @endif
         @endforeach
       </select>
     </div>

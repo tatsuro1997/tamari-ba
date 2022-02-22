@@ -43,9 +43,11 @@
         <label for="prefecture_id" class="leading-7 text-sm text-gray-600">都道府県</label>
         <select name="prefecture_id" id="prefecture_id" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             @foreach($prefectures as $prefecture)
-                <option value="{{ $prefecture->id }}">
-                    {{ $prefecture->name }}
-                </option>
+                @if ($prefecture->id===$user->prefecture_id)
+                  <option value="{{ $prefecture->id }}" selected>{{ $prefecture->name }}</option>
+                @else
+                  <option value="{{ $prefecture->id }}">{{ $prefecture->name }}</option>
+                @endif
             @endforeach
         </select>
       </div>
@@ -55,8 +57,8 @@
         <label for="through" class="leading-7 text-sm text-gray-600">すり抜け</label>
         <div class="block mt-1 w-full">
             <div class="relative flex justify-around">
-                <div><input type="radio" name="through" value="1" class="mr-2" checked>無</div>
-                <div><input type="radio" name="through" value="0" class="mr-2">有</div>
+                <div><input type="radio" name="through" value="1" class="mr-2" @if($user->through===1) checked @endif>無</div>
+                <div><input type="radio" name="through" value="0" class="mr-2" @if($user->through===0) checked @endif>有</div>
             </div>
         </div>
       </div>
