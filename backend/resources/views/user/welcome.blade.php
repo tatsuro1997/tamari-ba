@@ -4,10 +4,10 @@
         <div class="swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="w-full h-80 sm:h-screen" width="390" height="320" src="{{ asset('images/main_1.webp') }}"></div>
-                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="390" height="320" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/main_2.webp') }}"></div>
-                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="390" height="320" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/other.webp') }}"></div>
-                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="390" height="320" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/enjoy.webp') }}"></div>
+                <div class="swiper-slide"><img class="w-full h-80 sm:h-screen" width="360" height="320" src="{{ asset('images/main_1.webp') }}"></div>
+                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="360" height="320" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/main_2.webp') }}"></div>
+                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="360" height="320" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/other.webp') }}"></div>
+                <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="360" height="320" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/enjoy.webp') }}"></div>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
