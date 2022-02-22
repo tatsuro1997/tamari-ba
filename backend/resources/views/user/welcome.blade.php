@@ -4,7 +4,7 @@
         <div class="swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="w-full h-80 sm:h-screen" width="100%" height="100vh" src="{{ asset('images/main_1.webp') }}"></div>
+                <div class="swiper-slide"><img class="w-full h-80 sm:h-screen" width="390" height="320" src="{{ asset('images/main_1.webp') }}"></div>
                 <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="100%" height="100vh" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/main_2.webp') }}"></div>
                 <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="100%" height="100vh" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/other.webp') }}"></div>
                 <div class="swiper-slide"><img class="lazyload w-full h-80 sm:h-screen" width="100%" height="100vh" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/enjoy.webp') }}"></div>
