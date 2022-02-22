@@ -27,7 +27,12 @@
                                         @else
                                             <p class="leading-relaxed text-right"><i class="fas fa-link mr-2"></i>URLが設定されていません</p>
                                         @endif
-                                        <p class="leading-relaxed text-right"><i class="far fa-calendar-alt mr-2"></i>{{ $user->created_at->format('Y-m-d') }}</p>
+                                        <div class="flex justify-end">
+                                            @if ($user->through==0)
+                                                <p class="leading-relaxed mb-1 mr-2"><i class="fas fa-motorcycle mr-2 w-4"></i></p>
+                                            @endif
+                                            <p class="leading-relaxed"><i class="far fa-calendar-alt mr-2"></i>{{ $user->created_at->format('Y-m-d') }}</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
