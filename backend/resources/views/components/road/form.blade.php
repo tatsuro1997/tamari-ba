@@ -85,6 +85,7 @@
     }
 </script>
 
+<script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('/js/setCurrentLocation.js') }}"></script>
 <script src="{{ asset('/js/originalLocation.js') }}"></script>
 <script src="{{ asset('/js/getLatLng.js') }}"></script>
