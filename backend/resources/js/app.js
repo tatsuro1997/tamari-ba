@@ -4,4 +4,7 @@ import Alpine from 'alpinejs';
 
 Alpine.start();
 
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
 require('./_like.js')
