@@ -23,7 +23,7 @@ function initMap() {
     path = location.pathname
     // pathを/で区切り、最後の要素を取得
     let lastPath = path.split('/').slice(-1)[0];
-    if (lastPath == "create" || lastPath=="edit" ) {
+    if (lastPath == "create" || lastPath == "edit") {
         mapObj.addListener('click', function (e) {
             getClickLatLng(e.latLng, mapObj);
         });

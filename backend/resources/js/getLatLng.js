@@ -35,6 +35,22 @@ function getLatLng() {
                         $('#latitude').val(lat);
                         $('#longitude').val(lng);
 
+                        // google map へ表示するための設定
+                        latlng = new google.maps.LatLng(lat, lng);
+                        map = document.getElementById("map");
+                        opt = {
+                            zoom: 13,
+                            center: latlng,
+                        };
+                        // google map 表示
+                        mapObj = new google.maps.Map(map, opt);
+                        // マーカーを設定
+                        marker = new google.maps.Marker({
+                            position: latlng,
+                            map: mapObj,
+                            title: '現在地',
+                        });
+
                         // そもそも、ループを回して、検索結果にあっているものをiに入れていっているため
                         // 精度の低いものもでてきてしまう。その必要はないから、一回でbreak
                         break;
