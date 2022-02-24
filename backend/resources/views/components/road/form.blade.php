@@ -1,8 +1,9 @@
 <div id="map" class="lg:w-1/2 sm:w-full h-80 mx-auto"></div>
 
 {{-- GoogleMap --}}
-<div class="p-2 w-1/2 mx-auto">
+<div class="p-2 sm:w-1/2 w-full mx-auto flex justify-between">
   <a id="cLocation" onclick="cLocation()" disabled class="leading-7 text-lg text-red-600 font-bold">▼現在地を取得</a>
+  <a id="resetMap" onclick="resetLocation()" disabled class="leading-7 text-sm text-gray-600 font-normal">マップリセット</a>
 </div>
 
 <div class="-m-2">
@@ -81,6 +82,9 @@
     function cLocation(){
       lat = document.getElementById('latitude').value;
       lng = document.getElementById('longitude').value;
+      initMap();
+    }
+    function resetLocation(){
       initMap();
     }
 </script>
