@@ -8,10 +8,25 @@ const setCurrentLocation = (pos) => {
     console.log(lng);
 
     document.getElementById("cLocation").addEventListener('click', function () {
-        // welcomeの中からlat_inputのclassを見つけて、そのvalueに、定数latを代入
+        // fornの中からlatのclassを見つけて、そのvalueに、定数latを代入
         $("#latitude").val(lat);
-        //welcomeの中からlng_inputのclassを見つけて、そのvalueに、定数lngを代入
+        // formの中からlngのclassを見つけて、そのvalueに、定数lngを代入
         $("#longitude").val(lng);
+        // google map へ表示するための設定
+        latlng = new google.maps.LatLng(lat, lng);
+        map = document.getElementById("map");
+        opt = {
+            zoom: 13,
+            center: latlng,
+        };
+        // google map 表示
+        mapObj = new google.maps.Map(map, opt);
+        // マーカーを設定
+        marker = new google.maps.Marker({
+            position: latlng,
+            map: mapObj,
+            title: '現在地',
+        });
     });
 
 }
@@ -45,4 +60,3 @@ if ("geolocation" in navigator) {
     alert("ブラウザが位置情報取得に対応していません");
 }
 
-$('#cLocation').prop('disabled', false)
