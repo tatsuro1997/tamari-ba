@@ -27,6 +27,7 @@ function initMap() {
         mapObj.addListener('click', function (e) {
             getClickLatLng(e.latLng, mapObj);
         });
+        $('#resetMap').on('click', clearMarker(lat, lng));
     }
 }
 
@@ -54,4 +55,18 @@ function deleteMarker() {
         marker.setMap(null);
     }
     marker = null;
+}
+
+function clearMarker(lat, lng) {
+    $('#latitude').val(lat);
+    $('#longitude').val(lng);
+
+    // 既存のマーカーの削除
+    deleteMarker();
+
+    marker = new google.maps.Marker({
+        position: latlng,
+        map: mapObj,
+        title: '現在地',
+    });
 }
