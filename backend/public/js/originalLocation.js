@@ -27,6 +27,8 @@ function initMap() {
         mapObj.addListener('click', function (e) {
             getClickLatLng(e.latLng, mapObj);
         });
+        let lat = '35.6585769';
+        let lng = '139.7454506';
         $('#resetMap').on('click', clearMarker(lat, lng));
     }
 }

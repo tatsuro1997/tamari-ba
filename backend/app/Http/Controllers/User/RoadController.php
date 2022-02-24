@@ -104,11 +104,8 @@ class RoadController extends Controller
         $road = Road::findOrFail($road->id);
         $tags = Tag::pluck('name', 'id')->toArray();
         $prefectures = Prefecture::all();
-        # Mapでデフォルトを東京タワーに指定
-        $lat = '35.6585769';
-        $lng = '139.7454506';
 
-        return view('user.roads.edit', compact('road', 'tags', 'prefectures', 'lat', 'lng'));
+        return view('user.roads.edit', compact('road', 'tags', 'prefectures'));
     }
 
 
