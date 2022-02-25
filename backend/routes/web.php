@@ -69,4 +69,7 @@ Route::get('/dashboard', function () {
 Route::get('/inquiry', [InquiryController::class, 'Inquiry'])->name('inquiry');
 Route::post('/send_inquiry', [InquiryController::class, 'Send_Inquiry'])->name('send.inquiry');
 
+Route::get('/terms_of_service', [WelcomeController::class, 'Terms_Of_Service'])->name('terms_of_service');
+Route::get('/privacy_policy', [WelcomeController::class, 'Privacy_Policy'])->name('privacy_policy');
+
 require __DIR__.'/auth.php';
