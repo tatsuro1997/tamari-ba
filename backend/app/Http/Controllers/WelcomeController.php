@@ -19,4 +19,14 @@ class WelcomeController extends Controller
 
         return view('user.welcome', compact('roads'));
     }
+
+    public function terms_of_service()
+    {
+        return view('user.terms_of_service');
+    }
+
+    public function privacy_policy()
+    {
+        return view('user.privacy_policy');
+    }
 }
