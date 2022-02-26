@@ -7,6 +7,7 @@
                     <section class="text-gray-600 body-font">
                         <div class="xl:w-3/4 md:w-full container px-5 py-8 mx-auto">
                             <div class="flex justify-end mb-4">
+                                <button onclick="location.href='{{ route('owner.tags.index') }}'"  class="text-black bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg mr-4">タグの編集</button>
                                 <button onclick="location.href='{{ route('user.roads.index') }}'"  class="text-black bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg">一覧に戻る</button>
                             </div>
 
