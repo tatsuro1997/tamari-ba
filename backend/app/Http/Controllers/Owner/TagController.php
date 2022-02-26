@@ -7,11 +7,14 @@ use Illuminate\Http\Request;
 use Throwable;
 use Illuminate\Support\Facades\Log;
 use App\Models\Tag;
+use Gate;
 
 class TagController extends Controller
 {
     public function index(Request $request)
     {
+        Gate::authorize('isAdmin');
+
         $tags = Tag::pluck('name', 'id')->toArray();
 
         return view('owner.tags.index', compact('tags'));
@@ -20,6 +23,8 @@ class TagController extends Controller
 
     public function store(Request $request)
     {
+        Gate::authorize('isAdmin');
+
         try {
             Tag::create([
                 'slug' => $request->slug,
@@ -38,6 +43,8 @@ class TagController extends Controller
 
     public function destroy($id)
     {
+        Gate::authorize('isAdmin');
+
         Tag::findOrFail($id)->delete();
 
         return redirect()
