@@ -9,6 +9,8 @@ use App\Http\Controllers\Owner\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Owner\Auth\RegisteredUserController;
 use App\Http\Controllers\Owner\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Owner\TagController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/tags', [TagController::class, 'Index'])->name('tags.index');
+Route::post('/tag', [TagController::class, 'Store'])->name('tags.store');
+Route::delete('/tag/{id}', [TagController::class, 'Destroy'])->name('tags.destroy');
 
 Route::get('/', function () {
   return view('owner.welcome');
