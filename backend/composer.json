@@ -9,6 +9,7 @@
         "ext-gd": "*",
         "aws/aws-sdk-php": "^3.209",
         "barryvdh/laravel-debugbar": "^3.6",
+        "doctrine/dbal": "^3.3",
         "fruitcake/laravel-cors": "^2.0",
         "fzaninotto/faker": "^1.9",
         "guzzlehttp/guzzle": "^7.0.1",

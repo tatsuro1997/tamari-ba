@@ -38,7 +38,7 @@ class User extends Authenticatable
         'url',
         'email',
         'password',
-        'age',
+        'birthday',
         'gender',
         'prefecture_id',
         'years_of_experience',

@@ -44,6 +44,7 @@ class RegisteredUserController extends Controller
             'uid' => ['required', 'unique:users', 'regex:/\A([a-zA-Z0-9])+\z/u', 'max:20' ],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'avatar'=>['required', 'image'],
+            'birthday' => ['required', 'date', 'before:today'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -61,7 +62,7 @@ class RegisteredUserController extends Controller
             'uid' => $request->uid,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'age' => $request->age,
+            'birthday' => $request->birthday,
             'gender' => $request->gender,
             'prefecture_id' => $request->prefecture_id,
             'years_of_experience' => $request->years_of_experience,

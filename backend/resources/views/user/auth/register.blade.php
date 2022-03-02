@@ -61,8 +61,8 @@
 
             <!-- Age -->
             <div class="mt-4">
-                <x-label for="age" :value="__('年齢 ※必須')" />
-                <x-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')" required />
+                <x-label for="birthday" :value="__('年齢 ※必須')" />
+                <x-input id="birthday" class="block mt-1 w-full" type="date" name="birthday" :value="old('birthday')" required />
             </div>
 
             <!-- Gender -->
