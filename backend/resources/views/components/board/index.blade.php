@@ -31,7 +31,7 @@
                         <div class="flex justify-end">
                             <div class="leading-relaxed text-right">{{ $board->created_at->format('Y-m-d') }}</div>
                             @if ($type=='index' || $type=='welcome')
-                                <div class="leading-relaxed text-right ml-2">{{ $board->user->name }}</div>
+                                <div class="leading-relaxed text-right ml-2"><a href="{{ route('user.profile', ['user' => $board->user->uid ?? Auth::user()->uid]) }}" class="border-b-2 border-indigo-100">{{ $board->user->name }}</a></div>
                             @endif
                         </div>
                     </div>
