@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeColumnToUserAge extends Migration
+class CreateYearsOfExperiencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class ChangeColumnToUserAge extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dateTime('birthday');
-            $table->dropColumn('age');
+        Schema::create('years_of_experiences', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ class ChangeColumnToUserAge extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-
-        });
+        Schema::dropIfExists('years_of_experiences');
     }
 }

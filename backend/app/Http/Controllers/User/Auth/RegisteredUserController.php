@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Prefecture;
+use App\Models\YearsOfExperience;
 use Intervention\Image\Facades\Image;
 
 class RegisteredUserController extends Controller
@@ -24,8 +25,9 @@ class RegisteredUserController extends Controller
     public function create()
     {
         $prefectures = Prefecture::all();
+        $experiences = YearsOfExperience::all();
 
-        return view('user.auth.register', compact('prefectures'));
+        return view('user.auth.register', compact('prefectures', 'experiences'));
     }
 
     /**

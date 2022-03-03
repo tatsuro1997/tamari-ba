@@ -61,7 +61,7 @@
 
             <!-- Age -->
             <div class="mt-4">
-                <x-label for="birthday" :value="__('年齢 ※必須')" />
+                <x-label for="birthday" :value="__('生年月日 ※必須')" />
                 <x-input id="birthday" class="block mt-1 w-full" type="date" name="birthday" :value="old('birthday')" required />
             </div>
 
@@ -91,7 +91,13 @@
             <!-- Experience -->
             <div class="mt-4">
                 <x-label for="years_of_experience" :value="__('バイク歴(年) ※必須')" />
-                <x-input id="years_of_experience" class="block mt-1 w-full" type="number" name="years_of_experience" :value="old('years_of_experience')" required />
+                <select name="years_of_experience" id="years_of_experience" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    @foreach($experiences as $experience)
+                        <option value="{{ $experience->id }}">
+                            {{ $experience->name }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
             <!-- Through -->
