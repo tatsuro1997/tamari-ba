@@ -17,6 +17,7 @@ use App\Models\Board;
 use App\Models\RoadComment;
 use App\Models\RoadLike;
 use App\Models\BoardComment;
+use App\Models\YearsOfExperience;
 use App\Notifications\User\ResetPassword;
 
 
@@ -38,11 +39,12 @@ class User extends Authenticatable
         'url',
         'email',
         'password',
-        'age',
+        'birthday',
         'gender',
         'prefecture_id',
         'years_of_experience',
-        'through'
+        'through',
+        'agree'
     ];
 
     /**
@@ -86,6 +88,11 @@ class User extends Authenticatable
     public function prefecture()
     {
         return $this->belongsTo(Prefecture::class);
+    }
+
+    public function experience()
+    {
+        return $this->belongsTo(YearsOfExperience::class);
     }
 
     public function boards()

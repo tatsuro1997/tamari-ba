@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             // OwnerSeeder::class,
             // BikeSeeder::class,
             PrefectureSeeder::class,
+            YearsOfExperienceSeeder::class,
             BikeMakerSeeder::class,
             BikeTypeSeeder::class,
             // UserSeeder::class,
