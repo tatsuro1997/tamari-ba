@@ -48,6 +48,7 @@ class RegisteredUserController extends Controller
             'avatar'=>['required', 'image'],
             'birthday' => ['required', 'date', 'before:today'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'agree' => ['required']
         ]);
 
         $avatarName = $request->file('avatar')->hashName();
@@ -70,6 +71,7 @@ class RegisteredUserController extends Controller
             'years_of_experience' => $request->years_of_experience,
             'through' => $request->through,
             'role' => $request->role,
+            'agree' => $request->agree,
         ]);
 
         event(new Registered($user));

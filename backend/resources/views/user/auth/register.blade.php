@@ -111,6 +111,18 @@
                 </div>
             </div>
 
+             <!-- Agree -->
+            <div class="mt-4">
+                <x-label for="agree" :value="__('規約に同意 ※必須')" />
+                <div class="block mt-1 w-full">
+                    <div class="relative flex justify-around">
+                        <div><a href="{{ route('user.terms_of_service') }}">利用規約を確認</a></div>
+                        <div><a href="{{ route('user.privacy_policy') }}">プライバシーポリシーを確認</a></div>
+                    </div>
+                    <div class="text-center"><input type="checkbox" name="agree" value="1" class="mr-2" required>上記に同意</div>
+                </div>
+            </div>
+
             <!-- Role -->
             <input type="hidden" name="role" value="5">
 

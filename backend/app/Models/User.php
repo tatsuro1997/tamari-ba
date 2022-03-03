@@ -43,7 +43,8 @@ class User extends Authenticatable
         'gender',
         'prefecture_id',
         'years_of_experience',
-        'through'
+        'through',
+        'agree'
     ];
 
     /**
