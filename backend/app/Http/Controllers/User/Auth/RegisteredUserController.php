@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Prefecture;
+use App\Models\YearsOfExperience;
 use Intervention\Image\Facades\Image;
 
 class RegisteredUserController extends Controller
@@ -24,8 +25,9 @@ class RegisteredUserController extends Controller
     public function create()
     {
         $prefectures = Prefecture::all();
+        $experiences = YearsOfExperience::all();
 
-        return view('user.auth.register', compact('prefectures'));
+        return view('user.auth.register', compact('prefectures', 'experiences'));
     }
 
     /**
@@ -44,7 +46,9 @@ class RegisteredUserController extends Controller
             'uid' => ['required', 'unique:users', 'regex:/\A([a-zA-Z0-9])+\z/u', 'max:20' ],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'avatar'=>['required', 'image'],
+            'birthday' => ['required', 'date', 'before:today'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'agree' => ['required']
         ]);
 
         $avatarName = $request->file('avatar')->hashName();
@@ -61,12 +65,13 @@ class RegisteredUserController extends Controller
             'uid' => $request->uid,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'age' => $request->age,
+            'birthday' => $request->birthday,
             'gender' => $request->gender,
             'prefecture_id' => $request->prefecture_id,
             'years_of_experience' => $request->years_of_experience,
             'through' => $request->through,
             'role' => $request->role,
+            'agree' => $request->agree,
         ]);
 
         event(new Registered($user));

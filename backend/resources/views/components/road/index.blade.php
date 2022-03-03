@@ -32,7 +32,7 @@
                         <div class="flex justify-end">
                             <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
                             @if ($type=='index' || $type=='welcome')
-                                <div class="leading-relaxed text-right ml-2">{{ $road->user->name }}</div>
+                                <div class="leading-relaxed text-right ml-2"><a href="{{ route('user.profile', ['user' => $road->user->uid ?? Auth::user()->uid]) }}" class="border-b-2 border-indigo-100">{{ $road->user->name }}</a></div>
                             @endif
                         </div>
                     </div>

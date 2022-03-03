@@ -125,7 +125,7 @@ return [
         'background_image' => '背景画像',
         'prolife' => 'プロフィール',
         'url' => 'URL',
-        'age' => '年齢',
+        'birthday' => '誕生日',
         'gender' => '性別',
         'prefecture_id' => '都道府県',
         'years_of_experience' => 'バイク歴',
