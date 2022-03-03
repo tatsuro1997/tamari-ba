@@ -14,7 +14,7 @@ class ChangeColumnToUserAge extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dateTime('birthday')->default('2021/01/01');
+            $table->dateTime('birthday')->nullable();
             $table->dropColumn('age');
             $table->boolean('agree')->default(0);
         });
