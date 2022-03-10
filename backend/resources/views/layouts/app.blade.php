@@ -27,18 +27,18 @@
 
     </head>
     <body class="font-sans antialiased">
-        <div class="bg-gray-100">
-            @if (auth('admin')->user())
-                @include('layouts.admin-navigation')
-            @elseif(auth('owners')->user())
-                @include('layouts.owner-navigation')
-            @else
-                @include('layouts.user-navigation')
-            @endif
+        @if (auth('admin')->user())
+            @include('layouts.admin-navigation')
+        @elseif(auth('owners')->user())
+            @include('layouts.owner-navigation')
+        @else
+            @include('layouts.user-navigation')
+        @endif
 
-            <main>
+        <main>
+            <div class="bg-gray-100">
                 {{ $slot }}
-            </main>
-        </div>
+            </div>
+        </main>
     </body>
 </html>
