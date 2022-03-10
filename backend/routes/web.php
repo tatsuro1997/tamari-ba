@@ -30,19 +30,19 @@ Route::resource('bikes', BikeController::class)
     ->middleware('auth:users')
     ->except(['index', 'show']);
 Route::get('bikes', [BikeController::class, 'index'])->name('bikes.index');
-Route::get('bikes/{id}', [BikeController::class, 'show'])->name('bikes.show');
+Route::get('bikes/{bike}', [BikeController::class, 'show'])->name('bikes.show');
 
 Route::resource('roads', RoadController::class)
     ->middleware('auth:users')
     ->except(['index', 'show']);
 Route::get('roads', [RoadController::class, 'index'])->name('roads.index');
-Route::get('roads/{id}', [RoadController::class, 'show'])->name('roads.show');
+Route::get('roads/{road}', [RoadController::class, 'show'])->name('roads.show');
 
 Route::resource('boards', BoardController::class)
     ->middleware('auth:users')
     ->except(['index', 'show']);
 Route::get('boards', [BoardController::class, 'index'])->name('boards.index');
-Route::get('boards/{id}', [BoardController::class, 'show'])->name('boards.show');
+Route::get('boards/{board}', [BoardController::class, 'show'])->name('boards.show');
 
 Route::resource('bike.comment', BikeCommentsController::class)
     ->middleware('auth:users')
