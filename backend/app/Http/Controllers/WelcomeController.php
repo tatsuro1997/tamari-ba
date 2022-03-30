@@ -13,10 +13,6 @@ class WelcomeController extends Controller
     {
         $roads = Road::with('tags', 'roadImages', 'user')->orderBy('created_at', 'desc')->take(3)->get();
 
-        $value = Cache::remember($roads->first()->id, 600, function () {
-            return DB::table('roads')->get();
-        });
-
         return view('user.welcome', compact('roads'));
     }
 
