@@ -1,9 +1,9 @@
 <div class="flex flex-wrap -m-4">
     @foreach ($roads as $road)
-        <div class="p-4 lg:w-1/3 md:w-1/2">
+        <div class="p-4 lg:w-1/3 md:w-1/2 w-full">
             <a href="{{ route('user.roads.show', ['road' => $road->id]) }}">
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                    <x-thumbnail filename="{{ $road->roadImages->first()->filename ?? ''}}" type="roads" />
+                    <x-thumbnail filename="{{ $road->filename ?? ''}}" type="roads" />
                     <div class="p-6">
                         <div class="flex justify-between">
                             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $road->title }}</h1>
@@ -26,9 +26,9 @@
                             </div>
                         </div>
                         <x-tag.list :tags="$road->tags" />
-                        @if ($type=='index' || $type=='welcome')
+                        {{-- @if ($type=='index' || $type=='welcome')
                             <p class="leading-relaxed text-left mb-3 h-24">{{ Str::limit($road->description, 100, ' ...') }}</p>
-                        @endif
+                        @endif --}}
                         <div class="flex justify-end">
                             <div class="leading-relaxed text-right">{{ $road->created_at->format('Y-m-d') }}</div>
                             @if ($type=='index' || $type=='welcome')

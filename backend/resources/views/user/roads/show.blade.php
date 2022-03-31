@@ -11,7 +11,12 @@
                             </div>
                             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                 <div class="lg:flex">
-                                    <x-swiper :images="$road->roadImages" type="road"/>
+                                    {{-- <x-swiper :images="$road->roadImages" type="road"/> --}}
+                                    @if(empty($road->filename))
+                                        <img class="lazyload w-1/2" width="350" height="240" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/no_image.webp') }}">
+                                    @else
+                                        <img class="lazyload w-full md:w-1/2 sm:max-h-80 max-h-52 mx-auto bg-cover" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ url($road->filename) }}">
+                                    @endif
                                     <div class="lg:w-1/2 sm:w-full">
                                         <div id="map" class="w-full h-80">
                                     </div>

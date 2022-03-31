@@ -28,6 +28,8 @@ $nowDate = new Carbon(Carbon::now());
     @endif
     @if(empty($filename))
         <img class="lazyload" width="350" height="240" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ asset('images/no_image.webp') }}">
+    @elseif ($type === 'roads')
+        <img class="lazyload w-full sm:max-h-80 max-h-52 mx-auto bg-cover" loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ url($filename) }}">
     @else
         <img class="{{ $style }}" width="350" height="240"  loading="lazy" src="{{ asset('images/test.webp') }}" data-src="{{ Storage::disk('s3')->url($path . $filename) }}">
     @endif
