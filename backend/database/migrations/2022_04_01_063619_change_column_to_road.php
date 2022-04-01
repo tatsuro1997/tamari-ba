@@ -14,7 +14,7 @@ class ChangeColumnToRoad extends Migration
     public function up()
     {
         Schema::table('roads', function (Blueprint $table) {
-            $table->string('filename');
+            $table->string('filename')->nullable()->after('user_id');
         });
     }
 
