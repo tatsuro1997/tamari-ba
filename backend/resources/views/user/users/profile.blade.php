@@ -9,10 +9,10 @@
                             <div class="flex justify-end mb-4">
                                 @can('isAdmin')
                                     <button onclick="location.href='{{ route('owner.tags.index') }}'"  class="text-black bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg mr-4">タグの編集</button>
+                                    <x-road.import />
                                 @endcan
                                 <button onclick="location.href='{{ route('user.roads.index') }}'"  class="text-black bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg">一覧に戻る</button>
                             </div>
-
                             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                 <x-thumbnail filename="{{ $user->background_image ?? ''}}" type="users" />
                                 <div class="flex justify-around h-20">

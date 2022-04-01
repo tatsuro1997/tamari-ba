@@ -80,5 +80,7 @@ Route::post('/send_inquiry', [InquiryController::class, 'Send_Inquiry'])->name('
 
 Route::get('/terms_of_service', [WelcomeController::class, 'Terms_Of_Service'])->name('terms_of_service');
 Route::get('/privacy_policy', [WelcomeController::class, 'Privacy_Policy'])->name('privacy_policy');
+Route::post('/roads_import', [RoadController::class, 'import'])->name('import');
+
 
 require __DIR__.'/auth.php';
