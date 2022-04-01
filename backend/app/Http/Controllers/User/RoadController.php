@@ -16,6 +16,8 @@ use App\Models\RoadImage;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\RoadImport;
 
 
 class RoadController extends Controller
@@ -192,5 +194,16 @@ class RoadController extends Controller
         ];
         //下記の記述でajaxに引数の値を返す
         return response()->json($json);
+    }
+
+    public function import(Request $request)
+    {
+        $excel_file = $request->file('excel_file');
+        $excel_file->store('excels');
+        Excel::import(new RoadImport, $excel_file);
+
+        return redirect()
+            ->route('user.roads.index')
+            ->with(['message' => '道の投稿をインポートしました。', 'status' => 'info']);
     }
 }

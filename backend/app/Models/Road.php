@@ -23,6 +23,7 @@ class Road extends Model
         'prefecture_id',
         'description',
         'user_id',
+        'filename',
     ];
 
     public function scopeSearch($query, $search)
