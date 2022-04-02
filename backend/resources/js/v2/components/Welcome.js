@@ -33,7 +33,4 @@ function Welcome() {
     )
 }
 
-ReactDOM.render(
-    <Welcome />,
-    document.getElementById('welcome')
-)
+export default Welcome;
