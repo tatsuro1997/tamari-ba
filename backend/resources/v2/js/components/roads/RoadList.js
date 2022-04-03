@@ -1,8 +1,9 @@
+import Container from "../ui/ListContainer";
 import RoadItem from "./RoadItem";
 
 const RoadList = (props) => {
     return (
-        <ul>
+        <Container>
             {props.roads.map(road => (
                 <RoadItem
                     key={road.id}
@@ -12,7 +13,7 @@ const RoadList = (props) => {
                     created_at={road.created_at}
                 />
             ))}
-        </ul>
+        </Container>
     );
 };
 

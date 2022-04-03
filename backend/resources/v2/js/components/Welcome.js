@@ -21,17 +21,6 @@ function Welcome() {
     return (
         <Fragment>
             <RoadList roads={LoadedRoads} />
-            {/* {
-                roads.map((road) => {
-                    return (
-                        <div key={road.id}>
-                            <h2>タイトル:{road.title}</h2>
-                            <p>投稿日:{road.created_at}</p>
-                            <img src={road.filename} />
-                        </div>
-                    );
-                })
-            } */}
         </Fragment>
     )
 }
