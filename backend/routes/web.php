@@ -84,3 +84,10 @@ Route::post('/roads_import', [RoadController::class, 'import'])->name('import');
 
 
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+# v2
+Route::get('v2/welcome', [WelcomeController::class, 'v2_welcome'])->name('v2_welcome');

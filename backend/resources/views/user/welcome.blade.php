@@ -137,6 +137,8 @@
             <button onclick="location.href='{{ route('user.register') }}'" class="flex font-bold mx-auto text-black bg-orange-400 border-0 py-4 px-10 focus:outline-none hover:bg-orange-500 rounded-full text-lg">Tamari-Baをはじめる</button>
         </div>
     </div>
+
+    <div class="hidden" id="root" ></div>  <!-- // エラーになるので一時挿入 -->
 <script src="{{ mix('js/auto-swiper.js') }}"></script>
 </x-app-layout>
 <x-footer />

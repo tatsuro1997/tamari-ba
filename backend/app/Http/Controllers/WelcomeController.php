@@ -25,4 +25,9 @@ class WelcomeController extends Controller
     {
         return view('user.privacy_policy');
     }
+
+    public function v2_welcome()
+    {
+        return view('v2.welcome');
+    }
 }
