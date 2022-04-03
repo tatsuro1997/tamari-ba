@@ -1,15 +1,17 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
+import RoadList from './roads/RoadList';
+
 function Welcome() {
-    const [roads, setRoads] = useState([]);
+    const [LoadedRoads, setLoadedRoads] = useState([]);
 
     useEffect(
         () => {
             axios
                 .get('/api/welcome')
                 .then((res) => {
-                    setRoads(res.data.data);
+                    setLoadedRoads(res.data.data);
                 })
                 .catch((e) => {
                     console.log(e);
@@ -18,7 +20,8 @@ function Welcome() {
 
     return (
         <Fragment>
-            {
+            <RoadList roads={LoadedRoads} />
+            {/* {
                 roads.map((road) => {
                     return (
                         <div key={road.id}>
@@ -28,7 +31,7 @@ function Welcome() {
                         </div>
                     );
                 })
-            }
+            } */}
         </Fragment>
     )
 }
