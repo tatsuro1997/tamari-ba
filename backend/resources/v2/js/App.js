@@ -1,10 +1,13 @@
+import Layout from './components/layout/Layout';
 import Welcome from './components/Welcome';
 
 function App() {
     return (
-        <>
-            <Welcome />
-        </>
+        <div>
+            <Layout>
+               <Welcome />
+            </Layout>
+        </div>
     )
 }
 
