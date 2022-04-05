@@ -1332,6 +1332,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     justify-content: center;
   }.sm\:justify-between {
     justify-content: space-between;
+  }.sm\:justify-around {
+    justify-content: space-around;
   }.sm\:rounded-lg {
     border-radius: 0.5rem;
   }.sm\:px-6 {
