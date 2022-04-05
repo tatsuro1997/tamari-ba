@@ -5400,6 +5400,98 @@ function Welcome() {
 
 /***/ }),
 
+/***/ "./resources/v2/js/components/Welcome/Swiper.js":
+/*!******************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/Swiper.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _public_images_main_1_webp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../public/images/main_1.webp */ "./public/images/main_1.webp");
+/* harmony import */ var _public_images_main_2_webp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../public/images/main_2.webp */ "./public/images/main_2.webp");
+/* harmony import */ var _public_images_other_webp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../public/images/other.webp */ "./public/images/other.webp");
+/* harmony import */ var _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../public/images/enjoy.webp */ "./public/images/enjoy.webp");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+var Swiper = function Swiper() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "w-full text-center relative z-0",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "swiper-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "swiper-wrapper",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "swiper-slide",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              className: "w-full h-80 sm:h-screen",
+              width: "360",
+              height: "320",
+              src: _public_images_main_1_webp__WEBPACK_IMPORTED_MODULE_0__["default"],
+              alt: "mainImage1"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "swiper-slide",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              className: "lazyload w-full h-80 sm:h-screen",
+              width: "360",
+              height: "320",
+              loading: "lazy",
+              src: _public_images_main_2_webp__WEBPACK_IMPORTED_MODULE_1__["default"],
+              alt: "mainImage1"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "swiper-slide",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              className: "lazyload w-full h-80 sm:h-screen",
+              width: "360",
+              height: "320",
+              loading: "lazy",
+              src: _public_images_other_webp__WEBPACK_IMPORTED_MODULE_2__["default"],
+              alt: "mainImage1"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "swiper-slide",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              className: "lazyload w-full h-80 sm:h-screen",
+              width: "360",
+              height: "320",
+              loading: "lazy",
+              src: _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_3__["default"],
+              alt: "mainImage1"
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "swiper-pagination"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "absolute left-10 lg:top-72 top-32 z-10",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+        className: "lg:text-6xl text-3xl text-white",
+        children: "Tamari-Ba"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h2", {
+        className: "lg:text-4xl text-xl text-white lg:mt-10 mt-4",
+        children: ["\u3042\u306A\u305F\u306E\u597D\u304D\u304C\u3001", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "\u300C\u305F\u307E\u308A\u5834\u300D\u3092\u5275\u308B\u3002"]
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Swiper);
+
+/***/ }),
+
 /***/ "./resources/v2/js/components/layout/Footer.js":
 /*!*****************************************************!*\
   !*** ./resources/v2/js/components/layout/Footer.js ***!
@@ -5430,7 +5522,7 @@ var Footer = function Footer() {
             loading: "lazy",
             width: "50",
             height: "50",
-            srcset: _public_images_icon_webp__WEBPACK_IMPORTED_MODULE_0__["default"],
+            src: _public_images_icon_webp__WEBPACK_IMPORTED_MODULE_0__["default"],
             alt: "icon",
             className: "lazyload h-14 sm:mr-4 sm:pb-2"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -5489,18 +5581,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _MainNavigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainNavigation */ "./resources/v2/js/components/layout/MainNavigation.js");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Footer */ "./resources/v2/js/components/layout/Footer.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Welcome_Swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Welcome/Swiper */ "./resources/v2/js/components/Welcome/Swiper.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./resources/v2/js/components/layout/Footer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 
 var Layout = function Layout(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainNavigation__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_MainNavigation__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Welcome_Swiper__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("main", {
       children: props.children
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
   });
 };
 
@@ -5534,7 +5628,7 @@ var MainNavigation = function MainNavigation() {
         loading: "lazy",
         width: "50",
         height: "50",
-        srcset: _public_images_icon_webp__WEBPACK_IMPORTED_MODULE_0__["default"],
+        src: _public_images_icon_webp__WEBPACK_IMPORTED_MODULE_0__["default"],
         alt: "icon",
         className: "lazyload h-14 sm:mr-4 sm:pb-2"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -10860,6 +10954,21 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
+/***/ "./public/images/enjoy.webp":
+/*!**********************************!*\
+  !*** ./public/images/enjoy.webp ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/enjoy.webp?ef6865677114d04a6c5222ecec73d585");
+
+/***/ }),
+
 /***/ "./public/images/icon.webp":
 /*!*********************************!*\
   !*** ./public/images/icon.webp ***!
@@ -10872,6 +10981,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/icon.webp?48815e90d4840e538548850a0610818b");
+
+/***/ }),
+
+/***/ "./public/images/main_1.webp":
+/*!***********************************!*\
+  !*** ./public/images/main_1.webp ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/main_1.webp?0f719f92f78b63990d1fc6f099566786");
+
+/***/ }),
+
+/***/ "./public/images/main_2.webp":
+/*!***********************************!*\
+  !*** ./public/images/main_2.webp ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/main_2.webp?c80f8b8122713cb997c4c7a17e5dce4d");
+
+/***/ }),
+
+/***/ "./public/images/other.webp":
+/*!**********************************!*\
+  !*** ./public/images/other.webp ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/other.webp?051a79241cad2ca7d7f0c6155cf56298");
 
 /***/ }),
 
