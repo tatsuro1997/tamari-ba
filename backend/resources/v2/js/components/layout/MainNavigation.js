@@ -4,7 +4,7 @@ const MainNavigation = () => {
     return (
         <header className="w-full h-20 flex justify-between bg-white p-4">
             <div className='flex w-1/4'>
-                <img loading="lazy" width="50" height="50" srcset={icon} alt="icon" className="lazyload h-14 sm:mr-4 sm:pb-2" />
+                <img loading="lazy" width="50" height="50" src={icon} alt="icon" className="lazyload h-14 sm:mr-4 sm:pb-2" />
                 <div className="text-2xl icon-color font-bold leading-10">Tamari-Ba</div>
             </div>
             <nav className="w-3/4 flex justify-between leading-8">

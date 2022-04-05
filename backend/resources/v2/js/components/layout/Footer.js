@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="w-full sm:py-10 mx-auto sm:flex sm:justify-around">
                 <div className="ml-4 text-center">
                     <div className='flex'>
-                        <img loading="lazy" width="50" height="50" srcset={icon} alt="icon" className="lazyload h-14 sm:mr-4 sm:pb-2" />
+                        <img loading="lazy" width="50" height="50" src={icon} alt="icon" className="lazyload h-14 sm:mr-4 sm:pb-2" />
                         <div className="text-2xl icon-color font-bold leading-10">Tamari-Ba</div>
                     </div>
                     <p className="mt-2 text-sm text-gray-500">あなたの好きが、「たまり場」を創る。</p>
