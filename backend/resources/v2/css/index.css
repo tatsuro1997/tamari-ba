@@ -17,5 +17,5 @@
 }
 
 .nav-signin-button {
-    @apply inline-block font-normal mx-auto text-black bg-orange-400 border-0 py-2 px-4 focus:outline-none hover:bg-orange-500 rounded-full text-sm;
+    @apply inline-block font-normal mx-auto text-black bg-orange-400 border-0 py-2 px-4 focus:outline-none hover:bg-orange-500 rounded-full text-sm h-10 leading-6;
 }

@@ -631,6 +631,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 4rem;
 }.w-28 {
   width: 7rem;
+}.w-1 {
+  width: 0.25rem;
 }.min-w-0 {
   min-width: 0px;
 }.max-w-7xl {
@@ -1003,6 +1005,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.5;
 }.leading-tight {
   line-height: 1.25;
+}.leading-3 {
+  line-height: .75rem;
+}.leading-10 {
+  line-height: 2.5rem;
 }.tracking-widest {
   letter-spacing: 0.1em;
 }.tracking-wider {
@@ -1340,6 +1346,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-top: 5rem;
   }.sm\:pt-0 {
     padding-top: 0px;
+  }.sm\:pb-2 {
+    padding-bottom: 0.5rem;
+  }.sm\:pb-4 {
+    padding-bottom: 1rem;
   }.sm\:text-left {
     text-align: left;
   }.sm\:text-right {
