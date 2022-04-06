@@ -5,7 +5,7 @@ const Layout = (props) => {
     return (
         <div>
             <MainNavigation />
-            <main className="py-16 mx-auto">
+            <main className="pb-16 mx-auto">
                 {props.children}
             </main>
             <Footer />

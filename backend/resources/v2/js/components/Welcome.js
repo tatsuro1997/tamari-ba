@@ -10,6 +10,35 @@ import communicate from '../../../../public/images/communicate.webp';
 import other from '../../../../public/images/other.webp';
 import enjoy from '../../../../public/images/enjoy.webp';
 
+const ABOUT_DATA = [
+    {
+        id: '1',
+        title: 'Tamari-Baとは？',
+        description: 'バイカー同士の情報共有サイトです。',
+    },
+    {
+        id: '2',
+        title: '愛車の共有',
+        description: 'Tamari-Baユーザーのこだわりの愛車を共有可能\n他のバイクを見て、次に買うバイクを決めたり、カスタムパーツを知ることが可能',
+    },
+    {
+        id: '3',
+        title: 'コアな道の共有',
+        description: '大好きなツーリングスポットを共有\nTamari- Baユーザーのお気に入りスポットを閲覧\n次のツーリングスポットを見つけられる',
+    },
+    {
+        id: '4',
+        title: 'ツーリング募集',
+        description: 'この時期だからこそ、みんなでバイクに乗ろう\n一人では味わえないツーリングを見つけよう',
+    },
+    {
+        id: '5',
+        title: 'Tamari-Ba作成背景',
+        description: 'バイク乗り達が自分のバイク、好きな道、きつかった道、楽しかった道の駅等を語り合う「たまり場」をイメージして作成。いつも行くあのカフェ、あの道の駅等の集まってダベれる「たまり場」のように好きなスポットについて語り合えるようなサイトです。\nツーリングに行く際に、目的地までの道が重要なのだが道を紹介するサイトが少ない（もしくはバイク乗りなら誰でも知っているような内容しかなかった）という課題から、道やスポットを紹介し、交流できる場が必要だと感じ作成。',
+    },
+]
+
+
 const PURPOSE_DATA = [
     {
         id: '1',
@@ -75,7 +104,11 @@ function Welcome() {
     return (
         <Fragment>
             <Swiper />
-            <Main roads={LoadedRoads} purposes={PURPOSE_DATA}/>
+            <Main
+                abouts={ABOUT_DATA}
+                purposes={PURPOSE_DATA}
+                roads={LoadedRoads}
+            />
         </Fragment>
     )
 }

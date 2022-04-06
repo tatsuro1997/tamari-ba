@@ -595,6 +595,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 15rem;
 }.h-1 {
   height: 0.25rem;
+}.h-40 {
+  height: 10rem;
 }.max-h-52 {
   max-height: 13rem;
 }.min-h-screen {
@@ -633,6 +635,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 7rem;
 }.w-1 {
   width: 0.25rem;
+}.w-40 {
+  width: 10rem;
+}.w-80 {
+  width: 20rem;
 }.min-w-0 {
   min-width: 0px;
 }.max-w-7xl {
@@ -945,6 +951,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.75rem;
 }.pr-4 {
   padding-right: 1rem;
+}.pb-16 {
+  padding-bottom: 4rem;
 }.text-left {
   text-align: left;
 }.text-center {
