@@ -5388,6 +5388,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+var ABOUT_DATA = [{
+  id: '1'
+}];
 var PURPOSE_DATA = [{
   id: '1',
   image: _public_images_solo_webp__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -5492,7 +5495,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _roads_RoadList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../roads/RoadList */ "./resources/v2/js/components/roads/RoadList.js");
 /* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button */ "./resources/v2/js/components/Welcome/Button.js");
-/* harmony import */ var _PurposeList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PurposeList */ "./resources/v2/js/components/Welcome/PurposeList.js");
+/* harmony import */ var _Purpose_PurposeList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Purpose/PurposeList */ "./resources/v2/js/components/Welcome/Purpose/PurposeList.js");
 /* harmony import */ var _public_images_map_webp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../public/images/map.webp */ "./public/images/map.webp");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -5564,7 +5567,7 @@ var Main = function Main(props) {
           })]
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_PurposeList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Purpose_PurposeList__WEBPACK_IMPORTED_MODULE_2__["default"], {
       purposes: props.purposes
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
       className: "text-gray-600 body-font",
@@ -5602,10 +5605,10 @@ var Main = function Main(props) {
 
 /***/ }),
 
-/***/ "./resources/v2/js/components/Welcome/PurposeItem.js":
-/*!***********************************************************!*\
-  !*** ./resources/v2/js/components/Welcome/PurposeItem.js ***!
-  \***********************************************************/
+/***/ "./resources/v2/js/components/Welcome/Purpose/PurposeItem.js":
+/*!*******************************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/Purpose/PurposeItem.js ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5647,10 +5650,10 @@ var PurposeItem = function PurposeItem(props) {
 
 /***/ }),
 
-/***/ "./resources/v2/js/components/Welcome/PurposeList.js":
-/*!***********************************************************!*\
-  !*** ./resources/v2/js/components/Welcome/PurposeList.js ***!
-  \***********************************************************/
+/***/ "./resources/v2/js/components/Welcome/Purpose/PurposeList.js":
+/*!*******************************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/Purpose/PurposeList.js ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5658,7 +5661,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _PurposeItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PurposeItem */ "./resources/v2/js/components/Welcome/PurposeItem.js");
+/* harmony import */ var _PurposeItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PurposeItem */ "./resources/v2/js/components/Welcome/Purpose/PurposeItem.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 

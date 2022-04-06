@@ -1,6 +1,6 @@
 import RoadList from '../roads/RoadList';
 import Button from './Button';
-import PurposeList from './PurposeList';
+import PurposeList from './Purpose/PurposeList';
 
 import map from '../../../../../public/images/map.webp';
 
