@@ -1,7 +1,8 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
-import RoadList from './roads/RoadList';
+import Swiper from './Welcome/Swiper';
+import Main from './Welcome/Main';
 
 function Welcome() {
     const [LoadedRoads, setLoadedRoads] = useState([]);
@@ -20,7 +21,8 @@ function Welcome() {
 
     return (
         <Fragment>
-            <RoadList roads={LoadedRoads} />
+            <Swiper />
+            <Main roads={LoadedRoads} />
         </Fragment>
     )
 }
