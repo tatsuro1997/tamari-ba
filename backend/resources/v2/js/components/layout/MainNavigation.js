@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import icon from '../../../../../public/images/icon.webp'
 
 const MainNavigation = () => {
@@ -5,23 +7,29 @@ const MainNavigation = () => {
         <header className="w-full h-20 flex justify-between bg-white p-4">
             <div className='flex w-1/4'>
                 <img loading="lazy" width="50" height="50" src={icon} alt="icon" className="lazyload h-14 sm:mr-4 sm:pb-2" />
-                <div className="text-2xl icon-color font-bold leading-10">Tamari-Ba</div>
+                <Link to="v2/welcome">
+                    <button className="text-2xl icon-color font-bold leading-10">Tamari-Ba</button>
+                </Link>
             </div>
             <nav className="w-3/4 flex justify-between leading-8">
                 <ul className="flex">
                     <li className="mr-4 nav-content">
-                        道の投稿
+                        <Link to="roads">道の投稿</Link>
                     </li>
                     <li className="mr-4 nav-content">
-                        バイクの投稿
+                        <Link to="bikes">バイクの投稿</Link>
                     </li>
                     <li className="nav-content">
-                        ツーリング掲示板
+                        <Link to="borads">ツーリング掲示板</Link>
                     </li>
                 </ul>
                 <ul className="flex">
-                    <li className="mr-4 nav-login">ログイン</li>
-                    <li className="nav-signin-button">Tamari-Baに参加</li>
+                    <li className="mr-4 nav-login">
+                        <Link to="login">ログイン</Link>
+                    </li>
+                    <li className="nav-signin-button">
+                        <Link to="register">Tamari-Baに参加</Link>
+                    </li>
                 </ul>
             </nav>
         </header>
