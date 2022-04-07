@@ -14,21 +14,21 @@ const MainNavigation = () => {
             <nav className="w-3/4 flex justify-between leading-8">
                 <ul className="flex">
                     <li className="mr-4 nav-content">
-                        <Link to="roads">道の投稿</Link>
+                        <Link to="v2/roads">道の投稿</Link>
                     </li>
                     <li className="mr-4 nav-content">
-                        <Link to="bikes">バイクの投稿</Link>
+                        <Link to="v2/bikes">バイクの投稿</Link>
                     </li>
                     <li className="nav-content">
-                        <Link to="borads">ツーリング掲示板</Link>
+                        <Link to="v2/borads">ツーリング掲示板</Link>
                     </li>
                 </ul>
                 <ul className="flex">
                     <li className="mr-4 nav-login">
-                        <Link to="login">ログイン</Link>
+                        <Link to="v2/login">ログイン</Link>
                     </li>
                     <li className="nav-signin-button">
-                        <Link to="register">Tamari-Baに参加</Link>
+                        <Link to="v2/register">Tamari-Baに参加</Link>
                     </li>
                 </ul>
             </nav>
