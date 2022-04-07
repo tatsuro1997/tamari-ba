@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\WelcomeController;
+use App\Http\Controllers\User\RoadController;
 
 
 /*
@@ -23,3 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['middleware' => 'api'], function () {
     Route::get('welcome', [WelcomeController::class, 'getRoads']);
 });
+
+// Route::get('roads', [WelcomeController::class, 'getRoads']);
+Route::get('bikes', [WelcomeController::class, 'getRoads']);
+// Route::get('roads', [RoadController::class, 'index']);

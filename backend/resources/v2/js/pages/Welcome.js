@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
-import Swiper from './Welcome/Swiper';
-import Main from './Welcome/Main';
+import Swiper from '../components/Welcome/Swiper';
+import Main from '../components/Welcome/Main';
 
 import solo from '../../../../public/images/solo.webp';
 import touring from '../../../../public/images/touring.webp';

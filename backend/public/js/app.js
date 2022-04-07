@@ -5327,8 +5327,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/layout/Layout */ "./resources/v2/js/components/layout/Layout.js");
-/* harmony import */ var _components_Welcome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Welcome */ "./resources/v2/js/components/Welcome.js");
+/* harmony import */ var _pages_Welcome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Welcome */ "./resources/v2/js/pages/Welcome.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -5337,146 +5338,25 @@ __webpack_require__.r(__webpack_exports__);
 function App() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Routes, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
-          path: "v2/welcome/*",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Welcome__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-        })
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+          path: "v2/welcome",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_pages_Welcome__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+          path: "roads",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_pages_Welcome__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+          path: "bikes",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Bikes"
+          })
+        })]
       })
     })
   });
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
-
-/***/ }),
-
-/***/ "./resources/v2/js/components/Welcome.js":
-/*!***********************************************!*\
-  !*** ./resources/v2/js/components/Welcome.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Welcome_Swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Welcome/Swiper */ "./resources/v2/js/components/Welcome/Swiper.js");
-/* harmony import */ var _Welcome_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Welcome/Main */ "./resources/v2/js/components/Welcome/Main.js");
-/* harmony import */ var _public_images_solo_webp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../public/images/solo.webp */ "./public/images/solo.webp");
-/* harmony import */ var _public_images_touring_webp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../public/images/touring.webp */ "./public/images/touring.webp");
-/* harmony import */ var _public_images_custom_webp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../public/images/custom.webp */ "./public/images/custom.webp");
-/* harmony import */ var _public_images_communicate_webp__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../public/images/communicate.webp */ "./public/images/communicate.webp");
-/* harmony import */ var _public_images_other_webp__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../public/images/other.webp */ "./public/images/other.webp");
-/* harmony import */ var _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../public/images/enjoy.webp */ "./public/images/enjoy.webp");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-
-
-
-
-var ABOUT_DATA = [{
-  id: '1',
-  title: 'Tamari-Baとは？',
-  description: 'バイカー同士の情報共有サイトです。'
-}, {
-  id: '2',
-  title: '愛車の共有',
-  description: 'Tamari-Baユーザーのこだわりの愛車を共有可能\n他のバイクを見て、次に買うバイクを決めたり、カスタムパーツを知ることが可能'
-}, {
-  id: '3',
-  title: 'コアな道の共有',
-  description: '大好きなツーリングスポットを共有\nTamari- Baユーザーのお気に入りスポットを閲覧\n次のツーリングスポットを見つけられる'
-}, {
-  id: '4',
-  title: 'ツーリング募集',
-  description: 'この時期だからこそ、みんなでバイクに乗ろう\n一人では味わえないツーリングを見つけよう'
-}, {
-  id: '5',
-  title: 'Tamari-Ba作成背景',
-  description: 'バイク乗り達が自分のバイク、好きな道、きつかった道、楽しかった道の駅等を語り合う「たまり場」をイメージして作成。いつも行くあのカフェ、あの道の駅等の集まってダベれる「たまり場」のように好きなスポットについて語り合えるようなサイトです。\nツーリングに行く際に、目的地までの道が重要なのだが道を紹介するサイトが少ない（もしくはバイク乗りなら誰でも知っているような内容しかなかった）という課題から、道やスポットを紹介し、交流できる場が必要だと感じ作成。'
-}];
-var PURPOSE_DATA = [{
-  id: '1',
-  image: _public_images_solo_webp__WEBPACK_IMPORTED_MODULE_3__["default"],
-  kind: 'ソロ',
-  title: 'ツーリングスポットはTamari-Baで!',
-  description: 'Tamari-Baではユーザーお気に入りのツーリングスポットが数々紹介されています。目的地が決まっていないときや目的地周辺で次に行くスポットを探すときなどに便利です。'
-}, {
-  id: '2',
-  image: _public_images_touring_webp__WEBPACK_IMPORTED_MODULE_4__["default"],
-  kind: 'ツーリング',
-  title: 'もちろんツーリングも!',
-  description: '同じ目的地に行くのであれば、Tamari-Baユーザーとツーリングをしてみませんか？ソロやいつもの仲間で走るより、知らないバイクを間近で見ることやバイカー同士で会話をするツーリングは同じ目的地に行くのでも格別です。'
-}, {
-  id: '3',
-  image: _public_images_custom_webp__WEBPACK_IMPORTED_MODULE_5__["default"],
-  kind: 'カスタム',
-  title: 'あなたのバイクはこう変わる',
-  description: 'Tamari-Baユーザーの愛車を見ることができます。そこには今乗っている愛車と同じバイクもあるはずです。まだ手を入れていないあなたの愛車もカスタムをすることでさらに愛着が湧くはずです。'
-}, {
-  id: '4',
-  image: _public_images_communicate_webp__WEBPACK_IMPORTED_MODULE_6__["default"],
-  kind: '交流',
-  title: 'バイカー専用SNS',
-  description: 'Tamari-Baはバイク専用のSNSです。ユーザーの愛車やお気に入りの道の投稿に対してコメントすることができます。投稿へのコメントから一緒にツーリングに行くキッカケがうまれます。積極的にコメントすることでTamari-Baすることができます。'
-}, {
-  id: '5',
-  image: _public_images_other_webp__WEBPACK_IMPORTED_MODULE_7__["default"],
-  kind: 'バイク✕？？',
-  title: 'バイクと組み合わせる',
-  description: 'Tamari-Baではバイクを入り口に、カフェや道の駅、バイクと組み合わせてできる趣味の仲間を見つけることができます。そこではバイクが軸となり広がっていくTamari-Baがあります。バイクをキッカケにキャンプやカメラ、釣りなど相性の良い趣味の幅を広げていきましょう。'
-}, {
-  id: '6',
-  image: _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_8__["default"],
-  kind: 'Enjoy',
-  title: '見るだけで楽しい!',
-  description: 'もしまだ愛車がなくても大歓迎!バイクの免許を取りに行こうとしている、次に買うバイクを悩んでいる、ただただバイクを見ることが好きだ!そんな方でも、次のバイクの検討や憧れのバイクを見つけて楽しめます。'
-}];
-
-function Welcome() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      LoadedRoads = _useState2[0],
-      setLoadedRoads = _useState2[1];
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get('/api/welcome').then(function (res) {
-      setLoadedRoads(res.data.data);
-    })["catch"](function (e) {
-      console.log(e);
-    });
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Welcome_Swiper__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Welcome_Main__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      abouts: ABOUT_DATA,
-      purposes: PURPOSE_DATA,
-      roads: LoadedRoads
-    })]
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Welcome);
 
 /***/ }),
 
@@ -6220,6 +6100,135 @@ __webpack_require__.r(__webpack_exports__);
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, {
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_App__WEBPACK_IMPORTED_MODULE_2__["default"], {})
 }), document.getElementById('root'));
+
+/***/ }),
+
+/***/ "./resources/v2/js/pages/Welcome.js":
+/*!******************************************!*\
+  !*** ./resources/v2/js/pages/Welcome.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Welcome_Swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Welcome/Swiper */ "./resources/v2/js/components/Welcome/Swiper.js");
+/* harmony import */ var _components_Welcome_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Welcome/Main */ "./resources/v2/js/components/Welcome/Main.js");
+/* harmony import */ var _public_images_solo_webp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../public/images/solo.webp */ "./public/images/solo.webp");
+/* harmony import */ var _public_images_touring_webp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../public/images/touring.webp */ "./public/images/touring.webp");
+/* harmony import */ var _public_images_custom_webp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../public/images/custom.webp */ "./public/images/custom.webp");
+/* harmony import */ var _public_images_communicate_webp__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../public/images/communicate.webp */ "./public/images/communicate.webp");
+/* harmony import */ var _public_images_other_webp__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../public/images/other.webp */ "./public/images/other.webp");
+/* harmony import */ var _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../public/images/enjoy.webp */ "./public/images/enjoy.webp");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+var ABOUT_DATA = [{
+  id: '1',
+  title: 'Tamari-Baとは？',
+  description: 'バイカー同士の情報共有サイトです。'
+}, {
+  id: '2',
+  title: '愛車の共有',
+  description: 'Tamari-Baユーザーのこだわりの愛車を共有可能\n他のバイクを見て、次に買うバイクを決めたり、カスタムパーツを知ることが可能'
+}, {
+  id: '3',
+  title: 'コアな道の共有',
+  description: '大好きなツーリングスポットを共有\nTamari- Baユーザーのお気に入りスポットを閲覧\n次のツーリングスポットを見つけられる'
+}, {
+  id: '4',
+  title: 'ツーリング募集',
+  description: 'この時期だからこそ、みんなでバイクに乗ろう\n一人では味わえないツーリングを見つけよう'
+}, {
+  id: '5',
+  title: 'Tamari-Ba作成背景',
+  description: 'バイク乗り達が自分のバイク、好きな道、きつかった道、楽しかった道の駅等を語り合う「たまり場」をイメージして作成。いつも行くあのカフェ、あの道の駅等の集まってダベれる「たまり場」のように好きなスポットについて語り合えるようなサイトです。\nツーリングに行く際に、目的地までの道が重要なのだが道を紹介するサイトが少ない（もしくはバイク乗りなら誰でも知っているような内容しかなかった）という課題から、道やスポットを紹介し、交流できる場が必要だと感じ作成。'
+}];
+var PURPOSE_DATA = [{
+  id: '1',
+  image: _public_images_solo_webp__WEBPACK_IMPORTED_MODULE_3__["default"],
+  kind: 'ソロ',
+  title: 'ツーリングスポットはTamari-Baで!',
+  description: 'Tamari-Baではユーザーお気に入りのツーリングスポットが数々紹介されています。目的地が決まっていないときや目的地周辺で次に行くスポットを探すときなどに便利です。'
+}, {
+  id: '2',
+  image: _public_images_touring_webp__WEBPACK_IMPORTED_MODULE_4__["default"],
+  kind: 'ツーリング',
+  title: 'もちろんツーリングも!',
+  description: '同じ目的地に行くのであれば、Tamari-Baユーザーとツーリングをしてみませんか？ソロやいつもの仲間で走るより、知らないバイクを間近で見ることやバイカー同士で会話をするツーリングは同じ目的地に行くのでも格別です。'
+}, {
+  id: '3',
+  image: _public_images_custom_webp__WEBPACK_IMPORTED_MODULE_5__["default"],
+  kind: 'カスタム',
+  title: 'あなたのバイクはこう変わる',
+  description: 'Tamari-Baユーザーの愛車を見ることができます。そこには今乗っている愛車と同じバイクもあるはずです。まだ手を入れていないあなたの愛車もカスタムをすることでさらに愛着が湧くはずです。'
+}, {
+  id: '4',
+  image: _public_images_communicate_webp__WEBPACK_IMPORTED_MODULE_6__["default"],
+  kind: '交流',
+  title: 'バイカー専用SNS',
+  description: 'Tamari-Baはバイク専用のSNSです。ユーザーの愛車やお気に入りの道の投稿に対してコメントすることができます。投稿へのコメントから一緒にツーリングに行くキッカケがうまれます。積極的にコメントすることでTamari-Baすることができます。'
+}, {
+  id: '5',
+  image: _public_images_other_webp__WEBPACK_IMPORTED_MODULE_7__["default"],
+  kind: 'バイク✕？？',
+  title: 'バイクと組み合わせる',
+  description: 'Tamari-Baではバイクを入り口に、カフェや道の駅、バイクと組み合わせてできる趣味の仲間を見つけることができます。そこではバイクが軸となり広がっていくTamari-Baがあります。バイクをキッカケにキャンプやカメラ、釣りなど相性の良い趣味の幅を広げていきましょう。'
+}, {
+  id: '6',
+  image: _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_8__["default"],
+  kind: 'Enjoy',
+  title: '見るだけで楽しい!',
+  description: 'もしまだ愛車がなくても大歓迎!バイクの免許を取りに行こうとしている、次に買うバイクを悩んでいる、ただただバイクを見ることが好きだ!そんな方でも、次のバイクの検討や憧れのバイクを見つけて楽しめます。'
+}];
+
+function Welcome() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      LoadedRoads = _useState2[0],
+      setLoadedRoads = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios.get('/api/welcome').then(function (res) {
+      setLoadedRoads(res.data.data);
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Welcome_Swiper__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Welcome_Main__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      abouts: ABOUT_DATA,
+      purposes: PURPOSE_DATA,
+      roads: LoadedRoads
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Welcome);
 
 /***/ }),
 
