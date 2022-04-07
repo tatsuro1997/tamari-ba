@@ -6039,7 +6039,7 @@ var RoadItem = function RoadItem(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "p-6",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-          className: "title-font text-lg font-medium text-gray-900 mb-3",
+          className: "text-left title-font text-lg font-medium text-gray-900 mb-3",
           children: props.title
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "flex justify-end",

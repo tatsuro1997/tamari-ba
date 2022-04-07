@@ -9,7 +9,7 @@ const RoadItem = (props) => {
                     src={props.filename}
                 />
                 <div className="p-6">
-                    <h2 className="title-font text-lg font-medium text-gray-900 mb-3">
+                    <h2 className="text-left title-font text-lg font-medium text-gray-900 mb-3">
                         {props.title}
                     </h2>
                     <div className="flex justify-end">
