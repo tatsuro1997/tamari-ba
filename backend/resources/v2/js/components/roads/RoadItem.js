@@ -1,13 +1,17 @@
+import { Link } from 'react-router-dom';
+
 import Card from "../ui/Card";
 
 const RoadItem = (props) => {
     return (
         <Card>
             <div key={props.id}>
-                <img
-                    className="lazyload w-full sm:max-h-60 max-h-52 mx-auto bg-cover"
-                    src={props.filename}
-                />
+                <Link to={`${props.id}`}>
+                    <img
+                        className="lazyload w-full sm:max-h-60 max-h-52 mx-auto bg-cover"
+                        src={props.filename}
+                    />
+                </Link>
                 <div className="p-6">
                     <h2 className="text-left title-font text-lg font-medium text-gray-900 mb-3">
                         {props.title}
