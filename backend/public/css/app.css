@@ -11919,6 +11919,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 7rem;
 }.w-80 {
   width: 20rem;
+}.w-screen {
+  width: 100vw;
 }.min-w-0 {
   min-width: 0px;
 }.max-w-7xl {
