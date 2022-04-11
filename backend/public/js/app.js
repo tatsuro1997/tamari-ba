@@ -13518,14 +13518,23 @@ var Map = function Map(props) {
       setcenter = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (!isShowMarker) {
-      setcenter({
-        lat: props.lat,
-        lng: props.lng
-      });
-      setIsShowMarker(true);
-    }
+    var timer = setTimeout(function () {
+      if (!isShowMarker) {
+        setcenter({
+          lat: props.lat,
+          lng: props.lng
+        });
+        setIsShowMarker(true);
+      }
+    }, 500);
+    return function () {
+      clearTimeout(timer);
+    }; // if (!isShowMarker) {
+    //     setcenter({ lat: props.lat, lng: props.lng });
+    //     setIsShowMarker(true);
+    // }
   }, [center, setIsShowMarker]);
+  console.log(process.env.REACT_APP_GOOGLE_MAP_API_KEY);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.LoadScript, {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.GoogleMap, {
