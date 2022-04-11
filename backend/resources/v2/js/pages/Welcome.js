@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
-import Swiper from '../components/Welcome/Swiper';
 import Main from '../components/Welcome/Main';
 
 import solo from '../../../../public/images/solo.webp';
@@ -103,7 +102,6 @@ function Welcome() {
 
     return (
         <Fragment>
-            <Swiper />
             <Main
                 abouts={ABOUT_DATA}
                 purposes={PURPOSE_DATA}
