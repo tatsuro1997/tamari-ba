@@ -13534,7 +13534,8 @@ var Map = function Map(props) {
     //     setIsShowMarker(true);
     // }
   }, [center, setIsShowMarker]);
-  console.log(process.env.REACT_APP_GOOGLE_MAP_API_KEY);
+  console.log('GoogleApiKey');
+  console.log("AIzaSyA2tlchreYbSYH5E0qgkrWt6yNF8FgnkO8");
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.LoadScript, {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.GoogleMap, {
