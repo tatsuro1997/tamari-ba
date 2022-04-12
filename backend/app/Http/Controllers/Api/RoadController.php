@@ -13,4 +13,9 @@ class RoadController extends Controller
     {
         return RoadResource::collection(Road::all());
     }
+
+    public function getRoad($id)
+    {
+        return RoadResource::collection(Road::all()->where('id', $id));
+    }
 }

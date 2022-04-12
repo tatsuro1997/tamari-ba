@@ -13,7 +13,7 @@ function App() {
                 <Routes>
                     <Route path="v2/welcome" element={<Welcome />} />
                     <Route path="v2/roads" element={<Roads />} />
-                    <Route path="v2/roads/:id" element={<RoadDetail />} />
+                    <Route path="v2/roads/:roadId" element={<RoadDetail />} />
                     <Route path="bikes" element={<p>Bikes</p>} />
                 </Routes>
             </Layout>

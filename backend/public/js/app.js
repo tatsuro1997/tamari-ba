@@ -12868,7 +12868,7 @@ function App() {
           path: "v2/roads",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_pages_Roads__WEBPACK_IMPORTED_MODULE_2__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-          path: "v2/roads/:id",
+          path: "v2/roads/:roadId",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_pages_RoadDetail__WEBPACK_IMPORTED_MODULE_1__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
           path: "bikes",
@@ -13830,10 +13830,9 @@ var RoadDetail = function RoadDetail() {
       road = _useState2[0],
       setRoad = _useState2[1];
 
+  var query = "/".concat(roadId);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get('/api/road', {
-      id: roadId
-    }).then(function (res) {
+    axios.get('/api/road' + query).then(function (res) {
       setRoad(res.data.data[0]);
       console.log(res.data.data[0]);
     })["catch"](function (e) {

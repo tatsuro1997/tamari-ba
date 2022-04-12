@@ -4,15 +4,14 @@ import Map from "../components/roads/Map";
 
 const RoadDetail = () => {
     const { roadId } = useParams();
-
     const [road, setRoad] = useState('');
+
+    const query = `/${roadId}`;
 
     useEffect(
         () => {
             axios
-                .get('/api/road', {
-                    id: roadId
-                })
+                .get('/api/road' + query)
                 .then((res) => {
                     setRoad(res.data.data[0]);
                     console.log(res.data.data[0]);
