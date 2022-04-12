@@ -23,14 +23,14 @@ const MainNavigation = () => {
                         <Link to="v2/borads">ツーリング掲示板</Link>
                     </li>
                 </ul>
-                <ul className="flex">
+                {/* <ul className="flex">
                     <li className="mr-4 nav-login">
                         <Link to="v2/login">ログイン</Link>
                     </li>
                     <li className="nav-signin-button">
                         <Link to="v2/register">Tamari-Baに参加</Link>
                     </li>
-                </ul>
+                </ul> */}
             </nav>
         </header>
     );
