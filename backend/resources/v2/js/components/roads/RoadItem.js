@@ -6,7 +6,7 @@ const RoadItem = (props) => {
     return (
         <Card>
             <div key={props.id}>
-                <Link to={`${props.id}`}>
+                <Link to={`/v2/roads/${props.id}`}>
                     <img
                         className="lazyload w-full sm:max-h-60 max-h-52 mx-auto bg-cover"
                         src={props.filename}
