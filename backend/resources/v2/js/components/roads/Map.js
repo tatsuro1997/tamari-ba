@@ -5,7 +5,7 @@ import LoadingSpinner from "../ui/LoadingSpiner";
 
 const containerStyle = {
     width: "50%",
-    height: "400px",
+    height: "sm:max-h-80 max-h-52",
 };
 
 const BASE_POSITION = {

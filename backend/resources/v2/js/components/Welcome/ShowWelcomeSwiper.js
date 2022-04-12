@@ -4,8 +4,7 @@ import Swiper from './Swiper';
 
 const ShowWelcomeSwiper = () => {
     let location = useLocation();
-    console.log(location.pathname);
-    
+
     if (location.pathname.match(/welcome/)) {
         return <Swiper />;
     }
