@@ -4,7 +4,7 @@ import RoadList from "../components/roads/RoadList";
 
 const Roads = () => {
 
-    const [LoadedRoads, setLoadedRoads] = useState([]);
+    const [loadedRoads, setLoadedRoads] = useState([]);
 
     useEffect(
         () => {
@@ -20,7 +20,7 @@ const Roads = () => {
 
     return (
         <Fragment>
-            <RoadList roads={LoadedRoads}/>
+            <RoadList roads={loadedRoads}/>
         </Fragment>
     )
 };
