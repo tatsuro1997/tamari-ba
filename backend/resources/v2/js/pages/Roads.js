@@ -1,15 +1,15 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import ReactDOM from 'react-dom';
 
-import RoadList from './roads/RoadList';
+import RoadList from "../components/roads/RoadList";
 
-function Welcome() {
-    const [LoadedRoads, setLoadedRoads] = useState([]);
+const Roads = () => {
+
+    const [loadedRoads, setLoadedRoads] = useState([]);
 
     useEffect(
         () => {
             axios
-                .get('/api/welcome')
+                .get('/api/roads')
                 .then((res) => {
                     setLoadedRoads(res.data.data);
                 })
@@ -20,9 +20,9 @@ function Welcome() {
 
     return (
         <Fragment>
-            <RoadList roads={LoadedRoads} />
+            <RoadList roads={loadedRoads}/>
         </Fragment>
     )
-}
+};
 
-export default Welcome;
+export default Roads;

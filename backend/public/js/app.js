@@ -3202,6 +3202,7524 @@ function withinMaxClamp(min, value, max) {
 
 /***/ }),
 
+/***/ "./node_modules/@react-google-maps/api/dist/esm.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@react-google-maps/api/dist/esm.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Autocomplete": () => (/* binding */ Autocomplete),
+/* harmony export */   "BicyclingLayer": () => (/* binding */ BicyclingLayer),
+/* harmony export */   "Circle": () => (/* binding */ Circle),
+/* harmony export */   "Data": () => (/* binding */ Data),
+/* harmony export */   "DirectionsRenderer": () => (/* binding */ DirectionsRenderer),
+/* harmony export */   "DirectionsService": () => (/* binding */ DirectionsService),
+/* harmony export */   "DistanceMatrixService": () => (/* binding */ DistanceMatrixService),
+/* harmony export */   "DrawingManager": () => (/* binding */ DrawingManager),
+/* harmony export */   "GoogleMap": () => (/* binding */ GoogleMap),
+/* harmony export */   "GoogleMapsMarkerClusterer": () => (/* binding */ index_esm),
+/* harmony export */   "GoogleMarkerClusterer": () => (/* binding */ GoogleMarkerClusterer$1),
+/* harmony export */   "GroundOverlay": () => (/* binding */ GroundOverlay),
+/* harmony export */   "HeatmapLayer": () => (/* binding */ HeatmapLayer),
+/* harmony export */   "InfoBox": () => (/* binding */ InfoBoxComponent),
+/* harmony export */   "InfoWindow": () => (/* binding */ InfoWindow),
+/* harmony export */   "KmlLayer": () => (/* binding */ KmlLayer),
+/* harmony export */   "LoadScript": () => (/* binding */ LoadScript),
+/* harmony export */   "LoadScriptNext": () => (/* binding */ LoadScriptNext$1),
+/* harmony export */   "MapContext": () => (/* binding */ MapContext),
+/* harmony export */   "Marker": () => (/* binding */ Marker),
+/* harmony export */   "MarkerClusterer": () => (/* binding */ ClustererComponent),
+/* harmony export */   "OverlayView": () => (/* binding */ OverlayView),
+/* harmony export */   "Polygon": () => (/* binding */ Polygon),
+/* harmony export */   "Polyline": () => (/* binding */ Polyline),
+/* harmony export */   "Rectangle": () => (/* binding */ Rectangle),
+/* harmony export */   "StandaloneSearchBox": () => (/* binding */ StandaloneSearchBox),
+/* harmony export */   "StreetViewPanorama": () => (/* binding */ StreetViewPanorama),
+/* harmony export */   "StreetViewService": () => (/* binding */ StreetViewService),
+/* harmony export */   "TrafficLayer": () => (/* binding */ TrafficLayer),
+/* harmony export */   "TransitLayer": () => (/* binding */ TransitLayer),
+/* harmony export */   "useGoogleMap": () => (/* binding */ useGoogleMap),
+/* harmony export */   "useJsApiLoader": () => (/* binding */ useJsApiLoader),
+/* harmony export */   "useLoadScript": () => (/* binding */ useLoadScript)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+
+
+
+
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof __webpack_require__.g !== 'undefined' ? __webpack_require__.g : typeof self !== 'undefined' ? self : {};
+
+var jsxRuntime = {exports: {}};
+
+var reactJsxRuntime_production_min = {};
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+var objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty$1.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+/** @license React v17.0.2
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+var f=react__WEBPACK_IMPORTED_MODULE_0__,g=60103;reactJsxRuntime_production_min.Fragment=60107;if("function"===typeof Symbol&&Symbol.for){var h=Symbol.for;g=h("react.element");reactJsxRuntime_production_min.Fragment=h("react.fragment");}var m=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,n=Object.prototype.hasOwnProperty,p={key:!0,ref:!0,__self:!0,__source:!0};
+function q(c,a,k){var b,d={},e=null,l=null;void 0!==k&&(e=""+k);void 0!==a.key&&(e=""+a.key);void 0!==a.ref&&(l=a.ref);for(b in a)n.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return {$$typeof:g,type:c,key:e,ref:l,props:d,_owner:m.current}}reactJsxRuntime_production_min.jsx=q;reactJsxRuntime_production_min.jsxs=q;
+
+var reactJsxRuntime_development = {};
+
+/** @license React v17.0.2
+ * react-jsx-runtime.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+(function (exports) {
+
+if (true) {
+  (function() {
+
+var React = react__WEBPACK_IMPORTED_MODULE_0__;
+var _assign = objectAssign;
+
+// ATTENTION
+// When adding new symbols to this file,
+// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var REACT_ELEMENT_TYPE = 0xeac7;
+var REACT_PORTAL_TYPE = 0xeaca;
+exports.Fragment = 0xeacb;
+var REACT_STRICT_MODE_TYPE = 0xeacc;
+var REACT_PROFILER_TYPE = 0xead2;
+var REACT_PROVIDER_TYPE = 0xeacd;
+var REACT_CONTEXT_TYPE = 0xeace;
+var REACT_FORWARD_REF_TYPE = 0xead0;
+var REACT_SUSPENSE_TYPE = 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+var REACT_MEMO_TYPE = 0xead3;
+var REACT_LAZY_TYPE = 0xead4;
+var REACT_BLOCK_TYPE = 0xead9;
+var REACT_SERVER_BLOCK_TYPE = 0xeada;
+var REACT_FUNDAMENTAL_TYPE = 0xead5;
+var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
+
+if (typeof Symbol === 'function' && Symbol.for) {
+  var symbolFor = Symbol.for;
+  REACT_ELEMENT_TYPE = symbolFor('react.element');
+  REACT_PORTAL_TYPE = symbolFor('react.portal');
+  exports.Fragment = symbolFor('react.fragment');
+  REACT_STRICT_MODE_TYPE = symbolFor('react.strict_mode');
+  REACT_PROFILER_TYPE = symbolFor('react.profiler');
+  REACT_PROVIDER_TYPE = symbolFor('react.provider');
+  REACT_CONTEXT_TYPE = symbolFor('react.context');
+  REACT_FORWARD_REF_TYPE = symbolFor('react.forward_ref');
+  REACT_SUSPENSE_TYPE = symbolFor('react.suspense');
+  REACT_SUSPENSE_LIST_TYPE = symbolFor('react.suspense_list');
+  REACT_MEMO_TYPE = symbolFor('react.memo');
+  REACT_LAZY_TYPE = symbolFor('react.lazy');
+  REACT_BLOCK_TYPE = symbolFor('react.block');
+  REACT_SERVER_BLOCK_TYPE = symbolFor('react.server.block');
+  REACT_FUNDAMENTAL_TYPE = symbolFor('react.fundamental');
+  symbolFor('react.scope');
+  symbolFor('react.opaque.id');
+  REACT_DEBUG_TRACING_MODE_TYPE = symbolFor('react.debug_trace_mode');
+  symbolFor('react.offscreen');
+  REACT_LEGACY_HIDDEN_TYPE = symbolFor('react.legacy_hidden');
+}
+
+var MAYBE_ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+var FAUX_ITERATOR_SYMBOL = '@@iterator';
+function getIteratorFn(maybeIterable) {
+  if (maybeIterable === null || typeof maybeIterable !== 'object') {
+    return null;
+  }
+
+  var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
+
+  if (typeof maybeIterator === 'function') {
+    return maybeIterator;
+  }
+
+  return null;
+}
+
+var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+
+function error(format) {
+  {
+    for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+      args[_key2 - 1] = arguments[_key2];
+    }
+
+    printWarning('error', format, args);
+  }
+}
+
+function printWarning(level, format, args) {
+  // When changing this logic, you might want to also
+  // update consoleWithStackDev.www.js as well.
+  {
+    var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+    var stack = ReactDebugCurrentFrame.getStackAddendum();
+
+    if (stack !== '') {
+      format += '%s';
+      args = args.concat([stack]);
+    }
+
+    var argsWithFormat = args.map(function (item) {
+      return '' + item;
+    }); // Careful: RN currently depends on this prefix
+
+    argsWithFormat.unshift('Warning: ' + format); // We intentionally don't use spread (or .apply) directly because it
+    // breaks IE9: https://github.com/facebook/react/issues/13610
+    // eslint-disable-next-line react-internal/no-production-logging
+
+    Function.prototype.apply.call(console[level], console, argsWithFormat);
+  }
+}
+
+// Filter certain DOM attributes (e.g. src, href) if their values are empty strings.
+
+var enableScopeAPI = false; // Experimental Create Event Handle API.
+
+function isValidElementType(type) {
+  if (typeof type === 'string' || typeof type === 'function') {
+    return true;
+  } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
+
+
+  if (type === exports.Fragment || type === REACT_PROFILER_TYPE || type === REACT_DEBUG_TRACING_MODE_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || type === REACT_LEGACY_HIDDEN_TYPE || enableScopeAPI ) {
+    return true;
+  }
+
+  if (typeof type === 'object' && type !== null) {
+    if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_BLOCK_TYPE || type[0] === REACT_SERVER_BLOCK_TYPE) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function getWrappedName(outerType, innerType, wrapperName) {
+  var functionName = innerType.displayName || innerType.name || '';
+  return outerType.displayName || (functionName !== '' ? wrapperName + "(" + functionName + ")" : wrapperName);
+}
+
+function getContextName(type) {
+  return type.displayName || 'Context';
+}
+
+function getComponentName(type) {
+  if (type == null) {
+    // Host root, text node or just invalid type.
+    return null;
+  }
+
+  {
+    if (typeof type.tag === 'number') {
+      error('Received an unexpected object in getComponentName(). ' + 'This is likely a bug in React. Please file an issue.');
+    }
+  }
+
+  if (typeof type === 'function') {
+    return type.displayName || type.name || null;
+  }
+
+  if (typeof type === 'string') {
+    return type;
+  }
+
+  switch (type) {
+    case exports.Fragment:
+      return 'Fragment';
+
+    case REACT_PORTAL_TYPE:
+      return 'Portal';
+
+    case REACT_PROFILER_TYPE:
+      return 'Profiler';
+
+    case REACT_STRICT_MODE_TYPE:
+      return 'StrictMode';
+
+    case REACT_SUSPENSE_TYPE:
+      return 'Suspense';
+
+    case REACT_SUSPENSE_LIST_TYPE:
+      return 'SuspenseList';
+  }
+
+  if (typeof type === 'object') {
+    switch (type.$$typeof) {
+      case REACT_CONTEXT_TYPE:
+        var context = type;
+        return getContextName(context) + '.Consumer';
+
+      case REACT_PROVIDER_TYPE:
+        var provider = type;
+        return getContextName(provider._context) + '.Provider';
+
+      case REACT_FORWARD_REF_TYPE:
+        return getWrappedName(type, type.render, 'ForwardRef');
+
+      case REACT_MEMO_TYPE:
+        return getComponentName(type.type);
+
+      case REACT_BLOCK_TYPE:
+        return getComponentName(type._render);
+
+      case REACT_LAZY_TYPE:
+        {
+          var lazyComponent = type;
+          var payload = lazyComponent._payload;
+          var init = lazyComponent._init;
+
+          try {
+            return getComponentName(init(payload));
+          } catch (x) {
+            return null;
+          }
+        }
+    }
+  }
+
+  return null;
+}
+
+// Helpers to patch console.logs to avoid logging during side-effect free
+// replaying on render function. This currently only patches the object
+// lazily which won't cover if the log function was extracted eagerly.
+// We could also eagerly patch the method.
+var disabledDepth = 0;
+var prevLog;
+var prevInfo;
+var prevWarn;
+var prevError;
+var prevGroup;
+var prevGroupCollapsed;
+var prevGroupEnd;
+
+function disabledLog() {}
+
+disabledLog.__reactDisabledLog = true;
+function disableLogs() {
+  {
+    if (disabledDepth === 0) {
+      /* eslint-disable react-internal/no-production-logging */
+      prevLog = console.log;
+      prevInfo = console.info;
+      prevWarn = console.warn;
+      prevError = console.error;
+      prevGroup = console.group;
+      prevGroupCollapsed = console.groupCollapsed;
+      prevGroupEnd = console.groupEnd; // https://github.com/facebook/react/issues/19099
+
+      var props = {
+        configurable: true,
+        enumerable: true,
+        value: disabledLog,
+        writable: true
+      }; // $FlowFixMe Flow thinks console is immutable.
+
+      Object.defineProperties(console, {
+        info: props,
+        log: props,
+        warn: props,
+        error: props,
+        group: props,
+        groupCollapsed: props,
+        groupEnd: props
+      });
+      /* eslint-enable react-internal/no-production-logging */
+    }
+
+    disabledDepth++;
+  }
+}
+function reenableLogs() {
+  {
+    disabledDepth--;
+
+    if (disabledDepth === 0) {
+      /* eslint-disable react-internal/no-production-logging */
+      var props = {
+        configurable: true,
+        enumerable: true,
+        writable: true
+      }; // $FlowFixMe Flow thinks console is immutable.
+
+      Object.defineProperties(console, {
+        log: _assign({}, props, {
+          value: prevLog
+        }),
+        info: _assign({}, props, {
+          value: prevInfo
+        }),
+        warn: _assign({}, props, {
+          value: prevWarn
+        }),
+        error: _assign({}, props, {
+          value: prevError
+        }),
+        group: _assign({}, props, {
+          value: prevGroup
+        }),
+        groupCollapsed: _assign({}, props, {
+          value: prevGroupCollapsed
+        }),
+        groupEnd: _assign({}, props, {
+          value: prevGroupEnd
+        })
+      });
+      /* eslint-enable react-internal/no-production-logging */
+    }
+
+    if (disabledDepth < 0) {
+      error('disabledDepth fell below zero. ' + 'This is a bug in React. Please file an issue.');
+    }
+  }
+}
+
+var ReactCurrentDispatcher = ReactSharedInternals.ReactCurrentDispatcher;
+var prefix;
+function describeBuiltInComponentFrame(name, source, ownerFn) {
+  {
+    if (prefix === undefined) {
+      // Extract the VM specific prefix used by each line.
+      try {
+        throw Error();
+      } catch (x) {
+        var match = x.stack.trim().match(/\n( *(at )?)/);
+        prefix = match && match[1] || '';
+      }
+    } // We use the prefix to ensure our stacks line up with native stack frames.
+
+
+    return '\n' + prefix + name;
+  }
+}
+var reentry = false;
+var componentFrameCache;
+
+{
+  var PossiblyWeakMap = typeof WeakMap === 'function' ? WeakMap : Map;
+  componentFrameCache = new PossiblyWeakMap();
+}
+
+function describeNativeComponentFrame(fn, construct) {
+  // If something asked for a stack inside a fake render, it should get ignored.
+  if (!fn || reentry) {
+    return '';
+  }
+
+  {
+    var frame = componentFrameCache.get(fn);
+
+    if (frame !== undefined) {
+      return frame;
+    }
+  }
+
+  var control;
+  reentry = true;
+  var previousPrepareStackTrace = Error.prepareStackTrace; // $FlowFixMe It does accept undefined.
+
+  Error.prepareStackTrace = undefined;
+  var previousDispatcher;
+
+  {
+    previousDispatcher = ReactCurrentDispatcher.current; // Set the dispatcher in DEV because this might be call in the render function
+    // for warnings.
+
+    ReactCurrentDispatcher.current = null;
+    disableLogs();
+  }
+
+  try {
+    // This should throw.
+    if (construct) {
+      // Something should be setting the props in the constructor.
+      var Fake = function () {
+        throw Error();
+      }; // $FlowFixMe
+
+
+      Object.defineProperty(Fake.prototype, 'props', {
+        set: function () {
+          // We use a throwing setter instead of frozen or non-writable props
+          // because that won't throw in a non-strict mode function.
+          throw Error();
+        }
+      });
+
+      if (typeof Reflect === 'object' && Reflect.construct) {
+        // We construct a different control for this case to include any extra
+        // frames added by the construct call.
+        try {
+          Reflect.construct(Fake, []);
+        } catch (x) {
+          control = x;
+        }
+
+        Reflect.construct(fn, [], Fake);
+      } else {
+        try {
+          Fake.call();
+        } catch (x) {
+          control = x;
+        }
+
+        fn.call(Fake.prototype);
+      }
+    } else {
+      try {
+        throw Error();
+      } catch (x) {
+        control = x;
+      }
+
+      fn();
+    }
+  } catch (sample) {
+    // This is inlined manually because closure doesn't do it for us.
+    if (sample && control && typeof sample.stack === 'string') {
+      // This extracts the first frame from the sample that isn't also in the control.
+      // Skipping one frame that we assume is the frame that calls the two.
+      var sampleLines = sample.stack.split('\n');
+      var controlLines = control.stack.split('\n');
+      var s = sampleLines.length - 1;
+      var c = controlLines.length - 1;
+
+      while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
+        // We expect at least one stack frame to be shared.
+        // Typically this will be the root most one. However, stack frames may be
+        // cut off due to maximum stack limits. In this case, one maybe cut off
+        // earlier than the other. We assume that the sample is longer or the same
+        // and there for cut off earlier. So we should find the root most frame in
+        // the sample somewhere in the control.
+        c--;
+      }
+
+      for (; s >= 1 && c >= 0; s--, c--) {
+        // Next we find the first one that isn't the same which should be the
+        // frame that called our sample function and the control.
+        if (sampleLines[s] !== controlLines[c]) {
+          // In V8, the first line is describing the message but other VMs don't.
+          // If we're about to return the first line, and the control is also on the same
+          // line, that's a pretty good indicator that our sample threw at same line as
+          // the control. I.e. before we entered the sample frame. So we ignore this result.
+          // This can happen if you passed a class to function component, or non-function.
+          if (s !== 1 || c !== 1) {
+            do {
+              s--;
+              c--; // We may still have similar intermediate frames from the construct call.
+              // The next one that isn't the same should be our match though.
+
+              if (c < 0 || sampleLines[s] !== controlLines[c]) {
+                // V8 adds a "new" prefix for native classes. Let's remove it to make it prettier.
+                var _frame = '\n' + sampleLines[s].replace(' at new ', ' at ');
+
+                {
+                  if (typeof fn === 'function') {
+                    componentFrameCache.set(fn, _frame);
+                  }
+                } // Return the line we found.
+
+
+                return _frame;
+              }
+            } while (s >= 1 && c >= 0);
+          }
+
+          break;
+        }
+      }
+    }
+  } finally {
+    reentry = false;
+
+    {
+      ReactCurrentDispatcher.current = previousDispatcher;
+      reenableLogs();
+    }
+
+    Error.prepareStackTrace = previousPrepareStackTrace;
+  } // Fallback to just using the name if we couldn't make it throw.
+
+
+  var name = fn ? fn.displayName || fn.name : '';
+  var syntheticFrame = name ? describeBuiltInComponentFrame(name) : '';
+
+  {
+    if (typeof fn === 'function') {
+      componentFrameCache.set(fn, syntheticFrame);
+    }
+  }
+
+  return syntheticFrame;
+}
+function describeFunctionComponentFrame(fn, source, ownerFn) {
+  {
+    return describeNativeComponentFrame(fn, false);
+  }
+}
+
+function shouldConstruct(Component) {
+  var prototype = Component.prototype;
+  return !!(prototype && prototype.isReactComponent);
+}
+
+function describeUnknownElementTypeFrameInDEV(type, source, ownerFn) {
+
+  if (type == null) {
+    return '';
+  }
+
+  if (typeof type === 'function') {
+    {
+      return describeNativeComponentFrame(type, shouldConstruct(type));
+    }
+  }
+
+  if (typeof type === 'string') {
+    return describeBuiltInComponentFrame(type);
+  }
+
+  switch (type) {
+    case REACT_SUSPENSE_TYPE:
+      return describeBuiltInComponentFrame('Suspense');
+
+    case REACT_SUSPENSE_LIST_TYPE:
+      return describeBuiltInComponentFrame('SuspenseList');
+  }
+
+  if (typeof type === 'object') {
+    switch (type.$$typeof) {
+      case REACT_FORWARD_REF_TYPE:
+        return describeFunctionComponentFrame(type.render);
+
+      case REACT_MEMO_TYPE:
+        // Memo may contain any component type so we recursively resolve it.
+        return describeUnknownElementTypeFrameInDEV(type.type, source, ownerFn);
+
+      case REACT_BLOCK_TYPE:
+        return describeFunctionComponentFrame(type._render);
+
+      case REACT_LAZY_TYPE:
+        {
+          var lazyComponent = type;
+          var payload = lazyComponent._payload;
+          var init = lazyComponent._init;
+
+          try {
+            // Lazy may contain any component type so we recursively resolve it.
+            return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
+          } catch (x) {}
+        }
+    }
+  }
+
+  return '';
+}
+
+var loggedTypeFailures = {};
+var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+
+function setCurrentlyValidatingElement(element) {
+  {
+    if (element) {
+      var owner = element._owner;
+      var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
+      ReactDebugCurrentFrame.setExtraStackFrame(stack);
+    } else {
+      ReactDebugCurrentFrame.setExtraStackFrame(null);
+    }
+  }
+}
+
+function checkPropTypes(typeSpecs, values, location, componentName, element) {
+  {
+    // $FlowFixMe This is okay but Flow doesn't know it.
+    var has = Function.call.bind(Object.prototype.hasOwnProperty);
+
+    for (var typeSpecName in typeSpecs) {
+      if (has(typeSpecs, typeSpecName)) {
+        var error$1 = void 0; // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
+            err.name = 'Invariant Violation';
+            throw err;
+          }
+
+          error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED');
+        } catch (ex) {
+          error$1 = ex;
+        }
+
+        if (error$1 && !(error$1 instanceof Error)) {
+          setCurrentlyValidatingElement(element);
+
+          error('%s: type specification of %s' + ' `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error$1);
+
+          setCurrentlyValidatingElement(null);
+        }
+
+        if (error$1 instanceof Error && !(error$1.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error$1.message] = true;
+          setCurrentlyValidatingElement(element);
+
+          error('Failed %s type: %s', location, error$1.message);
+
+          setCurrentlyValidatingElement(null);
+        }
+      }
+    }
+  }
+}
+
+var ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var RESERVED_PROPS = {
+  key: true,
+  ref: true,
+  __self: true,
+  __source: true
+};
+var specialPropKeyWarningShown;
+var specialPropRefWarningShown;
+var didWarnAboutStringRefs;
+
+{
+  didWarnAboutStringRefs = {};
+}
+
+function hasValidRef(config) {
+  {
+    if (hasOwnProperty.call(config, 'ref')) {
+      var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;
+
+      if (getter && getter.isReactWarning) {
+        return false;
+      }
+    }
+  }
+
+  return config.ref !== undefined;
+}
+
+function hasValidKey(config) {
+  {
+    if (hasOwnProperty.call(config, 'key')) {
+      var getter = Object.getOwnPropertyDescriptor(config, 'key').get;
+
+      if (getter && getter.isReactWarning) {
+        return false;
+      }
+    }
+  }
+
+  return config.key !== undefined;
+}
+
+function warnIfStringRefCannotBeAutoConverted(config, self) {
+  {
+    if (typeof config.ref === 'string' && ReactCurrentOwner.current && self && ReactCurrentOwner.current.stateNode !== self) {
+      var componentName = getComponentName(ReactCurrentOwner.current.type);
+
+      if (!didWarnAboutStringRefs[componentName]) {
+        error('Component "%s" contains the string ref "%s". ' + 'Support for string refs will be removed in a future major release. ' + 'This case cannot be automatically converted to an arrow function. ' + 'We ask you to manually fix this case by using useRef() or createRef() instead. ' + 'Learn more about using refs safely here: ' + 'https://reactjs.org/link/strict-mode-string-ref', getComponentName(ReactCurrentOwner.current.type), config.ref);
+
+        didWarnAboutStringRefs[componentName] = true;
+      }
+    }
+  }
+}
+
+function defineKeyPropWarningGetter(props, displayName) {
+  {
+    var warnAboutAccessingKey = function () {
+      if (!specialPropKeyWarningShown) {
+        specialPropKeyWarningShown = true;
+
+        error('%s: `key` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://reactjs.org/link/special-props)', displayName);
+      }
+    };
+
+    warnAboutAccessingKey.isReactWarning = true;
+    Object.defineProperty(props, 'key', {
+      get: warnAboutAccessingKey,
+      configurable: true
+    });
+  }
+}
+
+function defineRefPropWarningGetter(props, displayName) {
+  {
+    var warnAboutAccessingRef = function () {
+      if (!specialPropRefWarningShown) {
+        specialPropRefWarningShown = true;
+
+        error('%s: `ref` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://reactjs.org/link/special-props)', displayName);
+      }
+    };
+
+    warnAboutAccessingRef.isReactWarning = true;
+    Object.defineProperty(props, 'ref', {
+      get: warnAboutAccessingRef,
+      configurable: true
+    });
+  }
+}
+/**
+ * Factory method to create a new React element. This no longer adheres to
+ * the class pattern, so do not use new to call it. Also, instanceof check
+ * will not work. Instead test $$typeof field against Symbol.for('react.element') to check
+ * if something is a React Element.
+ *
+ * @param {*} type
+ * @param {*} props
+ * @param {*} key
+ * @param {string|object} ref
+ * @param {*} owner
+ * @param {*} self A *temporary* helper to detect places where `this` is
+ * different from the `owner` when React.createElement is called, so that we
+ * can warn. We want to get rid of owner and replace string `ref`s with arrow
+ * functions, and as long as `this` and owner are the same, there will be no
+ * change in behavior.
+ * @param {*} source An annotation object (added by a transpiler or otherwise)
+ * indicating filename, line number, and/or other information.
+ * @internal
+ */
+
+
+var ReactElement = function (type, key, ref, self, source, owner, props) {
+  var element = {
+    // This tag allows us to uniquely identify this as a React Element
+    $$typeof: REACT_ELEMENT_TYPE,
+    // Built-in properties that belong on the element
+    type: type,
+    key: key,
+    ref: ref,
+    props: props,
+    // Record the component responsible for creating this element.
+    _owner: owner
+  };
+
+  {
+    // The validation flag is currently mutative. We put it on
+    // an external backing store so that we can freeze the whole object.
+    // This can be replaced with a WeakMap once they are implemented in
+    // commonly used development environments.
+    element._store = {}; // To make comparing ReactElements easier for testing purposes, we make
+    // the validation flag non-enumerable (where possible, which should
+    // include every environment we run tests in), so the test framework
+    // ignores it.
+
+    Object.defineProperty(element._store, 'validated', {
+      configurable: false,
+      enumerable: false,
+      writable: true,
+      value: false
+    }); // self and source are DEV only properties.
+
+    Object.defineProperty(element, '_self', {
+      configurable: false,
+      enumerable: false,
+      writable: false,
+      value: self
+    }); // Two elements created in two different places should be considered
+    // equal for testing purposes and therefore we hide it from enumeration.
+
+    Object.defineProperty(element, '_source', {
+      configurable: false,
+      enumerable: false,
+      writable: false,
+      value: source
+    });
+
+    if (Object.freeze) {
+      Object.freeze(element.props);
+      Object.freeze(element);
+    }
+  }
+
+  return element;
+};
+/**
+ * https://github.com/reactjs/rfcs/pull/107
+ * @param {*} type
+ * @param {object} props
+ * @param {string} key
+ */
+
+function jsxDEV(type, config, maybeKey, source, self) {
+  {
+    var propName; // Reserved names are extracted
+
+    var props = {};
+    var key = null;
+    var ref = null; // Currently, key can be spread in as a prop. This causes a potential
+    // issue if key is also explicitly declared (ie. <div {...props} key="Hi" />
+    // or <div key="Hi" {...props} /> ). We want to deprecate key spread,
+    // but as an intermediary step, we will use jsxDEV for everything except
+    // <div {...props} key="Hi" />, because we aren't currently able to tell if
+    // key is explicitly declared to be undefined or not.
+
+    if (maybeKey !== undefined) {
+      key = '' + maybeKey;
+    }
+
+    if (hasValidKey(config)) {
+      key = '' + config.key;
+    }
+
+    if (hasValidRef(config)) {
+      ref = config.ref;
+      warnIfStringRefCannotBeAutoConverted(config, self);
+    } // Remaining properties are added to a new props object
+
+
+    for (propName in config) {
+      if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
+        props[propName] = config[propName];
+      }
+    } // Resolve default props
+
+
+    if (type && type.defaultProps) {
+      var defaultProps = type.defaultProps;
+
+      for (propName in defaultProps) {
+        if (props[propName] === undefined) {
+          props[propName] = defaultProps[propName];
+        }
+      }
+    }
+
+    if (key || ref) {
+      var displayName = typeof type === 'function' ? type.displayName || type.name || 'Unknown' : type;
+
+      if (key) {
+        defineKeyPropWarningGetter(props, displayName);
+      }
+
+      if (ref) {
+        defineRefPropWarningGetter(props, displayName);
+      }
+    }
+
+    return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);
+  }
+}
+
+var ReactCurrentOwner$1 = ReactSharedInternals.ReactCurrentOwner;
+var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
+
+function setCurrentlyValidatingElement$1(element) {
+  {
+    if (element) {
+      var owner = element._owner;
+      var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
+      ReactDebugCurrentFrame$1.setExtraStackFrame(stack);
+    } else {
+      ReactDebugCurrentFrame$1.setExtraStackFrame(null);
+    }
+  }
+}
+
+var propTypesMisspellWarningShown;
+
+{
+  propTypesMisspellWarningShown = false;
+}
+/**
+ * Verifies the object is a ReactElement.
+ * See https://reactjs.org/docs/react-api.html#isvalidelement
+ * @param {?object} object
+ * @return {boolean} True if `object` is a ReactElement.
+ * @final
+ */
+
+function isValidElement(object) {
+  {
+    return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+  }
+}
+
+function getDeclarationErrorAddendum() {
+  {
+    if (ReactCurrentOwner$1.current) {
+      var name = getComponentName(ReactCurrentOwner$1.current.type);
+
+      if (name) {
+        return '\n\nCheck the render method of `' + name + '`.';
+      }
+    }
+
+    return '';
+  }
+}
+
+function getSourceInfoErrorAddendum(source) {
+  {
+    if (source !== undefined) {
+      var fileName = source.fileName.replace(/^.*[\\\/]/, '');
+      var lineNumber = source.lineNumber;
+      return '\n\nCheck your code at ' + fileName + ':' + lineNumber + '.';
+    }
+
+    return '';
+  }
+}
+/**
+ * Warn if there's no key explicitly set on dynamic arrays of children or
+ * object keys are not valid. This allows us to keep track of children between
+ * updates.
+ */
+
+
+var ownerHasKeyUseWarning = {};
+
+function getCurrentComponentErrorInfo(parentType) {
+  {
+    var info = getDeclarationErrorAddendum();
+
+    if (!info) {
+      var parentName = typeof parentType === 'string' ? parentType : parentType.displayName || parentType.name;
+
+      if (parentName) {
+        info = "\n\nCheck the top-level render call using <" + parentName + ">.";
+      }
+    }
+
+    return info;
+  }
+}
+/**
+ * Warn if the element doesn't have an explicit key assigned to it.
+ * This element is in an array. The array could grow and shrink or be
+ * reordered. All children that haven't already been validated are required to
+ * have a "key" property assigned to it. Error statuses are cached so a warning
+ * will only be shown once.
+ *
+ * @internal
+ * @param {ReactElement} element Element that requires a key.
+ * @param {*} parentType element's parent's type.
+ */
+
+
+function validateExplicitKey(element, parentType) {
+  {
+    if (!element._store || element._store.validated || element.key != null) {
+      return;
+    }
+
+    element._store.validated = true;
+    var currentComponentErrorInfo = getCurrentComponentErrorInfo(parentType);
+
+    if (ownerHasKeyUseWarning[currentComponentErrorInfo]) {
+      return;
+    }
+
+    ownerHasKeyUseWarning[currentComponentErrorInfo] = true; // Usually the current owner is the offender, but if it accepts children as a
+    // property, it may be the creator of the child that's responsible for
+    // assigning it a key.
+
+    var childOwner = '';
+
+    if (element && element._owner && element._owner !== ReactCurrentOwner$1.current) {
+      // Give the component that originally created this child.
+      childOwner = " It was passed a child from " + getComponentName(element._owner.type) + ".";
+    }
+
+    setCurrentlyValidatingElement$1(element);
+
+    error('Each child in a list should have a unique "key" prop.' + '%s%s See https://reactjs.org/link/warning-keys for more information.', currentComponentErrorInfo, childOwner);
+
+    setCurrentlyValidatingElement$1(null);
+  }
+}
+/**
+ * Ensure that every element either is passed in a static location, in an
+ * array with an explicit keys property defined, or in an object literal
+ * with valid key property.
+ *
+ * @internal
+ * @param {ReactNode} node Statically passed child of any type.
+ * @param {*} parentType node's parent's type.
+ */
+
+
+function validateChildKeys(node, parentType) {
+  {
+    if (typeof node !== 'object') {
+      return;
+    }
+
+    if (Array.isArray(node)) {
+      for (var i = 0; i < node.length; i++) {
+        var child = node[i];
+
+        if (isValidElement(child)) {
+          validateExplicitKey(child, parentType);
+        }
+      }
+    } else if (isValidElement(node)) {
+      // This element was passed in a valid location.
+      if (node._store) {
+        node._store.validated = true;
+      }
+    } else if (node) {
+      var iteratorFn = getIteratorFn(node);
+
+      if (typeof iteratorFn === 'function') {
+        // Entry iterators used to provide implicit keys,
+        // but now we print a separate warning for them later.
+        if (iteratorFn !== node.entries) {
+          var iterator = iteratorFn.call(node);
+          var step;
+
+          while (!(step = iterator.next()).done) {
+            if (isValidElement(step.value)) {
+              validateExplicitKey(step.value, parentType);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/**
+ * Given an element, validate that its props follow the propTypes definition,
+ * provided by the type.
+ *
+ * @param {ReactElement} element
+ */
+
+
+function validatePropTypes(element) {
+  {
+    var type = element.type;
+
+    if (type === null || type === undefined || typeof type === 'string') {
+      return;
+    }
+
+    var propTypes;
+
+    if (typeof type === 'function') {
+      propTypes = type.propTypes;
+    } else if (typeof type === 'object' && (type.$$typeof === REACT_FORWARD_REF_TYPE || // Note: Memo only checks outer props here.
+    // Inner props are checked in the reconciler.
+    type.$$typeof === REACT_MEMO_TYPE)) {
+      propTypes = type.propTypes;
+    } else {
+      return;
+    }
+
+    if (propTypes) {
+      // Intentionally inside to avoid triggering lazy initializers:
+      var name = getComponentName(type);
+      checkPropTypes(propTypes, element.props, 'prop', name, element);
+    } else if (type.PropTypes !== undefined && !propTypesMisspellWarningShown) {
+      propTypesMisspellWarningShown = true; // Intentionally inside to avoid triggering lazy initializers:
+
+      var _name = getComponentName(type);
+
+      error('Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', _name || 'Unknown');
+    }
+
+    if (typeof type.getDefaultProps === 'function' && !type.getDefaultProps.isReactClassApproved) {
+      error('getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.');
+    }
+  }
+}
+/**
+ * Given a fragment, validate that it can only be provided with fragment props
+ * @param {ReactElement} fragment
+ */
+
+
+function validateFragmentProps(fragment) {
+  {
+    var keys = Object.keys(fragment.props);
+
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+
+      if (key !== 'children' && key !== 'key') {
+        setCurrentlyValidatingElement$1(fragment);
+
+        error('Invalid prop `%s` supplied to `React.Fragment`. ' + 'React.Fragment can only have `key` and `children` props.', key);
+
+        setCurrentlyValidatingElement$1(null);
+        break;
+      }
+    }
+
+    if (fragment.ref !== null) {
+      setCurrentlyValidatingElement$1(fragment);
+
+      error('Invalid attribute `ref` supplied to `React.Fragment`.');
+
+      setCurrentlyValidatingElement$1(null);
+    }
+  }
+}
+
+function jsxWithValidation(type, props, key, isStaticChildren, source, self) {
+  {
+    var validType = isValidElementType(type); // We warn in this case but don't throw. We expect the element creation to
+    // succeed and there will likely be errors in render.
+
+    if (!validType) {
+      var info = '';
+
+      if (type === undefined || typeof type === 'object' && type !== null && Object.keys(type).length === 0) {
+        info += ' You likely forgot to export your component from the file ' + "it's defined in, or you might have mixed up default and named imports.";
+      }
+
+      var sourceInfo = getSourceInfoErrorAddendum(source);
+
+      if (sourceInfo) {
+        info += sourceInfo;
+      } else {
+        info += getDeclarationErrorAddendum();
+      }
+
+      var typeString;
+
+      if (type === null) {
+        typeString = 'null';
+      } else if (Array.isArray(type)) {
+        typeString = 'array';
+      } else if (type !== undefined && type.$$typeof === REACT_ELEMENT_TYPE) {
+        typeString = "<" + (getComponentName(type.type) || 'Unknown') + " />";
+        info = ' Did you accidentally export a JSX literal instead of a component?';
+      } else {
+        typeString = typeof type;
+      }
+
+      error('React.jsx: type is invalid -- expected a string (for ' + 'built-in components) or a class/function (for composite ' + 'components) but got: %s.%s', typeString, info);
+    }
+
+    var element = jsxDEV(type, props, key, source, self); // The result can be nullish if a mock or a custom function is used.
+    // TODO: Drop this when these are no longer allowed as the type argument.
+
+    if (element == null) {
+      return element;
+    } // Skip key warning if the type isn't valid since our key validation logic
+    // doesn't expect a non-string/function type and can throw confusing errors.
+    // We don't want exception behavior to differ between dev and prod.
+    // (Rendering will throw with a helpful message and as soon as the type is
+    // fixed, the key warnings will appear.)
+
+
+    if (validType) {
+      var children = props.children;
+
+      if (children !== undefined) {
+        if (isStaticChildren) {
+          if (Array.isArray(children)) {
+            for (var i = 0; i < children.length; i++) {
+              validateChildKeys(children[i], type);
+            }
+
+            if (Object.freeze) {
+              Object.freeze(children);
+            }
+          } else {
+            error('React.jsx: Static children should always be an array. ' + 'You are likely explicitly calling React.jsxs or React.jsxDEV. ' + 'Use the Babel transform instead.');
+          }
+        } else {
+          validateChildKeys(children, type);
+        }
+      }
+    }
+
+    if (type === exports.Fragment) {
+      validateFragmentProps(element);
+    } else {
+      validatePropTypes(element);
+    }
+
+    return element;
+  }
+} // These two functions exist to still get child warnings in dev
+// even with the prod transform. This means that jsxDEV is purely
+// opt-in behavior for better messages but that we won't stop
+// giving you warnings if you use production apis.
+
+function jsxWithValidationStatic(type, props, key) {
+  {
+    return jsxWithValidation(type, props, key, true);
+  }
+}
+function jsxWithValidationDynamic(type, props, key) {
+  {
+    return jsxWithValidation(type, props, key, false);
+  }
+}
+
+var jsx =  jsxWithValidationDynamic ; // we may want to special case jsxs internally to take advantage of static children.
+// for now we can ship identical prod functions
+
+var jsxs =  jsxWithValidationStatic ;
+
+exports.jsx = jsx;
+exports.jsxs = jsxs;
+  })();
+}
+}(reactJsxRuntime_development));
+
+if (false) {} else {
+  jsxRuntime.exports = reactJsxRuntime_development;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var NODE_ENV = "development";
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+var invariant_1 = invariant;
+
+const MapContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+function useGoogleMap() {
+    invariant_1(!!react__WEBPACK_IMPORTED_MODULE_0__.useContext, 'useGoogleMap is React hook and requires React version 16.8+');
+    const map = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(MapContext);
+    invariant_1(!!map, 'useGoogleMap needs a GoogleMap available up in the tree');
+    return map;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function reduce(obj, fn, acc) {
+    return Object.keys(obj).reduce(function reducer(newAcc, key) {
+        return fn(newAcc, obj[key], key);
+    }, acc);
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function forEach(obj, fn) {
+    Object.keys(obj).forEach((key) => {
+        return fn(obj[key], key);
+    });
+}
+
+/* global google */
+function applyUpdaterToNextProps(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+updaterMap, 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+prevProps, 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+nextProps, 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+instance
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const map = {};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const iter = (fn, key) => {
+        const nextValue = nextProps[key];
+        if (nextValue !== prevProps[key]) {
+            map[key] = nextValue;
+            fn(instance, nextValue);
+        }
+    };
+    forEach(updaterMap, iter);
+    return map;
+}
+function registerEvents(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+props, 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+instance, eventMap) {
+    const registeredList = reduce(eventMap, function reducer(acc, googleEventName, 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    onEventName) {
+        if (typeof props[onEventName] === 'function') {
+            acc.push(google.maps.event.addListener(instance, googleEventName, props[onEventName]));
+        }
+        return acc;
+    }, []);
+    return registeredList;
+}
+function unregisterEvent(registered) {
+    google.maps.event.removeListener(registered);
+}
+function unregisterEvents(events = []) {
+    events.forEach(unregisterEvent);
+}
+function applyUpdatersToPropsAndRegisterEvents({ updaterMap, eventMap, prevProps, nextProps, instance, }) {
+    const registeredEvents = registerEvents(nextProps, instance, eventMap);
+    applyUpdaterToNextProps(updaterMap, prevProps, nextProps, instance);
+    return registeredEvents;
+}
+
+const eventMap$i = {
+    onDblClick: 'dblclick',
+    onDragEnd: 'dragend',
+    onDragStart: 'dragstart',
+    onMapTypeIdChanged: 'maptypeid_changed',
+    onMouseMove: 'mousemove',
+    onMouseOut: 'mouseout',
+    onMouseOver: 'mouseover',
+    onMouseDown: 'mousedown',
+    onMouseUp: 'mouseup',
+    onRightClick: 'rightclick',
+    onTilesLoaded: 'tilesloaded',
+    onBoundsChanged: 'bounds_changed',
+    onCenterChanged: 'center_changed',
+    onClick: 'click',
+    onDrag: 'drag',
+    onHeadingChanged: 'heading_changed',
+    onIdle: 'idle',
+    onProjectionChanged: 'projection_changed',
+    onResize: 'resize',
+    onTiltChanged: 'tilt_changed',
+    onZoomChanged: 'zoom_changed',
+};
+const updaterMap$i = {
+    extraMapTypes(map, extra) {
+        extra.forEach(function forEachExtra(it, i) {
+            map.mapTypes.set(String(i), it);
+        });
+    },
+    center(map, center) {
+        map.setCenter(center);
+    },
+    clickableIcons(map, clickable) {
+        map.setClickableIcons(clickable);
+    },
+    heading(map, heading) {
+        map.setHeading(heading);
+    },
+    mapTypeId(map, mapTypeId) {
+        map.setMapTypeId(mapTypeId);
+    },
+    options(map, options) {
+        map.setOptions(options);
+    },
+    streetView(map, streetView) {
+        map.setStreetView(streetView);
+    },
+    tilt(map, tilt) {
+        map.setTilt(tilt);
+    },
+    zoom(map, zoom) {
+        map.setZoom(zoom);
+    },
+};
+// function GoogleMapFunctional({ children, options, id, mapContainerStyle, center, clickableIcons, extraMapTypes, heading, mapContainerClassName, mapTypeId, onBoundsChanged, onCenterChanged, onClick, onDblClick, onDrag, onDragEnd, onDragStart, onHeadingChanged, onIdle, onProjectionChanged, onResize, onTiltChanged, onLoad }: GoogleMapProps): JSX.Element {
+//   const [map, setMap] = useState<google.maps.Map | null>(null)
+//   const ref = useRef<HTMLDivElement | null>(null)
+//   const getInstance = useCallback(() => {
+//     if (ref.current === null) {
+//       return null
+//     }
+//     return new google.maps.Map(ref.current, options)
+//   }, [options])
+//   useEffect(() => {
+//   }, [])
+//   const panTo = useCallback((latLng: google.maps.LatLng | google.maps.LatLngLiteral): void => {
+//     const map = getInstance()
+//     if (map) {
+//       map.panTo(latLng)
+//     }
+//   }, [])
+//   useEffect(() => {
+//     const map = getInstance()
+//   }, [])
+//   return (
+//     <div
+//         id={id}
+//         ref={ref}
+//         style={mapContainerStyle}
+//         className={mapContainerClassName}
+//       >
+//         <MapContext.Provider value={map}>
+//           {map !== null ? children : <></>}
+//         </MapContext.Provider>
+//       </div>
+//   )
+// }
+class GoogleMap extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            map: null,
+        };
+        this.registeredEvents = [];
+        this.mapRef = null;
+        this.getInstance = () => {
+            if (this.mapRef === null) {
+                return null;
+            }
+            return new google.maps.Map(this.mapRef, this.props.options);
+        };
+        this.panTo = (latLng) => {
+            const map = this.getInstance();
+            if (map) {
+                map.panTo(latLng);
+            }
+        };
+        this.setMapCallback = () => {
+            if (this.state.map !== null) {
+                if (this.props.onLoad) {
+                    this.props.onLoad(this.state.map);
+                }
+            }
+        };
+        this.getRef = (ref) => {
+            this.mapRef = ref;
+        };
+    }
+    componentDidMount() {
+        const map = this.getInstance();
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$i,
+            eventMap: eventMap$i,
+            prevProps: {},
+            nextProps: this.props,
+            instance: map,
+        });
+        this.setState(function setMap() {
+            return {
+                map,
+            };
+        }, this.setMapCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.map !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$i,
+                eventMap: eventMap$i,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.map,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.map !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.map);
+            }
+            unregisterEvents(this.registeredEvents);
+        }
+    }
+    render() {
+        return (jsxRuntime.exports.jsx("div", Object.assign({ id: this.props.id, ref: this.getRef, style: this.props.mapContainerStyle, className: this.props.mapContainerClassName }, { children: jsxRuntime.exports.jsx(MapContext.Provider, Object.assign({ value: this.state.map }, { children: this.state.map !== null ? this.props.children : jsxRuntime.exports.jsx(jsxRuntime.exports.Fragment, {}) })) })));
+    }
+}
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+function __rest$1(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+const isBrowser = typeof document !== 'undefined';
+
+function injectScript({ url, id, nonce }) {
+    if (!isBrowser) {
+        return Promise.reject(new Error('document is undefined'));
+    }
+    return new Promise(function injectScriptCallback(resolve, reject) {
+        const existingScript = document.getElementById(id);
+        const windowWithGoogleMap = window;
+        if (existingScript) {
+            // Same script id/url: keep same script
+            const dataStateAttribute = existingScript.getAttribute('data-state');
+            if (existingScript.src === url && dataStateAttribute !== 'error') {
+                if (dataStateAttribute === 'ready') {
+                    return resolve(id);
+                }
+                else {
+                    const originalInitMap = windowWithGoogleMap.initMap;
+                    const originalErrorCallback = existingScript.onerror;
+                    windowWithGoogleMap.initMap = function initMap() {
+                        if (originalInitMap) {
+                            originalInitMap();
+                        }
+                        resolve(id);
+                    };
+                    existingScript.onerror = function (err) {
+                        if (originalErrorCallback) {
+                            originalErrorCallback(err);
+                        }
+                        reject(err);
+                    };
+                    return;
+                }
+            }
+            // Same script id, but either
+            // 1. requested URL is different
+            // 2. script failed to load
+            else {
+                existingScript.remove();
+            }
+        }
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = url;
+        script.id = id;
+        script.async = true;
+        script.nonce = nonce;
+        script.onerror = function onerror(err) {
+            script.setAttribute('data-state', 'error');
+            reject(err);
+        };
+        windowWithGoogleMap.initMap = function onload() {
+            script.setAttribute('data-state', 'ready');
+            resolve(id);
+        };
+        document.head.appendChild(script);
+    }).catch(err => {
+        console.error('injectScript error: ', err);
+        throw err;
+    });
+}
+
+function isRobotoStyle(element) {
+    // roboto font download
+    if (element.href &&
+        element.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') ===
+            0) {
+        return true;
+    }
+    // roboto style elements
+    if (element.tagName.toLowerCase() === 'style' &&
+        // @ts-ignore
+        element.styleSheet &&
+        // @ts-ignore
+        element.styleSheet.cssText &&
+        // @ts-ignore
+        element.styleSheet.cssText.replace('\r\n', '').indexOf('.gm-style') === 0) {
+        // @ts-ignore
+        element.styleSheet.cssText = '';
+        return true;
+    }
+    // roboto style elements for other browsers
+    if (element.tagName.toLowerCase() === 'style' &&
+        element.innerHTML &&
+        element.innerHTML.replace('\r\n', '').indexOf('.gm-style') === 0) {
+        element.innerHTML = '';
+        return true;
+    }
+    // when google tries to add empty style
+    if (element.tagName.toLowerCase() === 'style' &&
+        // @ts-ignore
+        !element.styleSheet &&
+        !element.innerHTML) {
+        return true;
+    }
+    return false;
+}
+// Preventing the Google Maps library from downloading an extra font
+function preventGoogleFonts() {
+    // we override these methods only for one particular head element
+    // default methods for other elements are not affected
+    const head = document.getElementsByTagName('head')[0];
+    const trueInsertBefore = head.insertBefore.bind(head);
+    // TODO: adding return before reflect solves the TS issue
+    // @ts-ignore
+    head.insertBefore = function insertBefore(newElement, referenceElement) {
+        if (!isRobotoStyle(newElement)) {
+            Reflect.apply(trueInsertBefore, head, [newElement, referenceElement]);
+        }
+    };
+    const trueAppend = head.appendChild.bind(head);
+    // TODO: adding return before reflect solves the TS issue
+    // @ts-ignore
+    head.appendChild = function appendChild(textNode) {
+        if (!isRobotoStyle(textNode)) {
+            Reflect.apply(trueAppend, head, [textNode]);
+        }
+    };
+}
+
+function makeLoadScriptUrl({ googleMapsApiKey, googleMapsClientId, version = 'weekly', language, region, libraries, channel, mapIds }) {
+    const params = [];
+    invariant_1((googleMapsApiKey && googleMapsClientId) || !(googleMapsApiKey && googleMapsClientId), 'You need to specify either googleMapsApiKey or googleMapsClientId for @react-google-maps/api load script to work. You cannot use both at the same time.');
+    if (googleMapsApiKey) {
+        params.push(`key=${googleMapsApiKey}`);
+    }
+    else if (googleMapsClientId) {
+        params.push(`client=${googleMapsClientId}`);
+    }
+    if (version) {
+        params.push(`v=${version}`);
+    }
+    if (language) {
+        params.push(`language=${language}`);
+    }
+    if (region) {
+        params.push(`region=${region}`);
+    }
+    if (libraries && libraries.length) {
+        params.push(`libraries=${libraries.sort().join(',')}`);
+    }
+    if (channel) {
+        params.push(`channel=${channel}`);
+    }
+    if (mapIds && mapIds.length) {
+        params.push(`map_ids=${mapIds.join(',')}`);
+    }
+    params.push('callback=initMap');
+    return `https://maps.googleapis.com/maps/api/js?${params.join('&')}`;
+}
+
+let cleaningUp = false;
+function DefaultLoadingElement() {
+    return jsxRuntime.exports.jsx("div", { children: `Loading...` });
+}
+const defaultLoadScriptProps = {
+    id: 'script-loader',
+    version: 'weekly',
+};
+class LoadScript extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.check = (0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)();
+        this.state = {
+            loaded: false,
+        };
+        this.cleanupCallback = () => {
+            // @ts-ignore
+            delete window.google.maps;
+            this.injectScript();
+        };
+        this.isCleaningUp = () => __awaiter(this, void 0, void 0, function* () {
+            function promiseCallback(resolve) {
+                if (!cleaningUp) {
+                    resolve();
+                }
+                else {
+                    if (isBrowser) {
+                        const timer = window.setInterval(function interval() {
+                            if (!cleaningUp) {
+                                window.clearInterval(timer);
+                                resolve();
+                            }
+                        }, 1);
+                    }
+                }
+                return;
+            }
+            return new Promise(promiseCallback);
+        });
+        this.cleanup = () => {
+            cleaningUp = true;
+            const script = document.getElementById(this.props.id);
+            if (script && script.parentNode) {
+                script.parentNode.removeChild(script);
+            }
+            Array.prototype.slice
+                .call(document.getElementsByTagName('script'))
+                .filter(function filter(script) {
+                return typeof script.src === 'string' && script.src.includes('maps.googleapis');
+            })
+                .forEach(function forEach(script) {
+                if (script.parentNode) {
+                    script.parentNode.removeChild(script);
+                }
+            });
+            Array.prototype.slice
+                .call(document.getElementsByTagName('link'))
+                .filter(function filter(link) {
+                return (link.href === 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans');
+            })
+                .forEach(function forEach(link) {
+                if (link.parentNode) {
+                    link.parentNode.removeChild(link);
+                }
+            });
+            Array.prototype.slice
+                .call(document.getElementsByTagName('style'))
+                .filter(function filter(style) {
+                return (style.innerText !== undefined &&
+                    style.innerText.length > 0 &&
+                    style.innerText.includes('.gm-'));
+            })
+                .forEach(function forEach(style) {
+                if (style.parentNode) {
+                    style.parentNode.removeChild(style);
+                }
+            });
+        };
+        this.injectScript = () => {
+            if (this.props.preventGoogleFontsLoading) {
+                preventGoogleFonts();
+            }
+            invariant_1(!!this.props.id, 'LoadScript requires "id" prop to be a string: %s', this.props.id);
+            const injectScriptOptions = {
+                id: this.props.id,
+                nonce: this.props.nonce,
+                url: makeLoadScriptUrl(this.props),
+            };
+            injectScript(injectScriptOptions)
+                .then(() => {
+                if (this.props.onLoad) {
+                    this.props.onLoad();
+                }
+                this.setState(function setLoaded() {
+                    return {
+                        loaded: true,
+                    };
+                });
+                return;
+            })
+                .catch(err => {
+                if (this.props.onError) {
+                    this.props.onError(err);
+                }
+                console.error(`
+          There has been an Error with loading Google Maps API script, please check that you provided correct google API key (${this
+                    .props.googleMapsApiKey || '-'}) or Client ID (${this.props.googleMapsClientId ||
+                    '-'}) to <LoadScript />
+          Otherwise it is a Network issue.
+        `);
+            });
+        };
+    }
+    componentDidMount() {
+        if (isBrowser) {
+            if (window.google && window.google.maps && !cleaningUp) {
+                console.error('google api is already presented');
+                return;
+            }
+            this.isCleaningUp()
+                .then(this.injectScript)
+                .catch(function error(err) {
+                console.error('Error at injecting script after cleaning up: ', err);
+            });
+        }
+    }
+    componentDidUpdate(prevProps) {
+        if (this.props.libraries !== prevProps.libraries) {
+            console.warn('Performance warning! LoadScript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable outside of component, or somewhere in config files or ENV variables');
+        }
+        if (isBrowser && prevProps.language !== this.props.language) {
+            this.cleanup();
+            // TODO: refactor to use gDSFP maybe... wait for hooks refactoring.
+            // eslint-disable-next-line react/no-did-update-set-state
+            this.setState(function setLoaded() {
+                return {
+                    loaded: false,
+                };
+            }, this.cleanupCallback);
+        }
+    }
+    componentWillUnmount() {
+        if (isBrowser) {
+            this.cleanup();
+            const timeoutCallback = () => {
+                if (!this.check.current) {
+                    // @ts-ignore
+                    delete window.google;
+                    cleaningUp = false;
+                }
+            };
+            window.setTimeout(timeoutCallback, 1);
+            if (this.props.onUnmount) {
+                this.props.onUnmount();
+            }
+        }
+    }
+    render() {
+        return (jsxRuntime.exports.jsxs(jsxRuntime.exports.Fragment, { children: [jsxRuntime.exports.jsx("div", { ref: this.check }), this.state.loaded
+                    ? this.props.children
+                    : this.props.loadingElement || jsxRuntime.exports.jsx(DefaultLoadingElement, {})] }));
+    }
+}
+LoadScript.defaultProps = defaultLoadScriptProps;
+
+/* eslint-disable filenames/match-regex */
+let previouslyLoadedUrl;
+function useLoadScript({ id = defaultLoadScriptProps.id, version = defaultLoadScriptProps.version, nonce, googleMapsApiKey, googleMapsClientId, language, region, libraries, preventGoogleFontsLoading, channel, mapIds, }) {
+    const isMounted = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+    const [isLoaded, setLoaded] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const [loadError, setLoadError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function trackMountedState() {
+        isMounted.current = true;
+        return () => {
+            isMounted.current = false;
+        };
+    }, []);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function applyPreventGoogleFonts() {
+        if (isBrowser && preventGoogleFontsLoading) {
+            preventGoogleFonts();
+        }
+    }, [preventGoogleFontsLoading]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function validateLoadedState() {
+        if (isLoaded) {
+            invariant_1(!!window.google, 'useLoadScript was marked as loaded, but window.google is not present. Something went wrong.');
+        }
+    }, [isLoaded]);
+    const url = makeLoadScriptUrl({
+        version,
+        googleMapsApiKey,
+        googleMapsClientId,
+        language,
+        region,
+        libraries,
+        channel,
+        mapIds
+    });
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function loadScriptAndModifyLoadedState() {
+        if (!isBrowser) {
+            return;
+        }
+        function setLoadedIfMounted() {
+            if (isMounted.current) {
+                setLoaded(true);
+                previouslyLoadedUrl = url;
+            }
+        }
+        if (window.google && window.google.maps && previouslyLoadedUrl === url) {
+            setLoadedIfMounted();
+            return;
+        }
+        injectScript({ id, url, nonce })
+            .then(setLoadedIfMounted)
+            .catch(function handleInjectError(err) {
+            if (isMounted.current) {
+                setLoadError(err);
+            }
+            console.warn(`
+        There has been an Error with loading Google Maps API script, please check that you provided correct google API key (${googleMapsApiKey ||
+                '-'}) or Client ID (${googleMapsClientId || '-'})
+        Otherwise it is a Network issue.
+      `);
+            console.error(err);
+        });
+    }, [id, url, nonce]);
+    const prevLibraries = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function checkPerformance() {
+        if (prevLibraries.current && libraries !== prevLibraries.current) {
+            console.warn('Performance warning! LoadScript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable outside of component, or somewhere in config files or ENV variables');
+        }
+        prevLibraries.current = libraries;
+    }, [libraries]);
+    return { isLoaded, loadError, url };
+}
+
+const defaultLoadingElement = jsxRuntime.exports.jsx(DefaultLoadingElement, {});
+function LoadScriptNext(_a) {
+    var { loadingElement, onLoad, onError, onUnmount, children } = _a, hookOptions = __rest$1(_a, ["loadingElement", "onLoad", "onError", "onUnmount", "children"]);
+    const { isLoaded, loadError } = useLoadScript(hookOptions);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function handleOnLoad() {
+        if (isLoaded && typeof onLoad === 'function') {
+            onLoad();
+        }
+    }, [isLoaded, onLoad]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function handleOnError() {
+        if (loadError && typeof onError === 'function') {
+            onError(loadError);
+        }
+    }, [loadError, onError]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function handleOnUnmount() {
+        return () => {
+            if (onUnmount) {
+                onUnmount();
+            }
+        };
+    }, [onUnmount]);
+    return isLoaded ? children : loadingElement || defaultLoadingElement;
+}
+var LoadScriptNext$1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(LoadScriptNext);
+
+// do not edit .js files directly - edit src/index.jst
+
+
+
+var fastDeepEqual = function equal(a, b) {
+  if (a === b) return true;
+
+  if (a && b && typeof a == 'object' && typeof b == 'object') {
+    if (a.constructor !== b.constructor) return false;
+
+    var length, i, keys;
+    if (Array.isArray(a)) {
+      length = a.length;
+      if (length != b.length) return false;
+      for (i = length; i-- !== 0;)
+        if (!equal(a[i], b[i])) return false;
+      return true;
+    }
+
+
+
+    if (a.constructor === RegExp) return a.source === b.source && a.flags === b.flags;
+    if (a.valueOf !== Object.prototype.valueOf) return a.valueOf() === b.valueOf();
+    if (a.toString !== Object.prototype.toString) return a.toString() === b.toString();
+
+    keys = Object.keys(a);
+    length = keys.length;
+    if (length !== Object.keys(b).length) return false;
+
+    for (i = length; i-- !== 0;)
+      if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
+
+    for (i = length; i-- !== 0;) {
+      var key = keys[i];
+
+      if (!equal(a[key], b[key])) return false;
+    }
+
+    return true;
+  }
+
+  // true if both NaN, false otherwise
+  return a!==a && b!==b;
+};
+
+/**
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at.
+ *
+ *      Http://www.apache.org/licenses/LICENSE-2.0.
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+const DEFAULT_ID = "__googleMapsScriptId";
+/**
+ * The status of the [[Loader]].
+ */
+var LoaderStatus;
+(function (LoaderStatus) {
+    LoaderStatus[LoaderStatus["INITIALIZED"] = 0] = "INITIALIZED";
+    LoaderStatus[LoaderStatus["LOADING"] = 1] = "LOADING";
+    LoaderStatus[LoaderStatus["SUCCESS"] = 2] = "SUCCESS";
+    LoaderStatus[LoaderStatus["FAILURE"] = 3] = "FAILURE";
+})(LoaderStatus || (LoaderStatus = {}));
+/**
+ * [[Loader]] makes it easier to add Google Maps JavaScript API to your application
+ * dynamically using
+ * [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+ * It works by dynamically creating and appending a script node to the the
+ * document head and wrapping the callback function so as to return a promise.
+ *
+ * ```
+ * const loader = new Loader({
+ *   apiKey: "",
+ *   version: "weekly",
+ *   libraries: ["places"]
+ * });
+ *
+ * loader.load().then((google) => {
+ *   const map = new google.maps.Map(...)
+ * })
+ * ```
+ */
+class Loader {
+    /**
+     * Creates an instance of Loader using [[LoaderOptions]]. No defaults are set
+     * using this library, instead the defaults are set by the Google Maps
+     * JavaScript API server.
+     *
+     * ```
+     * const loader = Loader({apiKey, version: 'weekly', libraries: ['places']});
+     * ```
+     */
+    constructor({ apiKey, channel, client, id = DEFAULT_ID, libraries = [], language, region, version, mapIds, nonce, retries = 3, url = "https://maps.googleapis.com/maps/api/js", }) {
+        this.CALLBACK = "__googleMapsCallback";
+        this.callbacks = [];
+        this.done = false;
+        this.loading = false;
+        this.errors = [];
+        this.version = version;
+        this.apiKey = apiKey;
+        this.channel = channel;
+        this.client = client;
+        this.id = id || DEFAULT_ID; // Do not allow empty string
+        this.libraries = libraries;
+        this.language = language;
+        this.region = region;
+        this.mapIds = mapIds;
+        this.nonce = nonce;
+        this.retries = retries;
+        this.url = url;
+        if (Loader.instance) {
+            if (!fastDeepEqual(this.options, Loader.instance.options)) {
+                throw new Error(`Loader must not be called again with different options. ${JSON.stringify(this.options)} !== ${JSON.stringify(Loader.instance.options)}`);
+            }
+            return Loader.instance;
+        }
+        Loader.instance = this;
+    }
+    get options() {
+        return {
+            version: this.version,
+            apiKey: this.apiKey,
+            channel: this.channel,
+            client: this.client,
+            id: this.id,
+            libraries: this.libraries,
+            language: this.language,
+            region: this.region,
+            mapIds: this.mapIds,
+            nonce: this.nonce,
+            url: this.url,
+        };
+    }
+    get status() {
+        if (this.errors.length) {
+            return LoaderStatus.FAILURE;
+        }
+        if (this.done) {
+            return LoaderStatus.SUCCESS;
+        }
+        if (this.loading) {
+            return LoaderStatus.LOADING;
+        }
+        return LoaderStatus.INITIALIZED;
+    }
+    get failed() {
+        return this.done && !this.loading && this.errors.length >= this.retries + 1;
+    }
+    /**
+     * CreateUrl returns the Google Maps JavaScript API script url given the [[LoaderOptions]].
+     *
+     * @ignore
+     */
+    createUrl() {
+        let url = this.url;
+        url += `?callback=${this.CALLBACK}`;
+        if (this.apiKey) {
+            url += `&key=${this.apiKey}`;
+        }
+        if (this.channel) {
+            url += `&channel=${this.channel}`;
+        }
+        if (this.client) {
+            url += `&client=${this.client}`;
+        }
+        if (this.libraries.length > 0) {
+            url += `&libraries=${this.libraries.join(",")}`;
+        }
+        if (this.language) {
+            url += `&language=${this.language}`;
+        }
+        if (this.region) {
+            url += `&region=${this.region}`;
+        }
+        if (this.version) {
+            url += `&v=${this.version}`;
+        }
+        if (this.mapIds) {
+            url += `&map_ids=${this.mapIds.join(",")}`;
+        }
+        return url;
+    }
+    deleteScript() {
+        const script = document.getElementById(this.id);
+        if (script) {
+            script.remove();
+        }
+    }
+    /**
+     * Load the Google Maps JavaScript API script and return a Promise.
+     */
+    load() {
+        return this.loadPromise();
+    }
+    /**
+     * Load the Google Maps JavaScript API script and return a Promise.
+     *
+     * @ignore
+     */
+    loadPromise() {
+        return new Promise((resolve, reject) => {
+            this.loadCallback((err) => {
+                if (!err) {
+                    resolve(window.google);
+                }
+                else {
+                    reject(err.error);
+                }
+            });
+        });
+    }
+    /**
+     * Load the Google Maps JavaScript API script with a callback.
+     */
+    loadCallback(fn) {
+        this.callbacks.push(fn);
+        this.execute();
+    }
+    /**
+     * Set the script on document.
+     */
+    setScript() {
+        if (document.getElementById(this.id)) {
+            // TODO wrap onerror callback for cases where the script was loaded elsewhere
+            this.callback();
+            return;
+        }
+        const url = this.createUrl();
+        const script = document.createElement("script");
+        script.id = this.id;
+        script.type = "text/javascript";
+        script.src = url;
+        script.onerror = this.loadErrorCallback.bind(this);
+        script.defer = true;
+        script.async = true;
+        if (this.nonce) {
+            script.nonce = this.nonce;
+        }
+        document.head.appendChild(script);
+    }
+    /**
+     * Reset the loader state.
+     */
+    reset() {
+        this.deleteScript();
+        this.done = false;
+        this.loading = false;
+        this.errors = [];
+        this.onerrorEvent = null;
+    }
+    resetIfRetryingFailed() {
+        if (this.failed) {
+            this.reset();
+        }
+    }
+    loadErrorCallback(e) {
+        this.errors.push(e);
+        if (this.errors.length <= this.retries) {
+            const delay = this.errors.length * Math.pow(2, this.errors.length);
+            console.log(`Failed to load Google Maps script, retrying in ${delay} ms.`);
+            setTimeout(() => {
+                this.deleteScript();
+                this.setScript();
+            }, delay);
+        }
+        else {
+            this.onerrorEvent = e;
+            this.callback();
+        }
+    }
+    setCallback() {
+        window.__googleMapsCallback = this.callback.bind(this);
+    }
+    callback() {
+        this.done = true;
+        this.loading = false;
+        this.callbacks.forEach((cb) => {
+            cb(this.onerrorEvent);
+        });
+        this.callbacks = [];
+    }
+    execute() {
+        this.resetIfRetryingFailed();
+        if (this.done) {
+            this.callback();
+        }
+        else {
+            // short circuit and warn if google.maps is already loaded
+            if (window.google && window.google.maps && window.google.maps.version) {
+                console.warn("Google Maps already loaded outside @googlemaps/js-api-loader." +
+                    "This may result in undesirable behavior as options and script parameters may not match.");
+                this.callback();
+                return;
+            }
+            if (this.loading) ;
+            else {
+                this.loading = true;
+                this.setCallback();
+                this.setScript();
+            }
+        }
+    }
+}
+
+function useJsApiLoader({ id = defaultLoadScriptProps.id, version = defaultLoadScriptProps.version, nonce, googleMapsApiKey, 
+// googleMapsClientId,
+language, region, libraries, preventGoogleFontsLoading, 
+// channel,
+mapIds, }) {
+    const isMounted = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+    const [isLoaded, setLoaded] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const [loadError, setLoadError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function trackMountedState() {
+        isMounted.current = true;
+        return () => {
+            isMounted.current = false;
+        };
+    }, []);
+    const loader = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function memo() {
+        return new Loader({
+            id,
+            apiKey: googleMapsApiKey,
+            version,
+            libraries,
+            language,
+            region,
+            mapIds,
+            nonce,
+        });
+    }, [id, googleMapsApiKey, version, libraries, language, region, mapIds, nonce]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function effect() {
+        if (isLoaded) {
+            return;
+        }
+        else {
+            loader.load().then(function then() {
+                if (isMounted.current)
+                    setLoaded(true);
+            })
+                .catch(function onrejected(error) {
+                setLoadError(error);
+            });
+        }
+    }, []);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function applyPreventGoogleFonts() {
+        if (isBrowser && preventGoogleFontsLoading) {
+            preventGoogleFonts();
+        }
+    }, [preventGoogleFontsLoading]);
+    const prevLibraries = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function effect() {
+        if (prevLibraries.current && libraries !== prevLibraries.current) {
+            console.warn('Performance warning! LoadScript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable outside of component, or somewhere in config files or ENV variables');
+        }
+        prevLibraries.current = libraries;
+    }, [libraries]);
+    return { isLoaded, loadError };
+}
+
+const eventMap$h = {};
+const updaterMap$h = {
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+};
+class TrafficLayer extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            trafficLayer: null,
+        };
+        this.setTrafficLayerCallback = () => {
+            if (this.state.trafficLayer !== null && this.props.onLoad) {
+                // @ts-ignore
+                this.props.onLoad(this.state.trafficLayer);
+            }
+        };
+        this.registeredEvents = [];
+    }
+    componentDidMount() {
+        const trafficLayer = new google.maps.TrafficLayer(Object.assign(Object.assign({}, (this.props.options || {})), { map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$h,
+            eventMap: eventMap$h,
+            prevProps: {},
+            nextProps: this.props,
+            instance: trafficLayer,
+        });
+        this.setState(function setTrafficLayer() {
+            return {
+                trafficLayer,
+            };
+        }, this.setTrafficLayerCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.trafficLayer !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$h,
+                eventMap: eventMap$h,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.trafficLayer,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.trafficLayer !== null) {
+            if (this.props.onUnmount) {
+                // @ts-ignore
+                this.props.onUnmount(this.state.trafficLayer);
+            }
+            unregisterEvents(this.registeredEvents);
+            // @ts-ignore
+            this.state.trafficLayer.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+TrafficLayer.contextType = MapContext;
+
+class BicyclingLayer extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            bicyclingLayer: null,
+        };
+        this.setBicyclingLayerCallback = () => {
+            if (this.state.bicyclingLayer !== null) {
+                this.state.bicyclingLayer.setMap(this.context);
+                if (this.props.onLoad) {
+                    this.props.onLoad(this.state.bicyclingLayer);
+                }
+            }
+        };
+    }
+    componentDidMount() {
+        const bicyclingLayer = new google.maps.BicyclingLayer();
+        this.setState(() => {
+            return {
+                bicyclingLayer,
+            };
+        }, this.setBicyclingLayerCallback);
+    }
+    componentWillUnmount() {
+        if (this.state.bicyclingLayer !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.bicyclingLayer);
+            }
+            // @ts-ignore
+            this.state.bicyclingLayer.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+BicyclingLayer.contextType = MapContext;
+
+class TransitLayer extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            transitLayer: null,
+        };
+        this.setTransitLayerCallback = () => {
+            if (this.state.transitLayer !== null) {
+                // TODO: how is this possibly null if we're doing a null check
+                // @ts-ignore
+                this.state.transitLayer.setMap(this.context);
+                if (this.props.onLoad) {
+                    // @ts-ignore
+                    this.props.onLoad(this.state.transitLayer);
+                }
+            }
+        };
+    }
+    componentDidMount() {
+        const transitLayer = new google.maps.TransitLayer();
+        this.setState(function setTransitLayer() {
+            return {
+                transitLayer,
+            };
+        }, this.setTransitLayerCallback);
+    }
+    componentWillUnmount() {
+        if (this.state.transitLayer !== null) {
+            if (this.props.onUnmount) {
+                // @ts-ignore
+                this.props.onUnmount(this.state.transitLayer);
+            }
+            // @ts-ignore
+            this.state.transitLayer.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+TransitLayer.contextType = MapContext;
+
+/* globals google */
+const eventMap$g = {
+    onCircleComplete: 'circlecomplete',
+    onMarkerComplete: 'markercomplete',
+    onOverlayComplete: 'overlaycomplete',
+    onPolygonComplete: 'polygoncomplete',
+    onPolylineComplete: 'polylinecomplete',
+    onRectangleComplete: 'rectanglecomplete',
+};
+const updaterMap$g = {
+    drawingMode(instance, drawingMode) {
+        instance.setDrawingMode(drawingMode);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+};
+class DrawingManager extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor(props) {
+        super(props);
+        this.registeredEvents = [];
+        this.state = {
+            drawingManager: null,
+        };
+        this.setDrawingManagerCallback = () => {
+            if (this.state.drawingManager !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.drawingManager);
+            }
+        };
+        invariant_1(!!google.maps.drawing, `Did you include prop libraries={['drawing']} in the URL? %s`, google.maps.drawing);
+    }
+    componentDidMount() {
+        const drawingManager = new google.maps.drawing.DrawingManager(Object.assign(Object.assign({}, (this.props.options || {})), { map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$g,
+            eventMap: eventMap$g,
+            prevProps: {},
+            nextProps: this.props,
+            instance: drawingManager,
+        });
+        this.setState(function setDrawingManager() {
+            return {
+                drawingManager,
+            };
+        }, this.setDrawingManagerCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.drawingManager !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$g,
+                eventMap: eventMap$g,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.drawingManager,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.drawingManager !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.drawingManager);
+            }
+            unregisterEvents(this.registeredEvents);
+            this.state.drawingManager.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+DrawingManager.contextType = MapContext;
+
+const eventMap$f = {
+    onAnimationChanged: 'animation_changed',
+    onClick: 'click',
+    onClickableChanged: 'clickable_changed',
+    onCursorChanged: 'cursor_changed',
+    onDblClick: 'dblclick',
+    onDrag: 'drag',
+    onDragEnd: 'dragend',
+    onDraggableChanged: 'draggable_changed',
+    onDragStart: 'dragstart',
+    onFlatChanged: 'flat_changed',
+    onIconChanged: 'icon_changed',
+    onMouseDown: 'mousedown',
+    onMouseOut: 'mouseout',
+    onMouseOver: 'mouseover',
+    onMouseUp: 'mouseup',
+    onPositionChanged: 'position_changed',
+    onRightClick: 'rightclick',
+    onShapeChanged: 'shape_changed',
+    onTitleChanged: 'title_changed',
+    onVisibleChanged: 'visible_changed',
+    onZindexChanged: 'zindex_changed',
+};
+const updaterMap$f = {
+    animation(instance, animation) {
+        instance.setAnimation(animation);
+    },
+    clickable(instance, clickable) {
+        instance.setClickable(clickable);
+    },
+    cursor(instance, cursor) {
+        instance.setCursor(cursor);
+    },
+    draggable(instance, draggable) {
+        instance.setDraggable(draggable);
+    },
+    icon(instance, icon) {
+        instance.setIcon(icon);
+    },
+    label(instance, label) {
+        instance.setLabel(label);
+    },
+    map(instance, map) {
+        instance.setMap(map);
+    },
+    opacity(instance, opacity) {
+        instance.setOpacity(opacity);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    position(instance, position) {
+        instance.setPosition(position);
+    },
+    shape(instance, shape) {
+        instance.setShape(shape);
+    },
+    title(instance, title) {
+        instance.setTitle(title);
+    },
+    visible(instance, visible) {
+        instance.setVisible(visible);
+    },
+    zIndex(instance, zIndex) {
+        instance.setZIndex(zIndex);
+    },
+};
+class Marker extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+    }
+    componentDidMount() {
+        const markerOptions = Object.assign(Object.assign(Object.assign({}, (this.props.options || {})), (this.props.clusterer ? {} : { map: this.context })), { position: this.props.position });
+        // Unfortunately we can't just do this in the contstructor, because the
+        // `MapContext` might not be filled in yet.
+        this.marker = new google.maps.Marker(markerOptions);
+        if (this.props.clusterer) {
+            this.props.clusterer.addMarker(this.marker, !!this.props.noClustererRedraw);
+        }
+        else {
+            this.marker.setMap(this.context);
+        }
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$f,
+            eventMap: eventMap$f,
+            prevProps: {},
+            nextProps: this.props,
+            instance: this.marker,
+        });
+        if (this.props.onLoad) {
+            this.props.onLoad(this.marker);
+        }
+    }
+    componentDidUpdate(prevProps) {
+        if (this.marker) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$f,
+                eventMap: eventMap$f,
+                prevProps,
+                nextProps: this.props,
+                instance: this.marker,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.marker) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.marker);
+            }
+            unregisterEvents(this.registeredEvents);
+            if (this.props.clusterer) {
+                this.props.clusterer.removeMarker(this.marker, !!this.props.noClustererRedraw);
+            }
+            else {
+                this.marker && this.marker.setMap(null);
+            }
+        }
+    }
+    render() {
+        let children = null;
+        if (this.props.children) {
+            children = react__WEBPACK_IMPORTED_MODULE_0__.Children.map(this.props.children, child => {
+                if (!(0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(child)) {
+                    return child;
+                }
+                let elementChild = child;
+                return (0,react__WEBPACK_IMPORTED_MODULE_0__.cloneElement)(elementChild, { anchor: this.marker });
+            });
+        }
+        return children || null;
+    }
+}
+Marker.contextType = MapContext;
+
+var ClusterIcon = /** @class */ (function () {
+    function ClusterIcon(cluster, styles) {
+        cluster.getClusterer().extend(ClusterIcon, google.maps.OverlayView);
+        this.cluster = cluster;
+        this.clusterClassName = this.cluster.getClusterer().getClusterClass();
+        this.className = this.clusterClassName;
+        this.styles = styles;
+        this.center = undefined;
+        this.div = null;
+        this.sums = null;
+        this.visible = false;
+        this.boundsChangedListener = null;
+        this.url = '';
+        this.height = 0;
+        this.width = 0;
+        this.anchorText = [0, 0];
+        this.anchorIcon = [0, 0];
+        this.textColor = 'black';
+        this.textSize = 11;
+        this.textDecoration = 'none';
+        this.fontWeight = 'bold';
+        this.fontStyle = 'normal';
+        this.fontFamily = 'Arial,sans-serif';
+        this.backgroundPosition = '0 0';
+        // @ts-ignore
+        this.setMap(cluster.getMap()); // Note: this causes onAdd to be called
+    }
+    ClusterIcon.prototype.onAdd = function () {
+        var _this = this;
+        var cMouseDownInCluster;
+        var cDraggingMapByCluster;
+        this.div = document.createElement('div');
+        this.div.className = this.className;
+        if (this.visible) {
+            this.show();
+        }
+        // @ts-ignore
+        this.getPanes().overlayMouseTarget.appendChild(this.div);
+        // Fix for Issue 157
+        this.boundsChangedListener = google.maps.event.addListener(
+        // @ts-ignore
+        this.getMap(), 'boundschanged', function boundsChanged() {
+            cDraggingMapByCluster = cMouseDownInCluster;
+        });
+        google.maps.event.addDomListener(this.div, 'mousedown', function onMouseDown() {
+            cMouseDownInCluster = true;
+            cDraggingMapByCluster = false;
+        });
+        google.maps.event.addDomListener(this.div, 'click', function (event) {
+            cMouseDownInCluster = false;
+            if (!cDraggingMapByCluster) {
+                var markerClusterer_1 = _this.cluster.getClusterer();
+                /**
+                 * This event is fired when a cluster marker is clicked.
+                 * @name MarkerClusterer#click
+                 * @param {Cluster} c The cluster that was clicked.
+                 * @event
+                 */
+                google.maps.event.trigger(markerClusterer_1, 'click', _this.cluster);
+                google.maps.event.trigger(markerClusterer_1, 'clusterclick', _this.cluster); // deprecated name
+                // The default click handler follows. Disable it by setting
+                // the zoomOnClick property to false.
+                if (markerClusterer_1.getZoomOnClick()) {
+                    // Zoom into the cluster.
+                    var maxZoom_1 = markerClusterer_1.getMaxZoom();
+                    var bounds_1 = _this.cluster.getBounds();
+                    // @ts-ignore
+                    markerClusterer_1.getMap().fitBounds(bounds_1);
+                    // There is a fix for Issue 170 here:
+                    setTimeout(function timeout() {
+                        // @ts-ignore
+                        markerClusterer_1.getMap().fitBounds(bounds_1);
+                        // Don't zoom beyond the max zoom level
+                        // @ts-ignore
+                        if (maxZoom_1 !== null && markerClusterer_1.getMap().getZoom() > maxZoom_1) {
+                            // @ts-ignore
+                            markerClusterer_1.getMap().setZoom(maxZoom_1 + 1);
+                        }
+                    }, 100);
+                }
+                // Prevent event propagation to the map:
+                event.cancelBubble = true;
+                if (event.stopPropagation) {
+                    event.stopPropagation();
+                }
+            }
+        });
+        google.maps.event.addDomListener(this.div, 'mouseover', function () {
+            /**
+             * This event is fired when the mouse moves over a cluster marker.
+             * @name MarkerClusterer#mouseover
+             * @param {Cluster} c The cluster that the mouse moved over.
+             * @event
+             */
+            google.maps.event.trigger(_this.cluster.getClusterer(), 'mouseover', _this.cluster);
+        });
+        google.maps.event.addDomListener(this.div, 'mouseout', function () {
+            /**
+             * This event is fired when the mouse moves out of a cluster marker.
+             * @name MarkerClusterer#mouseout
+             * @param {Cluster} c The cluster that the mouse moved out of.
+             * @event
+             */
+            google.maps.event.trigger(_this.cluster.getClusterer(), 'mouseout', _this.cluster);
+        });
+    };
+    ClusterIcon.prototype.onRemove = function () {
+        if (this.div && this.div.parentNode) {
+            this.hide();
+            if (this.boundsChangedListener !== null) {
+                google.maps.event.removeListener(this.boundsChangedListener);
+            }
+            google.maps.event.clearInstanceListeners(this.div);
+            this.div.parentNode.removeChild(this.div);
+            this.div = null;
+        }
+    };
+    ClusterIcon.prototype.draw = function () {
+        if (this.visible && this.div !== null && this.center) {
+            var _a = this.getPosFromLatLng(this.center), x = _a.x, y = _a.y;
+            this.div.style.top = y + 'px';
+            this.div.style.left = x + 'px';
+        }
+    };
+    ClusterIcon.prototype.hide = function () {
+        if (this.div) {
+            this.div.style.display = 'none';
+        }
+        this.visible = false;
+    };
+    ClusterIcon.prototype.show = function () {
+        var _a;
+        if (this.div && this.center) {
+            var divTitle = '';
+            // NOTE: values must be specified in px units
+            var bp = this.backgroundPosition.split(' ');
+            var spriteH = parseInt(bp[0].replace(/^\s+|\s+$/g, ''), 10);
+            var spriteV = parseInt(bp[1].replace(/^\s+|\s+$/g, ''), 10);
+            var pos = this.getPosFromLatLng(this.center);
+            if (this.sums === null || typeof this.sums.title === 'undefined' || this.sums.title === '') {
+                divTitle = this.cluster.getClusterer().getTitle();
+            }
+            else {
+                divTitle = this.sums.title;
+            }
+            this.div.style.cursor = 'pointer';
+            this.div.style.position = 'absolute';
+            this.div.style.top = "".concat(pos.y, "px");
+            this.div.style.left = "".concat(pos.x, "px");
+            this.div.style.width = "".concat(this.width, "px");
+            this.div.style.height = "".concat(this.height, "px");
+            var img = document.createElement('img');
+            img.alt = divTitle;
+            img.src = this.url;
+            img.style.position = 'absolute';
+            img.style.top = "".concat(spriteV, "px");
+            img.style.left = "".concat(spriteH, "px");
+            if (!this.cluster.getClusterer().enableRetinaIcons) {
+                img.style.clip = "rect(-".concat(spriteV, "px, -").concat(spriteH + this.width, "px, -").concat(spriteV + this.height, ", -").concat(spriteH, ")");
+            }
+            var textElm = document.createElement('div');
+            textElm.style.position = 'absolute';
+            textElm.style.top = "".concat(this.anchorText[0], "px");
+            textElm.style.left = "".concat(this.anchorText[1], "px");
+            textElm.style.color = this.textColor;
+            textElm.style.fontSize = "".concat(this.textSize, "px");
+            textElm.style.fontFamily = this.fontFamily;
+            textElm.style.fontWeight = this.fontWeight;
+            textElm.style.fontStyle = this.fontStyle;
+            textElm.style.textDecoration = this.textDecoration;
+            textElm.style.textAlign = 'center';
+            textElm.style.width = "".concat(this.width, "px");
+            textElm.style.lineHeight = "".concat(this.height, "px");
+            textElm.innerText = "".concat((_a = this.sums) === null || _a === void 0 ? void 0 : _a.text);
+            this.div.innerHTML = '';
+            this.div.appendChild(img);
+            this.div.appendChild(textElm);
+            this.div.title = divTitle;
+            this.div.style.display = '';
+        }
+        this.visible = true;
+    };
+    ClusterIcon.prototype.useStyle = function (sums) {
+        this.sums = sums;
+        var styles = this.cluster.getClusterer().getStyles();
+        var style = styles[Math.min(styles.length - 1, Math.max(0, sums.index - 1))];
+        this.url = style.url;
+        this.height = style.height;
+        this.width = style.width;
+        if (style.className)
+            this.className = "".concat(this.clusterClassName, " ").concat(style.className);
+        this.anchorText = style.anchorText || [0, 0];
+        this.anchorIcon = style.anchorIcon || [this.height / 2, this.width / 2];
+        this.textColor = style.textColor || 'black';
+        this.textSize = style.textSize || 11;
+        this.textDecoration = style.textDecoration || 'none';
+        this.fontWeight = style.fontWeight || 'bold';
+        this.fontStyle = style.fontStyle || 'normal';
+        this.fontFamily = style.fontFamily || 'Arial,sans-serif';
+        this.backgroundPosition = style.backgroundPosition || '0 0';
+    };
+    ClusterIcon.prototype.setCenter = function (center) {
+        this.center = center;
+    };
+    ClusterIcon.prototype.getPosFromLatLng = function (latlng) {
+        // @ts-ignore
+        var pos = this.getProjection().fromLatLngToDivPixel(latlng);
+        pos.x -= this.anchorIcon[1];
+        pos.y -= this.anchorIcon[0];
+        // pos.x = pos.x
+        // pos.y = pos.y
+        return pos;
+    };
+    return ClusterIcon;
+}());
+
+var Cluster$1 = /** @class */ (function () {
+    function Cluster(markerClusterer) {
+        this.markerClusterer = markerClusterer;
+        // @ts-ignore
+        this.map = this.markerClusterer.getMap();
+        this.gridSize = this.markerClusterer.getGridSize();
+        this.minClusterSize = this.markerClusterer.getMinimumClusterSize();
+        this.averageCenter = this.markerClusterer.getAverageCenter();
+        this.markers = [];
+        this.center = undefined;
+        this.bounds = null;
+        this.clusterIcon = new ClusterIcon(this, this.markerClusterer.getStyles());
+    }
+    Cluster.prototype.getSize = function () {
+        return this.markers.length;
+    };
+    Cluster.prototype.getMarkers = function () {
+        return this.markers;
+    };
+    Cluster.prototype.getCenter = function () {
+        return this.center;
+    };
+    Cluster.prototype.getMap = function () {
+        return this.map;
+    };
+    Cluster.prototype.getClusterer = function () {
+        return this.markerClusterer;
+    };
+    Cluster.prototype.getBounds = function () {
+        var bounds = new google.maps.LatLngBounds(this.center, this.center);
+        var markers = this.getMarkers();
+        for (var i = 0; i < markers.length; i++) {
+            var position = markers[i].getPosition();
+            if (position) {
+                bounds.extend(position);
+            }
+        }
+        return bounds;
+    };
+    Cluster.prototype.remove = function () {
+        // @ts-ignore
+        this.clusterIcon.setMap(null);
+        this.markers = [];
+        // @ts-ignore
+        delete this.markers;
+    };
+    Cluster.prototype.addMarker = function (marker) {
+        if (this.isMarkerAlreadyAdded(marker)) {
+            return false;
+        }
+        if (!this.center) {
+            var position = marker.getPosition();
+            if (position) {
+                this.center = position;
+                this.calculateBounds();
+            }
+        }
+        else {
+            if (this.averageCenter) {
+                var position = marker.getPosition();
+                if (position) {
+                    var length_1 = this.markers.length + 1;
+                    this.center = new google.maps.LatLng((this.center.lat() * (length_1 - 1) + position.lat()) / length_1, (this.center.lng() * (length_1 - 1) + position.lng()) / length_1);
+                    this.calculateBounds();
+                }
+            }
+        }
+        marker.isAdded = true;
+        this.markers.push(marker);
+        var mCount = this.markers.length;
+        var maxZoom = this.markerClusterer.getMaxZoom();
+        var zoom = this.map.getZoom();
+        if (maxZoom !== null && typeof zoom !== 'undefined' && zoom > maxZoom) {
+            // Zoomed in past max zoom, so show the marker.
+            if (marker.getMap() !== this.map) {
+                marker.setMap(this.map);
+            }
+        }
+        else if (mCount < this.minClusterSize) {
+            // Min cluster size not reached so show the marker.
+            if (marker.getMap() !== this.map) {
+                marker.setMap(this.map);
+            }
+        }
+        else if (mCount === this.minClusterSize) {
+            // Hide the markers that were showing.
+            for (var i = 0; i < mCount; i++) {
+                this.markers[i].setMap(null);
+            }
+        }
+        else {
+            marker.setMap(null);
+        }
+        return true;
+    };
+    Cluster.prototype.isMarkerInClusterBounds = function (marker) {
+        if (this.bounds !== null) {
+            var position = marker.getPosition();
+            if (position) {
+                return this.bounds.contains(position);
+            }
+        }
+        return false;
+    };
+    Cluster.prototype.calculateBounds = function () {
+        this.bounds = this.markerClusterer.getExtendedBounds(new google.maps.LatLngBounds(this.center, this.center));
+    };
+    Cluster.prototype.updateIcon = function () {
+        var mCount = this.markers.length;
+        var maxZoom = this.markerClusterer.getMaxZoom();
+        var zoom = this.map.getZoom();
+        if (maxZoom !== null && typeof zoom !== 'undefined' && zoom > maxZoom) {
+            this.clusterIcon.hide();
+            return;
+        }
+        if (mCount < this.minClusterSize) {
+            // Min cluster size not yet reached.
+            this.clusterIcon.hide();
+            return;
+        }
+        if (this.center) {
+            this.clusterIcon.setCenter(this.center);
+        }
+        this.clusterIcon.useStyle(this.markerClusterer.getCalculator()(this.markers, this.markerClusterer.getStyles().length));
+        this.clusterIcon.show();
+    };
+    Cluster.prototype.isMarkerAlreadyAdded = function (marker) {
+        if (this.markers.includes) {
+            return this.markers.includes(marker);
+        }
+        else {
+            for (var i = 0; i < this.markers.length; i++) {
+                if (marker === this.markers[i]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    };
+    return Cluster;
+}());
+
+/* global google */
+/**
+ * Supports up to 9007199254740991 (Number.MAX_SAFE_INTEGER) markers
+ * which is not a problem as max array length is 4294967296 (2**32)
+ */
+var CALCULATOR = function CALCULATOR(markers, numStyles) {
+    var count = markers.length;
+    var numberOfDigits = count.toString().length;
+    var index = Math.min(numberOfDigits, numStyles);
+    return {
+        text: count.toString(),
+        index: index,
+        title: '',
+    };
+};
+var BATCH_SIZE = 2000;
+var BATCH_SIZE_IE = 500;
+var IMAGE_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
+var IMAGE_EXTENSION = 'png';
+var IMAGE_SIZES = [53, 56, 66, 78, 90];
+var CLUSTERER_CLASS = 'cluster';
+var Clusterer = /** @class */ (function () {
+    function Clusterer(map, optMarkers, optOptions) {
+        if (optMarkers === void 0) { optMarkers = []; }
+        if (optOptions === void 0) { optOptions = {}; }
+        this.extend(Clusterer, google.maps.OverlayView);
+        this.markers = [];
+        this.clusters = [];
+        this.listeners = [];
+        this.activeMap = null;
+        this.ready = false;
+        this.gridSize = optOptions.gridSize || 60;
+        this.minClusterSize = optOptions.minimumClusterSize || 2;
+        this.maxZoom = optOptions.maxZoom || null;
+        this.styles = optOptions.styles || [];
+        this.title = optOptions.title || '';
+        this.zoomOnClick = true;
+        if (optOptions.zoomOnClick !== undefined) {
+            this.zoomOnClick = optOptions.zoomOnClick;
+        }
+        this.averageCenter = false;
+        if (optOptions.averageCenter !== undefined) {
+            this.averageCenter = optOptions.averageCenter;
+        }
+        this.ignoreHidden = false;
+        if (optOptions.ignoreHidden !== undefined) {
+            this.ignoreHidden = optOptions.ignoreHidden;
+        }
+        this.enableRetinaIcons = false;
+        if (optOptions.enableRetinaIcons !== undefined) {
+            this.enableRetinaIcons = optOptions.enableRetinaIcons;
+        }
+        this.imagePath = optOptions.imagePath || IMAGE_PATH;
+        this.imageExtension = optOptions.imageExtension || IMAGE_EXTENSION;
+        this.imageSizes = optOptions.imageSizes || IMAGE_SIZES;
+        this.calculator = optOptions.calculator || CALCULATOR;
+        this.batchSize = optOptions.batchSize || BATCH_SIZE;
+        this.batchSizeIE = optOptions.batchSizeIE || BATCH_SIZE_IE;
+        this.clusterClass = optOptions.clusterClass || CLUSTERER_CLASS;
+        if (navigator.userAgent.toLowerCase().indexOf('msie') !== -1) {
+            // Try to avoid IE timeout when processing a huge number of markers:
+            this.batchSize = this.batchSizeIE;
+        }
+        this.timerRefStatic = null;
+        this.setupStyles();
+        this.addMarkers(optMarkers, true);
+        // @ts-ignore
+        this.setMap(map); // Note: this causes onAdd to be called
+    }
+    Clusterer.prototype.onAdd = function () {
+        var _this = this;
+        // @ts-ignore
+        this.activeMap = this.getMap();
+        this.ready = true;
+        this.repaint();
+        // Add the map event listeners
+        this.listeners = [
+            google.maps.event.addListener(
+            // @ts-ignore
+            this.getMap(), 'zoom_changed', function () {
+                _this.resetViewport(false);
+                // Workaround for this Google bug: when map is at level 0 and "-" of
+                // zoom slider is clicked, a "zoom_changed" event is fired even though
+                // the map doesn't zoom out any further. In this situation, no "idle"
+                // event is triggered so the cluster markers that have been removed
+                // do not get redrawn. Same goes for a zoom in at maxZoom.
+                if (
+                // @ts-ignore
+                _this.getMap().getZoom() === (_this.get('minZoom') || 0) ||
+                    // @ts-ignore
+                    _this.getMap().getZoom() === _this.get('maxZoom')) {
+                    google.maps.event.trigger(_this, 'idle');
+                }
+            }),
+            google.maps.event.addListener(
+            // @ts-ignore
+            this.getMap(), 'idle', function () {
+                _this.redraw();
+            }),
+        ];
+    };
+    Clusterer.prototype.onRemove = function () {
+        // Put all the managed markers back on the map:
+        for (var i = 0; i < this.markers.length; i++) {
+            if (this.markers[i].getMap() !== this.activeMap) {
+                this.markers[i].setMap(this.activeMap);
+            }
+        }
+        // Remove all clusters:
+        for (var i = 0; i < this.clusters.length; i++) {
+            this.clusters[i].remove();
+        }
+        this.clusters = [];
+        // Remove map event listeners:
+        for (var i = 0; i < this.listeners.length; i++) {
+            google.maps.event.removeListener(this.listeners[i]);
+        }
+        this.listeners = [];
+        this.activeMap = null;
+        this.ready = false;
+    };
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    Clusterer.prototype.draw = function () { };
+    Clusterer.prototype.setupStyles = function () {
+        if (this.styles.length > 0) {
+            return;
+        }
+        for (var i = 0; i < this.imageSizes.length; i++) {
+            this.styles.push({
+                url: this.imagePath + (i + 1) + '.' + this.imageExtension,
+                height: this.imageSizes[i],
+                width: this.imageSizes[i],
+            });
+        }
+    };
+    Clusterer.prototype.fitMapToMarkers = function () {
+        var markers = this.getMarkers();
+        var bounds = new google.maps.LatLngBounds();
+        for (var i = 0; i < markers.length; i++) {
+            var position = markers[i].getPosition();
+            if (position) {
+                bounds.extend(position);
+            }
+        }
+        // @ts-ignore
+        this.getMap().fitBounds(bounds);
+    };
+    Clusterer.prototype.getGridSize = function () {
+        return this.gridSize;
+    };
+    Clusterer.prototype.setGridSize = function (gridSize) {
+        this.gridSize = gridSize;
+    };
+    Clusterer.prototype.getMinimumClusterSize = function () {
+        return this.minClusterSize;
+    };
+    Clusterer.prototype.setMinimumClusterSize = function (minimumClusterSize) {
+        this.minClusterSize = minimumClusterSize;
+    };
+    Clusterer.prototype.getMaxZoom = function () {
+        return this.maxZoom;
+    };
+    Clusterer.prototype.setMaxZoom = function (maxZoom) {
+        this.maxZoom = maxZoom;
+    };
+    Clusterer.prototype.getStyles = function () {
+        return this.styles;
+    };
+    Clusterer.prototype.setStyles = function (styles) {
+        this.styles = styles;
+    };
+    Clusterer.prototype.getTitle = function () {
+        return this.title;
+    };
+    Clusterer.prototype.setTitle = function (title) {
+        this.title = title;
+    };
+    Clusterer.prototype.getZoomOnClick = function () {
+        return this.zoomOnClick;
+    };
+    Clusterer.prototype.setZoomOnClick = function (zoomOnClick) {
+        this.zoomOnClick = zoomOnClick;
+    };
+    Clusterer.prototype.getAverageCenter = function () {
+        return this.averageCenter;
+    };
+    Clusterer.prototype.setAverageCenter = function (averageCenter) {
+        this.averageCenter = averageCenter;
+    };
+    Clusterer.prototype.getIgnoreHidden = function () {
+        return this.ignoreHidden;
+    };
+    Clusterer.prototype.setIgnoreHidden = function (ignoreHidden) {
+        this.ignoreHidden = ignoreHidden;
+    };
+    Clusterer.prototype.getEnableRetinaIcons = function () {
+        return this.enableRetinaIcons;
+    };
+    Clusterer.prototype.setEnableRetinaIcons = function (enableRetinaIcons) {
+        this.enableRetinaIcons = enableRetinaIcons;
+    };
+    Clusterer.prototype.getImageExtension = function () {
+        return this.imageExtension;
+    };
+    Clusterer.prototype.setImageExtension = function (imageExtension) {
+        this.imageExtension = imageExtension;
+    };
+    Clusterer.prototype.getImagePath = function () {
+        return this.imagePath;
+    };
+    Clusterer.prototype.setImagePath = function (imagePath) {
+        this.imagePath = imagePath;
+    };
+    Clusterer.prototype.getImageSizes = function () {
+        return this.imageSizes;
+    };
+    Clusterer.prototype.setImageSizes = function (imageSizes) {
+        this.imageSizes = imageSizes;
+    };
+    Clusterer.prototype.getCalculator = function () {
+        return this.calculator;
+    };
+    Clusterer.prototype.setCalculator = function (calculator) {
+        this.calculator = calculator;
+    };
+    Clusterer.prototype.getBatchSizeIE = function () {
+        return this.batchSizeIE;
+    };
+    Clusterer.prototype.setBatchSizeIE = function (batchSizeIE) {
+        this.batchSizeIE = batchSizeIE;
+    };
+    Clusterer.prototype.getClusterClass = function () {
+        return this.clusterClass;
+    };
+    Clusterer.prototype.setClusterClass = function (clusterClass) {
+        this.clusterClass = clusterClass;
+    };
+    Clusterer.prototype.getMarkers = function () {
+        return this.markers;
+    };
+    Clusterer.prototype.getTotalMarkers = function () {
+        return this.markers.length;
+    };
+    Clusterer.prototype.getClusters = function () {
+        return this.clusters;
+    };
+    Clusterer.prototype.getTotalClusters = function () {
+        return this.clusters.length;
+    };
+    Clusterer.prototype.addMarker = function (marker, optNoDraw) {
+        this.pushMarkerTo(marker);
+        if (!optNoDraw) {
+            this.redraw();
+        }
+    };
+    Clusterer.prototype.addMarkers = function (markers, optNoDraw) {
+        for (var key in markers) {
+            if (Object.prototype.hasOwnProperty.call(markers, key)) {
+                this.pushMarkerTo(markers[key]);
+            }
+        }
+        if (!optNoDraw) {
+            this.redraw();
+        }
+    };
+    Clusterer.prototype.pushMarkerTo = function (marker) {
+        var _this = this;
+        // If the marker is draggable add a listener so we can update the clusters on the dragend:
+        if (marker.getDraggable()) {
+            google.maps.event.addListener(marker, 'dragend', function () {
+                if (_this.ready) {
+                    marker.isAdded = false;
+                    _this.repaint();
+                }
+            });
+        }
+        marker.isAdded = false;
+        this.markers.push(marker);
+    };
+    Clusterer.prototype.removeMarker_ = function (marker) {
+        var index = -1;
+        if (this.markers.indexOf) {
+            index = this.markers.indexOf(marker);
+        }
+        else {
+            for (var i = 0; i < this.markers.length; i++) {
+                if (marker === this.markers[i]) {
+                    index = i;
+                    break;
+                }
+            }
+        }
+        if (index === -1) {
+            // Marker is not in our list of markers, so do nothing:
+            return false;
+        }
+        marker.setMap(null);
+        this.markers.splice(index, 1); // Remove the marker from the list of managed markers
+        return true;
+    };
+    Clusterer.prototype.removeMarker = function (marker, optNoDraw) {
+        var removed = this.removeMarker_(marker);
+        if (!optNoDraw && removed) {
+            this.repaint();
+        }
+        return removed;
+    };
+    Clusterer.prototype.removeMarkers = function (markers, optNoDraw) {
+        var removed = false;
+        for (var i = 0; i < markers.length; i++) {
+            removed = removed || this.removeMarker_(markers[i]);
+        }
+        if (!optNoDraw && removed) {
+            this.repaint();
+        }
+        return removed;
+    };
+    Clusterer.prototype.clearMarkers = function () {
+        this.resetViewport(true);
+        this.markers = [];
+    };
+    Clusterer.prototype.repaint = function () {
+        var oldClusters = this.clusters.slice();
+        this.clusters = [];
+        this.resetViewport(false);
+        this.redraw();
+        // Remove the old clusters.
+        // Do it in a timeout to prevent blinking effect.
+        setTimeout(function timeout() {
+            for (var i = 0; i < oldClusters.length; i++) {
+                oldClusters[i].remove();
+            }
+        }, 0);
+    };
+    Clusterer.prototype.getExtendedBounds = function (bounds) {
+        // @ts-ignore
+        var projection = this.getProjection();
+        // Convert the points to pixels and the extend out by the grid size.
+        var trPix = projection.fromLatLngToDivPixel(
+        // Turn the bounds into latlng.
+        new google.maps.LatLng(bounds.getNorthEast().lat(), bounds.getNorthEast().lng()));
+        trPix.x += this.gridSize;
+        trPix.y -= this.gridSize;
+        var blPix = projection.fromLatLngToDivPixel(
+        // Turn the bounds into latlng.
+        new google.maps.LatLng(bounds.getSouthWest().lat(), bounds.getSouthWest().lng()));
+        blPix.x -= this.gridSize;
+        blPix.y += this.gridSize;
+        // Extend the bounds to contain the new bounds.
+        bounds.extend(
+        // Convert the pixel points back to LatLng nw
+        projection.fromDivPixelToLatLng(trPix));
+        bounds.extend(
+        // Convert the pixel points back to LatLng sw
+        projection.fromDivPixelToLatLng(blPix));
+        return bounds;
+    };
+    Clusterer.prototype.redraw = function () {
+        // Redraws all the clusters.
+        this.createClusters(0);
+    };
+    Clusterer.prototype.resetViewport = function (optHide) {
+        // Remove all the clusters
+        for (var i = 0; i < this.clusters.length; i++) {
+            this.clusters[i].remove();
+        }
+        this.clusters = [];
+        // Reset the markers to not be added and to be removed from the map.
+        for (var i = 0; i < this.markers.length; i++) {
+            var marker = this.markers[i];
+            marker.isAdded = false;
+            if (optHide) {
+                marker.setMap(null);
+            }
+        }
+    };
+    Clusterer.prototype.distanceBetweenPoints = function (p1, p2) {
+        var R = 6371; // Radius of the Earth in km
+        var dLat = ((p2.lat() - p1.lat()) * Math.PI) / 180;
+        var dLon = ((p2.lng() - p1.lng()) * Math.PI) / 180;
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos((p1.lat() * Math.PI) / 180) *
+                Math.cos((p2.lat() * Math.PI) / 180) *
+                Math.sin(dLon / 2) *
+                Math.sin(dLon / 2);
+        return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+    };
+    Clusterer.prototype.isMarkerInBounds = function (marker, bounds) {
+        var position = marker.getPosition();
+        if (position) {
+            return bounds.contains(position);
+        }
+        return false;
+    };
+    Clusterer.prototype.addToClosestCluster = function (marker) {
+        var cluster;
+        var distance = 40000; // Some large number
+        var clusterToAddTo = null;
+        for (var i = 0; i < this.clusters.length; i++) {
+            cluster = this.clusters[i];
+            var center = cluster.getCenter();
+            var position = marker.getPosition();
+            if (center && position) {
+                var d = this.distanceBetweenPoints(center, position);
+                if (d < distance) {
+                    distance = d;
+                    clusterToAddTo = cluster;
+                }
+            }
+        }
+        if (clusterToAddTo && clusterToAddTo.isMarkerInClusterBounds(marker)) {
+            clusterToAddTo.addMarker(marker);
+        }
+        else {
+            cluster = new Cluster$1(this);
+            cluster.addMarker(marker);
+            this.clusters.push(cluster);
+        }
+    };
+    Clusterer.prototype.createClusters = function (iFirst) {
+        var _this = this;
+        if (!this.ready) {
+            return;
+        }
+        // Cancel previous batch processing if we're working on the first batch:
+        if (iFirst === 0) {
+            /**
+             * This event is fired when the <code>Clusterer</code> begins
+             *  clustering markers.
+             * @name Clusterer#clusteringbegin
+             * @param {Clusterer} mc The Clusterer whose markers are being clustered.
+             * @event
+             */
+            google.maps.event.trigger(this, 'clusteringbegin', this);
+            if (this.timerRefStatic !== null) {
+                window.clearTimeout(this.timerRefStatic);
+                // @ts-ignore
+                delete this.timerRefStatic;
+            }
+        }
+        // Get our current map view bounds.
+        // Create a new bounds object so we don't affect the map.
+        //
+        // See Comments 9 & 11 on Issue 3651 relating to this workaround for a Google Maps bug:
+        var mapBounds = 
+        // @ts-ignore
+        this.getMap().getZoom() > 3
+            ? new google.maps.LatLngBounds(
+            // @ts-ignore
+            this.getMap()
+                .getBounds()
+                .getSouthWest(), 
+            // @ts-ignore
+            this.getMap()
+                .getBounds()
+                .getNorthEast())
+            : new google.maps.LatLngBounds(new google.maps.LatLng(85.02070771743472, -178.48388434375), new google.maps.LatLng(-85.08136444384544, 178.00048865625));
+        var bounds = this.getExtendedBounds(mapBounds);
+        var iLast = Math.min(iFirst + this.batchSize, this.markers.length);
+        for (var i = iFirst; i < iLast; i++) {
+            var marker = this.markers[i];
+            if (!marker.isAdded && this.isMarkerInBounds(marker, bounds)) {
+                if (!this.ignoreHidden || (this.ignoreHidden && marker.getVisible())) {
+                    this.addToClosestCluster(marker);
+                }
+            }
+        }
+        if (iLast < this.markers.length) {
+            this.timerRefStatic = window.setTimeout(function () {
+                _this.createClusters(iLast);
+            }, 0);
+        }
+        else {
+            this.timerRefStatic = null;
+            /**
+             * This event is fired when the <code>Clusterer</code> stops
+             *  clustering markers.
+             * @name Clusterer#clusteringend
+             * @param {Clusterer} mc The Clusterer whose markers are being clustered.
+             * @event
+             */
+            google.maps.event.trigger(this, 'clusteringend', this);
+            for (var i = 0; i < this.clusters.length; i++) {
+                this.clusters[i].updateIcon();
+            }
+        }
+    };
+    Clusterer.prototype.extend = function (obj1, obj2) {
+        return function applyExtend(object) {
+            // eslint-disable-next-line guard-for-in
+            for (var property in object.prototype) {
+                // @ts-ignore
+                this.prototype[property] = object.prototype[property];
+            }
+            // @ts-ignore
+            return this;
+        }.apply(obj1, [obj2]);
+    };
+    return Clusterer;
+}());
+
+const eventMap$e = {
+    onClick: 'click',
+    onClusteringBegin: 'clusteringbegin',
+    onClusteringEnd: 'clusteringend',
+    onMouseOut: 'mouseout',
+    onMouseOver: 'mouseover',
+};
+const updaterMap$e = {
+    averageCenter(instance, averageCenter) {
+        instance.setAverageCenter(averageCenter);
+    },
+    batchSizeIE(instance, batchSizeIE) {
+        instance.setBatchSizeIE(batchSizeIE);
+    },
+    calculator(instance, calculator) {
+        instance.setCalculator(calculator);
+    },
+    clusterClass(instance, clusterClass) {
+        instance.setClusterClass(clusterClass);
+    },
+    enableRetinaIcons(instance, enableRetinaIcons) {
+        instance.setEnableRetinaIcons(enableRetinaIcons);
+    },
+    gridSize(instance, gridSize) {
+        instance.setGridSize(gridSize);
+    },
+    ignoreHidden(instance, ignoreHidden) {
+        instance.setIgnoreHidden(ignoreHidden);
+    },
+    imageExtension(instance, imageExtension) {
+        instance.setImageExtension(imageExtension);
+    },
+    imagePath(instance, imagePath) {
+        instance.setImagePath(imagePath);
+    },
+    imageSizes(instance, imageSizes) {
+        instance.setImageSizes(imageSizes);
+    },
+    maxZoom(instance, maxZoom) {
+        instance.setMaxZoom(maxZoom);
+    },
+    minimumClusterSize(instance, minimumClusterSize) {
+        instance.setMinimumClusterSize(minimumClusterSize);
+    },
+    styles(instance, styles) {
+        instance.setStyles(styles);
+    },
+    title(instance, title) {
+        instance.setTitle(title);
+    },
+    zoomOnClick(instance, zoomOnClick) {
+        instance.setZoomOnClick(zoomOnClick);
+    },
+};
+class ClustererComponent extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            markerClusterer: null,
+        };
+        this.setClustererCallback = () => {
+            if (this.state.markerClusterer !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.markerClusterer);
+            }
+        };
+    }
+    componentDidMount() {
+        if (this.context) {
+            const markerClusterer = new Clusterer(this.context, [], this.props.options);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$e,
+                eventMap: eventMap$e,
+                prevProps: {},
+                nextProps: this.props,
+                instance: markerClusterer,
+            });
+            this.setState(function setClusterer() {
+                return {
+                    markerClusterer,
+                };
+            }, this.setClustererCallback);
+        }
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.markerClusterer) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$e,
+                eventMap: eventMap$e,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.markerClusterer,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.markerClusterer !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.markerClusterer);
+            }
+            unregisterEvents(this.registeredEvents);
+            // @ts-ignore
+            this.state.markerClusterer.setMap(null);
+        }
+    }
+    render() {
+        return this.state.markerClusterer !== null
+            ? this.props.children(this.state.markerClusterer)
+            : null;
+    }
+}
+ClustererComponent.contextType = MapContext;
+
+var InfoBox = /** @class */ (function () {
+    function InfoBox(options) {
+        if (options === void 0) { options = {}; }
+        this.extend(InfoBox, google.maps.OverlayView);
+        // Standard options (in common with google.maps.InfoWindow):
+        this.content = options.content || '';
+        this.disableAutoPan = options.disableAutoPan || false;
+        this.maxWidth = options.maxWidth || 0;
+        this.pixelOffset = options.pixelOffset || new google.maps.Size(0, 0);
+        this.position = options.position || new google.maps.LatLng(0, 0);
+        this.zIndex = options.zIndex || null;
+        // Additional options (unique to InfoBox):
+        this.boxClass = options.boxClass || 'infoBox';
+        this.boxStyle = options.boxStyle || {};
+        this.closeBoxMargin = options.closeBoxMargin || '2px';
+        this.closeBoxURL = options.closeBoxURL || 'http://www.google.com/intl/en_us/mapfiles/close.gif';
+        if (options.closeBoxURL === '') {
+            this.closeBoxURL = '';
+        }
+        this.infoBoxClearance = options.infoBoxClearance || new google.maps.Size(1, 1);
+        if (typeof options.visible === 'undefined') {
+            if (typeof options.isHidden === 'undefined') {
+                options.visible = true;
+            }
+            else {
+                options.visible = !options.isHidden;
+            }
+        }
+        this.isHidden = !options.visible;
+        this.alignBottom = options.alignBottom || false;
+        this.pane = options.pane || 'floatPane';
+        this.enableEventPropagation = options.enableEventPropagation || false;
+        this.div = null;
+        this.closeListener = null;
+        this.moveListener = null;
+        this.mapListener = null;
+        this.contextListener = null;
+        this.eventListeners = null;
+        this.fixedWidthSet = null;
+    }
+    InfoBox.prototype.createInfoBoxDiv = function () {
+        var _this = this;
+        // This handler prevents an event in the InfoBox from being passed on to the map.
+        function cancelHandler(event) {
+            event.cancelBubble = true;
+            if (event.stopPropagation) {
+                event.stopPropagation();
+            }
+        }
+        // This handler ignores the current event in the InfoBox and conditionally prevents
+        // the event from being passed on to the map. It is used for the contextmenu event.
+        var ignoreHandler = function (event) {
+            event.returnValue = false;
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            if (!_this.enableEventPropagation) {
+                cancelHandler(event);
+            }
+        };
+        if (!this.div) {
+            this.div = document.createElement('div');
+            this.setBoxStyle();
+            if (typeof this.content === 'string') {
+                this.div.innerHTML = this.getCloseBoxImg() + this.content;
+            }
+            else {
+                this.div.innerHTML = this.getCloseBoxImg();
+                this.div.appendChild(this.content);
+            }
+            // @ts-ignore
+            var panes = this.getPanes();
+            panes[this.pane].appendChild(this.div); // Add the InfoBox div to the DOM
+            this.addClickHandler();
+            if (this.div.style.width) {
+                this.fixedWidthSet = true;
+            }
+            else {
+                if (this.maxWidth !== 0 && this.div.offsetWidth > this.maxWidth) {
+                    this.div.style.width = this.maxWidth + 'px';
+                    this.fixedWidthSet = true;
+                }
+                else {
+                    // The following code is needed to overcome problems with MSIE
+                    var bw = this.getBoxWidths();
+                    this.div.style.width = this.div.offsetWidth - bw.left - bw.right + 'px';
+                    this.fixedWidthSet = false;
+                }
+            }
+            this.panBox(this.disableAutoPan);
+            if (!this.enableEventPropagation) {
+                this.eventListeners = [];
+                // Cancel event propagation.
+                // Note: mousemove not included (to resolve Issue 152)
+                var events = [
+                    'mousedown',
+                    'mouseover',
+                    'mouseout',
+                    'mouseup',
+                    'click',
+                    'dblclick',
+                    'touchstart',
+                    'touchend',
+                    'touchmove',
+                ];
+                for (var i = 0; i < events.length; i++) {
+                    this.eventListeners.push(google.maps.event.addDomListener(this.div, events[i], cancelHandler));
+                }
+                // Workaround for Google bug that causes the cursor to change to a pointer
+                // when the mouse moves over a marker underneath InfoBox.
+                this.eventListeners.push(google.maps.event.addDomListener(this.div, 'mouseover', function () {
+                    if (_this.div) {
+                        _this.div.style.cursor = 'default';
+                    }
+                }));
+            }
+            this.contextListener = google.maps.event.addDomListener(this.div, 'contextmenu', ignoreHandler);
+            /**
+             * This event is fired when the DIV containing the InfoBox's content is attached to the DOM.
+             * @name InfoBox#domready
+             * @event
+             */
+            google.maps.event.trigger(this, 'domready');
+        }
+    };
+    InfoBox.prototype.getCloseBoxImg = function () {
+        var img = '';
+        if (this.closeBoxURL !== '') {
+            img = '<img alt=""';
+            img += ' aria-hidden="true"';
+            img += " src='" + this.closeBoxURL + "'";
+            img += ' align=right'; // Do this because Opera chokes on style='float: right;'
+            img += " style='";
+            img += ' position: relative;'; // Required by MSIE
+            img += ' cursor: pointer;';
+            img += ' margin: ' + this.closeBoxMargin + ';';
+            img += "'>";
+        }
+        return img;
+    };
+    InfoBox.prototype.addClickHandler = function () {
+        if (this.div && this.div.firstChild && this.closeBoxURL !== '') {
+            var closeBox = this.div.firstChild;
+            this.closeListener = google.maps.event.addDomListener(closeBox, 'click', this.getCloseClickHandler());
+        }
+        else {
+            this.closeListener = null;
+        }
+    };
+    InfoBox.prototype.getCloseClickHandler = function () {
+        var _this = this;
+        return function (event) {
+            // 1.0.3 fix: Always prevent propagation of a close box click to the map:
+            event.cancelBubble = true;
+            if (event.stopPropagation) {
+                event.stopPropagation();
+            }
+            /**
+             * This event is fired when the InfoBox's close box is clicked.
+             * @name InfoBox#closeclick
+             * @event
+             */
+            google.maps.event.trigger(_this, 'closeclick');
+            _this.close();
+        };
+    };
+    InfoBox.prototype.panBox = function (disablePan) {
+        if (this.div && !disablePan) {
+            // @ts-ignore
+            var map = this.getMap();
+            // Only pan if attached to map, not panorama
+            if (map instanceof google.maps.Map) {
+                var xOffset = 0;
+                var yOffset = 0;
+                var bounds = map.getBounds();
+                if (bounds && !bounds.contains(this.position)) {
+                    // Marker not in visible area of map, so set center
+                    // of map to the marker position first.
+                    map.setCenter(this.position);
+                }
+                var mapDiv = map.getDiv();
+                // @ts-ignore
+                var mapWidth = mapDiv.offsetWidth;
+                // @ts-ignore
+                var mapHeight = mapDiv.offsetHeight;
+                var iwOffsetX = this.pixelOffset.width;
+                var iwOffsetY = this.pixelOffset.height;
+                var iwWidth = this.div.offsetWidth;
+                var iwHeight = this.div.offsetHeight;
+                var padX = this.infoBoxClearance.width;
+                var padY = this.infoBoxClearance.height;
+                // @ts-ignore
+                var projection = this.getProjection();
+                var pixPosition = projection.fromLatLngToContainerPixel(this.position);
+                if (pixPosition !== null) {
+                    if (pixPosition.x < -iwOffsetX + padX) {
+                        xOffset = pixPosition.x + iwOffsetX - padX;
+                    }
+                    else if (pixPosition.x + iwWidth + iwOffsetX + padX > mapWidth) {
+                        xOffset = pixPosition.x + iwWidth + iwOffsetX + padX - mapWidth;
+                    }
+                    if (this.alignBottom) {
+                        if (pixPosition.y < -iwOffsetY + padY + iwHeight) {
+                            yOffset = pixPosition.y + iwOffsetY - padY - iwHeight;
+                        }
+                        else if (pixPosition.y + iwOffsetY + padY > mapHeight) {
+                            yOffset = pixPosition.y + iwOffsetY + padY - mapHeight;
+                        }
+                    }
+                    else {
+                        if (pixPosition.y < -iwOffsetY + padY) {
+                            yOffset = pixPosition.y + iwOffsetY - padY;
+                        }
+                        else if (pixPosition.y + iwHeight + iwOffsetY + padY > mapHeight) {
+                            yOffset = pixPosition.y + iwHeight + iwOffsetY + padY - mapHeight;
+                        }
+                    }
+                }
+                if (!(xOffset === 0 && yOffset === 0)) {
+                    // Move the map to the shifted center.
+                    map.panBy(xOffset, yOffset);
+                }
+            }
+        }
+    };
+    InfoBox.prototype.setBoxStyle = function () {
+        if (this.div) {
+            // Apply style values from the style sheet defined in the boxClass parameter:
+            this.div.className = this.boxClass;
+            // Clear existing inline style values:
+            this.div.style.cssText = '';
+            // Apply style values defined in the boxStyle parameter:
+            var boxStyle = this.boxStyle;
+            for (var i in boxStyle) {
+                if (boxStyle.hasOwnProperty(i)) {
+                    // @ts-ignore
+                    this.div.style[i] = boxStyle[i];
+                }
+            }
+            // Fix for iOS disappearing InfoBox problem
+            // See http://stackoverflow.com/questions/9229535/google-maps-markers-disappear-at-certain-zoom-level-only-on-iphone-ipad
+            this.div.style.webkitTransform = 'translateZ(0)';
+            // Fix up opacity style for benefit of MSIE
+            if (typeof this.div.style.opacity !== 'undefined' && this.div.style.opacity !== '') {
+                // See http://www.quirksmode.org/css/opacity.html
+                var opacity = parseFloat(this.div.style.opacity || '');
+                // @ts-ignore
+                this.div.style.msFilter =
+                    '"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')"';
+                this.div.style.filter = 'alpha(opacity=' + opacity * 100 + ')';
+            }
+            // Apply required styles
+            this.div.style.position = 'absolute';
+            this.div.style.visibility = 'hidden';
+            if (this.zIndex !== null) {
+                this.div.style.zIndex = this.zIndex + '';
+            }
+            if (!this.div.style.overflow) {
+                this.div.style.overflow = 'auto';
+            }
+        }
+    };
+    InfoBox.prototype.getBoxWidths = function () {
+        var bw = { top: 0, bottom: 0, left: 0, right: 0 };
+        if (!this.div) {
+            return bw;
+        }
+        if (document.defaultView) {
+            var ownerDocument = this.div.ownerDocument;
+            var computedStyle = ownerDocument && ownerDocument.defaultView
+                ? ownerDocument.defaultView.getComputedStyle(this.div, '')
+                : null;
+            if (computedStyle) {
+                // The computed styles are always in pixel units (good!)
+                bw.top = parseInt(computedStyle.borderTopWidth || '', 10) || 0;
+                bw.bottom = parseInt(computedStyle.borderBottomWidth || '', 10) || 0;
+                bw.left = parseInt(computedStyle.borderLeftWidth || '', 10) || 0;
+                bw.right = parseInt(computedStyle.borderRightWidth || '', 10) || 0;
+            }
+        }
+        else if (
+        // @ts-ignore
+        document.documentElement.currentStyle // MSIE
+        ) {
+            // @ts-ignore
+            var currentStyle = this.div.currentStyle;
+            if (currentStyle) {
+                // The current styles may not be in pixel units, but assume they are (bad!)
+                bw.top = parseInt(currentStyle.borderTopWidth || '', 10) || 0;
+                bw.bottom = parseInt(currentStyle.borderBottomWidth || '', 10) || 0;
+                bw.left = parseInt(currentStyle.borderLeftWidth || '', 10) || 0;
+                bw.right = parseInt(currentStyle.borderRightWidth || '', 10) || 0;
+            }
+        }
+        return bw;
+    };
+    InfoBox.prototype.onRemove = function () {
+        if (this.div && this.div.parentNode) {
+            this.div.parentNode.removeChild(this.div);
+            this.div = null;
+        }
+    };
+    InfoBox.prototype.draw = function () {
+        this.createInfoBoxDiv();
+        if (this.div) {
+            // @ts-ignore
+            var projection = this.getProjection();
+            var pixPosition = projection.fromLatLngToDivPixel(this.position);
+            if (pixPosition !== null) {
+                this.div.style.left = pixPosition.x + this.pixelOffset.width + 'px';
+                if (this.alignBottom) {
+                    this.div.style.bottom = -(pixPosition.y + this.pixelOffset.height) + 'px';
+                }
+                else {
+                    this.div.style.top = pixPosition.y + this.pixelOffset.height + 'px';
+                }
+            }
+            if (this.isHidden) {
+                this.div.style.visibility = 'hidden';
+            }
+            else {
+                this.div.style.visibility = 'visible';
+            }
+        }
+    };
+    InfoBox.prototype.setOptions = function (options) {
+        if (options === void 0) { options = {}; }
+        if (typeof options.boxClass !== 'undefined') {
+            // Must be first
+            this.boxClass = options.boxClass;
+            this.setBoxStyle();
+        }
+        if (typeof options.boxStyle !== 'undefined') {
+            // Must be second
+            this.boxStyle = options.boxStyle;
+            this.setBoxStyle();
+        }
+        if (typeof options.content !== 'undefined') {
+            this.setContent(options.content);
+        }
+        if (typeof options.disableAutoPan !== 'undefined') {
+            this.disableAutoPan = options.disableAutoPan;
+        }
+        if (typeof options.maxWidth !== 'undefined') {
+            this.maxWidth = options.maxWidth;
+        }
+        if (typeof options.pixelOffset !== 'undefined') {
+            this.pixelOffset = options.pixelOffset;
+        }
+        if (typeof options.alignBottom !== 'undefined') {
+            this.alignBottom = options.alignBottom;
+        }
+        if (typeof options.position !== 'undefined') {
+            this.setPosition(options.position);
+        }
+        if (typeof options.zIndex !== 'undefined') {
+            this.setZIndex(options.zIndex);
+        }
+        if (typeof options.closeBoxMargin !== 'undefined') {
+            this.closeBoxMargin = options.closeBoxMargin;
+        }
+        if (typeof options.closeBoxURL !== 'undefined') {
+            this.closeBoxURL = options.closeBoxURL;
+        }
+        if (typeof options.infoBoxClearance !== 'undefined') {
+            this.infoBoxClearance = options.infoBoxClearance;
+        }
+        if (typeof options.isHidden !== 'undefined') {
+            this.isHidden = options.isHidden;
+        }
+        if (typeof options.visible !== 'undefined') {
+            this.isHidden = !options.visible;
+        }
+        if (typeof options.enableEventPropagation !== 'undefined') {
+            this.enableEventPropagation = options.enableEventPropagation;
+        }
+        if (this.div) {
+            this.draw();
+        }
+    };
+    InfoBox.prototype.setContent = function (content) {
+        this.content = content;
+        if (this.div) {
+            if (this.closeListener) {
+                google.maps.event.removeListener(this.closeListener);
+                this.closeListener = null;
+            }
+            // Odd code required to make things work with MSIE.
+            if (!this.fixedWidthSet) {
+                this.div.style.width = '';
+            }
+            if (typeof content === 'string') {
+                this.div.innerHTML = this.getCloseBoxImg() + content;
+            }
+            else {
+                this.div.innerHTML = this.getCloseBoxImg();
+                this.div.appendChild(content);
+            }
+            // Perverse code required to make things work with MSIE.
+            // (Ensures the close box does, in fact, float to the right.)
+            if (!this.fixedWidthSet) {
+                this.div.style.width = this.div.offsetWidth + 'px';
+                if (typeof content === 'string') {
+                    this.div.innerHTML = this.getCloseBoxImg() + content;
+                }
+                else {
+                    this.div.innerHTML = this.getCloseBoxImg();
+                    this.div.appendChild(content);
+                }
+            }
+            this.addClickHandler();
+        }
+        /**
+         * This event is fired when the content of the InfoBox changes.
+         * @name InfoBox#content_changed
+         * @event
+         */
+        google.maps.event.trigger(this, 'content_changed');
+    };
+    InfoBox.prototype.setPosition = function (latLng) {
+        this.position = latLng;
+        if (this.div) {
+            this.draw();
+        }
+        /**
+         * This event is fired when the position of the InfoBox changes.
+         * @name InfoBox#position_changed
+         * @event
+         */
+        google.maps.event.trigger(this, 'position_changed');
+    };
+    InfoBox.prototype.setVisible = function (isVisible) {
+        this.isHidden = !isVisible;
+        if (this.div) {
+            this.div.style.visibility = this.isHidden ? 'hidden' : 'visible';
+        }
+    };
+    InfoBox.prototype.setZIndex = function (index) {
+        this.zIndex = index;
+        if (this.div) {
+            this.div.style.zIndex = index + '';
+        }
+        /**
+         * This event is fired when the zIndex of the InfoBox changes.
+         * @name InfoBox#zindex_changed
+         * @event
+         */
+        google.maps.event.trigger(this, 'zindex_changed');
+    };
+    InfoBox.prototype.getContent = function () {
+        return this.content;
+    };
+    InfoBox.prototype.getPosition = function () {
+        return this.position;
+    };
+    InfoBox.prototype.getZIndex = function () {
+        return this.zIndex;
+    };
+    InfoBox.prototype.getVisible = function () {
+        // @ts-ignore
+        var map = this.getMap();
+        var isVisible;
+        if (typeof map === 'undefined' || map === null) {
+            isVisible = false;
+        }
+        else {
+            isVisible = !this.isHidden;
+        }
+        return isVisible;
+    };
+    InfoBox.prototype.show = function () {
+        this.isHidden = false;
+        if (this.div) {
+            this.div.style.visibility = 'visible';
+        }
+    };
+    InfoBox.prototype.hide = function () {
+        this.isHidden = true;
+        if (this.div) {
+            this.div.style.visibility = 'hidden';
+        }
+    };
+    InfoBox.prototype.open = function (map, anchor) {
+        var _this = this;
+        if (anchor) {
+            // @ts-ignore
+            this.position = anchor.getPosition();
+            this.moveListener = google.maps.event.addListener(anchor, 'position_changed', function () {
+                // @ts-ignore
+                var position = anchor.getPosition();
+                _this.setPosition(position);
+            });
+            this.mapListener = google.maps.event.addListener(anchor, 'map_changed', function () {
+                // @ts-ignore
+                _this.setMap(anchor.map);
+            });
+        }
+        // @ts-ignore
+        this.setMap(map);
+        if (this.div) {
+            this.panBox();
+        }
+    };
+    InfoBox.prototype.close = function () {
+        if (this.closeListener) {
+            google.maps.event.removeListener(this.closeListener);
+            this.closeListener = null;
+        }
+        if (this.eventListeners) {
+            for (var i = 0; i < this.eventListeners.length; i++) {
+                google.maps.event.removeListener(this.eventListeners[i]);
+            }
+            this.eventListeners = null;
+        }
+        if (this.moveListener) {
+            google.maps.event.removeListener(this.moveListener);
+            this.moveListener = null;
+        }
+        if (this.mapListener) {
+            google.maps.event.removeListener(this.mapListener);
+            this.mapListener = null;
+        }
+        if (this.contextListener) {
+            google.maps.event.removeListener(this.contextListener);
+            this.contextListener = null;
+        }
+        // @ts-ignore
+        this.setMap(null);
+    };
+    InfoBox.prototype.extend = function (obj1, obj2) {
+        return function applyExtend(object) {
+            // eslint-disable-next-line guard-for-in
+            for (var property in object.prototype) {
+                // @ts-ignore
+                if (!this.prototype.hasOwnProperty(property)) {
+                    // @ts-ignore
+                    this.prototype[property] = object.prototype[property];
+                }
+            }
+            // @ts-ignore
+            return this;
+        }.apply(obj1, [obj2]);
+    };
+    return InfoBox;
+}());
+
+const eventMap$d = {
+    onCloseClick: 'closeclick',
+    onContentChanged: 'content_changed',
+    onDomReady: 'domready',
+    onPositionChanged: 'position_changed',
+    onZindexChanged: 'zindex_changed',
+};
+const updaterMap$d = {
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    position(instance, position) {
+        if (position instanceof google.maps.LatLng) {
+            instance.setPosition(position);
+        }
+        else {
+            instance.setPosition(new google.maps.LatLng(position.lat, position.lng));
+        }
+    },
+    visible(instance, visible) {
+        instance.setVisible(visible);
+    },
+    zIndex(instance, zIndex) {
+        instance.setZIndex(zIndex);
+    },
+};
+class InfoBoxComponent extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.containerElement = null;
+        this.state = {
+            infoBox: null,
+        };
+        this.open = (infoBox, anchor) => {
+            if (anchor) {
+                infoBox.open(this.context, anchor);
+            }
+            else if (infoBox.getPosition()) {
+                infoBox.open(this.context);
+            }
+            else {
+                invariant_1(false, 'You must provide either an anchor or a position prop for <InfoBox>.');
+            }
+        };
+        this.setInfoBoxCallback = () => {
+            const { anchor, onLoad } = this.props;
+            const { infoBox } = this.state;
+            if (infoBox !== null && this.containerElement !== null) {
+                infoBox.setContent(this.containerElement);
+                this.open(infoBox, anchor);
+                if (onLoad) {
+                    onLoad(infoBox);
+                }
+            }
+        };
+    }
+    componentDidMount() {
+        const { options } = this.props;
+        const _a = options || {}, { position } = _a, infoBoxOptions = __rest$1(_a, ["position"]);
+        let positionLatLng;
+        if (position && !(position instanceof google.maps.LatLng)) {
+            positionLatLng = new google.maps.LatLng(position.lat, position.lng);
+        }
+        const infoBox = new InfoBox(Object.assign(Object.assign({}, infoBoxOptions), (positionLatLng ? { position: positionLatLng } : {})));
+        this.containerElement = document.createElement('div');
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$d,
+            eventMap: eventMap$d,
+            prevProps: {},
+            nextProps: this.props,
+            instance: infoBox,
+        });
+        this.setState({ infoBox }, this.setInfoBoxCallback);
+    }
+    componentDidUpdate(prevProps) {
+        const { infoBox } = this.state;
+        if (infoBox !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$d,
+                eventMap: eventMap$d,
+                prevProps,
+                nextProps: this.props,
+                instance: infoBox,
+            });
+        }
+    }
+    componentWillUnmount() {
+        const { onUnmount } = this.props;
+        const { infoBox } = this.state;
+        if (infoBox !== null) {
+            if (onUnmount) {
+                onUnmount(infoBox);
+            }
+            unregisterEvents(this.registeredEvents);
+            infoBox.close();
+        }
+    }
+    render() {
+        if (!this.containerElement) {
+            return null;
+        }
+        return (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)(react__WEBPACK_IMPORTED_MODULE_0__.Children.only(this.props.children), this.containerElement);
+    }
+}
+InfoBoxComponent.contextType = MapContext;
+
+var kdbush = {exports: {}};
+
+(function (module, exports) {
+(function (global, factory) {
+module.exports = factory() ;
+}(commonjsGlobal, (function () {
+function sortKD(ids, coords, nodeSize, left, right, depth) {
+    if (right - left <= nodeSize) { return; }
+
+    var m = (left + right) >> 1;
+
+    select(ids, coords, m, left, right, depth % 2);
+
+    sortKD(ids, coords, nodeSize, left, m - 1, depth + 1);
+    sortKD(ids, coords, nodeSize, m + 1, right, depth + 1);
+}
+
+function select(ids, coords, k, left, right, inc) {
+
+    while (right > left) {
+        if (right - left > 600) {
+            var n = right - left + 1;
+            var m = k - left + 1;
+            var z = Math.log(n);
+            var s = 0.5 * Math.exp(2 * z / 3);
+            var sd = 0.5 * Math.sqrt(z * s * (n - s) / n) * (m - n / 2 < 0 ? -1 : 1);
+            var newLeft = Math.max(left, Math.floor(k - m * s / n + sd));
+            var newRight = Math.min(right, Math.floor(k + (n - m) * s / n + sd));
+            select(ids, coords, k, newLeft, newRight, inc);
+        }
+
+        var t = coords[2 * k + inc];
+        var i = left;
+        var j = right;
+
+        swapItem(ids, coords, left, k);
+        if (coords[2 * right + inc] > t) { swapItem(ids, coords, left, right); }
+
+        while (i < j) {
+            swapItem(ids, coords, i, j);
+            i++;
+            j--;
+            while (coords[2 * i + inc] < t) { i++; }
+            while (coords[2 * j + inc] > t) { j--; }
+        }
+
+        if (coords[2 * left + inc] === t) { swapItem(ids, coords, left, j); }
+        else {
+            j++;
+            swapItem(ids, coords, j, right);
+        }
+
+        if (j <= k) { left = j + 1; }
+        if (k <= j) { right = j - 1; }
+    }
+}
+
+function swapItem(ids, coords, i, j) {
+    swap(ids, i, j);
+    swap(coords, 2 * i, 2 * j);
+    swap(coords, 2 * i + 1, 2 * j + 1);
+}
+
+function swap(arr, i, j) {
+    var tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+}
+
+function range(ids, coords, minX, minY, maxX, maxY, nodeSize) {
+    var stack = [0, ids.length - 1, 0];
+    var result = [];
+    var x, y;
+
+    while (stack.length) {
+        var axis = stack.pop();
+        var right = stack.pop();
+        var left = stack.pop();
+
+        if (right - left <= nodeSize) {
+            for (var i = left; i <= right; i++) {
+                x = coords[2 * i];
+                y = coords[2 * i + 1];
+                if (x >= minX && x <= maxX && y >= minY && y <= maxY) { result.push(ids[i]); }
+            }
+            continue;
+        }
+
+        var m = Math.floor((left + right) / 2);
+
+        x = coords[2 * m];
+        y = coords[2 * m + 1];
+
+        if (x >= minX && x <= maxX && y >= minY && y <= maxY) { result.push(ids[m]); }
+
+        var nextAxis = (axis + 1) % 2;
+
+        if (axis === 0 ? minX <= x : minY <= y) {
+            stack.push(left);
+            stack.push(m - 1);
+            stack.push(nextAxis);
+        }
+        if (axis === 0 ? maxX >= x : maxY >= y) {
+            stack.push(m + 1);
+            stack.push(right);
+            stack.push(nextAxis);
+        }
+    }
+
+    return result;
+}
+
+function within(ids, coords, qx, qy, r, nodeSize) {
+    var stack = [0, ids.length - 1, 0];
+    var result = [];
+    var r2 = r * r;
+
+    while (stack.length) {
+        var axis = stack.pop();
+        var right = stack.pop();
+        var left = stack.pop();
+
+        if (right - left <= nodeSize) {
+            for (var i = left; i <= right; i++) {
+                if (sqDist(coords[2 * i], coords[2 * i + 1], qx, qy) <= r2) { result.push(ids[i]); }
+            }
+            continue;
+        }
+
+        var m = Math.floor((left + right) / 2);
+
+        var x = coords[2 * m];
+        var y = coords[2 * m + 1];
+
+        if (sqDist(x, y, qx, qy) <= r2) { result.push(ids[m]); }
+
+        var nextAxis = (axis + 1) % 2;
+
+        if (axis === 0 ? qx - r <= x : qy - r <= y) {
+            stack.push(left);
+            stack.push(m - 1);
+            stack.push(nextAxis);
+        }
+        if (axis === 0 ? qx + r >= x : qy + r >= y) {
+            stack.push(m + 1);
+            stack.push(right);
+            stack.push(nextAxis);
+        }
+    }
+
+    return result;
+}
+
+function sqDist(ax, ay, bx, by) {
+    var dx = ax - bx;
+    var dy = ay - by;
+    return dx * dx + dy * dy;
+}
+
+var defaultGetX = function (p) { return p[0]; };
+var defaultGetY = function (p) { return p[1]; };
+
+var KDBush = function KDBush(points, getX, getY, nodeSize, ArrayType) {
+    if ( getX === void 0 ) getX = defaultGetX;
+    if ( getY === void 0 ) getY = defaultGetY;
+    if ( nodeSize === void 0 ) nodeSize = 64;
+    if ( ArrayType === void 0 ) ArrayType = Float64Array;
+
+    this.nodeSize = nodeSize;
+    this.points = points;
+
+    var IndexArrayType = points.length < 65536 ? Uint16Array : Uint32Array;
+
+    var ids = this.ids = new IndexArrayType(points.length);
+    var coords = this.coords = new ArrayType(points.length * 2);
+
+    for (var i = 0; i < points.length; i++) {
+        ids[i] = i;
+        coords[2 * i] = getX(points[i]);
+        coords[2 * i + 1] = getY(points[i]);
+    }
+
+    sortKD(ids, coords, nodeSize, 0, ids.length - 1, 0);
+};
+
+KDBush.prototype.range = function range$1 (minX, minY, maxX, maxY) {
+    return range(this.ids, this.coords, minX, minY, maxX, maxY, this.nodeSize);
+};
+
+KDBush.prototype.within = function within$1 (x, y, r) {
+    return within(this.ids, this.coords, x, y, r, this.nodeSize);
+};
+
+return KDBush;
+
+})));
+}(kdbush));
+
+var KDBush = kdbush.exports;
+
+const defaultOptions = {
+    minZoom: 0,   // min zoom to generate clusters on
+    maxZoom: 16,  // max zoom level to cluster the points on
+    minPoints: 2, // minimum points to form a cluster
+    radius: 40,   // cluster radius in pixels
+    extent: 512,  // tile extent (radius is calculated relative to it)
+    nodeSize: 64, // size of the KD-tree leaf node, affects performance
+    log: false,   // whether to log timing info
+
+    // whether to generate numeric ids for input features (in vector tiles)
+    generateId: false,
+
+    // a reduce function for calculating custom cluster properties
+    reduce: null, // (accumulated, props) => { accumulated.sum += props.sum; }
+
+    // properties to use for individual points when running the reducer
+    map: props => props // props => ({sum: props.my_value})
+};
+
+const fround = Math.fround || (tmp => ((x) => { tmp[0] = +x; return tmp[0]; }))(new Float32Array(1));
+
+class Supercluster {
+    constructor(options) {
+        this.options = extend$1(Object.create(defaultOptions), options);
+        this.trees = new Array(this.options.maxZoom + 1);
+    }
+
+    load(points) {
+        const {log, minZoom, maxZoom, nodeSize} = this.options;
+
+        if (log) console.time('total time');
+
+        const timerId = `prepare ${  points.length  } points`;
+        if (log) console.time(timerId);
+
+        this.points = points;
+
+        // generate a cluster object for each point and index input points into a KD-tree
+        let clusters = [];
+        for (let i = 0; i < points.length; i++) {
+            if (!points[i].geometry) continue;
+            clusters.push(createPointCluster(points[i], i));
+        }
+        this.trees[maxZoom + 1] = new KDBush(clusters, getX, getY, nodeSize, Float32Array);
+
+        if (log) console.timeEnd(timerId);
+
+        // cluster points on max zoom, then cluster the results on previous zoom, etc.;
+        // results in a cluster hierarchy across zoom levels
+        for (let z = maxZoom; z >= minZoom; z--) {
+            const now = +Date.now();
+
+            // create a new set of clusters for the zoom and index them with a KD-tree
+            clusters = this._cluster(clusters, z);
+            this.trees[z] = new KDBush(clusters, getX, getY, nodeSize, Float32Array);
+
+            if (log) console.log('z%d: %d clusters in %dms', z, clusters.length, +Date.now() - now);
+        }
+
+        if (log) console.timeEnd('total time');
+
+        return this;
+    }
+
+    getClusters(bbox, zoom) {
+        let minLng = ((bbox[0] + 180) % 360 + 360) % 360 - 180;
+        const minLat = Math.max(-90, Math.min(90, bbox[1]));
+        let maxLng = bbox[2] === 180 ? 180 : ((bbox[2] + 180) % 360 + 360) % 360 - 180;
+        const maxLat = Math.max(-90, Math.min(90, bbox[3]));
+
+        if (bbox[2] - bbox[0] >= 360) {
+            minLng = -180;
+            maxLng = 180;
+        } else if (minLng > maxLng) {
+            const easternHem = this.getClusters([minLng, minLat, 180, maxLat], zoom);
+            const westernHem = this.getClusters([-180, minLat, maxLng, maxLat], zoom);
+            return easternHem.concat(westernHem);
+        }
+
+        const tree = this.trees[this._limitZoom(zoom)];
+        const ids = tree.range(lngX(minLng), latY(maxLat), lngX(maxLng), latY(minLat));
+        const clusters = [];
+        for (const id of ids) {
+            const c = tree.points[id];
+            clusters.push(c.numPoints ? getClusterJSON(c) : this.points[c.index]);
+        }
+        return clusters;
+    }
+
+    getChildren(clusterId) {
+        const originId = this._getOriginId(clusterId);
+        const originZoom = this._getOriginZoom(clusterId);
+        const errorMsg = 'No cluster with the specified id.';
+
+        const index = this.trees[originZoom];
+        if (!index) throw new Error(errorMsg);
+
+        const origin = index.points[originId];
+        if (!origin) throw new Error(errorMsg);
+
+        const r = this.options.radius / (this.options.extent * Math.pow(2, originZoom - 1));
+        const ids = index.within(origin.x, origin.y, r);
+        const children = [];
+        for (const id of ids) {
+            const c = index.points[id];
+            if (c.parentId === clusterId) {
+                children.push(c.numPoints ? getClusterJSON(c) : this.points[c.index]);
+            }
+        }
+
+        if (children.length === 0) throw new Error(errorMsg);
+
+        return children;
+    }
+
+    getLeaves(clusterId, limit, offset) {
+        limit = limit || 10;
+        offset = offset || 0;
+
+        const leaves = [];
+        this._appendLeaves(leaves, clusterId, limit, offset, 0);
+
+        return leaves;
+    }
+
+    getTile(z, x, y) {
+        const tree = this.trees[this._limitZoom(z)];
+        const z2 = Math.pow(2, z);
+        const {extent, radius} = this.options;
+        const p = radius / extent;
+        const top = (y - p) / z2;
+        const bottom = (y + 1 + p) / z2;
+
+        const tile = {
+            features: []
+        };
+
+        this._addTileFeatures(
+            tree.range((x - p) / z2, top, (x + 1 + p) / z2, bottom),
+            tree.points, x, y, z2, tile);
+
+        if (x === 0) {
+            this._addTileFeatures(
+                tree.range(1 - p / z2, top, 1, bottom),
+                tree.points, z2, y, z2, tile);
+        }
+        if (x === z2 - 1) {
+            this._addTileFeatures(
+                tree.range(0, top, p / z2, bottom),
+                tree.points, -1, y, z2, tile);
+        }
+
+        return tile.features.length ? tile : null;
+    }
+
+    getClusterExpansionZoom(clusterId) {
+        let expansionZoom = this._getOriginZoom(clusterId) - 1;
+        while (expansionZoom <= this.options.maxZoom) {
+            const children = this.getChildren(clusterId);
+            expansionZoom++;
+            if (children.length !== 1) break;
+            clusterId = children[0].properties.cluster_id;
+        }
+        return expansionZoom;
+    }
+
+    _appendLeaves(result, clusterId, limit, offset, skipped) {
+        const children = this.getChildren(clusterId);
+
+        for (const child of children) {
+            const props = child.properties;
+
+            if (props && props.cluster) {
+                if (skipped + props.point_count <= offset) {
+                    // skip the whole cluster
+                    skipped += props.point_count;
+                } else {
+                    // enter the cluster
+                    skipped = this._appendLeaves(result, props.cluster_id, limit, offset, skipped);
+                    // exit the cluster
+                }
+            } else if (skipped < offset) {
+                // skip a single point
+                skipped++;
+            } else {
+                // add a single point
+                result.push(child);
+            }
+            if (result.length === limit) break;
+        }
+
+        return skipped;
+    }
+
+    _addTileFeatures(ids, points, x, y, z2, tile) {
+        for (const i of ids) {
+            const c = points[i];
+            const isCluster = c.numPoints;
+
+            let tags, px, py;
+            if (isCluster) {
+                tags = getClusterProperties(c);
+                px = c.x;
+                py = c.y;
+            } else {
+                const p = this.points[c.index];
+                tags = p.properties;
+                px = lngX(p.geometry.coordinates[0]);
+                py = latY(p.geometry.coordinates[1]);
+            }
+
+            const f = {
+                type: 1,
+                geometry: [[
+                    Math.round(this.options.extent * (px * z2 - x)),
+                    Math.round(this.options.extent * (py * z2 - y))
+                ]],
+                tags
+            };
+
+            // assign id
+            let id;
+            if (isCluster) {
+                id = c.id;
+            } else if (this.options.generateId) {
+                // optionally generate id
+                id = c.index;
+            } else if (this.points[c.index].id) {
+                // keep id if already assigned
+                id = this.points[c.index].id;
+            }
+
+            if (id !== undefined) f.id = id;
+
+            tile.features.push(f);
+        }
+    }
+
+    _limitZoom(z) {
+        return Math.max(this.options.minZoom, Math.min(+z, this.options.maxZoom + 1));
+    }
+
+    _cluster(points, zoom) {
+        const clusters = [];
+        const {radius, extent, reduce, minPoints} = this.options;
+        const r = radius / (extent * Math.pow(2, zoom));
+
+        // loop through each point
+        for (let i = 0; i < points.length; i++) {
+            const p = points[i];
+            // if we've already visited the point at this zoom level, skip it
+            if (p.zoom <= zoom) continue;
+            p.zoom = zoom;
+
+            // find all nearby points
+            const tree = this.trees[zoom + 1];
+            const neighborIds = tree.within(p.x, p.y, r);
+
+            const numPointsOrigin = p.numPoints || 1;
+            let numPoints = numPointsOrigin;
+
+            // count the number of points in a potential cluster
+            for (const neighborId of neighborIds) {
+                const b = tree.points[neighborId];
+                // filter out neighbors that are already processed
+                if (b.zoom > zoom) numPoints += b.numPoints || 1;
+            }
+
+            // if there were neighbors to merge, and there are enough points to form a cluster
+            if (numPoints > numPointsOrigin && numPoints >= minPoints) {
+                let wx = p.x * numPointsOrigin;
+                let wy = p.y * numPointsOrigin;
+
+                let clusterProperties = reduce && numPointsOrigin > 1 ? this._map(p, true) : null;
+
+                // encode both zoom and point index on which the cluster originated -- offset by total length of features
+                const id = (i << 5) + (zoom + 1) + this.points.length;
+
+                for (const neighborId of neighborIds) {
+                    const b = tree.points[neighborId];
+
+                    if (b.zoom <= zoom) continue;
+                    b.zoom = zoom; // save the zoom (so it doesn't get processed twice)
+
+                    const numPoints2 = b.numPoints || 1;
+                    wx += b.x * numPoints2; // accumulate coordinates for calculating weighted center
+                    wy += b.y * numPoints2;
+
+                    b.parentId = id;
+
+                    if (reduce) {
+                        if (!clusterProperties) clusterProperties = this._map(p, true);
+                        reduce(clusterProperties, this._map(b));
+                    }
+                }
+
+                p.parentId = id;
+                clusters.push(createCluster(wx / numPoints, wy / numPoints, id, numPoints, clusterProperties));
+
+            } else { // left points as unclustered
+                clusters.push(p);
+
+                if (numPoints > 1) {
+                    for (const neighborId of neighborIds) {
+                        const b = tree.points[neighborId];
+                        if (b.zoom <= zoom) continue;
+                        b.zoom = zoom;
+                        clusters.push(b);
+                    }
+                }
+            }
+        }
+
+        return clusters;
+    }
+
+    // get index of the point from which the cluster originated
+    _getOriginId(clusterId) {
+        return (clusterId - this.points.length) >> 5;
+    }
+
+    // get zoom of the point from which the cluster originated
+    _getOriginZoom(clusterId) {
+        return (clusterId - this.points.length) % 32;
+    }
+
+    _map(point, clone) {
+        if (point.numPoints) {
+            return clone ? extend$1({}, point.properties) : point.properties;
+        }
+        const original = this.points[point.index].properties;
+        const result = this.options.map(original);
+        return clone && result === original ? extend$1({}, result) : result;
+    }
+}
+
+function createCluster(x, y, id, numPoints, properties) {
+    return {
+        x: fround(x), // weighted cluster center; round for consistency with Float32Array index
+        y: fround(y),
+        zoom: Infinity, // the last zoom the cluster was processed at
+        id, // encodes index of the first child of the cluster and its zoom level
+        parentId: -1, // parent cluster id
+        numPoints,
+        properties
+    };
+}
+
+function createPointCluster(p, id) {
+    const [x, y] = p.geometry.coordinates;
+    return {
+        x: fround(lngX(x)), // projected point coordinates
+        y: fround(latY(y)),
+        zoom: Infinity, // the last zoom the point was processed at
+        index: id, // index of the source feature in the original input array,
+        parentId: -1 // parent cluster id
+    };
+}
+
+function getClusterJSON(cluster) {
+    return {
+        type: 'Feature',
+        id: cluster.id,
+        properties: getClusterProperties(cluster),
+        geometry: {
+            type: 'Point',
+            coordinates: [xLng(cluster.x), yLat(cluster.y)]
+        }
+    };
+}
+
+function getClusterProperties(cluster) {
+    const count = cluster.numPoints;
+    const abbrev =
+        count >= 10000 ? `${Math.round(count / 1000)  }k` :
+        count >= 1000 ? `${Math.round(count / 100) / 10  }k` : count;
+    return extend$1(extend$1({}, cluster.properties), {
+        cluster: true,
+        cluster_id: cluster.id,
+        point_count: count,
+        point_count_abbreviated: abbrev
+    });
+}
+
+// longitude/latitude to spherical mercator in [0..1] range
+function lngX(lng) {
+    return lng / 360 + 0.5;
+}
+function latY(lat) {
+    const sin = Math.sin(lat * Math.PI / 180);
+    const y = (0.5 - 0.25 * Math.log((1 + sin) / (1 - sin)) / Math.PI);
+    return y < 0 ? 0 : y > 1 ? 1 : y;
+}
+
+// spherical mercator to longitude/latitude
+function xLng(x) {
+    return (x - 0.5) * 360;
+}
+function yLat(y) {
+    const y2 = (180 - y * 360) * Math.PI / 180;
+    return 360 * Math.atan(Math.exp(y2)) / Math.PI - 90;
+}
+
+function extend$1(dest, src) {
+    for (const id in src) dest[id] = src[id];
+    return dest;
+}
+
+function getX(p) {
+    return p.x;
+}
+function getY(p) {
+    return p.y;
+}
+
+var HAS_WEAKSET_SUPPORT = typeof WeakSet === 'function';
+var keys = Object.keys;
+/**
+ * are the values passed strictly equal or both NaN
+ *
+ * @param a the value to compare against
+ * @param b the value to test
+ * @returns are the values equal by the SameValueZero principle
+ */
+function sameValueZeroEqual(a, b) {
+    return a === b || (a !== a && b !== b);
+}
+/**
+ * is the value a plain object
+ *
+ * @param value the value to test
+ * @returns is the value a plain object
+ */
+function isPlainObject(value) {
+    return value.constructor === Object || value.constructor == null;
+}
+/**
+ * is the value promise-like (meaning it is thenable)
+ *
+ * @param value the value to test
+ * @returns is the value promise-like
+ */
+function isPromiseLike(value) {
+    return !!value && typeof value.then === 'function';
+}
+/**
+ * is the value passed a react element
+ *
+ * @param value the value to test
+ * @returns is the value a react element
+ */
+function isReactElement(value) {
+    return !!(value && value.$$typeof);
+}
+/**
+ * in cases where WeakSet is not supported, creates a new custom
+ * object that mimics the necessary API aspects for cache purposes
+ *
+ * @returns the new cache object
+ */
+function getNewCacheFallback() {
+    var values = [];
+    return {
+        add: function (value) {
+            values.push(value);
+        },
+        has: function (value) {
+            return values.indexOf(value) !== -1;
+        },
+    };
+}
+/**
+ * get a new cache object to prevent circular references
+ *
+ * @returns the new cache object
+ */
+var getNewCache = (function (canUseWeakMap) {
+    if (canUseWeakMap) {
+        return function _getNewCache() {
+            return new WeakSet();
+        };
+    }
+    return getNewCacheFallback;
+})(HAS_WEAKSET_SUPPORT);
+/**
+ * create a custom isEqual handler specific to circular objects
+ *
+ * @param [isEqual] the isEqual comparator to use instead of isDeepEqual
+ * @returns the method to create the `isEqual` function
+ */
+function createCircularEqualCreator(isEqual) {
+    return function createCircularEqual(comparator) {
+        var _comparator = isEqual || comparator;
+        return function circularEqual(a, b, indexOrKeyA, indexOrKeyB, parentA, parentB, cache) {
+            if (cache === void 0) { cache = getNewCache(); }
+            var isCacheableA = !!a && typeof a === 'object';
+            var isCacheableB = !!b && typeof b === 'object';
+            if (isCacheableA || isCacheableB) {
+                var hasA = isCacheableA && cache.has(a);
+                var hasB = isCacheableB && cache.has(b);
+                if (hasA || hasB) {
+                    return hasA && hasB;
+                }
+                if (isCacheableA) {
+                    cache.add(a);
+                }
+                if (isCacheableB) {
+                    cache.add(b);
+                }
+            }
+            return _comparator(a, b, cache);
+        };
+    };
+}
+/**
+ * are the arrays equal in value
+ *
+ * @param a the array to test
+ * @param b the array to test against
+ * @param isEqual the comparator to determine equality
+ * @param meta the meta object to pass through
+ * @returns are the arrays equal
+ */
+function areArraysEqual(a, b, isEqual, meta) {
+    var index = a.length;
+    if (b.length !== index) {
+        return false;
+    }
+    while (index-- > 0) {
+        if (!isEqual(a[index], b[index], index, index, a, b, meta)) {
+            return false;
+        }
+    }
+    return true;
+}
+/**
+ * are the maps equal in value
+ *
+ * @param a the map to test
+ * @param b the map to test against
+ * @param isEqual the comparator to determine equality
+ * @param meta the meta map to pass through
+ * @returns are the maps equal
+ */
+function areMapsEqual(a, b, isEqual, meta) {
+    var isValueEqual = a.size === b.size;
+    if (isValueEqual && a.size) {
+        var matchedIndices_1 = {};
+        var indexA_1 = 0;
+        a.forEach(function (aValue, aKey) {
+            if (isValueEqual) {
+                var hasMatch_1 = false;
+                var matchIndexB_1 = 0;
+                b.forEach(function (bValue, bKey) {
+                    if (!hasMatch_1 && !matchedIndices_1[matchIndexB_1]) {
+                        hasMatch_1 =
+                            isEqual(aKey, bKey, indexA_1, matchIndexB_1, a, b, meta) && isEqual(aValue, bValue, aKey, bKey, a, b, meta);
+                        if (hasMatch_1) {
+                            matchedIndices_1[matchIndexB_1] = true;
+                        }
+                    }
+                    matchIndexB_1++;
+                });
+                indexA_1++;
+                isValueEqual = hasMatch_1;
+            }
+        });
+    }
+    return isValueEqual;
+}
+var OWNER = '_owner';
+var hasOwnProperty = Function.prototype.bind.call(Function.prototype.call, Object.prototype.hasOwnProperty);
+/**
+ * are the objects equal in value
+ *
+ * @param a the object to test
+ * @param b the object to test against
+ * @param isEqual the comparator to determine equality
+ * @param meta the meta object to pass through
+ * @returns are the objects equal
+ */
+function areObjectsEqual(a, b, isEqual, meta) {
+    var keysA = keys(a);
+    var index = keysA.length;
+    if (keys(b).length !== index) {
+        return false;
+    }
+    if (index) {
+        var key = void 0;
+        while (index-- > 0) {
+            key = keysA[index];
+            if (key === OWNER) {
+                var reactElementA = isReactElement(a);
+                var reactElementB = isReactElement(b);
+                if ((reactElementA || reactElementB) &&
+                    reactElementA !== reactElementB) {
+                    return false;
+                }
+            }
+            if (!hasOwnProperty(b, key) || !isEqual(a[key], b[key], key, key, a, b, meta)) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+/**
+ * are the regExps equal in value
+ *
+ * @param a the regExp to test
+ * @param b the regExp to test agains
+ * @returns are the regExps equal
+ */
+function areRegExpsEqual(a, b) {
+    return (a.source === b.source &&
+        a.global === b.global &&
+        a.ignoreCase === b.ignoreCase &&
+        a.multiline === b.multiline &&
+        a.unicode === b.unicode &&
+        a.sticky === b.sticky &&
+        a.lastIndex === b.lastIndex);
+}
+/**
+ * are the sets equal in value
+ *
+ * @param a the set to test
+ * @param b the set to test against
+ * @param isEqual the comparator to determine equality
+ * @param meta the meta set to pass through
+ * @returns are the sets equal
+ */
+function areSetsEqual(a, b, isEqual, meta) {
+    var isValueEqual = a.size === b.size;
+    if (isValueEqual && a.size) {
+        var matchedIndices_2 = {};
+        a.forEach(function (aValue, aKey) {
+            if (isValueEqual) {
+                var hasMatch_2 = false;
+                var matchIndex_1 = 0;
+                b.forEach(function (bValue, bKey) {
+                    if (!hasMatch_2 && !matchedIndices_2[matchIndex_1]) {
+                        hasMatch_2 = isEqual(aValue, bValue, aKey, bKey, a, b, meta);
+                        if (hasMatch_2) {
+                            matchedIndices_2[matchIndex_1] = true;
+                        }
+                    }
+                    matchIndex_1++;
+                });
+                isValueEqual = hasMatch_2;
+            }
+        });
+    }
+    return isValueEqual;
+}
+
+var HAS_MAP_SUPPORT = typeof Map === 'function';
+var HAS_SET_SUPPORT = typeof Set === 'function';
+function createComparator(createIsEqual) {
+    var isEqual = 
+    /* eslint-disable no-use-before-define */
+    typeof createIsEqual === 'function'
+        ? createIsEqual(comparator)
+        : function (a, b, indexOrKeyA, indexOrKeyB, parentA, parentB, meta) { return comparator(a, b, meta); };
+    /* eslint-enable */
+    /**
+     * compare the value of the two objects and return true if they are equivalent in values
+     *
+     * @param a the value to test against
+     * @param b the value to test
+     * @param [meta] an optional meta object that is passed through to all equality test calls
+     * @returns are a and b equivalent in value
+     */
+    function comparator(a, b, meta) {
+        if (a === b) {
+            return true;
+        }
+        if (a && b && typeof a === 'object' && typeof b === 'object') {
+            if (isPlainObject(a) && isPlainObject(b)) {
+                return areObjectsEqual(a, b, isEqual, meta);
+            }
+            var aShape = Array.isArray(a);
+            var bShape = Array.isArray(b);
+            if (aShape || bShape) {
+                return aShape === bShape && areArraysEqual(a, b, isEqual, meta);
+            }
+            aShape = a instanceof Date;
+            bShape = b instanceof Date;
+            if (aShape || bShape) {
+                return (aShape === bShape && sameValueZeroEqual(a.getTime(), b.getTime()));
+            }
+            aShape = a instanceof RegExp;
+            bShape = b instanceof RegExp;
+            if (aShape || bShape) {
+                return aShape === bShape && areRegExpsEqual(a, b);
+            }
+            if (isPromiseLike(a) || isPromiseLike(b)) {
+                return a === b;
+            }
+            if (HAS_MAP_SUPPORT) {
+                aShape = a instanceof Map;
+                bShape = b instanceof Map;
+                if (aShape || bShape) {
+                    return aShape === bShape && areMapsEqual(a, b, isEqual, meta);
+                }
+            }
+            if (HAS_SET_SUPPORT) {
+                aShape = a instanceof Set;
+                bShape = b instanceof Set;
+                if (aShape || bShape) {
+                    return aShape === bShape && areSetsEqual(a, b, isEqual, meta);
+                }
+            }
+            return areObjectsEqual(a, b, isEqual, meta);
+        }
+        return a !== a && b !== b;
+    }
+    return comparator;
+}
+
+var deepEqual = createComparator();
+createComparator(function () { return sameValueZeroEqual; });
+createComparator(createCircularEqualCreator());
+createComparator(createCircularEqualCreator(sameValueZeroEqual));
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+class Cluster {
+    constructor({ markers, position }) {
+        this.markers = markers;
+        if (position) {
+            if (position instanceof google.maps.LatLng) {
+                this._position = position;
+            }
+            else {
+                this._position = new google.maps.LatLng(position);
+            }
+        }
+    }
+    get bounds() {
+        if (this.markers.length === 0 && !this._position) {
+            return undefined;
+        }
+        return this.markers.reduce((bounds, marker) => {
+            return bounds.extend(marker.getPosition());
+        }, new google.maps.LatLngBounds(this._position, this._position));
+    }
+    get position() {
+        return this._position || this.bounds.getCenter();
+    }
+    /**
+     * Get the count of **visible** markers.
+     */
+    get count() {
+        return this.markers.filter((m) => m.getVisible())
+            .length;
+    }
+    /**
+     * Add a marker to the cluster.
+     */
+    push(marker) {
+        this.markers.push(marker);
+    }
+    /**
+     * Cleanup references and remove marker from map.
+     */
+    delete() {
+        if (this.marker) {
+            this.marker.setMap(null);
+            delete this.marker;
+        }
+        this.markers.length = 0;
+    }
+}
+
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+const filterMarkersToPaddedViewport = (map, mapCanvasProjection, markers, viewportPadding) => {
+    const extendedMapBounds = extendBoundsToPaddedViewport(map.getBounds(), mapCanvasProjection, viewportPadding);
+    return markers.filter((marker) => extendedMapBounds.contains(marker.getPosition()));
+};
+/**
+ * Extends a bounds by a number of pixels in each direction.
+ */
+const extendBoundsToPaddedViewport = (bounds, projection, pixels) => {
+    const { northEast, southWest } = latLngBoundsToPixelBounds(bounds, projection);
+    const extendedPixelBounds = extendPixelBounds({ northEast, southWest }, pixels);
+    return pixelBoundsToLatLngBounds(extendedPixelBounds, projection);
+};
+/**
+ * @hidden
+ */
+const distanceBetweenPoints = (p1, p2) => {
+    const R = 6371; // Radius of the Earth in km
+    const dLat = ((p2.lat - p1.lat) * Math.PI) / 180;
+    const dLon = ((p2.lng - p1.lng) * Math.PI) / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos((p1.lat * Math.PI) / 180) *
+            Math.cos((p2.lat * Math.PI) / 180) *
+            Math.sin(dLon / 2) *
+            Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+};
+/**
+ * @hidden
+ */
+const latLngBoundsToPixelBounds = (bounds, projection) => {
+    return {
+        northEast: projection.fromLatLngToDivPixel(bounds.getNorthEast()),
+        southWest: projection.fromLatLngToDivPixel(bounds.getSouthWest()),
+    };
+};
+/**
+ * @hidden
+ */
+const extendPixelBounds = ({ northEast, southWest }, pixels) => {
+    northEast.x += pixels;
+    northEast.y -= pixels;
+    southWest.x -= pixels;
+    southWest.y += pixels;
+    return { northEast, southWest };
+};
+/**
+ * @hidden
+ */
+const pixelBoundsToLatLngBounds = ({ northEast, southWest }, projection) => {
+    const bounds = new google.maps.LatLngBounds();
+    bounds.extend(projection.fromDivPixelToLatLng(northEast));
+    bounds.extend(projection.fromDivPixelToLatLng(southWest));
+    return bounds;
+};
+
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * @hidden
+ */
+class AbstractAlgorithm {
+    constructor({ maxZoom = 16 }) {
+        this.maxZoom = maxZoom;
+    }
+    /**
+     * Helper function to bypass clustering based upon some map state such as
+     * zoom, number of markers, etc.
+     *
+     * ```typescript
+     *  cluster({markers, map}: AlgorithmInput): Cluster[] {
+     *    if (shouldBypassClustering(map)) {
+     *      return this.noop({markers, map})
+     *    }
+     * }
+     * ```
+     */
+    noop({ markers }) {
+        return noop$1(markers);
+    }
+}
+/**
+ * Abstract viewport algorithm proves a class to filter markers by a padded
+ * viewport. This is a common optimization.
+ *
+ * @hidden
+ */
+class AbstractViewportAlgorithm extends AbstractAlgorithm {
+    constructor(_a) {
+        var { viewportPadding = 60 } = _a, options = __rest(_a, ["viewportPadding"]);
+        super(options);
+        this.viewportPadding = 60;
+        this.viewportPadding = viewportPadding;
+    }
+    calculate({ markers, map, mapCanvasProjection, }) {
+        if (map.getZoom() >= this.maxZoom) {
+            return {
+                clusters: this.noop({
+                    markers,
+                    map,
+                    mapCanvasProjection,
+                }),
+                changed: false,
+            };
+        }
+        return {
+            clusters: this.cluster({
+                markers: filterMarkersToPaddedViewport(map, mapCanvasProjection, markers, this.viewportPadding),
+                map,
+                mapCanvasProjection,
+            }),
+        };
+    }
+}
+/**
+ * @hidden
+ */
+const noop$1 = (markers) => {
+    const clusters = markers.map((marker) => new Cluster({
+        position: marker.getPosition(),
+        markers: [marker],
+    }));
+    return clusters;
+};
+
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * The default Grid algorithm historically used in Google Maps marker
+ * clustering.
+ *
+ * The Grid algorithm does not implement caching and markers may flash as the
+ * viewport changes. Instead use {@link SuperClusterAlgorithm}.
+ */
+class GridAlgorithm extends AbstractViewportAlgorithm {
+    constructor(_a) {
+        var { maxDistance = 40000, gridSize = 40 } = _a, options = __rest(_a, ["maxDistance", "gridSize"]);
+        super(options);
+        this.clusters = [];
+        this.maxDistance = maxDistance;
+        this.gridSize = gridSize;
+    }
+    cluster({ markers, map, mapCanvasProjection, }) {
+        this.clusters = [];
+        markers.forEach((marker) => {
+            this.addToClosestCluster(marker, map, mapCanvasProjection);
+        });
+        return this.clusters;
+    }
+    addToClosestCluster(marker, map, projection) {
+        let maxDistance = this.maxDistance; // Some large number
+        let cluster = null;
+        for (let i = 0; i < this.clusters.length; i++) {
+            const candidate = this.clusters[i];
+            const distance = distanceBetweenPoints(candidate.bounds.getCenter().toJSON(), marker.getPosition().toJSON());
+            if (distance < maxDistance) {
+                maxDistance = distance;
+                cluster = candidate;
+            }
+        }
+        if (cluster &&
+            extendBoundsToPaddedViewport(cluster.bounds, projection, this.gridSize).contains(marker.getPosition())) {
+            cluster.push(marker);
+        }
+        else {
+            const cluster = new Cluster({ markers: [marker] });
+            this.clusters.push(cluster);
+        }
+    }
+}
+
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Noop algorithm does not generate any clusters or filter markers by the an extended viewport.
+ */
+class NoopAlgorithm extends AbstractAlgorithm {
+    constructor(_a) {
+        var options = __rest(_a, []);
+        super(options);
+    }
+    calculate({ markers, map, mapCanvasProjection, }) {
+        return {
+            clusters: this.cluster({ markers, map, mapCanvasProjection }),
+            changed: false,
+        };
+    }
+    cluster(input) {
+        return this.noop(input);
+    }
+}
+
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * A very fast JavaScript algorithm for geospatial point clustering using KD trees.
+ *
+ * @see https://www.npmjs.com/package/supercluster for more information on options.
+ */
+class SuperClusterAlgorithm extends AbstractAlgorithm {
+    constructor(_a) {
+        var { maxZoom, radius = 60 } = _a, options = __rest(_a, ["maxZoom", "radius"]);
+        super({ maxZoom });
+        this.superCluster = new Supercluster(Object.assign({ maxZoom: this.maxZoom, radius }, options));
+        this.state = { zoom: null };
+    }
+    calculate(input) {
+        let changed = false;
+        if (!deepEqual(input.markers, this.markers)) {
+            changed = true;
+            // TODO use proxy to avoid copy?
+            this.markers = [...input.markers];
+            const points = this.markers.map((marker) => {
+                return {
+                    type: "Feature",
+                    geometry: {
+                        type: "Point",
+                        coordinates: [
+                            marker.getPosition().lng(),
+                            marker.getPosition().lat(),
+                        ],
+                    },
+                    properties: { marker },
+                };
+            });
+            this.superCluster.load(points);
+        }
+        const state = { zoom: input.map.getZoom() };
+        if (!changed) {
+            if (this.state.zoom > this.maxZoom && state.zoom > this.maxZoom) ;
+            else {
+                changed = changed || !deepEqual(this.state, state);
+            }
+        }
+        this.state = state;
+        if (changed) {
+            this.clusters = this.cluster(input);
+        }
+        return { clusters: this.clusters, changed };
+    }
+    cluster({ map }) {
+        return this.superCluster
+            .getClusters([-180, -90, 180, 90], Math.round(map.getZoom()))
+            .map(this.transformCluster.bind(this));
+    }
+    transformCluster({ geometry: { coordinates: [lng, lat], }, properties, }) {
+        if (properties.cluster) {
+            return new Cluster({
+                markers: this.superCluster
+                    .getLeaves(properties.cluster_id, Infinity)
+                    .map((leaf) => leaf.properties.marker),
+                position: new google.maps.LatLng({ lat, lng }),
+            });
+        }
+        else {
+            const marker = properties.marker;
+            return new Cluster({
+                markers: [marker],
+                position: marker.getPosition(),
+            });
+        }
+    }
+}
+
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Provides statistics on all clusters in the current render cycle for use in {@link Renderer.render}.
+ */
+class ClusterStats {
+    constructor(markers, clusters) {
+        this.markers = { sum: markers.length };
+        const clusterMarkerCounts = clusters.map((a) => a.count);
+        const clusterMarkerSum = clusterMarkerCounts.reduce((a, b) => a + b, 0);
+        this.clusters = {
+            count: clusters.length,
+            markers: {
+                mean: clusterMarkerSum / clusters.length,
+                sum: clusterMarkerSum,
+                min: Math.min(...clusterMarkerCounts),
+                max: Math.max(...clusterMarkerCounts),
+            },
+        };
+    }
+}
+class DefaultRenderer {
+    /**
+     * The default render function for the library used by {@link MarkerClusterer}.
+     *
+     * Currently set to use the following:
+     *
+     * ```typescript
+     * // change color if this cluster has more markers than the mean cluster
+     * const color =
+     *   count > Math.max(10, stats.clusters.markers.mean)
+     *     ? "#ff0000"
+     *     : "#0000ff";
+     *
+     * // create svg url with fill color
+     * const svg = window.btoa(`
+     * <svg fill="${color}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+     *   <circle cx="120" cy="120" opacity=".6" r="70" />
+     *   <circle cx="120" cy="120" opacity=".3" r="90" />
+     *   <circle cx="120" cy="120" opacity=".2" r="110" />
+     *   <circle cx="120" cy="120" opacity=".1" r="130" />
+     * </svg>`);
+     *
+     * // create marker using svg icon
+     * return new google.maps.Marker({
+     *   position,
+     *   icon: {
+     *     url: `data:image/svg+xml;base64,${svg}`,
+     *     scaledSize: new google.maps.Size(45, 45),
+     *   },
+     *   label: {
+     *     text: String(count),
+     *     color: "rgba(255,255,255,0.9)",
+     *     fontSize: "12px",
+     *   },
+     *   // adjust zIndex to be above other markers
+     *   zIndex: 1000 + count,
+     * });
+     * ```
+     */
+    render({ count, position }, stats) {
+        // change color if this cluster has more markers than the mean cluster
+        const color = count > Math.max(10, stats.clusters.markers.mean) ? "#ff0000" : "#0000ff";
+        // create svg url with fill color
+        const svg = window.btoa(`
+  <svg fill="${color}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+    <circle cx="120" cy="120" opacity=".6" r="70" />
+    <circle cx="120" cy="120" opacity=".3" r="90" />
+    <circle cx="120" cy="120" opacity=".2" r="110" />
+  </svg>`);
+        // create marker using svg icon
+        return new google.maps.Marker({
+            position,
+            icon: {
+                url: `data:image/svg+xml;base64,${svg}`,
+                scaledSize: new google.maps.Size(45, 45),
+            },
+            label: {
+                text: String(count),
+                color: "rgba(255,255,255,0.9)",
+                fontSize: "12px",
+            },
+            title: `Cluster of ${count} markers`,
+            // adjust zIndex to be above other markers
+            zIndex: Number(google.maps.Marker.MAX_ZINDEX) + count,
+        });
+    }
+}
+
+/**
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Extends an object's prototype by another's.
+ *
+ * @param type1 The Type to be extended.
+ * @param type2 The Type to extend with.
+ * @ignore
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function extend(type1, type2) {
+    /* istanbul ignore next */
+    // eslint-disable-next-line prefer-const
+    for (let property in type2.prototype) {
+        type1.prototype[property] = type2.prototype[property];
+    }
+}
+/**
+ * @ignore
+ */
+class OverlayViewSafe {
+    constructor() {
+        // MarkerClusterer implements google.maps.OverlayView interface. We use the
+        // extend function to extend MarkerClusterer with google.maps.OverlayView
+        // because it might not always be available when the code is defined so we
+        // look for it at the last possible moment. If it doesn't exist now then
+        // there is no point going ahead :)
+        extend(OverlayViewSafe, google.maps.OverlayView);
+    }
+}
+
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var MarkerClustererEvents;
+(function (MarkerClustererEvents) {
+    MarkerClustererEvents["CLUSTERING_BEGIN"] = "clusteringbegin";
+    MarkerClustererEvents["CLUSTERING_END"] = "clusteringend";
+    MarkerClustererEvents["CLUSTER_CLICK"] = "click";
+})(MarkerClustererEvents || (MarkerClustererEvents = {}));
+const defaultOnClusterClickHandler = (_, cluster, map) => {
+    map.fitBounds(cluster.bounds);
+};
+/**
+ * MarkerClusterer creates and manages per-zoom-level clusters for large amounts
+ * of markers. See {@link MarkerClustererOptions} for more details.
+ *
+ */
+class MarkerClusterer extends OverlayViewSafe {
+    constructor({ map, markers = [], algorithm = new SuperClusterAlgorithm({}), renderer = new DefaultRenderer(), onClusterClick = defaultOnClusterClickHandler, }) {
+        super();
+        this.markers = [...markers];
+        this.clusters = [];
+        this.algorithm = algorithm;
+        this.renderer = renderer;
+        this.onClusterClick = onClusterClick;
+        if (map) {
+            this.setMap(map);
+        }
+    }
+    addMarker(marker, noDraw) {
+        if (this.markers.includes(marker)) {
+            return;
+        }
+        this.markers.push(marker);
+        if (!noDraw) {
+            this.render();
+        }
+    }
+    addMarkers(markers, noDraw) {
+        markers.forEach((marker) => {
+            this.addMarker(marker, true);
+        });
+        if (!noDraw) {
+            this.render();
+        }
+    }
+    removeMarker(marker, noDraw) {
+        const index = this.markers.indexOf(marker);
+        if (index === -1) {
+            // Marker is not in our list of markers, so do nothing:
+            return false;
+        }
+        marker.setMap(null);
+        this.markers.splice(index, 1); // Remove the marker from the list of managed markers
+        if (!noDraw) {
+            this.render();
+        }
+        return true;
+    }
+    removeMarkers(markers, noDraw) {
+        let removed = false;
+        markers.forEach((marker) => {
+            removed = this.removeMarker(marker, true) || removed;
+        });
+        if (removed && !noDraw) {
+            this.render();
+        }
+        return removed;
+    }
+    clearMarkers(noDraw) {
+        this.markers.length = 0;
+        if (!noDraw) {
+            this.render();
+        }
+    }
+    /**
+     * Recalculates and draws all the marker clusters.
+     */
+    render() {
+        const map = this.getMap();
+        if (map instanceof google.maps.Map && this.getProjection()) {
+            google.maps.event.trigger(this, MarkerClustererEvents.CLUSTERING_BEGIN, this);
+            const { clusters, changed } = this.algorithm.calculate({
+                markers: this.markers,
+                map,
+                mapCanvasProjection: this.getProjection(),
+            });
+            // allow algorithms to return flag on whether the clusters/markers have changed
+            if (changed || changed == undefined) {
+                // reset visibility of markers and clusters
+                this.reset();
+                // store new clusters
+                this.clusters = clusters;
+                this.renderClusters();
+            }
+            google.maps.event.trigger(this, MarkerClustererEvents.CLUSTERING_END, this);
+        }
+    }
+    onAdd() {
+        this.idleListener = this.getMap().addListener("idle", this.render.bind(this));
+        this.render();
+    }
+    onRemove() {
+        google.maps.event.removeListener(this.idleListener);
+        this.reset();
+    }
+    reset() {
+        this.markers.forEach((marker) => marker.setMap(null));
+        this.clusters.forEach((cluster) => cluster.delete());
+        this.clusters = [];
+    }
+    renderClusters() {
+        // generate stats to pass to renderers
+        const stats = new ClusterStats(this.markers, this.clusters);
+        const map = this.getMap();
+        this.clusters.forEach((cluster) => {
+            if (cluster.markers.length === 1) {
+                cluster.marker = cluster.markers[0];
+            }
+            else {
+                cluster.marker = this.renderer.render(cluster, stats);
+                if (this.onClusterClick) {
+                    cluster.marker.addListener("click", 
+                    /* istanbul ignore next */
+                    (event) => {
+                        google.maps.event.trigger(this, MarkerClustererEvents.CLUSTER_CLICK, cluster);
+                        this.onClusterClick(event, cluster, map);
+                    });
+                }
+            }
+            cluster.marker.setMap(map);
+        });
+    }
+}
+
+var index_esm = /*#__PURE__*/Object.freeze({
+	__proto__: null,
+	AbstractAlgorithm: AbstractAlgorithm,
+	AbstractViewportAlgorithm: AbstractViewportAlgorithm,
+	Cluster: Cluster,
+	ClusterStats: ClusterStats,
+	DefaultRenderer: DefaultRenderer,
+	GridAlgorithm: GridAlgorithm,
+	MarkerClusterer: MarkerClusterer,
+	get MarkerClustererEvents () { return MarkerClustererEvents; },
+	NoopAlgorithm: NoopAlgorithm,
+	SuperClusterAlgorithm: SuperClusterAlgorithm,
+	defaultOnClusterClickHandler: defaultOnClusterClickHandler,
+	distanceBetweenPoints: distanceBetweenPoints,
+	extendBoundsToPaddedViewport: extendBoundsToPaddedViewport,
+	extendPixelBounds: extendPixelBounds,
+	filterMarkersToPaddedViewport: filterMarkersToPaddedViewport,
+	noop: noop$1,
+	pixelBoundsToLatLngBounds: pixelBoundsToLatLngBounds
+});
+
+const useGoogleMarkerClusterer = (options) => {
+    const map = useGoogleMap();
+    const [markerClusterer, setMarkerClusterer] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        if (map && markerClusterer === null) {
+            const markerCluster = new MarkerClusterer(Object.assign(Object.assign({}, options), { map }));
+            setMarkerClusterer(markerCluster);
+        }
+    }, [map]);
+    return markerClusterer;
+};
+/** Wrapper around [@googlemaps/markerclusterer](https://github.com/googlemaps/js-markerclusterer)
+ *
+ * Accepts {@link  MarkerClustererOptionsSubset} which is a subset of  {@link MarkerClustererOptions}
+ */
+function GoogleMarkerClusterer({ children, options }) {
+    const markerClusterer = useGoogleMarkerClusterer(options);
+    return markerClusterer !== null ? children(markerClusterer) : null;
+}
+var GoogleMarkerClusterer$1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(GoogleMarkerClusterer);
+
+/* global google */
+const eventMap$c = {
+    onCloseClick: 'closeclick',
+    onContentChanged: 'content_changed',
+    onDomReady: 'domready',
+    onPositionChanged: 'position_changed',
+    onZindexChanged: 'zindex_changed',
+};
+const updaterMap$c = {
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    position(instance, position) {
+        instance.setPosition(position);
+    },
+    zIndex(instance, zIndex) {
+        instance.setZIndex(zIndex);
+    },
+};
+class InfoWindow extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.containerElement = null;
+        this.state = {
+            infoWindow: null,
+        };
+        this.open = (infoWindow, anchor) => {
+            if (anchor) {
+                infoWindow.open(this.context, anchor);
+            }
+            else if (infoWindow.getPosition()) {
+                infoWindow.open(this.context);
+            }
+            else {
+                invariant_1(false, `You must provide either an anchor (typically render it inside a <Marker>) or a position props for <InfoWindow>.`);
+            }
+        };
+        this.setInfoWindowCallback = () => {
+            if (this.state.infoWindow !== null && this.containerElement !== null) {
+                this.state.infoWindow.setContent(this.containerElement);
+                this.open(this.state.infoWindow, this.props.anchor);
+                if (this.props.onLoad) {
+                    this.props.onLoad(this.state.infoWindow);
+                }
+            }
+        };
+    }
+    componentDidMount() {
+        const infoWindow = new google.maps.InfoWindow(Object.assign({}, (this.props.options || {})));
+        this.containerElement = document.createElement('div');
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$c,
+            eventMap: eventMap$c,
+            prevProps: {},
+            nextProps: this.props,
+            instance: infoWindow,
+        });
+        this.setState(() => {
+            return {
+                infoWindow,
+            };
+        }, this.setInfoWindowCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.infoWindow !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$c,
+                eventMap: eventMap$c,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.infoWindow,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.infoWindow !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.state.infoWindow.close();
+        }
+    }
+    render() {
+        return this.containerElement ? (react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal(react__WEBPACK_IMPORTED_MODULE_0__.Children.only(this.props.children), this.containerElement)) : (null);
+    }
+}
+InfoWindow.contextType = MapContext;
+
+const eventMap$b = {
+    onClick: 'click',
+    onDblClick: 'dblclick',
+    onDrag: 'drag',
+    onDragEnd: 'dragend',
+    onDragStart: 'dragstart',
+    onMouseDown: 'mousedown',
+    onMouseMove: 'mousemove',
+    onMouseOut: 'mouseout',
+    onMouseOver: 'mouseover',
+    onMouseUp: 'mouseup',
+    onRightClick: 'rightclick',
+};
+const updaterMap$b = {
+    draggable(instance, draggable) {
+        instance.setDraggable(draggable);
+    },
+    editable(instance, editable) {
+        instance.setEditable(editable);
+    },
+    map(instance, map) {
+        instance.setMap(map);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    path(instance, path) {
+        instance.setPath(path);
+    },
+    visible(instance, visible) {
+        instance.setVisible(visible);
+    },
+};
+class Polyline extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            polyline: null,
+        };
+        this.setPolylineCallback = () => {
+            if (this.state.polyline !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.polyline);
+            }
+        };
+    }
+    componentDidMount() {
+        const polyline = new google.maps.Polyline(Object.assign(Object.assign({}, (this.props.options || {})), { map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$b,
+            eventMap: eventMap$b,
+            prevProps: {},
+            nextProps: this.props,
+            instance: polyline,
+        });
+        this.setState(function setPolyline() {
+            return {
+                polyline,
+            };
+        }, this.setPolylineCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.polyline !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$b,
+                eventMap: eventMap$b,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.polyline,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.polyline !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.polyline);
+            }
+            unregisterEvents(this.registeredEvents);
+            this.state.polyline.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+Polyline.contextType = MapContext;
+
+/* global google */
+const eventMap$a = {
+    onClick: 'click',
+    onDblClick: 'dblclick',
+    onDrag: 'drag',
+    onDragEnd: 'dragend',
+    onDragStart: 'dragstart',
+    onMouseDown: 'mousedown',
+    onMouseMove: 'mousemove',
+    onMouseOut: 'mouseout',
+    onMouseOver: 'mouseover',
+    onMouseUp: 'mouseup',
+    onRightClick: 'rightclick',
+};
+const updaterMap$a = {
+    draggable(instance, draggable) {
+        instance.setDraggable(draggable);
+    },
+    editable(instance, editable) {
+        instance.setEditable(editable);
+    },
+    map(instance, map) {
+        instance.setMap(map);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    path(instance, path) {
+        instance.setPath(path);
+    },
+    paths(instance, paths) {
+        instance.setPaths(paths);
+    },
+    visible(instance, visible) {
+        instance.setVisible(visible);
+    },
+};
+class Polygon extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            polygon: null,
+        };
+        this.setPolygonCallback = () => {
+            if (this.state.polygon !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.polygon);
+            }
+        };
+    }
+    componentDidMount() {
+        const polygon = new google.maps.Polygon(Object.assign(Object.assign({}, (this.props.options || {})), { map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$a,
+            eventMap: eventMap$a,
+            prevProps: {},
+            nextProps: this.props,
+            instance: polygon,
+        });
+        this.setState(function setPolygon() {
+            return {
+                polygon,
+            };
+        }, this.setPolygonCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.polygon !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$a,
+                eventMap: eventMap$a,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.polygon,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.polygon !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.polygon);
+            }
+            unregisterEvents(this.registeredEvents);
+            this.state.polygon && this.state.polygon.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+Polygon.contextType = MapContext;
+
+const eventMap$9 = {
+    onBoundsChanged: 'bounds_changed',
+    onClick: 'click',
+    onDblClick: 'dblclick',
+    onDrag: 'drag',
+    onDragEnd: 'dragend',
+    onDragStart: 'dragstart',
+    onMouseDown: 'mousedown',
+    onMouseMove: 'mousemove',
+    onMouseOut: 'mouseout',
+    onMouseOver: 'mouseover',
+    onMouseUp: 'mouseup',
+    onRightClick: 'rightclick',
+};
+const updaterMap$9 = {
+    bounds(instance, bounds) {
+        instance.setBounds(bounds);
+    },
+    draggable(instance, draggable) {
+        instance.setDraggable(draggable);
+    },
+    editable(instance, editable) {
+        instance.setEditable(editable);
+    },
+    map(instance, map) {
+        instance.setMap(map);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    visible(instance, visible) {
+        instance.setVisible(visible);
+    },
+};
+class Rectangle extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            rectangle: null,
+        };
+        this.setRectangleCallback = () => {
+            if (this.state.rectangle !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.rectangle);
+            }
+        };
+    }
+    componentDidMount() {
+        const rectangle = new google.maps.Rectangle(Object.assign(Object.assign({}, (this.props.options || {})), { map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$9,
+            eventMap: eventMap$9,
+            prevProps: {},
+            nextProps: this.props,
+            instance: rectangle,
+        });
+        this.setState(function setRectangle() {
+            return {
+                rectangle,
+            };
+        }, this.setRectangleCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.rectangle !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$9,
+                eventMap: eventMap$9,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.rectangle,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.rectangle !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.rectangle);
+            }
+            unregisterEvents(this.registeredEvents);
+            this.state.rectangle.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+Rectangle.contextType = MapContext;
+
+const eventMap$8 = {
+    onCenterChanged: 'center_changed',
+    onClick: 'click',
+    onDblClick: 'dblclick',
+    onDrag: 'drag',
+    onDragEnd: 'dragend',
+    onDragStart: 'dragstart',
+    onMouseDown: 'mousedown',
+    onMouseMove: 'mousemove',
+    onMouseOut: 'mouseout',
+    onMouseOver: 'mouseover',
+    onMouseUp: 'mouseup',
+    onRadiusChanged: 'radius_changed',
+    onRightClick: 'rightclick',
+};
+const updaterMap$8 = {
+    center(instance, center) {
+        instance.setCenter(center);
+    },
+    draggable(instance, draggable) {
+        instance.setDraggable(draggable);
+    },
+    editable(instance, editable) {
+        instance.setEditable(editable);
+    },
+    map(instance, map) {
+        instance.setMap(map);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    radius(instance, radius) {
+        instance.setRadius(radius);
+    },
+    visible(instance, visible) {
+        instance.setVisible(visible);
+    },
+};
+class Circle extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            circle: null,
+        };
+        this.setCircleCallback = () => {
+            if (this.state.circle !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.circle);
+            }
+        };
+    }
+    componentDidMount() {
+        const circle = new google.maps.Circle(Object.assign(Object.assign({}, (this.props.options || {})), { map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$8,
+            eventMap: eventMap$8,
+            prevProps: {},
+            nextProps: this.props,
+            instance: circle,
+        });
+        this.setState(function setCircle() {
+            return {
+                circle,
+            };
+        }, this.setCircleCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.circle !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$8,
+                eventMap: eventMap$8,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.circle,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.circle !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.circle);
+            }
+            unregisterEvents(this.registeredEvents);
+            this.state.circle && this.state.circle.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+Circle.contextType = MapContext;
+
+const eventMap$7 = {
+    onAddFeature: 'addfeature',
+    onClick: 'click',
+    onDblClick: 'dblclick',
+    onMouseDown: 'mousedown',
+    onMouseOut: 'mouseout',
+    onMouseOver: 'mouseover',
+    onMouseUp: 'mouseup',
+    onRemoveFeature: 'removefeature',
+    onRemoveProperty: 'removeproperty',
+    onRightClick: 'rightclick',
+    onSetGeometry: 'setgeometry',
+    onSetProperty: 'setproperty',
+};
+const updaterMap$7 = {
+    add(instance, features) {
+        instance.add(features);
+    },
+    addgeojson(instance, geojson, options) {
+        instance.addGeoJson(geojson, options);
+    },
+    contains(instance, feature) {
+        instance.contains(feature);
+    },
+    foreach(instance, callback) {
+        instance.forEach(callback);
+    },
+    loadgeojson(instance, url, options, callback) {
+        instance.loadGeoJson(url, options, callback);
+    },
+    overridestyle(instance, feature, style) {
+        instance.overrideStyle(feature, style);
+    },
+    remove(instance, feature) {
+        instance.remove(feature);
+    },
+    revertstyle(instance, feature) {
+        instance.revertStyle(feature);
+    },
+    controlposition(instance, controlPosition) {
+        instance.setControlPosition(controlPosition);
+    },
+    controls(instance, controls) {
+        instance.setControls(controls);
+    },
+    drawingmode(instance, mode) {
+        instance.setDrawingMode(mode);
+    },
+    map(instance, map) {
+        instance.setMap(map);
+    },
+    style(instance, style) {
+        instance.setStyle(style);
+    },
+    togeojson(instance, callback) {
+        instance.toGeoJson(callback);
+    },
+};
+class Data extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            data: null,
+        };
+        this.setDataCallback = () => {
+            if (this.state.data !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.data);
+            }
+        };
+    }
+    componentDidMount() {
+        const data = new google.maps.Data(Object.assign(Object.assign({}, (this.props.options || {})), { map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$7,
+            eventMap: eventMap$7,
+            prevProps: {},
+            nextProps: this.props,
+            instance: data,
+        });
+        this.setState(() => {
+            return {
+                data,
+            };
+        }, this.setDataCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.data !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$7,
+                eventMap: eventMap$7,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.data,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.data !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.data);
+            }
+            unregisterEvents(this.registeredEvents);
+            if (this.state.data) {
+                this.state.data.setMap(null);
+            }
+        }
+    }
+    render() {
+        return null;
+    }
+}
+Data.contextType = MapContext;
+
+const eventMap$6 = {
+    onClick: 'click',
+    onDefaultViewportChanged: 'defaultviewport_changed',
+    onStatusChanged: 'status_changed',
+};
+const updaterMap$6 = {
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    url(instance, url) {
+        instance.setUrl(url);
+    },
+    zIndex(instance, zIndex) {
+        instance.setZIndex(zIndex);
+    },
+};
+class KmlLayer extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            kmlLayer: null,
+        };
+        this.setKmlLayerCallback = () => {
+            if (this.state.kmlLayer !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.kmlLayer);
+            }
+        };
+    }
+    componentDidMount() {
+        const kmlLayer = new google.maps.KmlLayer(Object.assign(Object.assign({}, this.props.options), { map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$6,
+            eventMap: eventMap$6,
+            prevProps: {},
+            nextProps: this.props,
+            instance: kmlLayer,
+        });
+        this.setState(function setLmlLayer() {
+            return {
+                kmlLayer,
+            };
+        }, this.setKmlLayerCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.kmlLayer !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$6,
+                eventMap: eventMap$6,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.kmlLayer,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.kmlLayer !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.kmlLayer);
+            }
+            unregisterEvents(this.registeredEvents);
+            this.state.kmlLayer.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+KmlLayer.contextType = MapContext;
+
+function getOffsetOverride(containerElement, getPixelPositionOffset) {
+    return typeof getPixelPositionOffset === 'function'
+        ? getPixelPositionOffset(containerElement.offsetWidth, containerElement.offsetHeight)
+        : {};
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function createLatLng(inst, Type) { return new Type(inst.lat, inst.lng); }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function createLatLngBounds(inst, Type) {
+    return new Type(new google.maps.LatLng(inst.ne.lat, inst.ne.lng), new google.maps.LatLng(inst.sw.lat, inst.sw.lng));
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function ensureOfType(inst, type, factory) {
+    return inst instanceof type ? inst : factory(inst, type);
+}
+function ensureOfTypeBounds(inst, type, factory) {
+    return inst instanceof type ? inst : factory(inst, type);
+}
+function getLayoutStylesByBounds(mapCanvasProjection, offset, bounds) {
+    const ne = mapCanvasProjection && mapCanvasProjection.fromLatLngToDivPixel(bounds.getNorthEast());
+    const sw = mapCanvasProjection && mapCanvasProjection.fromLatLngToDivPixel(bounds.getSouthWest());
+    if (ne && sw) {
+        return {
+            left: `${sw.x + offset.x}px`,
+            top: `${ne.y + offset.y}px`,
+            width: `${ne.x - sw.x - offset.x}px`,
+            height: `${sw.y - ne.y - offset.y}px`,
+        };
+    }
+    return {
+        left: '-9999px',
+        top: '-9999px',
+    };
+}
+function getLayoutStylesByPosition(mapCanvasProjection, offset, position) {
+    const point = mapCanvasProjection && mapCanvasProjection.fromLatLngToDivPixel(position);
+    if (point) {
+        const { x, y } = point;
+        return {
+            left: `${x + offset.x}px`,
+            top: `${y + offset.y}px`,
+        };
+    }
+    return {
+        left: '-9999px',
+        top: '-9999px',
+    };
+}
+function getLayoutStyles(mapCanvasProjection, offset, bounds, position) {
+    return bounds !== undefined
+        ? getLayoutStylesByBounds(mapCanvasProjection, offset, ensureOfTypeBounds(bounds, google.maps.LatLngBounds, createLatLngBounds))
+        : getLayoutStylesByPosition(mapCanvasProjection, offset, ensureOfType(position, google.maps.LatLng, createLatLng));
+}
+function arePositionsEqual(currentPosition, previousPosition) {
+    return currentPosition.left === previousPosition.left
+        && currentPosition.top === previousPosition.top
+        && currentPosition.width === previousPosition.height
+        && currentPosition.height === previousPosition.height;
+}
+
+function convertToLatLngString(latLngLike) {
+    if (!latLngLike) {
+        return '';
+    }
+    const latLng = latLngLike instanceof google.maps.LatLng
+        ? latLngLike
+        : new google.maps.LatLng(latLngLike.lat, latLngLike.lng);
+    return latLng + '';
+}
+function convertToLatLngBoundsString(latLngBoundsLike) {
+    if (!latLngBoundsLike) {
+        return '';
+    }
+    const latLngBounds = latLngBoundsLike instanceof google.maps.LatLngBounds
+        ? latLngBoundsLike
+        : new google.maps.LatLngBounds(new google.maps.LatLng(latLngBoundsLike.south, latLngBoundsLike.east), new google.maps.LatLng(latLngBoundsLike.north, latLngBoundsLike.west));
+    return latLngBounds + '';
+}
+class OverlayView extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            paneEl: null,
+            containerStyle: {
+                // set initial position
+                position: 'absolute'
+            },
+        };
+        this.updatePane = () => {
+            const mapPaneName = this.props.mapPaneName;
+            // https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapPanes
+            const mapPanes = this.overlayView.getPanes();
+            invariant_1(!!mapPaneName, `OverlayView requires props.mapPaneName but got %s`, mapPaneName);
+            if (mapPanes) {
+                this.setState({
+                    paneEl: mapPanes[mapPaneName]
+                });
+            }
+            else {
+                this.setState({
+                    paneEl: null
+                });
+            }
+        };
+        this.onAdd = () => {
+            var _a, _b;
+            this.updatePane();
+            (_b = (_a = this.props).onLoad) === null || _b === void 0 ? void 0 : _b.call(_a, this.overlayView);
+        };
+        this.onPositionElement = () => {
+            const mapCanvasProjection = this.overlayView.getProjection();
+            const offset = Object.assign({ x: 0, y: 0 }, (this.containerRef.current
+                ? getOffsetOverride(this.containerRef.current, this.props.getPixelPositionOffset)
+                : {}));
+            const layoutStyles = getLayoutStyles(mapCanvasProjection, offset, this.props.bounds, this.props.position);
+            const { left, top, width, height } = this.state.containerStyle;
+            if (!arePositionsEqual(layoutStyles, { left, top, width, height })) {
+                this.setState({
+                    containerStyle: Object.assign(Object.assign({}, layoutStyles), { position: 'absolute' }),
+                });
+            }
+        };
+        this.draw = () => {
+            this.onPositionElement();
+        };
+        this.onRemove = () => {
+            var _a, _b;
+            this.setState(() => ({
+                paneEl: null
+            }));
+            // this.mapPaneEl = null
+            (_b = (_a = this.props).onUnmount) === null || _b === void 0 ? void 0 : _b.call(_a, this.overlayView);
+        };
+        this.containerRef = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        // You must implement three methods: onAdd(), draw(), and onRemove().
+        const overlayView = new google.maps.OverlayView();
+        overlayView.onAdd = this.onAdd;
+        overlayView.draw = this.draw;
+        overlayView.onRemove = this.onRemove;
+        this.overlayView = overlayView;
+    }
+    componentDidMount() {
+        // You must call setMap() with a valid Map object to trigger the call to
+        // the onAdd() method and setMap(null) in order to trigger the onRemove() method.
+        this.overlayView.setMap(this.context);
+    }
+    componentDidUpdate(prevProps) {
+        const prevPositionString = convertToLatLngString(prevProps.position);
+        const positionString = convertToLatLngString(this.props.position);
+        const prevBoundsString = convertToLatLngBoundsString(prevProps.bounds);
+        const boundsString = convertToLatLngBoundsString(this.props.bounds);
+        if (prevPositionString !== positionString || prevBoundsString !== boundsString) {
+            this.overlayView.draw();
+        }
+        if (prevProps.mapPaneName !== this.props.mapPaneName) {
+            this.updatePane();
+        }
+    }
+    componentWillUnmount() {
+        this.overlayView.setMap(null);
+    }
+    render() {
+        const paneEl = this.state.paneEl;
+        if (paneEl) {
+            return react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal(jsxRuntime.exports.jsx("div", Object.assign({ ref: this.containerRef, style: this.state.containerStyle }, { children: react__WEBPACK_IMPORTED_MODULE_0__.Children.only(this.props.children) })), paneEl);
+        }
+        else {
+            return null;
+        }
+    }
+}
+OverlayView.FLOAT_PANE = `floatPane`;
+OverlayView.MAP_PANE = `mapPane`;
+OverlayView.MARKER_LAYER = `markerLayer`;
+OverlayView.OVERLAY_LAYER = `overlayLayer`;
+OverlayView.OVERLAY_MOUSE_TARGET = `overlayMouseTarget`;
+OverlayView.contextType = MapContext;
+
+function noop() { return; }
+
+const eventMap$5 = {
+    onDblClick: 'dblclick',
+    onClick: 'click',
+};
+const updaterMap$5 = {
+    opacity(instance, opacity) {
+        instance.setOpacity(opacity);
+    },
+};
+class GroundOverlay extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            groundOverlay: null,
+        };
+        this.setGroundOverlayCallback = () => {
+            if (this.state.groundOverlay !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.groundOverlay);
+            }
+        };
+    }
+    componentDidMount() {
+        invariant_1(!!this.props.url || !!this.props.bounds, `For GroundOverlay, url and bounds are passed in to constructor and are immutable after instantiated. This is the behavior of Google Maps JavaScript API v3 ( See https://developers.google.com/maps/documentation/javascript/reference#GroundOverlay) Hence, use the corresponding two props provided by \`react-google-maps-api\`, url and bounds. In some cases, you'll need the GroundOverlay component to reflect the changes of url and bounds. You can leverage the React's key property to remount the component. Typically, just \`key={url}\` would serve your need. See https://github.com/tomchentw/react-google-maps/issues/655`);
+        const groundOverlay = new google.maps.GroundOverlay(this.props.url, this.props.bounds, Object.assign(Object.assign({}, this.props.options), { map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$5,
+            eventMap: eventMap$5,
+            prevProps: {},
+            nextProps: this.props,
+            instance: groundOverlay,
+        });
+        this.setState(function setGroundOverlay() {
+            return {
+                groundOverlay,
+            };
+        }, this.setGroundOverlayCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.groundOverlay !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$5,
+                eventMap: eventMap$5,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.groundOverlay,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.groundOverlay) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.groundOverlay);
+            }
+            this.state.groundOverlay.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+GroundOverlay.defaultProps = {
+    onLoad: noop,
+};
+GroundOverlay.contextType = MapContext;
+
+const eventMap$4 = {};
+const updaterMap$4 = {
+    data(instance, data) {
+        instance.setData(data);
+    },
+    map(instance, map) {
+        instance.setMap(map);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+};
+class HeatmapLayer extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            heatmapLayer: null,
+        };
+        this.setHeatmapLayerCallback = () => {
+            if (this.state.heatmapLayer !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.heatmapLayer);
+            }
+        };
+    }
+    componentDidMount() {
+        invariant_1(!!google.maps.visualization, 'Did you include prop libraries={["visualization"]} to <LoadScript />? %s', google.maps.visualization);
+        invariant_1(!!this.props.data, 'data property is required in HeatmapLayer %s', this.props.data);
+        const heatmapLayer = new google.maps.visualization.HeatmapLayer(Object.assign(Object.assign({}, (this.props.options || {})), { data: this.props.data, map: this.context }));
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$4,
+            eventMap: eventMap$4,
+            prevProps: {},
+            nextProps: this.props,
+            instance: heatmapLayer,
+        });
+        this.setState(function setHeatmapLayer() {
+            return {
+                heatmapLayer,
+            };
+        }, this.setHeatmapLayerCallback);
+    }
+    componentDidUpdate(prevProps) {
+        unregisterEvents(this.registeredEvents);
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$4,
+            eventMap: eventMap$4,
+            prevProps,
+            nextProps: this.props,
+            instance: this.state.heatmapLayer,
+        });
+    }
+    componentWillUnmount() {
+        if (this.state.heatmapLayer !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.heatmapLayer);
+            }
+            unregisterEvents(this.registeredEvents);
+            this.state.heatmapLayer.setMap(null);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+HeatmapLayer.contextType = MapContext;
+
+const eventMap$3 = {
+    onCloseClick: 'closeclick',
+    onPanoChanged: 'pano_changed',
+    onPositionChanged: 'position_changed',
+    onPovChanged: 'pov_changed',
+    onResize: 'resize',
+    onStatusChanged: 'status_changed',
+    onVisibleChanged: 'visible_changed',
+    onZoomChanged: 'zoom_changed',
+};
+const updaterMap$3 = {
+    register(instance, provider, options) {
+        instance.registerPanoProvider(provider, options);
+    },
+    links(instance, links) {
+        instance.setLinks(links);
+    },
+    motionTracking(instance, motionTracking) {
+        instance.setMotionTracking(motionTracking);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    pano(instance, pano) {
+        instance.setPano(pano);
+    },
+    position(instance, position) {
+        instance.setPosition(position);
+    },
+    pov(instance, pov) {
+        instance.setPov(pov);
+    },
+    visible(instance, visible) {
+        instance.setVisible(visible);
+    },
+    zoom(instance, zoom) {
+        instance.setZoom(zoom);
+    },
+};
+class StreetViewPanorama extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            streetViewPanorama: null,
+        };
+        this.setStreetViewPanoramaCallback = () => {
+            if (this.state.streetViewPanorama !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.streetViewPanorama);
+            }
+        };
+    }
+    componentDidMount() {
+        const streetViewPanorama = this.context.getStreetView();
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$3,
+            eventMap: eventMap$3,
+            prevProps: {},
+            nextProps: this.props,
+            instance: streetViewPanorama,
+        });
+        this.setState(() => {
+            return {
+                streetViewPanorama,
+            };
+        }, this.setStreetViewPanoramaCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.streetViewPanorama !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$3,
+                eventMap: eventMap$3,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.streetViewPanorama,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.streetViewPanorama !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.streetViewPanorama);
+            }
+            unregisterEvents(this.registeredEvents);
+            this.state.streetViewPanorama.setVisible(false);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+StreetViewPanorama.contextType = MapContext;
+
+class StreetViewService extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            streetViewService: null,
+        };
+        this.setStreetViewServiceCallback = () => {
+            if (this.state.streetViewService !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.streetViewService);
+            }
+        };
+    }
+    componentDidMount() {
+        const streetViewService = new google.maps.StreetViewService();
+        this.setState(function setStreetViewService() {
+            return {
+                streetViewService,
+            };
+        }, this.setStreetViewServiceCallback);
+    }
+    componentWillUnmount() {
+        if (this.state.streetViewService !== null && this.props.onUnmount) {
+            this.props.onUnmount(this.state.streetViewService);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+StreetViewService.contextType = MapContext;
+
+class DirectionsService extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            directionsService: null,
+        };
+        this.setDirectionsServiceCallback = () => {
+            if (this.state.directionsService !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.directionsService);
+            }
+        };
+    }
+    componentDidMount() {
+        invariant_1(!!this.props.options, 'DirectionsService expected options object as parameter, but got %s', this.props.options);
+        const directionsService = new google.maps.DirectionsService();
+        this.setState(function setDirectionsService() {
+            return {
+                directionsService,
+            };
+        }, this.setDirectionsServiceCallback);
+    }
+    componentDidUpdate() {
+        if (this.state.directionsService !== null) {
+            this.state.directionsService.route(this.props.options, this.props.callback);
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.directionsService !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.directionsService);
+            }
+        }
+    }
+    render() {
+        return null;
+    }
+}
+
+const eventMap$2 = {
+    onDirectionsChanged: 'directions_changed',
+};
+const updaterMap$2 = {
+    directions(instance, directions) {
+        instance.setDirections(directions);
+    },
+    map(instance, map) {
+        instance.setMap(map);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    panel(instance, panel) {
+        instance.setPanel(panel);
+    },
+    routeIndex(instance, routeIndex) {
+        instance.setRouteIndex(routeIndex);
+    },
+};
+class DirectionsRenderer extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.state = {
+            directionsRenderer: null,
+        };
+        this.setDirectionsRendererCallback = () => {
+            if (this.state.directionsRenderer !== null) {
+                this.state.directionsRenderer.setMap(this.context);
+                if (this.props.onLoad) {
+                    this.props.onLoad(this.state.directionsRenderer);
+                }
+            }
+        };
+    }
+    componentDidMount() {
+        const directionsRenderer = new google.maps.DirectionsRenderer(this.props.options);
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap: updaterMap$2,
+            eventMap: eventMap$2,
+            prevProps: {},
+            nextProps: this.props,
+            instance: directionsRenderer,
+        });
+        this.setState(function setDirectionsRenderer() {
+            return {
+                directionsRenderer,
+            };
+        }, this.setDirectionsRendererCallback);
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.directionsRenderer !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$2,
+                eventMap: eventMap$2,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.directionsRenderer,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.directionsRenderer !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.directionsRenderer);
+            }
+            unregisterEvents(this.registeredEvents);
+            if (this.state.directionsRenderer) {
+                this.state.directionsRenderer.setMap(null);
+            }
+        }
+    }
+    render() {
+        return jsxRuntime.exports.jsx(jsxRuntime.exports.Fragment, {});
+    }
+}
+DirectionsRenderer.contextType = MapContext;
+
+class DistanceMatrixService extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            distanceMatrixService: null,
+        };
+        this.setDistanceMatrixServiceCallback = () => {
+            if (this.state.distanceMatrixService !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.distanceMatrixService);
+            }
+        };
+    }
+    componentDidMount() {
+        invariant_1(!!this.props.options, 'DistanceMatrixService expected options object as parameter, but go %s', this.props.options);
+        const distanceMatrixService = new google.maps.DistanceMatrixService();
+        this.setState(function setDistanceMatrixService() {
+            return {
+                distanceMatrixService,
+            };
+        }, this.setDistanceMatrixServiceCallback);
+    }
+    componentDidUpdate() {
+        if (this.state.distanceMatrixService !== null) {
+            this.state.distanceMatrixService.getDistanceMatrix(this.props.options, this.props.callback);
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.distanceMatrixService !== null && this.props.onUnmount) {
+            this.props.onUnmount(this.state.distanceMatrixService);
+        }
+    }
+    render() {
+        return null;
+    }
+}
+
+const eventMap$1 = {
+    onPlacesChanged: 'places_changed',
+};
+const updaterMap$1 = {
+    bounds(instance, bounds) {
+        instance.setBounds(bounds);
+    },
+};
+class StandaloneSearchBox extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.containerElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)();
+        this.state = {
+            searchBox: null,
+        };
+        this.setSearchBoxCallback = () => {
+            if (this.state.searchBox !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.searchBox);
+            }
+        };
+    }
+    componentDidMount() {
+        invariant_1(!!google.maps.places, 'You need to provide libraries={["places"]} prop to <LoadScript /> component %s', google.maps.places);
+        if (this.containerElement !== null && this.containerElement.current !== null) {
+            const input = this.containerElement.current.querySelector('input');
+            if (input !== null) {
+                const searchBox = new google.maps.places.SearchBox(input, this.props.options);
+                this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                    updaterMap: updaterMap$1,
+                    eventMap: eventMap$1,
+                    prevProps: {},
+                    nextProps: this.props,
+                    instance: searchBox,
+                });
+                this.setState(function setSearchBox() {
+                    return {
+                        searchBox,
+                    };
+                }, this.setSearchBoxCallback);
+            }
+        }
+    }
+    componentDidUpdate(prevProps) {
+        if (this.state.searchBox !== null) {
+            unregisterEvents(this.registeredEvents);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap: updaterMap$1,
+                eventMap: eventMap$1,
+                prevProps,
+                nextProps: this.props,
+                instance: this.state.searchBox,
+            });
+        }
+    }
+    componentWillUnmount() {
+        if (this.state.searchBox !== null) {
+            if (this.props.onUnmount) {
+                this.props.onUnmount(this.state.searchBox);
+            }
+            unregisterEvents(this.registeredEvents);
+        }
+    }
+    render() {
+        return jsxRuntime.exports.jsx("div", Object.assign({ ref: this.containerElement }, { children: react__WEBPACK_IMPORTED_MODULE_0__.Children.only(this.props.children) }));
+    }
+}
+StandaloneSearchBox.contextType = MapContext;
+
+const eventMap = {
+    onPlaceChanged: 'place_changed',
+};
+const updaterMap = {
+    bounds(instance, bounds) {
+        instance.setBounds(bounds);
+    },
+    restrictions(instance, restrictions) {
+        instance.setComponentRestrictions(restrictions);
+    },
+    fields(instance, fields) {
+        instance.setFields(fields);
+    },
+    options(instance, options) {
+        instance.setOptions(options);
+    },
+    types(instance, types) {
+        instance.setTypes(types);
+    },
+};
+class Autocomplete extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+    constructor() {
+        super(...arguments);
+        this.registeredEvents = [];
+        this.containerElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)();
+        this.state = {
+            autocomplete: null,
+        };
+        this.setAutocompleteCallback = () => {
+            if (this.state.autocomplete !== null && this.props.onLoad) {
+                this.props.onLoad(this.state.autocomplete);
+            }
+        };
+    }
+    componentDidMount() {
+        invariant_1(!!google.maps.places, 'You need to provide libraries={["places"]} prop to <LoadScript /> component %s', google.maps.places);
+        // TODO: why current could be equal null?
+        // @ts-ignore
+        const input = this.containerElement.current.querySelector('input');
+        if (input) {
+            const autocomplete = new google.maps.places.Autocomplete(input, this.props.options);
+            this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+                updaterMap,
+                eventMap,
+                prevProps: {},
+                nextProps: this.props,
+                instance: autocomplete,
+            });
+            this.setState(function setAutocomplete() {
+                return {
+                    autocomplete,
+                };
+            }, this.setAutocompleteCallback);
+        }
+    }
+    componentDidUpdate(prevProps) {
+        unregisterEvents(this.registeredEvents);
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+            updaterMap,
+            eventMap,
+            prevProps,
+            nextProps: this.props,
+            instance: this.state.autocomplete,
+        });
+    }
+    componentWillUnmount() {
+        if (this.state.autocomplete !== null) {
+            unregisterEvents(this.registeredEvents);
+        }
+    }
+    render() {
+        return jsxRuntime.exports.jsx("div", Object.assign({ ref: this.containerElement, className: this.props.className || '' }, { children: react__WEBPACK_IMPORTED_MODULE_0__.Children.only(this.props.children) }));
+    }
+}
+Autocomplete.contextType = MapContext;
+
+
+//# sourceMappingURL=esm.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -5325,15 +12843,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_Welcome__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Welcome */ "./resources/v2/js/components/Welcome.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_layout_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/layout/Layout */ "./resources/v2/js/components/layout/Layout.js");
+/* harmony import */ var _pages_RoadDetail__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/RoadDetail */ "./resources/v2/js/pages/RoadDetail.js");
+/* harmony import */ var _pages_Roads__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Roads */ "./resources/v2/js/pages/Roads.js");
+/* harmony import */ var _pages_Welcome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Welcome */ "./resources/v2/js/pages/Welcome.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
 
 
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components_Welcome__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_layout_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+          path: "v2/welcome",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_pages_Welcome__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+          path: "v2/roads",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_pages_Roads__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+          path: "v2/roads/:roadId",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_pages_RoadDetail__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+          path: "bikes",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            children: "Bikes"
+          })
+        })]
+      })
+    })
   });
 }
 
@@ -5341,10 +12885,10 @@ function App() {
 
 /***/ }),
 
-/***/ "./resources/v2/js/components/Welcome.js":
-/*!***********************************************!*\
-  !*** ./resources/v2/js/components/Welcome.js ***!
-  \***********************************************/
+/***/ "./resources/v2/js/components/Welcome/About/AboutItem.js":
+/*!***************************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/About/AboutItem.js ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5352,10 +12896,617 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _roads_RoadList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./roads/RoadList */ "./resources/v2/js/components/roads/RoadList.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var AboutItem = function AboutItem(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "mt-20",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+      className: "sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900",
+      children: props.title
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+      className: "lg:w-2/3 mx-auto leading-relaxed text-base",
+      children: props.description
+    }), props.image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+      className: "w-80 h-80 mx-auto",
+      width: "100%",
+      height: "100%",
+      src: props.image
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AboutItem);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/Welcome/About/AboutList.js":
+/*!***************************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/About/AboutList.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _AboutItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AboutItem */ "./resources/v2/js/components/Welcome/About/AboutItem.js");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Button */ "./resources/v2/js/components/Welcome/Button.js");
+/* harmony import */ var _public_images_map_webp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../public/images/map.webp */ "./public/images/map.webp");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var AboutList = function AboutList(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+    className: "text-gray-600 body-font",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "container px-5 py-16 mx-auto",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "flex flex-col text-center w-full mb-20",
+        children: props.abouts.map(function (about, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AboutItem__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            id: about.id,
+            title: about.title,
+            description: about.description,
+            image: index === 0 && _public_images_map_webp__WEBPACK_IMPORTED_MODULE_2__["default"]
+          }, about.id);
+        })
+      })
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AboutList);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/Welcome/Button.js":
+/*!******************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/Button.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var Button = function Button() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "p-2 w-full",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      to: "/v2/roads",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
+        className: "flex font-bold mx-auto text-black bg-orange-400 border-0 py-4 px-10 focus:outline-none hover:bg-orange-500 rounded-full text-lg",
+        children: "Tamari-Ba\u3092\u306F\u3058\u3081\u308B"
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Button);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/Welcome/Main.js":
+/*!****************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/Main.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _roads_RoadList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../roads/RoadList */ "./resources/v2/js/components/roads/RoadList.js");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button */ "./resources/v2/js/components/Welcome/Button.js");
+/* harmony import */ var _Purpose_PurposeList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Purpose/PurposeList */ "./resources/v2/js/components/Welcome/Purpose/PurposeList.js");
+/* harmony import */ var _About_AboutList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./About/AboutList */ "./resources/v2/js/components/Welcome/About/AboutList.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+var Main = function Main(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "p-3 bg-white",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_About_AboutList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      abouts: props.abouts
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Purpose_PurposeList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      purposes: props.purposes
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
+      className: "text-gray-600 body-font",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "container px-5 py-16 mx-auto",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "flex flex-col text-center w-full mb-20",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+              className: "sm:text-3xl lg:text-5xl font-medium title-font mb-4 text-gray-900",
+              children: "\u6700\u8FD1\u306E\u6295\u7A3F"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              className: "lg:w-2/3 mx-auto leading-relaxed text-base",
+              children: "Tamari-Ba\u3067\u306F\u5168\u56FD\u306E\u30D0\u30A4\u30AB\u30FC\u306E\u611B\u8ECA\u3084\u304A\u3059\u3059\u3081\u30B9\u30DD\u30C3\u30C8\u3084\u30B3\u30A2\u306A\u9053\u3092\u77E5\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u3002"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_roads_RoadList__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            roads: props.roads
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "mt-20 bg-orange-300 py-10",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+              className: "sm:text-3xl text-2xl font-bold title-font mb-4 text-gray-900",
+              children: "Tamari-Ba\u306B\u53C2\u52A0\u3059\u308B"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              className: "lg:w-2/3 mx-auto leading-relaxed text-base text-black",
+              children: "\u3042\u306A\u305F\u306E\u611B\u8ECA\u3084\u304A\u3059\u3059\u3081\u30B9\u30DD\u30C3\u30C8\u3092\u6295\u7A3F\u3057\u3066Tamari-Ba\u3092\u5145\u5B9F\u3055\u305B\u3066\u3044\u304D\u307E\u3057\u3087\u3046!"
+            })]
+          })]
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Main);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/Welcome/Purpose/PurposeItem.js":
+/*!*******************************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/Purpose/PurposeItem.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var PurposeItem = function PurposeItem(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "lg:w-1/3 sm:w-1/2 p-4",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+      alt: "gallery",
+      className: "w-full h-50 object-center lazyload",
+      loading: "lazy",
+      width: "480",
+      height: "270",
+      src: props.image
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "text-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h2", {
+        className: "w-32 text-sm font-medium my-8 mx-auto py-1 border-b-2 border-orange-500",
+        children: props.kind
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
+        className: "title-font text-3xl font-medium text-gray-900 mb-3",
+        children: props.title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+        className: "text-lg",
+        children: props.description
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PurposeItem);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/Welcome/Purpose/PurposeList.js":
+/*!*******************************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/Purpose/PurposeList.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _PurposeItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PurposeItem */ "./resources/v2/js/components/Welcome/Purpose/PurposeItem.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var PurposeList = function PurposeList(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
+    className: "text-gray-600 body-font",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "container px-5 py-16 mx-auto",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "flex flex-col text-center w-full mb-20",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+            className: "sm:text-3xl lg:text-5xl font-medium title-font mb-4 text-gray-900",
+            children: "Tamari-Ba\u306E\u697D\u3057\u307F\u65B9"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            className: "lg:w-2/3 mx-auto leading-relaxed text-base",
+            children: "\u30BD\u30ED\u3067\u30D0\u30A4\u30AF\u3092\u697D\u3057\u307F\u305F\u3044\u3001\u8907\u6570\u4EBA\u3067\u30C4\u30FC\u30EA\u30F3\u30B0\u306B\u884C\u304D\u305F\u3044\u65B9\u3084\u30D0\u30A4\u30AF\u3092\u30AD\u30C3\u30AB\u30B1\u306B\u6D3B\u52D5\u306E\u5E45\u3092\u5E83\u3052\u3066\u3044\u304D\u305F\u3044\u65B9\u306A\u3069\u3001\u5E45\u5E83\u3044\u5E74\u4EE3\u30FB\u76EE\u7684\u3067\u3054\u5229\u7528\u3044\u305F\u3060\u3051\u307E\u3059\u3002"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "flex flex-wrap -m-4",
+        children: props.purposes.map(function (purpose) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_PurposeItem__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            id: purpose.id,
+            image: purpose.image,
+            kind: purpose.kind,
+            title: purpose.title,
+            description: purpose.description
+          }, purpose.id);
+        })
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PurposeList);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/Welcome/ShowWelcomeSwiper.js":
+/*!*****************************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/ShowWelcomeSwiper.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _Swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Swiper */ "./resources/v2/js/components/Welcome/Swiper.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var ShowWelcomeSwiper = function ShowWelcomeSwiper() {
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useLocation)();
+
+  if (location.pathname.match(/welcome/)) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Swiper__WEBPACK_IMPORTED_MODULE_0__["default"], {});
+  }
+
+  return null;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ShowWelcomeSwiper);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/Welcome/Swiper.js":
+/*!******************************************************!*\
+  !*** ./resources/v2/js/components/Welcome/Swiper.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _public_images_main_1_webp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../public/images/main_1.webp */ "./public/images/main_1.webp");
+/* harmony import */ var _public_images_main_2_webp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../public/images/main_2.webp */ "./public/images/main_2.webp");
+/* harmony import */ var _public_images_other_webp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../public/images/other.webp */ "./public/images/other.webp");
+/* harmony import */ var _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../public/images/enjoy.webp */ "./public/images/enjoy.webp");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+var Swiper = function Swiper() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "w-full text-center relative z-0",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "swiper-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "swiper-wrapper",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "swiper-slide",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              className: "w-full h-80 sm:h-screen",
+              width: "360",
+              height: "320",
+              src: _public_images_main_1_webp__WEBPACK_IMPORTED_MODULE_0__["default"],
+              alt: "mainImage1"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "swiper-slide",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              className: "lazyload w-full h-80 sm:h-screen",
+              width: "360",
+              height: "320",
+              loading: "lazy",
+              src: _public_images_main_2_webp__WEBPACK_IMPORTED_MODULE_1__["default"],
+              alt: "mainImage1"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "swiper-slide",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              className: "lazyload w-full h-80 sm:h-screen",
+              width: "360",
+              height: "320",
+              loading: "lazy",
+              src: _public_images_other_webp__WEBPACK_IMPORTED_MODULE_2__["default"],
+              alt: "mainImage1"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "swiper-slide",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              className: "lazyload w-full h-80 sm:h-screen",
+              width: "360",
+              height: "320",
+              loading: "lazy",
+              src: _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_3__["default"],
+              alt: "mainImage1"
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "swiper-pagination"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "absolute left-10 lg:top-72 top-32 z-10",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+        className: "lg:text-6xl text-3xl text-white",
+        children: "Tamari-Ba"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h2", {
+        className: "lg:text-4xl text-xl text-white lg:mt-10 mt-4",
+        children: ["\u3042\u306A\u305F\u306E\u597D\u304D\u304C\u3001", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "\u300C\u305F\u307E\u308A\u5834\u300D\u3092\u5275\u308B\u3002"]
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Swiper);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/layout/Footer.js":
+/*!*****************************************************!*\
+  !*** ./resources/v2/js/components/layout/Footer.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _public_images_icon_webp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../public/images/icon.webp */ "./public/images/icon.webp");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var Footer = function Footer() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("footer", {
+    className: "text-gray-600 body-font",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "w-full sm:py-10 mx-auto sm:flex sm:justify-around",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "ml-4 text-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+          to: "v2/welcome",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "flex",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              loading: "lazy",
+              width: "50",
+              height: "50",
+              src: _public_images_icon_webp__WEBPACK_IMPORTED_MODULE_0__["default"],
+              alt: "icon",
+              className: "lazyload h-14 sm:mr-4 sm:pb-2"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "text-2xl icon-color font-bold leading-10",
+              children: "Tamari-Ba"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "mt-2 text-sm text-gray-500",
+          children: "\u3042\u306A\u305F\u306E\u597D\u304D\u304C\u3001\u300C\u305F\u307E\u308A\u5834\u300D\u3092\u5275\u308B\u3002"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "flex flex-wrap text-center mt-4 sm:pt-20",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "w-full px-4",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("nav", {
+            className: "list-none mb-10 flex flex-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              className: "footer-nav-content",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                to: "inquiry",
+                children: "\u304A\u554F\u3044\u5408\u308F\u305B"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              className: "ml-4 footer-nav-content",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                to: "terms_of_service",
+                children: "\u5229\u7528\u898F\u7D04"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              className: "ml-4 footer-nav-content",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                to: "privacy_policy",
+                children: "\u30D7\u30E9\u30A4\u30D0\u30B7\u30FC\u30DD\u30EA\u30B7\u30FC"
+              })
+            })]
+          })
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "bg-gray-100",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "container mx-auto py-4 px-5",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "text-gray-500 text-sm text-center",
+          children: "Copyright \xA9 Tamari-Ba 2022 Rights Reserved."
+        })
+      })
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/layout/Layout.js":
+/*!*****************************************************!*\
+  !*** ./resources/v2/js/components/layout/Layout.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _MainNavigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainNavigation */ "./resources/v2/js/components/layout/MainNavigation.js");
+/* harmony import */ var _Welcome_ShowWelcomeSwiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Welcome/ShowWelcomeSwiper */ "./resources/v2/js/components/Welcome/ShowWelcomeSwiper.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./resources/v2/js/components/layout/Footer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var Layout = function Layout(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_MainNavigation__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Welcome_ShowWelcomeSwiper__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "py-12",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "max-w-7xl mx-auto sm:px-6 lg:px-8",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "bg-white overflow-hidden shadow-sm sm:rounded-lg",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "p-6 bg-white border-b border-gray-200",
+            children: props.children
+          })
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Layout);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/layout/MainNavigation.js":
+/*!*************************************************************!*\
+  !*** ./resources/v2/js/components/layout/MainNavigation.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _public_images_icon_webp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../public/images/icon.webp */ "./public/images/icon.webp");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var MainNavigation = function MainNavigation() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("header", {
+    className: "w-full h-20 flex justify-between bg-white p-4",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flex w-1/4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        loading: "lazy",
+        width: "50",
+        height: "50",
+        src: _public_images_icon_webp__WEBPACK_IMPORTED_MODULE_0__["default"],
+        alt: "icon",
+        className: "lazyload h-14 sm:mr-4 sm:pb-2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+        to: "v2/welcome",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          className: "text-2xl icon-color font-bold leading-10",
+          children: "Tamari-Ba"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
+      className: "w-3/4 flex justify-between leading-8",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+        className: "flex",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+          className: "mr-4 nav-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+            to: "v2/roads",
+            children: "\u9053\u306E\u6295\u7A3F"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+          className: "mr-4 nav-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+            to: "v2/bikes",
+            children: "\u30D0\u30A4\u30AF\u306E\u6295\u7A3F"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+          className: "nav-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+            to: "v2/borads",
+            children: "\u30C4\u30FC\u30EA\u30F3\u30B0\u63B2\u793A\u677F"
+          })
+        })]
+      })
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainNavigation);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/roads/Map.js":
+/*!*************************************************!*\
+  !*** ./resources/v2/js/components/roads/Map.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @react-google-maps/api */ "./node_modules/@react-google-maps/api/dist/esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ui_LoadingSpiner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ui/LoadingSpiner */ "./resources/v2/js/components/ui/LoadingSpiner.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5373,27 +13524,57 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function Welcome() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+var containerStyle = {
+  width: "50%",
+  height: "sm:max-h-80 max-h-52"
+};
+var BASE_POSITION = {
+  lat: 35.6585769,
+  lng: 139.7454506
+};
+
+var Map = function Map(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      LoadedRoads = _useState2[0],
-      setLoadedRoads = _useState2[1];
+      isShowMarker = _useState2[0],
+      setIsShowMarker = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(BASE_POSITION),
+      _useState4 = _slicedToArray(_useState3, 2),
+      center = _useState4[0],
+      setCenter = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get('/api/welcome').then(function (res) {
-      setLoadedRoads(res.data.data);
-    })["catch"](function (e) {
-      console.log(e);
-    });
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_roads_RoadList__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      roads: LoadedRoads
-    })
+    var timer = setTimeout(function () {
+      if (!isShowMarker) {
+        setCenter({
+          lat: props.lat,
+          lng: props.lng
+        });
+        setIsShowMarker(true);
+      }
+    }, 1000);
+    return function () {
+      clearTimeout(timer);
+    };
+  }, [center, setIsShowMarker]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.LoadScript, {
+    googleMapsApiKey: "AIzaSyA2tlchreYbSYH5E0qgkrWt6yNF8FgnkO8",
+    children: [!isShowMarker && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "text-center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ui_LoadingSpiner__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+    }), isShowMarker && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.GoogleMap, {
+      mapContainerStyle: containerStyle,
+      center: center,
+      zoom: 13,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.Marker, {
+        position: center
+      })
+    })]
   });
-}
+};
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Welcome);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Map);
 
 /***/ }),
 
@@ -5408,8 +13589,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _ui_Card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/Card */ "./resources/v2/js/components/ui/Card.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -5417,13 +13600,16 @@ __webpack_require__.r(__webpack_exports__);
 var RoadItem = function RoadItem(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_ui_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-        className: "lazyload w-full sm:max-h-60 max-h-52 mx-auto bg-cover",
-        src: props.filename
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+        to: "/v2/roads/".concat(props.id),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          className: "lazyload w-full sm:max-h-60 max-h-52 mx-auto bg-cover",
+          src: props.filename
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "p-6",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-          className: "title-font text-lg font-medium text-gray-900 mb-3",
+          className: "text-left title-font text-lg font-medium text-gray-900 mb-3",
           children: props.title
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "flex justify-end",
@@ -5535,6 +13721,32 @@ var Container = function Container(props) {
 
 /***/ }),
 
+/***/ "./resources/v2/js/components/ui/LoadingSpiner.js":
+/*!********************************************************!*\
+  !*** ./resources/v2/js/components/ui/LoadingSpiner.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _LoadingSpinner_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LoadingSpinner.module.css */ "./resources/v2/js/components/ui/LoadingSpinner.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var LoadingSpinner = function LoadingSpinner() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: _LoadingSpinner_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].spinner
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoadingSpinner);
+
+/***/ }),
+
 /***/ "./resources/v2/js/index.js":
 /*!**********************************!*\
   !*** ./resources/v2/js/index.js ***!
@@ -5545,15 +13757,279 @@ var Container = function Container(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/index.css */ "./resources/v2/css/index.css");
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App */ "./resources/v2/js/App.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./resources/v2/js/App.js");
+/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/index.css */ "./resources/v2/css/index.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_App__WEBPACK_IMPORTED_MODULE_3__["default"], {}), document.getElementById('root'));
+
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, {
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_App__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+}), document.getElementById('root'));
+
+/***/ }),
+
+/***/ "./resources/v2/js/pages/RoadDetail.js":
+/*!*********************************************!*\
+  !*** ./resources/v2/js/pages/RoadDetail.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_roads_Map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/roads/Map */ "./resources/v2/js/components/roads/Map.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var RoadDetail = function RoadDetail() {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
+      roadId = _useParams.roadId;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      road = _useState2[0],
+      setRoad = _useState2[1];
+
+  var query = "/".concat(roadId);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios.get('/api/road' + query).then(function (res) {
+      setRoad(res.data.data[0]);
+      console.log(res.data.data[0]);
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  }, [roadId]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "flex",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        className: "lazyload w-full md:w-1/2 sm:max-h-80 max-h-52 mx-auto bg-cover",
+        loading: "lazy",
+        src: road.filename,
+        alt: "road_image"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_roads_Map__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        lat: road.latitude,
+        lng: road.longitude
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "flex justify-around mt-4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+        className: "title-font text-lg font-medium text-gray-900 mb-3",
+        children: road.title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        className: "leading-relaxed",
+        children: road.created_at
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RoadDetail);
+
+/***/ }),
+
+/***/ "./resources/v2/js/pages/Roads.js":
+/*!****************************************!*\
+  !*** ./resources/v2/js/pages/Roads.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_roads_RoadList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/roads/RoadList */ "./resources/v2/js/components/roads/RoadList.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+var Roads = function Roads() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      LoadedRoads = _useState2[0],
+      setLoadedRoads = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios.get('/api/roads').then(function (res) {
+      setLoadedRoads(res.data.data);
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_roads_RoadList__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      roads: LoadedRoads
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Roads);
+
+/***/ }),
+
+/***/ "./resources/v2/js/pages/Welcome.js":
+/*!******************************************!*\
+  !*** ./resources/v2/js/pages/Welcome.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Welcome_Main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Welcome/Main */ "./resources/v2/js/components/Welcome/Main.js");
+/* harmony import */ var _public_images_solo_webp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../public/images/solo.webp */ "./public/images/solo.webp");
+/* harmony import */ var _public_images_touring_webp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../public/images/touring.webp */ "./public/images/touring.webp");
+/* harmony import */ var _public_images_custom_webp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../public/images/custom.webp */ "./public/images/custom.webp");
+/* harmony import */ var _public_images_communicate_webp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../public/images/communicate.webp */ "./public/images/communicate.webp");
+/* harmony import */ var _public_images_other_webp__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../public/images/other.webp */ "./public/images/other.webp");
+/* harmony import */ var _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../public/images/enjoy.webp */ "./public/images/enjoy.webp");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+var ABOUT_DATA = [{
+  id: '1',
+  title: 'Tamari-Baとは？',
+  description: 'バイカー同士の情報共有サイトです。'
+}, {
+  id: '2',
+  title: '愛車の共有',
+  description: 'Tamari-Baユーザーのこだわりの愛車を共有可能\n他のバイクを見て、次に買うバイクを決めたり、カスタムパーツを知ることが可能'
+}, {
+  id: '3',
+  title: 'コアな道の共有',
+  description: '大好きなツーリングスポットを共有\nTamari- Baユーザーのお気に入りスポットを閲覧\n次のツーリングスポットを見つけられる'
+}, {
+  id: '4',
+  title: 'ツーリング募集',
+  description: 'この時期だからこそ、みんなでバイクに乗ろう\n一人では味わえないツーリングを見つけよう'
+}, {
+  id: '5',
+  title: 'Tamari-Ba作成背景',
+  description: 'バイク乗り達が自分のバイク、好きな道、きつかった道、楽しかった道の駅等を語り合う「たまり場」をイメージして作成。いつも行くあのカフェ、あの道の駅等の集まってダベれる「たまり場」のように好きなスポットについて語り合えるようなサイトです。\nツーリングに行く際に、目的地までの道が重要なのだが道を紹介するサイトが少ない（もしくはバイク乗りなら誰でも知っているような内容しかなかった）という課題から、道やスポットを紹介し、交流できる場が必要だと感じ作成。'
+}];
+var PURPOSE_DATA = [{
+  id: '1',
+  image: _public_images_solo_webp__WEBPACK_IMPORTED_MODULE_2__["default"],
+  kind: 'ソロ',
+  title: 'ツーリングスポットはTamari-Baで!',
+  description: 'Tamari-Baではユーザーお気に入りのツーリングスポットが数々紹介されています。目的地が決まっていないときや目的地周辺で次に行くスポットを探すときなどに便利です。'
+}, {
+  id: '2',
+  image: _public_images_touring_webp__WEBPACK_IMPORTED_MODULE_3__["default"],
+  kind: 'ツーリング',
+  title: 'もちろんツーリングも!',
+  description: '同じ目的地に行くのであれば、Tamari-Baユーザーとツーリングをしてみませんか？ソロやいつもの仲間で走るより、知らないバイクを間近で見ることやバイカー同士で会話をするツーリングは同じ目的地に行くのでも格別です。'
+}, {
+  id: '3',
+  image: _public_images_custom_webp__WEBPACK_IMPORTED_MODULE_4__["default"],
+  kind: 'カスタム',
+  title: 'あなたのバイクはこう変わる',
+  description: 'Tamari-Baユーザーの愛車を見ることができます。そこには今乗っている愛車と同じバイクもあるはずです。まだ手を入れていないあなたの愛車もカスタムをすることでさらに愛着が湧くはずです。'
+}, {
+  id: '4',
+  image: _public_images_communicate_webp__WEBPACK_IMPORTED_MODULE_5__["default"],
+  kind: '交流',
+  title: 'バイカー専用SNS',
+  description: 'Tamari-Baはバイク専用のSNSです。ユーザーの愛車やお気に入りの道の投稿に対してコメントすることができます。投稿へのコメントから一緒にツーリングに行くキッカケがうまれます。積極的にコメントすることでTamari-Baすることができます。'
+}, {
+  id: '5',
+  image: _public_images_other_webp__WEBPACK_IMPORTED_MODULE_6__["default"],
+  kind: 'バイク✕？？',
+  title: 'バイクと組み合わせる',
+  description: 'Tamari-Baではバイクを入り口に、カフェや道の駅、バイクと組み合わせてできる趣味の仲間を見つけることができます。そこではバイクが軸となり広がっていくTamari-Baがあります。バイクをキッカケにキャンプやカメラ、釣りなど相性の良い趣味の幅を広げていきましょう。'
+}, {
+  id: '6',
+  image: _public_images_enjoy_webp__WEBPACK_IMPORTED_MODULE_7__["default"],
+  kind: 'Enjoy',
+  title: '見るだけで楽しい!',
+  description: 'もしまだ愛車がなくても大歓迎!バイクの免許を取りに行こうとしている、次に買うバイクを悩んでいる、ただただバイクを見ることが好きだ!そんな方でも、次のバイクの検討や憧れのバイクを見つけて楽しめます。'
+}];
+
+function Welcome() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      LoadedRoads = _useState2[0],
+      setLoadedRoads = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios.get('/api/welcome').then(function (res) {
+      setLoadedRoads(res.data.data);
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Welcome_Main__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      abouts: ABOUT_DATA,
+      purposes: PURPOSE_DATA,
+      roads: LoadedRoads
+    })
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Welcome);
 
 /***/ }),
 
@@ -10601,8 +19077,35 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*\n! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com\n*//*\n1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)\n*/\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: #e5e7eb; /* 2 */\n}\n\n::before,\n::after {\n  --tw-content: '';\n}\n\n/*\n1. Use a consistent sensible line-height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n3. Use a more readable tab size.\n4. Use the user's configured `sans` font-family by default.\n*/\n\nhtml {\n  line-height: 1.5; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n  -moz-tab-size: 4; /* 3 */\n  -o-tab-size: 4;\n     tab-size: 4; /* 3 */\n  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; /* 4 */\n}\n\n/*\n1. Remove the margin in all browsers.\n2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.\n*/\n\nbody {\n  margin: 0; /* 1 */\n  line-height: inherit; /* 2 */\n}\n\n/*\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n3. Ensure horizontal rules are visible by default.\n*/\n\nhr {\n  height: 0; /* 1 */\n  color: inherit; /* 2 */\n  border-top-width: 1px; /* 3 */\n}\n\n/*\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr:where([title]) {\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n}\n\n/*\nRemove the default font size and weight for headings.\n*/\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/*\nReset links to optimize for opt-in styling instead of opt-out.\n*/\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/*\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/*\n1. Use the user's configured `mono` font family by default.\n2. Correct the odd `em` font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/*\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n  font-size: 80%;\n}\n\n/*\nPrevent `sub` and `sup` elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/*\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n3. Remove gaps between table borders by default.\n*/\n\ntable {\n  text-indent: 0; /* 1 */\n  border-color: inherit; /* 2 */\n  border-collapse: collapse; /* 3 */\n}\n\n/*\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n3. Remove default padding in all browsers.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  line-height: inherit; /* 1 */\n  color: inherit; /* 1 */\n  margin: 0; /* 2 */\n  padding: 0; /* 3 */\n}\n\n/*\nRemove the inheritance of text transform in Edge and Firefox.\n*/\n\nbutton,\nselect {\n  text-transform: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Remove default button styles.\n*/\n\nbutton,\n[type='button'],\n[type='reset'],\n[type='submit'] {\n  -webkit-appearance: button; /* 1 */\n  background-color: transparent; /* 2 */\n  background-image: none; /* 2 */\n}\n\n/*\nUse the modern Firefox focus style for all focusable elements.\n*/\n\n:-moz-focusring {\n  outline: auto;\n}\n\n/*\nRemove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n*/\n\n:-moz-ui-invalid {\n  box-shadow: none;\n}\n\n/*\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n  vertical-align: baseline;\n}\n\n/*\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/*\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type='search'] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/*\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to `inherit` in Safari.\n*/\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n  display: list-item;\n}\n\n/*\nRemoves the default spacing and border for appropriate elements.\n*/\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nlegend {\n  padding: 0;\n}\n\nol,\nul,\nmenu {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/*\nPrevent resizing textareas horizontally by default.\n*/\n\ntextarea {\n  resize: vertical;\n}\n\n/*\n1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n2. Set the default placeholder color to the user's configured gray 400 color.\n*/\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput:-ms-input-placeholder, textarea:-ms-input-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\n/*\nSet the default cursor for buttons.\n*/\n\nbutton,\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n/*\nMake sure disabled buttons don't get the pointer cursor.\n*/\n:disabled {\n  cursor: default;\n}\n\n/*\n1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n   This can trigger a poorly considered lint error in some tools but is included by design.\n*/\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/*\nConstrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n*/\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/*\nEnsure the default browser behavior of the `hidden` attribute.\n*/\n\n[hidden] {\n  display: none;\n}\n\n[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  background-color: #fff;\n  border-color: #6b7280;\n  border-width: 1px;\n  border-radius: 0px;\n  padding-top: 0.5rem;\n  padding-right: 0.75rem;\n  padding-bottom: 0.5rem;\n  padding-left: 0.75rem;\n  font-size: 1rem;\n  line-height: 1.5rem;\n  --tw-shadow: 0 0 #0000;\n}\n\n[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: #2563eb;\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  border-color: #2563eb;\n}\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  color: #6b7280;\n  opacity: 1;\n}\n\ninput:-ms-input-placeholder, textarea:-ms-input-placeholder {\n  color: #6b7280;\n  opacity: 1;\n}\n\ninput::placeholder,textarea::placeholder {\n  color: #6b7280;\n  opacity: 1;\n}\n\n::-webkit-datetime-edit-fields-wrapper {\n  padding: 0;\n}\n\n::-webkit-date-and-time-value {\n  min-height: 1.5em;\n}\n\nselect {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\");\n  background-position: right 0.5rem center;\n  background-repeat: no-repeat;\n  background-size: 1.5em 1.5em;\n  padding-right: 2.5rem;\n  -webkit-print-color-adjust: exact;\n          color-adjust: exact;\n}\n\n[multiple] {\n  background-image: initial;\n  background-position: initial;\n  background-repeat: unset;\n  background-size: initial;\n  padding-right: 0.75rem;\n  -webkit-print-color-adjust: unset;\n          color-adjust: unset;\n}\n\n[type='checkbox'],[type='radio'] {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  padding: 0;\n  -webkit-print-color-adjust: exact;\n          color-adjust: exact;\n  display: inline-block;\n  vertical-align: middle;\n  background-origin: border-box;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  flex-shrink: 0;\n  height: 1rem;\n  width: 1rem;\n  color: #2563eb;\n  background-color: #fff;\n  border-color: #6b7280;\n  border-width: 1px;\n  --tw-shadow: 0 0 #0000;\n}\n\n[type='checkbox'] {\n  border-radius: 0px;\n}\n\n[type='radio'] {\n  border-radius: 100%;\n}\n\n[type='checkbox']:focus,[type='radio']:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n  --tw-ring-offset-width: 2px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: #2563eb;\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n}\n\n[type='checkbox']:checked,[type='radio']:checked {\n  border-color: transparent;\n  background-color: currentColor;\n  background-size: 100% 100%;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n\n[type='checkbox']:checked {\n  background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e\");\n}\n\n[type='radio']:checked {\n  background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n}\n\n[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {\n  border-color: transparent;\n  background-color: currentColor;\n}\n\n[type='checkbox']:indeterminate {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e\");\n  border-color: transparent;\n  background-color: currentColor;\n  background-size: 100% 100%;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n\n[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {\n  border-color: transparent;\n  background-color: currentColor;\n}\n\n[type='file'] {\n  background: unset;\n  border-color: inherit;\n  border-width: 0;\n  border-radius: 0;\n  padding: 0;\n  font-size: unset;\n  line-height: inherit;\n}\n\n[type='file']:focus {\n  outline: 1px auto -webkit-focus-ring-color;\n}\n\n*, ::before, ::after {\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgb(59 130 246 / 0.5);\n  --tw-ring-offset-shadow: 0 0 #0000;\n  --tw-ring-shadow: 0 0 #0000;\n  --tw-shadow: 0 0 #0000;\n  --tw-shadow-colored: 0 0 #0000;\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n.container {\n  width: 100%;\n}\n@media (min-width: 640px) {\n\n  .container {\n    max-width: 640px;\n  }\n}\n@media (min-width: 768px) {\n\n  .container {\n    max-width: 768px;\n  }\n}\n@media (min-width: 1024px) {\n\n  .container {\n    max-width: 1024px;\n  }\n}\n@media (min-width: 1280px) {\n\n  .container {\n    max-width: 1280px;\n  }\n}\n@media (min-width: 1536px) {\n\n  .container {\n    max-width: 1536px;\n  }\n}\n.pointer-events-none {\n  pointer-events: none;\n}\n.fixed {\n  position: fixed;\n}\n.absolute {\n  position: absolute;\n}\n.relative {\n  position: relative;\n}\n.inset-x-0 {\n  left: 0px;\n  right: 0px;\n}\n.top-0 {\n  top: 0px;\n}\n.right-0 {\n  right: 0px;\n}\n.left-0 {\n  left: 0px;\n}\n.bottom-0 {\n  bottom: 0px;\n}\n.left-10 {\n  left: 2.5rem;\n}\n.top-32 {\n  top: 8rem;\n}\n.z-0 {\n  z-index: 0;\n}\n.z-20 {\n  z-index: 20;\n}\n.z-10 {\n  z-index: 10;\n}\n.z-50 {\n  z-index: 50;\n}\n.-m-2 {\n  margin: -0.5rem;\n}\n.-m-4 {\n  margin: -1rem;\n}\n.m-0 {\n  margin: 0px;\n}\n.m-8 {\n  margin: 2rem;\n}\n.mx-auto {\n  margin-left: auto;\n  margin-right: auto;\n}\n.my-2 {\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.my-1 {\n  margin-top: 0.25rem;\n  margin-bottom: 0.25rem;\n}\n.mx-4 {\n  margin-left: 1rem;\n  margin-right: 1rem;\n}\n.my-20 {\n  margin-top: 5rem;\n  margin-bottom: 5rem;\n}\n.my-8 {\n  margin-top: 2rem;\n  margin-bottom: 2rem;\n}\n.my-3 {\n  margin-top: 0.75rem;\n  margin-bottom: 0.75rem;\n}\n.ml-3 {\n  margin-left: 0.75rem;\n}\n.-ml-px {\n  margin-left: -1px;\n}\n.mt-4 {\n  margin-top: 1rem;\n}\n.ml-8 {\n  margin-left: 2rem;\n}\n.ml-16 {\n  margin-left: 4rem;\n}\n.mt-10 {\n  margin-top: 2.5rem;\n}\n.mb-4 {\n  margin-bottom: 1rem;\n}\n.mt-1 {\n  margin-top: 0.25rem;\n}\n.ml-2 {\n  margin-left: 0.5rem;\n}\n.mb-3 {\n  margin-bottom: 0.75rem;\n}\n.mr-2 {\n  margin-right: 0.5rem;\n}\n.mb-2 {\n  margin-bottom: 0.5rem;\n}\n.mb-1 {\n  margin-bottom: 0.25rem;\n}\n.mb-20 {\n  margin-bottom: 5rem;\n}\n.ml-4 {\n  margin-left: 1rem;\n}\n.mr-4 {\n  margin-right: 1rem;\n}\n.mt-6 {\n  margin-top: 1.5rem;\n}\n.ml-1 {\n  margin-left: 0.25rem;\n}\n.-mr-2 {\n  margin-right: -0.5rem;\n}\n.mt-3 {\n  margin-top: 0.75rem;\n}\n.mt-2 {\n  margin-top: 0.5rem;\n}\n.mb-10 {\n  margin-bottom: 2.5rem;\n}\n.mt-8 {\n  margin-top: 2rem;\n}\n.ml-12 {\n  margin-left: 3rem;\n}\n.-mt-px {\n  margin-top: -1px;\n}\n.mb-0 {\n  margin-bottom: 0px;\n}\n.-mb-px {\n  margin-bottom: -1px;\n}\n.mb-6 {\n  margin-bottom: 1.5rem;\n}\n.mt-20 {\n  margin-top: 5rem;\n}\n.mb-40 {\n  margin-bottom: 10rem;\n}\n.mb-8 {\n  margin-bottom: 2rem;\n}\n.mb-12 {\n  margin-bottom: 3rem;\n}\n.block {\n  display: block;\n}\n.inline-block {\n  display: inline-block;\n}\n.flex {\n  display: flex;\n}\n.inline-flex {\n  display: inline-flex;\n}\n.table {\n  display: table;\n}\n.grid {\n  display: grid;\n}\n.hidden {\n  display: none;\n}\n.h-5 {\n  height: 1.25rem;\n}\n.h-20 {\n  height: 5rem;\n}\n.h-80 {\n  height: 20rem;\n}\n.h-full {\n  height: 100%;\n}\n.h-44 {\n  height: 11rem;\n}\n.h-24 {\n  height: 6rem;\n}\n.h-16 {\n  height: 4rem;\n}\n.h-12 {\n  height: 3rem;\n}\n.h-4 {\n  height: 1rem;\n}\n.h-6 {\n  height: 1.5rem;\n}\n.h-10 {\n  height: 2.5rem;\n}\n.h-auto {\n  height: auto;\n}\n.h-14 {\n  height: 3.5rem;\n}\n.h-8 {\n  height: 2rem;\n}\n.h-60 {\n  height: 15rem;\n}\n.h-1 {\n  height: 0.25rem;\n}\n.max-h-52 {\n  max-height: 13rem;\n}\n.min-h-screen {\n  min-height: 100vh;\n}\n.w-5 {\n  width: 1.25rem;\n}\n.w-1\\/4 {\n  width: 25%;\n}\n.w-full {\n  width: 100%;\n}\n.w-20 {\n  width: 5rem;\n}\n.w-1\\/2 {\n  width: 50%;\n}\n.w-32 {\n  width: 8rem;\n}\n.w-4 {\n  width: 1rem;\n}\n.w-6 {\n  width: 1.5rem;\n}\n.w-48 {\n  width: 12rem;\n}\n.w-3\\/4 {\n  width: 75%;\n}\n.w-12 {\n  width: 3rem;\n}\n.w-8 {\n  width: 2rem;\n}\n.w-auto {\n  width: auto;\n}\n.w-1\\/5 {\n  width: 20%;\n}\n.w-16 {\n  width: 4rem;\n}\n.w-28 {\n  width: 7rem;\n}\n.min-w-0 {\n  min-width: 0px;\n}\n.max-w-7xl {\n  max-width: 80rem;\n}\n.max-w-xl {\n  max-width: 36rem;\n}\n.max-w-6xl {\n  max-width: 72rem;\n}\n.max-w-sm {\n  max-width: 24rem;\n}\n.flex-1 {\n  flex: 1 1 0%;\n}\n.flex-auto {\n  flex: 1 1 auto;\n}\n.flex-shrink-0 {\n  flex-shrink: 0;\n}\n.shrink-0 {\n  flex-shrink: 0;\n}\n.table-auto {\n  table-layout: auto;\n}\n.origin-top-left {\n  transform-origin: top left;\n}\n.origin-top {\n  transform-origin: top;\n}\n.origin-top-right {\n  transform-origin: top right;\n}\n.scale-95 {\n  --tw-scale-x: .95;\n  --tw-scale-y: .95;\n  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.scale-100 {\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.transform {\n  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.cursor-default {\n  cursor: default;\n}\n.list-inside {\n  list-style-position: inside;\n}\n.list-none {\n  list-style-type: none;\n}\n.list-disc {\n  list-style-type: disc;\n}\n.grid-cols-1 {\n  grid-template-columns: repeat(1, minmax(0, 1fr));\n}\n.flex-row {\n  flex-direction: row;\n}\n.flex-col {\n  flex-direction: column;\n}\n.flex-wrap {\n  flex-wrap: wrap;\n}\n.items-center {\n  align-items: center;\n}\n.justify-end {\n  justify-content: flex-end;\n}\n.justify-center {\n  justify-content: center;\n}\n.justify-between {\n  justify-content: space-between;\n}\n.justify-around {\n  justify-content: space-around;\n}\n.space-x-8 > :not([hidden]) ~ :not([hidden]) {\n  --tw-space-x-reverse: 0;\n  margin-right: calc(2rem * var(--tw-space-x-reverse));\n  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));\n}\n.space-y-1 > :not([hidden]) ~ :not([hidden]) {\n  --tw-space-y-reverse: 0;\n  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));\n  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));\n}\n.overflow-auto {\n  overflow: auto;\n}\n.overflow-hidden {\n  overflow: hidden;\n}\n.break-words {\n  overflow-wrap: break-word;\n}\n.rounded-md {\n  border-radius: 0.375rem;\n}\n.rounded {\n  border-radius: 0.25rem;\n}\n.rounded-lg {\n  border-radius: 0.5rem;\n}\n.rounded-full {\n  border-radius: 9999px;\n}\n.rounded-l-md {\n  border-top-left-radius: 0.375rem;\n  border-bottom-left-radius: 0.375rem;\n}\n.rounded-r-md {\n  border-top-right-radius: 0.375rem;\n  border-bottom-right-radius: 0.375rem;\n}\n.rounded-tl {\n  border-top-left-radius: 0.25rem;\n}\n.rounded-bl {\n  border-bottom-left-radius: 0.25rem;\n}\n.rounded-tr {\n  border-top-right-radius: 0.25rem;\n}\n.rounded-br {\n  border-bottom-right-radius: 0.25rem;\n}\n.border {\n  border-width: 1px;\n}\n.border-2 {\n  border-width: 2px;\n}\n.border-0 {\n  border-width: 0px;\n}\n.border-4 {\n  border-width: 4px;\n}\n.border-b {\n  border-bottom-width: 1px;\n}\n.border-t {\n  border-top-width: 1px;\n}\n.border-b-2 {\n  border-bottom-width: 2px;\n}\n.border-r {\n  border-right-width: 1px;\n}\n.border-b-4 {\n  border-bottom-width: 4px;\n}\n.border-l-4 {\n  border-left-width: 4px;\n}\n.border-dotted {\n  border-style: dotted;\n}\n.border-none {\n  border-style: none;\n}\n.border-gray-300 {\n  --tw-border-opacity: 1;\n  border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.border-gray-200 {\n  --tw-border-opacity: 1;\n  border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.border-black {\n  --tw-border-opacity: 1;\n  border-color: rgb(0 0 0 / var(--tw-border-opacity));\n}\n.border-gray-100 {\n  --tw-border-opacity: 1;\n  border-color: rgb(243 244 246 / var(--tw-border-opacity));\n}\n.border-blue-500 {\n  --tw-border-opacity: 1;\n  border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.border-transparent {\n  border-color: transparent;\n}\n.border-indigo-100 {\n  --tw-border-opacity: 1;\n  border-color: rgb(224 231 255 / var(--tw-border-opacity));\n}\n.border-gray-400 {\n  --tw-border-opacity: 1;\n  border-color: rgb(156 163 175 / var(--tw-border-opacity));\n}\n.border-indigo-400 {\n  --tw-border-opacity: 1;\n  border-color: rgb(129 140 248 / var(--tw-border-opacity));\n}\n.border-orange-500 {\n  --tw-border-opacity: 1;\n  border-color: rgb(249 115 22 / var(--tw-border-opacity));\n}\n.border-opacity-60 {\n  --tw-border-opacity: 0.6;\n}\n.bg-white {\n  --tw-bg-opacity: 1;\n  background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.bg-blue-300 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(147 197 253 / var(--tw-bg-opacity));\n}\n.bg-red-500 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(239 68 68 / var(--tw-bg-opacity));\n}\n.bg-gray-100 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.bg-gray-200 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(229 231 235 / var(--tw-bg-opacity));\n}\n.bg-indigo-500 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(99 102 241 / var(--tw-bg-opacity));\n}\n.bg-yellow-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(250 204 21 / var(--tw-bg-opacity));\n}\n.bg-red-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(248 113 113 / var(--tw-bg-opacity));\n}\n.bg-orange-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(251 146 60 / var(--tw-bg-opacity));\n}\n.bg-blue-500 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(59 130 246 / var(--tw-bg-opacity));\n}\n.bg-gray-800 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(31 41 55 / var(--tw-bg-opacity));\n}\n.bg-gray-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(156 163 175 / var(--tw-bg-opacity));\n}\n.bg-indigo-900 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(49 46 129 / var(--tw-bg-opacity));\n}\n.bg-gray-600 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(75 85 99 / var(--tw-bg-opacity));\n}\n.bg-orange-300 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(253 186 116 / var(--tw-bg-opacity));\n}\n.bg-indigo-50 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(238 242 255 / var(--tw-bg-opacity));\n}\n.bg-red-300 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(252 165 165 / var(--tw-bg-opacity));\n}\n.bg-transparent {\n  background-color: transparent;\n}\n.bg-indigo-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(129 140 248 / var(--tw-bg-opacity));\n}\n.bg-opacity-50 {\n  --tw-bg-opacity: 0.5;\n}\n.bg-opacity-75 {\n  --tw-bg-opacity: 0.75;\n}\n.bg-cover {\n  background-size: cover;\n}\n.bg-no-repeat {\n  background-repeat: no-repeat;\n}\n.fill-current {\n  fill: currentColor;\n}\n.object-cover {\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.object-center {\n  -o-object-position: center;\n     object-position: center;\n}\n.p-2 {\n  padding: 0.5rem;\n}\n.p-6 {\n  padding: 1.5rem;\n}\n.p-4 {\n  padding: 1rem;\n}\n.p-3 {\n  padding: 0.75rem;\n}\n.p-1 {\n  padding: 0.25rem;\n}\n.p-0 {\n  padding: 0px;\n}\n.px-4 {\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n.py-2 {\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n}\n.px-2 {\n  padding-left: 0.5rem;\n  padding-right: 0.5rem;\n}\n.py-12 {\n  padding-top: 3rem;\n  padding-bottom: 3rem;\n}\n.py-1 {\n  padding-top: 0.25rem;\n  padding-bottom: 0.25rem;\n}\n.px-3 {\n  padding-left: 0.75rem;\n  padding-right: 0.75rem;\n}\n.px-8 {\n  padding-left: 2rem;\n  padding-right: 2rem;\n}\n.px-5 {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.py-8 {\n  padding-top: 2rem;\n  padding-bottom: 2rem;\n}\n.py-4 {\n  padding-top: 1rem;\n  padding-bottom: 1rem;\n}\n.px-6 {\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n}\n.py-3 {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n}\n.py-5 {\n  padding-top: 1.25rem;\n  padding-bottom: 1.25rem;\n}\n.px-1 {\n  padding-left: 0.25rem;\n  padding-right: 0.25rem;\n}\n.px-10 {\n  padding-left: 2.5rem;\n  padding-right: 2.5rem;\n}\n.py-16 {\n  padding-top: 4rem;\n  padding-bottom: 4rem;\n}\n.py-10 {\n  padding-top: 2.5rem;\n  padding-bottom: 2.5rem;\n}\n.pt-2 {\n  padding-top: 0.5rem;\n}\n.pb-3 {\n  padding-bottom: 0.75rem;\n}\n.pt-4 {\n  padding-top: 1rem;\n}\n.pb-1 {\n  padding-bottom: 0.25rem;\n}\n.pt-6 {\n  padding-top: 1.5rem;\n}\n.pt-8 {\n  padding-top: 2rem;\n}\n.pt-3 {\n  padding-top: 0.75rem;\n}\n.pb-4 {\n  padding-bottom: 1rem;\n}\n.pl-2 {\n  padding-left: 0.5rem;\n}\n.pt-1 {\n  padding-top: 0.25rem;\n}\n.pl-3 {\n  padding-left: 0.75rem;\n}\n.pr-4 {\n  padding-right: 1rem;\n}\n.text-left {\n  text-align: left;\n}\n.text-center {\n  text-align: center;\n}\n.text-right {\n  text-align: right;\n}\n.align-baseline {\n  vertical-align: baseline;\n}\n.font-sans {\n  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n}\n.text-sm {\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n}\n.text-xl {\n  font-size: 1.25rem;\n  line-height: 1.75rem;\n}\n.text-base {\n  font-size: 1rem;\n  line-height: 1.5rem;\n}\n.text-lg {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n.text-xs {\n  font-size: 0.75rem;\n  line-height: 1rem;\n}\n.text-3xl {\n  font-size: 1.875rem;\n  line-height: 2.25rem;\n}\n.text-2xl {\n  font-size: 1.5rem;\n  line-height: 2rem;\n}\n.text-5xl {\n  font-size: 3rem;\n  line-height: 1;\n}\n.font-medium {\n  font-weight: 500;\n}\n.font-bold {\n  font-weight: 700;\n}\n.font-normal {\n  font-weight: 400;\n}\n.font-semibold {\n  font-weight: 600;\n}\n.font-light {\n  font-weight: 300;\n}\n.font-black {\n  font-weight: 900;\n}\n.uppercase {\n  text-transform: uppercase;\n}\n.leading-5 {\n  line-height: 1.25rem;\n}\n.leading-7 {\n  line-height: 1.75rem;\n}\n.leading-8 {\n  line-height: 2rem;\n}\n.leading-relaxed {\n  line-height: 1.625;\n}\n.leading-normal {\n  line-height: 1.5;\n}\n.leading-tight {\n  line-height: 1.25;\n}\n.tracking-widest {\n  letter-spacing: 0.1em;\n}\n.tracking-wider {\n  letter-spacing: 0.05em;\n}\n.tracking-wide {\n  letter-spacing: 0.025em;\n}\n.text-gray-500 {\n  --tw-text-opacity: 1;\n  color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.text-gray-700 {\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.text-white {\n  --tw-text-opacity: 1;\n  color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.text-gray-600 {\n  --tw-text-opacity: 1;\n  color: rgb(75 85 99 / var(--tw-text-opacity));\n}\n.text-indigo-600 {\n  --tw-text-opacity: 1;\n  color: rgb(79 70 229 / var(--tw-text-opacity));\n}\n.text-gray-900 {\n  --tw-text-opacity: 1;\n  color: rgb(17 24 39 / var(--tw-text-opacity));\n}\n.text-black {\n  --tw-text-opacity: 1;\n  color: rgb(0 0 0 / var(--tw-text-opacity));\n}\n.text-green-600 {\n  --tw-text-opacity: 1;\n  color: rgb(22 163 74 / var(--tw-text-opacity));\n}\n.text-gray-400 {\n  --tw-text-opacity: 1;\n  color: rgb(156 163 175 / var(--tw-text-opacity));\n}\n.text-gray-800 {\n  --tw-text-opacity: 1;\n  color: rgb(31 41 55 / var(--tw-text-opacity));\n}\n.text-red-600 {\n  --tw-text-opacity: 1;\n  color: rgb(220 38 38 / var(--tw-text-opacity));\n}\n.text-gray-200 {\n  --tw-text-opacity: 1;\n  color: rgb(229 231 235 / var(--tw-text-opacity));\n}\n.text-gray-300 {\n  --tw-text-opacity: 1;\n  color: rgb(209 213 219 / var(--tw-text-opacity));\n}\n.text-indigo-900 {\n  --tw-text-opacity: 1;\n  color: rgb(49 46 129 / var(--tw-text-opacity));\n}\n.text-indigo-700 {\n  --tw-text-opacity: 1;\n  color: rgb(67 56 202 / var(--tw-text-opacity));\n}\n.underline {\n  -webkit-text-decoration-line: underline;\n          text-decoration-line: underline;\n}\n.antialiased {\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.opacity-0 {\n  opacity: 0;\n}\n.opacity-100 {\n  opacity: 1;\n}\n.shadow-sm {\n  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);\n  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow-md {\n  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);\n  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow-lg {\n  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\n  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow {\n  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);\n  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.outline-none {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n.outline {\n  outline-style: solid;\n}\n.ring-1 {\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.ring-gray-300 {\n  --tw-ring-opacity: 1;\n  --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));\n}\n.ring-black {\n  --tw-ring-opacity: 1;\n  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));\n}\n.ring-opacity-5 {\n  --tw-ring-opacity: 0.05;\n}\n.transition {\n  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.transition-colors {\n  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.duration-150 {\n  transition-duration: 150ms;\n}\n.duration-200 {\n  transition-duration: 200ms;\n}\n.duration-75 {\n  transition-duration: 75ms;\n}\n.ease-in-out {\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n}\n.ease-out {\n  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);\n}\n.ease-in {\n  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);\n}\n.last\\:mr-0:last-child {\n  margin-right: 0px;\n}\n.hover\\:border-gray-300:hover {\n  --tw-border-opacity: 1;\n  border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.hover\\:border-blue-700:hover {\n  --tw-border-opacity: 1;\n  border-color: rgb(29 78 216 / var(--tw-border-opacity));\n}\n.hover\\:bg-gray-400:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(156 163 175 / var(--tw-bg-opacity));\n}\n.hover\\:bg-indigo-600:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(79 70 229 / var(--tw-bg-opacity));\n}\n.hover\\:bg-yellow-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(234 179 8 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(239 68 68 / var(--tw-bg-opacity));\n}\n.hover\\:bg-orange-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(249 115 22 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-100:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.hover\\:bg-blue-700:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(29 78 216 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(107 114 128 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-700:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(55 65 81 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-50:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(249 250 251 / var(--tw-bg-opacity));\n}\n.hover\\:bg-indigo-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(99 102 241 / var(--tw-bg-opacity));\n}\n.hover\\:text-gray-500:hover {\n  --tw-text-opacity: 1;\n  color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-400:hover {\n  --tw-text-opacity: 1;\n  color: rgb(156 163 175 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-900:hover {\n  --tw-text-opacity: 1;\n  color: rgb(17 24 39 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-700:hover {\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-800:hover {\n  --tw-text-opacity: 1;\n  color: rgb(31 41 55 / var(--tw-text-opacity));\n}\n.hover\\:text-white:hover {\n  --tw-text-opacity: 1;\n  color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.focus\\:z-10:focus {\n  z-index: 10;\n}\n.focus\\:border-blue-300:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(147 197 253 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-500:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(99 102 241 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-300:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(165 180 252 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-300:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-900:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(17 24 39 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-700:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(67 56 202 / var(--tw-border-opacity));\n}\n.focus\\:bg-white:focus {\n  --tw-bg-opacity: 1;\n  background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.focus\\:bg-gray-100:focus {\n  --tw-bg-opacity: 1;\n  background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.focus\\:bg-indigo-100:focus {\n  --tw-bg-opacity: 1;\n  background-color: rgb(224 231 255 / var(--tw-bg-opacity));\n}\n.focus\\:bg-gray-50:focus {\n  --tw-bg-opacity: 1;\n  background-color: rgb(249 250 251 / var(--tw-bg-opacity));\n}\n.focus\\:text-gray-700:focus {\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.focus\\:text-gray-500:focus {\n  --tw-text-opacity: 1;\n  color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.focus\\:text-indigo-800:focus {\n  --tw-text-opacity: 1;\n  color: rgb(55 48 163 / var(--tw-text-opacity));\n}\n.focus\\:text-gray-800:focus {\n  --tw-text-opacity: 1;\n  color: rgb(31 41 55 / var(--tw-text-opacity));\n}\n.focus\\:outline-none:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n.focus\\:ring:focus {\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-2:focus {\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-indigo-200:focus {\n  --tw-ring-opacity: 1;\n  --tw-ring-color: rgb(199 210 254 / var(--tw-ring-opacity));\n}\n.focus\\:ring-opacity-50:focus {\n  --tw-ring-opacity: 0.5;\n}\n.active\\:bg-gray-100:active {\n  --tw-bg-opacity: 1;\n  background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.active\\:bg-gray-900:active {\n  --tw-bg-opacity: 1;\n  background-color: rgb(17 24 39 / var(--tw-bg-opacity));\n}\n.active\\:text-gray-700:active {\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.active\\:text-gray-500:active {\n  --tw-text-opacity: 1;\n  color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.disabled\\:opacity-25:disabled {\n  opacity: 0.25;\n}\n@media (prefers-color-scheme: dark) {\n\n  .dark\\:border-gray-700 {\n    --tw-border-opacity: 1;\n    border-color: rgb(55 65 81 / var(--tw-border-opacity));\n  }\n\n  .dark\\:bg-gray-900 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(17 24 39 / var(--tw-bg-opacity));\n  }\n\n  .dark\\:bg-gray-800 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(31 41 55 / var(--tw-bg-opacity));\n  }\n\n  .dark\\:text-gray-500 {\n    --tw-text-opacity: 1;\n    color: rgb(107 114 128 / var(--tw-text-opacity));\n  }\n\n  .dark\\:text-white {\n    --tw-text-opacity: 1;\n    color: rgb(255 255 255 / var(--tw-text-opacity));\n  }\n\n  .dark\\:text-gray-400 {\n    --tw-text-opacity: 1;\n    color: rgb(156 163 175 / var(--tw-text-opacity));\n  }\n}\n@media (min-width: 640px) {\n\n  .sm\\:-my-px {\n    margin-top: -1px;\n    margin-bottom: -1px;\n  }\n\n  .sm\\:mr-4 {\n    margin-right: 1rem;\n  }\n\n  .sm\\:ml-10 {\n    margin-left: 2.5rem;\n  }\n\n  .sm\\:ml-6 {\n    margin-left: 1.5rem;\n  }\n\n  .sm\\:ml-0 {\n    margin-left: 0px;\n  }\n\n  .sm\\:block {\n    display: block;\n  }\n\n  .sm\\:flex {\n    display: flex;\n  }\n\n  .sm\\:hidden {\n    display: none;\n  }\n\n  .sm\\:h-screen {\n    height: 100vh;\n  }\n\n  .sm\\:h-20 {\n    height: 5rem;\n  }\n\n  .sm\\:max-h-80 {\n    max-height: 20rem;\n  }\n\n  .sm\\:w-full {\n    width: 100%;\n  }\n\n  .sm\\:w-1\\/2 {\n    width: 50%;\n  }\n\n  .sm\\:max-w-md {\n    max-width: 28rem;\n  }\n\n  .sm\\:flex-1 {\n    flex: 1 1 0%;\n  }\n\n  .sm\\:items-center {\n    align-items: center;\n  }\n\n  .sm\\:justify-start {\n    justify-content: flex-start;\n  }\n\n  .sm\\:justify-center {\n    justify-content: center;\n  }\n\n  .sm\\:justify-between {\n    justify-content: space-between;\n  }\n\n  .sm\\:rounded-lg {\n    border-radius: 0.5rem;\n  }\n\n  .sm\\:px-6 {\n    padding-left: 1.5rem;\n    padding-right: 1.5rem;\n  }\n\n  .sm\\:py-10 {\n    padding-top: 2.5rem;\n    padding-bottom: 2.5rem;\n  }\n\n  .sm\\:pt-2 {\n    padding-top: 0.5rem;\n  }\n\n  .sm\\:pt-20 {\n    padding-top: 5rem;\n  }\n\n  .sm\\:pt-0 {\n    padding-top: 0px;\n  }\n\n  .sm\\:text-left {\n    text-align: left;\n  }\n\n  .sm\\:text-right {\n    text-align: right;\n  }\n\n  .sm\\:text-3xl {\n    font-size: 1.875rem;\n    line-height: 2.25rem;\n  }\n}\n@media (min-width: 768px) {\n\n  .md\\:my-6 {\n    margin-top: 1.5rem;\n    margin-bottom: 1.5rem;\n  }\n\n  .md\\:block {\n    display: block;\n  }\n\n  .md\\:flex {\n    display: flex;\n  }\n\n  .md\\:h-14 {\n    height: 3.5rem;\n  }\n\n  .md\\:min-h-screen {\n    min-height: 100vh;\n  }\n\n  .md\\:w-1\\/3 {\n    width: 33.333333%;\n  }\n\n  .md\\:w-full {\n    width: 100%;\n  }\n\n  .md\\:w-1\\/2 {\n    width: 50%;\n  }\n\n  .md\\:w-2\\/3 {\n    width: 66.666667%;\n  }\n\n  .md\\:grid-cols-2 {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  .md\\:border-t-0 {\n    border-top-width: 0px;\n  }\n\n  .md\\:border-l {\n    border-left-width: 1px;\n  }\n\n  .md\\:p-6 {\n    padding: 1.5rem;\n  }\n\n  .md\\:px-5 {\n    padding-left: 1.25rem;\n    padding-right: 1.25rem;\n  }\n\n  .md\\:px-4 {\n    padding-left: 1rem;\n    padding-right: 1rem;\n  }\n\n  .md\\:pb-0 {\n    padding-bottom: 0px;\n  }\n\n  .md\\:text-3xl {\n    font-size: 1.875rem;\n    line-height: 2.25rem;\n  }\n}\n@media (min-width: 1024px) {\n\n  .lg\\:top-72 {\n    top: 18rem;\n  }\n\n  .lg\\:mt-10 {\n    margin-top: 2.5rem;\n  }\n\n  .lg\\:mt-20 {\n    margin-top: 5rem;\n  }\n\n  .lg\\:block {\n    display: block;\n  }\n\n  .lg\\:flex {\n    display: flex;\n  }\n\n  .lg\\:h-14 {\n    height: 3.5rem;\n  }\n\n  .lg\\:w-1\\/2 {\n    width: 50%;\n  }\n\n  .lg\\:w-1\\/3 {\n    width: 33.333333%;\n  }\n\n  @media (min-width: 1024px) {\n\n    .lg\\:lg\\:w-1\\/2 {\n      width: 50%;\n    }\n  }\n\n  .lg\\:w-2\\/3 {\n    width: 66.666667%;\n  }\n\n  .lg\\:flex-row-reverse {\n    flex-direction: row-reverse;\n  }\n\n  .lg\\:px-8 {\n    padding-left: 2rem;\n    padding-right: 2rem;\n  }\n\n  .lg\\:px-5 {\n    padding-left: 1.25rem;\n    padding-right: 1.25rem;\n  }\n\n  .lg\\:text-6xl {\n    font-size: 3.75rem;\n    line-height: 1;\n  }\n\n  .lg\\:text-4xl {\n    font-size: 2.25rem;\n    line-height: 2.5rem;\n  }\n\n  .lg\\:text-5xl {\n    font-size: 3rem;\n    line-height: 1;\n  }\n}\n@media (min-width: 1280px) {\n\n  .xl\\:w-3\\/4 {\n    width: 75%;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*\n! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com\n*//*\n1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)\n*/\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: #e5e7eb; /* 2 */\n}\n\n::before,\n::after {\n  --tw-content: '';\n}\n\n/*\n1. Use a consistent sensible line-height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n3. Use a more readable tab size.\n4. Use the user's configured `sans` font-family by default.\n*/\n\nhtml {\n  line-height: 1.5; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n  -moz-tab-size: 4; /* 3 */\n  -o-tab-size: 4;\n     tab-size: 4; /* 3 */\n  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; /* 4 */\n}\n\n/*\n1. Remove the margin in all browsers.\n2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.\n*/\n\nbody {\n  margin: 0; /* 1 */\n  line-height: inherit; /* 2 */\n}\n\n/*\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n3. Ensure horizontal rules are visible by default.\n*/\n\nhr {\n  height: 0; /* 1 */\n  color: inherit; /* 2 */\n  border-top-width: 1px; /* 3 */\n}\n\n/*\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr:where([title]) {\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n}\n\n/*\nRemove the default font size and weight for headings.\n*/\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/*\nReset links to optimize for opt-in styling instead of opt-out.\n*/\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/*\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/*\n1. Use the user's configured `mono` font family by default.\n2. Correct the odd `em` font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/*\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n  font-size: 80%;\n}\n\n/*\nPrevent `sub` and `sup` elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/*\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n3. Remove gaps between table borders by default.\n*/\n\ntable {\n  text-indent: 0; /* 1 */\n  border-color: inherit; /* 2 */\n  border-collapse: collapse; /* 3 */\n}\n\n/*\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n3. Remove default padding in all browsers.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  line-height: inherit; /* 1 */\n  color: inherit; /* 1 */\n  margin: 0; /* 2 */\n  padding: 0; /* 3 */\n}\n\n/*\nRemove the inheritance of text transform in Edge and Firefox.\n*/\n\nbutton,\nselect {\n  text-transform: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Remove default button styles.\n*/\n\nbutton,\n[type='button'],\n[type='reset'],\n[type='submit'] {\n  -webkit-appearance: button; /* 1 */\n  background-color: transparent; /* 2 */\n  background-image: none; /* 2 */\n}\n\n/*\nUse the modern Firefox focus style for all focusable elements.\n*/\n\n:-moz-focusring {\n  outline: auto;\n}\n\n/*\nRemove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n*/\n\n:-moz-ui-invalid {\n  box-shadow: none;\n}\n\n/*\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n  vertical-align: baseline;\n}\n\n/*\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/*\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type='search'] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/*\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to `inherit` in Safari.\n*/\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n  display: list-item;\n}\n\n/*\nRemoves the default spacing and border for appropriate elements.\n*/\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nlegend {\n  padding: 0;\n}\n\nol,\nul,\nmenu {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/*\nPrevent resizing textareas horizontally by default.\n*/\n\ntextarea {\n  resize: vertical;\n}\n\n/*\n1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n2. Set the default placeholder color to the user's configured gray 400 color.\n*/\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput:-ms-input-placeholder, textarea:-ms-input-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\n/*\nSet the default cursor for buttons.\n*/\n\nbutton,\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n/*\nMake sure disabled buttons don't get the pointer cursor.\n*/\n:disabled {\n  cursor: default;\n}\n\n/*\n1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n   This can trigger a poorly considered lint error in some tools but is included by design.\n*/\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/*\nConstrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n*/\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/*\nEnsure the default browser behavior of the `hidden` attribute.\n*/\n\n[hidden] {\n  display: none;\n}\n\n[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  background-color: #fff;\n  border-color: #6b7280;\n  border-width: 1px;\n  border-radius: 0px;\n  padding-top: 0.5rem;\n  padding-right: 0.75rem;\n  padding-bottom: 0.5rem;\n  padding-left: 0.75rem;\n  font-size: 1rem;\n  line-height: 1.5rem;\n  --tw-shadow: 0 0 #0000;\n}\n\n[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: #2563eb;\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  border-color: #2563eb;\n}\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  color: #6b7280;\n  opacity: 1;\n}\n\ninput:-ms-input-placeholder, textarea:-ms-input-placeholder {\n  color: #6b7280;\n  opacity: 1;\n}\n\ninput::placeholder,textarea::placeholder {\n  color: #6b7280;\n  opacity: 1;\n}\n\n::-webkit-datetime-edit-fields-wrapper {\n  padding: 0;\n}\n\n::-webkit-date-and-time-value {\n  min-height: 1.5em;\n}\n\nselect {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\");\n  background-position: right 0.5rem center;\n  background-repeat: no-repeat;\n  background-size: 1.5em 1.5em;\n  padding-right: 2.5rem;\n  -webkit-print-color-adjust: exact;\n          color-adjust: exact;\n}\n\n[multiple] {\n  background-image: initial;\n  background-position: initial;\n  background-repeat: unset;\n  background-size: initial;\n  padding-right: 0.75rem;\n  -webkit-print-color-adjust: unset;\n          color-adjust: unset;\n}\n\n[type='checkbox'],[type='radio'] {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  padding: 0;\n  -webkit-print-color-adjust: exact;\n          color-adjust: exact;\n  display: inline-block;\n  vertical-align: middle;\n  background-origin: border-box;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  flex-shrink: 0;\n  height: 1rem;\n  width: 1rem;\n  color: #2563eb;\n  background-color: #fff;\n  border-color: #6b7280;\n  border-width: 1px;\n  --tw-shadow: 0 0 #0000;\n}\n\n[type='checkbox'] {\n  border-radius: 0px;\n}\n\n[type='radio'] {\n  border-radius: 100%;\n}\n\n[type='checkbox']:focus,[type='radio']:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n  --tw-ring-offset-width: 2px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: #2563eb;\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n}\n\n[type='checkbox']:checked,[type='radio']:checked {\n  border-color: transparent;\n  background-color: currentColor;\n  background-size: 100% 100%;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n\n[type='checkbox']:checked {\n  background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e\");\n}\n\n[type='radio']:checked {\n  background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n}\n\n[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {\n  border-color: transparent;\n  background-color: currentColor;\n}\n\n[type='checkbox']:indeterminate {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e\");\n  border-color: transparent;\n  background-color: currentColor;\n  background-size: 100% 100%;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n\n[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {\n  border-color: transparent;\n  background-color: currentColor;\n}\n\n[type='file'] {\n  background: unset;\n  border-color: inherit;\n  border-width: 0;\n  border-radius: 0;\n  padding: 0;\n  font-size: unset;\n  line-height: inherit;\n}\n\n[type='file']:focus {\n  outline: 1px auto -webkit-focus-ring-color;\n}\n\n*, ::before, ::after {\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgb(59 130 246 / 0.5);\n  --tw-ring-offset-shadow: 0 0 #0000;\n  --tw-ring-shadow: 0 0 #0000;\n  --tw-shadow: 0 0 #0000;\n  --tw-shadow-colored: 0 0 #0000;\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n}\n.container {\n  width: 100%;\n}\n@media (min-width: 640px) {\n\n  .container {\n    max-width: 640px;\n  }\n}\n@media (min-width: 768px) {\n\n  .container {\n    max-width: 768px;\n  }\n}\n@media (min-width: 1024px) {\n\n  .container {\n    max-width: 1024px;\n  }\n}\n@media (min-width: 1280px) {\n\n  .container {\n    max-width: 1280px;\n  }\n}\n@media (min-width: 1536px) {\n\n  .container {\n    max-width: 1536px;\n  }\n}\n.pointer-events-none {\n  pointer-events: none;\n}\n.fixed {\n  position: fixed;\n}\n.absolute {\n  position: absolute;\n}\n.relative {\n  position: relative;\n}\n.inset-x-0 {\n  left: 0px;\n  right: 0px;\n}\n.top-0 {\n  top: 0px;\n}\n.right-0 {\n  right: 0px;\n}\n.left-0 {\n  left: 0px;\n}\n.bottom-0 {\n  bottom: 0px;\n}\n.left-10 {\n  left: 2.5rem;\n}\n.top-32 {\n  top: 8rem;\n}\n.z-0 {\n  z-index: 0;\n}\n.z-20 {\n  z-index: 20;\n}\n.z-10 {\n  z-index: 10;\n}\n.z-50 {\n  z-index: 50;\n}\n.-m-2 {\n  margin: -0.5rem;\n}\n.-m-4 {\n  margin: -1rem;\n}\n.m-0 {\n  margin: 0px;\n}\n.m-8 {\n  margin: 2rem;\n}\n.mx-auto {\n  margin-left: auto;\n  margin-right: auto;\n}\n.my-2 {\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.my-1 {\n  margin-top: 0.25rem;\n  margin-bottom: 0.25rem;\n}\n.mx-4 {\n  margin-left: 1rem;\n  margin-right: 1rem;\n}\n.my-20 {\n  margin-top: 5rem;\n  margin-bottom: 5rem;\n}\n.my-8 {\n  margin-top: 2rem;\n  margin-bottom: 2rem;\n}\n.my-3 {\n  margin-top: 0.75rem;\n  margin-bottom: 0.75rem;\n}\n.ml-3 {\n  margin-left: 0.75rem;\n}\n.-ml-px {\n  margin-left: -1px;\n}\n.mt-4 {\n  margin-top: 1rem;\n}\n.ml-8 {\n  margin-left: 2rem;\n}\n.ml-16 {\n  margin-left: 4rem;\n}\n.mt-10 {\n  margin-top: 2.5rem;\n}\n.mb-4 {\n  margin-bottom: 1rem;\n}\n.mt-1 {\n  margin-top: 0.25rem;\n}\n.ml-2 {\n  margin-left: 0.5rem;\n}\n.mb-3 {\n  margin-bottom: 0.75rem;\n}\n.mr-2 {\n  margin-right: 0.5rem;\n}\n.mb-2 {\n  margin-bottom: 0.5rem;\n}\n.mb-1 {\n  margin-bottom: 0.25rem;\n}\n.mb-20 {\n  margin-bottom: 5rem;\n}\n.ml-4 {\n  margin-left: 1rem;\n}\n.mr-4 {\n  margin-right: 1rem;\n}\n.mt-6 {\n  margin-top: 1.5rem;\n}\n.ml-1 {\n  margin-left: 0.25rem;\n}\n.-mr-2 {\n  margin-right: -0.5rem;\n}\n.mt-3 {\n  margin-top: 0.75rem;\n}\n.mt-2 {\n  margin-top: 0.5rem;\n}\n.mb-0 {\n  margin-bottom: 0px;\n}\n.mb-10 {\n  margin-bottom: 2.5rem;\n}\n.mt-8 {\n  margin-top: 2rem;\n}\n.ml-12 {\n  margin-left: 3rem;\n}\n.-mt-px {\n  margin-top: -1px;\n}\n.-mb-px {\n  margin-bottom: -1px;\n}\n.mb-6 {\n  margin-bottom: 1.5rem;\n}\n.mt-20 {\n  margin-top: 5rem;\n}\n.mb-40 {\n  margin-bottom: 10rem;\n}\n.mb-8 {\n  margin-bottom: 2rem;\n}\n.mb-12 {\n  margin-bottom: 3rem;\n}\n.block {\n  display: block;\n}\n.inline-block {\n  display: inline-block;\n}\n.flex {\n  display: flex;\n}\n.inline-flex {\n  display: inline-flex;\n}\n.table {\n  display: table;\n}\n.grid {\n  display: grid;\n}\n.hidden {\n  display: none;\n}\n.h-5 {\n  height: 1.25rem;\n}\n.h-20 {\n  height: 5rem;\n}\n.h-80 {\n  height: 20rem;\n}\n.h-full {\n  height: 100%;\n}\n.h-44 {\n  height: 11rem;\n}\n.h-24 {\n  height: 6rem;\n}\n.h-16 {\n  height: 4rem;\n}\n.h-12 {\n  height: 3rem;\n}\n.h-4 {\n  height: 1rem;\n}\n.h-6 {\n  height: 1.5rem;\n}\n.h-10 {\n  height: 2.5rem;\n}\n.h-auto {\n  height: auto;\n}\n.h-14 {\n  height: 3.5rem;\n}\n.h-8 {\n  height: 2rem;\n}\n.h-60 {\n  height: 15rem;\n}\n.h-1 {\n  height: 0.25rem;\n}\n.max-h-52 {\n  max-height: 13rem;\n}\n.min-h-screen {\n  min-height: 100vh;\n}\n.w-5 {\n  width: 1.25rem;\n}\n.w-1\\/4 {\n  width: 25%;\n}\n.w-full {\n  width: 100%;\n}\n.w-20 {\n  width: 5rem;\n}\n.w-1\\/2 {\n  width: 50%;\n}\n.w-32 {\n  width: 8rem;\n}\n.w-4 {\n  width: 1rem;\n}\n.w-6 {\n  width: 1.5rem;\n}\n.w-48 {\n  width: 12rem;\n}\n.w-3\\/4 {\n  width: 75%;\n}\n.w-12 {\n  width: 3rem;\n}\n.w-8 {\n  width: 2rem;\n}\n.w-auto {\n  width: auto;\n}\n.w-1\\/5 {\n  width: 20%;\n}\n.w-16 {\n  width: 4rem;\n}\n.w-28 {\n  width: 7rem;\n}\n.w-80 {\n  width: 20rem;\n}\n.min-w-0 {\n  min-width: 0px;\n}\n.max-w-7xl {\n  max-width: 80rem;\n}\n.max-w-xl {\n  max-width: 36rem;\n}\n.max-w-6xl {\n  max-width: 72rem;\n}\n.max-w-sm {\n  max-width: 24rem;\n}\n.flex-1 {\n  flex: 1 1 0%;\n}\n.flex-auto {\n  flex: 1 1 auto;\n}\n.flex-shrink-0 {\n  flex-shrink: 0;\n}\n.shrink-0 {\n  flex-shrink: 0;\n}\n.table-auto {\n  table-layout: auto;\n}\n.origin-top-left {\n  transform-origin: top left;\n}\n.origin-top {\n  transform-origin: top;\n}\n.origin-top-right {\n  transform-origin: top right;\n}\n.scale-95 {\n  --tw-scale-x: .95;\n  --tw-scale-y: .95;\n  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.scale-100 {\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.transform {\n  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.cursor-default {\n  cursor: default;\n}\n.list-inside {\n  list-style-position: inside;\n}\n.list-none {\n  list-style-type: none;\n}\n.list-disc {\n  list-style-type: disc;\n}\n.grid-cols-1 {\n  grid-template-columns: repeat(1, minmax(0, 1fr));\n}\n.flex-row {\n  flex-direction: row;\n}\n.flex-col {\n  flex-direction: column;\n}\n.flex-wrap {\n  flex-wrap: wrap;\n}\n.items-center {\n  align-items: center;\n}\n.justify-end {\n  justify-content: flex-end;\n}\n.justify-center {\n  justify-content: center;\n}\n.justify-between {\n  justify-content: space-between;\n}\n.justify-around {\n  justify-content: space-around;\n}\n.space-x-8 > :not([hidden]) ~ :not([hidden]) {\n  --tw-space-x-reverse: 0;\n  margin-right: calc(2rem * var(--tw-space-x-reverse));\n  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));\n}\n.space-y-1 > :not([hidden]) ~ :not([hidden]) {\n  --tw-space-y-reverse: 0;\n  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));\n  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));\n}\n.overflow-auto {\n  overflow: auto;\n}\n.overflow-hidden {\n  overflow: hidden;\n}\n.break-words {\n  overflow-wrap: break-word;\n}\n.rounded-md {\n  border-radius: 0.375rem;\n}\n.rounded {\n  border-radius: 0.25rem;\n}\n.rounded-lg {\n  border-radius: 0.5rem;\n}\n.rounded-full {\n  border-radius: 9999px;\n}\n.rounded-l-md {\n  border-top-left-radius: 0.375rem;\n  border-bottom-left-radius: 0.375rem;\n}\n.rounded-r-md {\n  border-top-right-radius: 0.375rem;\n  border-bottom-right-radius: 0.375rem;\n}\n.rounded-tl {\n  border-top-left-radius: 0.25rem;\n}\n.rounded-bl {\n  border-bottom-left-radius: 0.25rem;\n}\n.rounded-tr {\n  border-top-right-radius: 0.25rem;\n}\n.rounded-br {\n  border-bottom-right-radius: 0.25rem;\n}\n.border {\n  border-width: 1px;\n}\n.border-2 {\n  border-width: 2px;\n}\n.border-0 {\n  border-width: 0px;\n}\n.border-4 {\n  border-width: 4px;\n}\n.border-b {\n  border-bottom-width: 1px;\n}\n.border-t {\n  border-top-width: 1px;\n}\n.border-b-2 {\n  border-bottom-width: 2px;\n}\n.border-r {\n  border-right-width: 1px;\n}\n.border-b-4 {\n  border-bottom-width: 4px;\n}\n.border-l-4 {\n  border-left-width: 4px;\n}\n.border-dotted {\n  border-style: dotted;\n}\n.border-none {\n  border-style: none;\n}\n.border-gray-300 {\n  --tw-border-opacity: 1;\n  border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.border-gray-200 {\n  --tw-border-opacity: 1;\n  border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.border-black {\n  --tw-border-opacity: 1;\n  border-color: rgb(0 0 0 / var(--tw-border-opacity));\n}\n.border-gray-100 {\n  --tw-border-opacity: 1;\n  border-color: rgb(243 244 246 / var(--tw-border-opacity));\n}\n.border-blue-500 {\n  --tw-border-opacity: 1;\n  border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.border-transparent {\n  border-color: transparent;\n}\n.border-indigo-100 {\n  --tw-border-opacity: 1;\n  border-color: rgb(224 231 255 / var(--tw-border-opacity));\n}\n.border-gray-400 {\n  --tw-border-opacity: 1;\n  border-color: rgb(156 163 175 / var(--tw-border-opacity));\n}\n.border-indigo-400 {\n  --tw-border-opacity: 1;\n  border-color: rgb(129 140 248 / var(--tw-border-opacity));\n}\n.border-orange-500 {\n  --tw-border-opacity: 1;\n  border-color: rgb(249 115 22 / var(--tw-border-opacity));\n}\n.border-opacity-60 {\n  --tw-border-opacity: 0.6;\n}\n.bg-white {\n  --tw-bg-opacity: 1;\n  background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.bg-blue-300 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(147 197 253 / var(--tw-bg-opacity));\n}\n.bg-red-500 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(239 68 68 / var(--tw-bg-opacity));\n}\n.bg-gray-100 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.bg-gray-200 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(229 231 235 / var(--tw-bg-opacity));\n}\n.bg-indigo-500 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(99 102 241 / var(--tw-bg-opacity));\n}\n.bg-yellow-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(250 204 21 / var(--tw-bg-opacity));\n}\n.bg-red-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(248 113 113 / var(--tw-bg-opacity));\n}\n.bg-orange-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(251 146 60 / var(--tw-bg-opacity));\n}\n.bg-blue-500 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(59 130 246 / var(--tw-bg-opacity));\n}\n.bg-gray-800 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(31 41 55 / var(--tw-bg-opacity));\n}\n.bg-gray-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(156 163 175 / var(--tw-bg-opacity));\n}\n.bg-indigo-900 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(49 46 129 / var(--tw-bg-opacity));\n}\n.bg-gray-600 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(75 85 99 / var(--tw-bg-opacity));\n}\n.bg-orange-300 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(253 186 116 / var(--tw-bg-opacity));\n}\n.bg-indigo-50 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(238 242 255 / var(--tw-bg-opacity));\n}\n.bg-red-300 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(252 165 165 / var(--tw-bg-opacity));\n}\n.bg-transparent {\n  background-color: transparent;\n}\n.bg-indigo-400 {\n  --tw-bg-opacity: 1;\n  background-color: rgb(129 140 248 / var(--tw-bg-opacity));\n}\n.bg-opacity-50 {\n  --tw-bg-opacity: 0.5;\n}\n.bg-opacity-75 {\n  --tw-bg-opacity: 0.75;\n}\n.bg-cover {\n  background-size: cover;\n}\n.bg-no-repeat {\n  background-repeat: no-repeat;\n}\n.fill-current {\n  fill: currentColor;\n}\n.object-cover {\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.object-center {\n  -o-object-position: center;\n     object-position: center;\n}\n.p-2 {\n  padding: 0.5rem;\n}\n.p-6 {\n  padding: 1.5rem;\n}\n.p-4 {\n  padding: 1rem;\n}\n.p-3 {\n  padding: 0.75rem;\n}\n.p-1 {\n  padding: 0.25rem;\n}\n.p-0 {\n  padding: 0px;\n}\n.px-4 {\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n.py-2 {\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n}\n.px-2 {\n  padding-left: 0.5rem;\n  padding-right: 0.5rem;\n}\n.py-12 {\n  padding-top: 3rem;\n  padding-bottom: 3rem;\n}\n.py-1 {\n  padding-top: 0.25rem;\n  padding-bottom: 0.25rem;\n}\n.px-3 {\n  padding-left: 0.75rem;\n  padding-right: 0.75rem;\n}\n.px-8 {\n  padding-left: 2rem;\n  padding-right: 2rem;\n}\n.px-5 {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.py-8 {\n  padding-top: 2rem;\n  padding-bottom: 2rem;\n}\n.py-4 {\n  padding-top: 1rem;\n  padding-bottom: 1rem;\n}\n.px-6 {\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n}\n.py-3 {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n}\n.py-5 {\n  padding-top: 1.25rem;\n  padding-bottom: 1.25rem;\n}\n.px-1 {\n  padding-left: 0.25rem;\n  padding-right: 0.25rem;\n}\n.px-10 {\n  padding-left: 2.5rem;\n  padding-right: 2.5rem;\n}\n.py-16 {\n  padding-top: 4rem;\n  padding-bottom: 4rem;\n}\n.py-10 {\n  padding-top: 2.5rem;\n  padding-bottom: 2.5rem;\n}\n.pt-2 {\n  padding-top: 0.5rem;\n}\n.pb-3 {\n  padding-bottom: 0.75rem;\n}\n.pt-4 {\n  padding-top: 1rem;\n}\n.pb-1 {\n  padding-bottom: 0.25rem;\n}\n.pt-6 {\n  padding-top: 1.5rem;\n}\n.pt-8 {\n  padding-top: 2rem;\n}\n.pt-3 {\n  padding-top: 0.75rem;\n}\n.pb-4 {\n  padding-bottom: 1rem;\n}\n.pl-2 {\n  padding-left: 0.5rem;\n}\n.pt-1 {\n  padding-top: 0.25rem;\n}\n.pl-3 {\n  padding-left: 0.75rem;\n}\n.pr-4 {\n  padding-right: 1rem;\n}\n.text-left {\n  text-align: left;\n}\n.text-center {\n  text-align: center;\n}\n.text-right {\n  text-align: right;\n}\n.align-baseline {\n  vertical-align: baseline;\n}\n.font-sans {\n  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n}\n.text-sm {\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n}\n.text-xl {\n  font-size: 1.25rem;\n  line-height: 1.75rem;\n}\n.text-base {\n  font-size: 1rem;\n  line-height: 1.5rem;\n}\n.text-lg {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n.text-xs {\n  font-size: 0.75rem;\n  line-height: 1rem;\n}\n.text-3xl {\n  font-size: 1.875rem;\n  line-height: 2.25rem;\n}\n.text-2xl {\n  font-size: 1.5rem;\n  line-height: 2rem;\n}\n.text-5xl {\n  font-size: 3rem;\n  line-height: 1;\n}\n.font-medium {\n  font-weight: 500;\n}\n.font-bold {\n  font-weight: 700;\n}\n.font-normal {\n  font-weight: 400;\n}\n.font-semibold {\n  font-weight: 600;\n}\n.font-light {\n  font-weight: 300;\n}\n.font-black {\n  font-weight: 900;\n}\n.uppercase {\n  text-transform: uppercase;\n}\n.leading-5 {\n  line-height: 1.25rem;\n}\n.leading-7 {\n  line-height: 1.75rem;\n}\n.leading-8 {\n  line-height: 2rem;\n}\n.leading-relaxed {\n  line-height: 1.625;\n}\n.leading-normal {\n  line-height: 1.5;\n}\n.leading-tight {\n  line-height: 1.25;\n}\n.leading-10 {\n  line-height: 2.5rem;\n}\n.tracking-widest {\n  letter-spacing: 0.1em;\n}\n.tracking-wider {\n  letter-spacing: 0.05em;\n}\n.tracking-wide {\n  letter-spacing: 0.025em;\n}\n.text-gray-500 {\n  --tw-text-opacity: 1;\n  color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.text-gray-700 {\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.text-white {\n  --tw-text-opacity: 1;\n  color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.text-gray-600 {\n  --tw-text-opacity: 1;\n  color: rgb(75 85 99 / var(--tw-text-opacity));\n}\n.text-indigo-600 {\n  --tw-text-opacity: 1;\n  color: rgb(79 70 229 / var(--tw-text-opacity));\n}\n.text-gray-900 {\n  --tw-text-opacity: 1;\n  color: rgb(17 24 39 / var(--tw-text-opacity));\n}\n.text-black {\n  --tw-text-opacity: 1;\n  color: rgb(0 0 0 / var(--tw-text-opacity));\n}\n.text-green-600 {\n  --tw-text-opacity: 1;\n  color: rgb(22 163 74 / var(--tw-text-opacity));\n}\n.text-gray-400 {\n  --tw-text-opacity: 1;\n  color: rgb(156 163 175 / var(--tw-text-opacity));\n}\n.text-gray-800 {\n  --tw-text-opacity: 1;\n  color: rgb(31 41 55 / var(--tw-text-opacity));\n}\n.text-red-600 {\n  --tw-text-opacity: 1;\n  color: rgb(220 38 38 / var(--tw-text-opacity));\n}\n.text-gray-200 {\n  --tw-text-opacity: 1;\n  color: rgb(229 231 235 / var(--tw-text-opacity));\n}\n.text-gray-300 {\n  --tw-text-opacity: 1;\n  color: rgb(209 213 219 / var(--tw-text-opacity));\n}\n.text-indigo-900 {\n  --tw-text-opacity: 1;\n  color: rgb(49 46 129 / var(--tw-text-opacity));\n}\n.text-indigo-700 {\n  --tw-text-opacity: 1;\n  color: rgb(67 56 202 / var(--tw-text-opacity));\n}\n.underline {\n  -webkit-text-decoration-line: underline;\n          text-decoration-line: underline;\n}\n.antialiased {\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.opacity-0 {\n  opacity: 0;\n}\n.opacity-100 {\n  opacity: 1;\n}\n.shadow-sm {\n  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);\n  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow-md {\n  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);\n  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow-lg {\n  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\n  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow {\n  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);\n  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);\n  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.outline-none {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n.outline {\n  outline-style: solid;\n}\n.ring-1 {\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.ring-gray-300 {\n  --tw-ring-opacity: 1;\n  --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));\n}\n.ring-black {\n  --tw-ring-opacity: 1;\n  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));\n}\n.ring-opacity-5 {\n  --tw-ring-opacity: 0.05;\n}\n.transition {\n  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.transition-colors {\n  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.duration-150 {\n  transition-duration: 150ms;\n}\n.duration-200 {\n  transition-duration: 200ms;\n}\n.duration-75 {\n  transition-duration: 75ms;\n}\n.ease-in-out {\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n}\n.ease-out {\n  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);\n}\n.ease-in {\n  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);\n}\n\n/* common */\n.icon-color {\n    color: #364f6b;\n}\n\n/* header nav */\n.nav-content {\n  display: inline-flex;\n  align-items: center;\n  border-bottom-width: 2px;\n  border-color: transparent;\n  padding-left: 0.25rem;\n  padding-right: 0.25rem;\n  padding-top: 0.25rem;\n  font-size: 0.875rem;\n  font-weight: 500;\n  line-height: 1.25rem;\n  --tw-text-opacity: 1;\n  color: rgb(107 114 128 / var(--tw-text-opacity));\n  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;\n  transition-duration: 150ms;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n}\n.nav-content:hover {\n  --tw-border-opacity: 1;\n  border-color: rgb(209 213 219 / var(--tw-border-opacity));\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.nav-content:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(209 213 219 / var(--tw-border-opacity));\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n\n.nav-login {\n  margin-right: 1rem;\n  margin-top: 1rem;\n  display: inline-block;\n  font-size: 0.875rem;\n  line-height: .75rem;\n  --tw-text-opacity: 1;\n  color: rgb(0 0 0 / var(--tw-text-opacity));\n  -webkit-text-decoration-line: underline;\n          text-decoration-line: underline;\n}\n\n.nav-signin-button {\n  margin-left: auto;\n  margin-right: auto;\n  display: inline-block;\n  height: 2.5rem;\n  border-radius: 9999px;\n  border-width: 0px;\n  --tw-bg-opacity: 1;\n  background-color: rgb(251 146 60 / var(--tw-bg-opacity));\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n  padding-left: 1rem;\n  padding-right: 1rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  line-height: 1.5rem;\n  --tw-text-opacity: 1;\n  color: rgb(0 0 0 / var(--tw-text-opacity));\n}\n\n.nav-signin-button:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(249 115 22 / var(--tw-bg-opacity));\n}\n\n.nav-signin-button:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n\n/* footer nav */\n.footer-nav-content {\n  --tw-text-opacity: 1;\n  color: rgb(75 85 99 / var(--tw-text-opacity));\n}\n.footer-nav-content:hover {\n  --tw-text-opacity: 1;\n  color: rgb(31 41 55 / var(--tw-text-opacity));\n}\n.last\\:mr-0:last-child {\n  margin-right: 0px;\n}\n.hover\\:border-gray-300:hover {\n  --tw-border-opacity: 1;\n  border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.hover\\:border-blue-700:hover {\n  --tw-border-opacity: 1;\n  border-color: rgb(29 78 216 / var(--tw-border-opacity));\n}\n.hover\\:bg-gray-400:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(156 163 175 / var(--tw-bg-opacity));\n}\n.hover\\:bg-indigo-600:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(79 70 229 / var(--tw-bg-opacity));\n}\n.hover\\:bg-yellow-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(234 179 8 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(239 68 68 / var(--tw-bg-opacity));\n}\n.hover\\:bg-orange-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(249 115 22 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-100:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.hover\\:bg-blue-700:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(29 78 216 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(107 114 128 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-700:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(55 65 81 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-50:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(249 250 251 / var(--tw-bg-opacity));\n}\n.hover\\:bg-indigo-500:hover {\n  --tw-bg-opacity: 1;\n  background-color: rgb(99 102 241 / var(--tw-bg-opacity));\n}\n.hover\\:text-gray-500:hover {\n  --tw-text-opacity: 1;\n  color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-400:hover {\n  --tw-text-opacity: 1;\n  color: rgb(156 163 175 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-900:hover {\n  --tw-text-opacity: 1;\n  color: rgb(17 24 39 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-700:hover {\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-800:hover {\n  --tw-text-opacity: 1;\n  color: rgb(31 41 55 / var(--tw-text-opacity));\n}\n.hover\\:text-white:hover {\n  --tw-text-opacity: 1;\n  color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.focus\\:z-10:focus {\n  z-index: 10;\n}\n.focus\\:border-blue-300:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(147 197 253 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-500:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(99 102 241 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-300:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(165 180 252 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-300:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-900:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(17 24 39 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-700:focus {\n  --tw-border-opacity: 1;\n  border-color: rgb(67 56 202 / var(--tw-border-opacity));\n}\n.focus\\:bg-white:focus {\n  --tw-bg-opacity: 1;\n  background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.focus\\:bg-gray-100:focus {\n  --tw-bg-opacity: 1;\n  background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.focus\\:bg-indigo-100:focus {\n  --tw-bg-opacity: 1;\n  background-color: rgb(224 231 255 / var(--tw-bg-opacity));\n}\n.focus\\:bg-gray-50:focus {\n  --tw-bg-opacity: 1;\n  background-color: rgb(249 250 251 / var(--tw-bg-opacity));\n}\n.focus\\:text-gray-700:focus {\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.focus\\:text-gray-500:focus {\n  --tw-text-opacity: 1;\n  color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.focus\\:text-indigo-800:focus {\n  --tw-text-opacity: 1;\n  color: rgb(55 48 163 / var(--tw-text-opacity));\n}\n.focus\\:text-gray-800:focus {\n  --tw-text-opacity: 1;\n  color: rgb(31 41 55 / var(--tw-text-opacity));\n}\n.focus\\:outline-none:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n.focus\\:ring:focus {\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-2:focus {\n  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-indigo-200:focus {\n  --tw-ring-opacity: 1;\n  --tw-ring-color: rgb(199 210 254 / var(--tw-ring-opacity));\n}\n.focus\\:ring-opacity-50:focus {\n  --tw-ring-opacity: 0.5;\n}\n.active\\:bg-gray-100:active {\n  --tw-bg-opacity: 1;\n  background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.active\\:bg-gray-900:active {\n  --tw-bg-opacity: 1;\n  background-color: rgb(17 24 39 / var(--tw-bg-opacity));\n}\n.active\\:text-gray-700:active {\n  --tw-text-opacity: 1;\n  color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.active\\:text-gray-500:active {\n  --tw-text-opacity: 1;\n  color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.disabled\\:opacity-25:disabled {\n  opacity: 0.25;\n}\n@media (prefers-color-scheme: dark) {\n\n  .dark\\:border-gray-700 {\n    --tw-border-opacity: 1;\n    border-color: rgb(55 65 81 / var(--tw-border-opacity));\n  }\n\n  .dark\\:bg-gray-900 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(17 24 39 / var(--tw-bg-opacity));\n  }\n\n  .dark\\:bg-gray-800 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(31 41 55 / var(--tw-bg-opacity));\n  }\n\n  .dark\\:text-gray-500 {\n    --tw-text-opacity: 1;\n    color: rgb(107 114 128 / var(--tw-text-opacity));\n  }\n\n  .dark\\:text-white {\n    --tw-text-opacity: 1;\n    color: rgb(255 255 255 / var(--tw-text-opacity));\n  }\n\n  .dark\\:text-gray-400 {\n    --tw-text-opacity: 1;\n    color: rgb(156 163 175 / var(--tw-text-opacity));\n  }\n}\n@media (min-width: 640px) {\n\n  .sm\\:-my-px {\n    margin-top: -1px;\n    margin-bottom: -1px;\n  }\n\n  .sm\\:mr-4 {\n    margin-right: 1rem;\n  }\n\n  .sm\\:ml-10 {\n    margin-left: 2.5rem;\n  }\n\n  .sm\\:ml-6 {\n    margin-left: 1.5rem;\n  }\n\n  .sm\\:ml-0 {\n    margin-left: 0px;\n  }\n\n  .sm\\:block {\n    display: block;\n  }\n\n  .sm\\:flex {\n    display: flex;\n  }\n\n  .sm\\:hidden {\n    display: none;\n  }\n\n  .sm\\:h-screen {\n    height: 100vh;\n  }\n\n  .sm\\:h-20 {\n    height: 5rem;\n  }\n\n  .sm\\:max-h-80 {\n    max-height: 20rem;\n  }\n\n  .sm\\:max-h-60 {\n    max-height: 15rem;\n  }\n\n  .sm\\:w-full {\n    width: 100%;\n  }\n\n  .sm\\:w-1\\/2 {\n    width: 50%;\n  }\n\n  .sm\\:max-w-md {\n    max-width: 28rem;\n  }\n\n  .sm\\:flex-1 {\n    flex: 1 1 0%;\n  }\n\n  .sm\\:items-center {\n    align-items: center;\n  }\n\n  .sm\\:justify-start {\n    justify-content: flex-start;\n  }\n\n  .sm\\:justify-center {\n    justify-content: center;\n  }\n\n  .sm\\:justify-between {\n    justify-content: space-between;\n  }\n\n  .sm\\:justify-around {\n    justify-content: space-around;\n  }\n\n  .sm\\:rounded-lg {\n    border-radius: 0.5rem;\n  }\n\n  .sm\\:px-6 {\n    padding-left: 1.5rem;\n    padding-right: 1.5rem;\n  }\n\n  .sm\\:py-10 {\n    padding-top: 2.5rem;\n    padding-bottom: 2.5rem;\n  }\n\n  .sm\\:pt-2 {\n    padding-top: 0.5rem;\n  }\n\n  .sm\\:pt-20 {\n    padding-top: 5rem;\n  }\n\n  .sm\\:pt-0 {\n    padding-top: 0px;\n  }\n\n  .sm\\:pb-2 {\n    padding-bottom: 0.5rem;\n  }\n\n  .sm\\:text-left {\n    text-align: left;\n  }\n\n  .sm\\:text-right {\n    text-align: right;\n  }\n\n  .sm\\:text-3xl {\n    font-size: 1.875rem;\n    line-height: 2.25rem;\n  }\n}\n@media (min-width: 768px) {\n\n  .md\\:my-6 {\n    margin-top: 1.5rem;\n    margin-bottom: 1.5rem;\n  }\n\n  .md\\:block {\n    display: block;\n  }\n\n  .md\\:flex {\n    display: flex;\n  }\n\n  .md\\:h-14 {\n    height: 3.5rem;\n  }\n\n  .md\\:min-h-screen {\n    min-height: 100vh;\n  }\n\n  .md\\:w-1\\/3 {\n    width: 33.333333%;\n  }\n\n  .md\\:w-full {\n    width: 100%;\n  }\n\n  .md\\:w-1\\/2 {\n    width: 50%;\n  }\n\n  .md\\:w-2\\/3 {\n    width: 66.666667%;\n  }\n\n  .md\\:grid-cols-2 {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  .md\\:border-t-0 {\n    border-top-width: 0px;\n  }\n\n  .md\\:border-l {\n    border-left-width: 1px;\n  }\n\n  .md\\:p-6 {\n    padding: 1.5rem;\n  }\n\n  .md\\:px-5 {\n    padding-left: 1.25rem;\n    padding-right: 1.25rem;\n  }\n\n  .md\\:px-4 {\n    padding-left: 1rem;\n    padding-right: 1rem;\n  }\n\n  .md\\:pb-0 {\n    padding-bottom: 0px;\n  }\n\n  .md\\:text-3xl {\n    font-size: 1.875rem;\n    line-height: 2.25rem;\n  }\n}\n@media (min-width: 1024px) {\n\n  .lg\\:top-72 {\n    top: 18rem;\n  }\n\n  .lg\\:mt-10 {\n    margin-top: 2.5rem;\n  }\n\n  .lg\\:mt-20 {\n    margin-top: 5rem;\n  }\n\n  .lg\\:block {\n    display: block;\n  }\n\n  .lg\\:flex {\n    display: flex;\n  }\n\n  .lg\\:h-14 {\n    height: 3.5rem;\n  }\n\n  .lg\\:w-1\\/2 {\n    width: 50%;\n  }\n\n  .lg\\:w-1\\/3 {\n    width: 33.333333%;\n  }\n\n  @media (min-width: 1024px) {\n\n    .lg\\:lg\\:w-1\\/2 {\n      width: 50%;\n    }\n  }\n\n  .lg\\:w-2\\/3 {\n    width: 66.666667%;\n  }\n\n  .lg\\:flex-row-reverse {\n    flex-direction: row-reverse;\n  }\n\n  .lg\\:px-8 {\n    padding-left: 2rem;\n    padding-right: 2rem;\n  }\n\n  .lg\\:px-5 {\n    padding-left: 1.25rem;\n    padding-right: 1.25rem;\n  }\n\n  .lg\\:text-6xl {\n    font-size: 3.75rem;\n    line-height: 1;\n  }\n\n  .lg\\:text-4xl {\n    font-size: 2.25rem;\n    line-height: 2.5rem;\n  }\n\n  .lg\\:text-5xl {\n    font-size: 3rem;\n    line-height: 1;\n  }\n}\n@media (min-width: 1280px) {\n\n  .xl\\:w-3\\/4 {\n    width: 75%;\n  }\n}\n", ""]);
 // Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/v2/js/components/ui/LoadingSpinner.module.css":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/v2/js/components/ui/LoadingSpinner.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".MOUdBZX8lTj3X7bNrpdcGA\\=\\= {\n  display: inline-block;\n  width: 80px;\n  height: 80px;\n}\n.MOUdBZX8lTj3X7bNrpdcGA\\=\\=:after {\n  content: ' ';\n  display: block;\n  width: 64px;\n  height: 64px;\n  margin: 8px;\n  border-radius: 50%;\n  border: 6px solid teal;\n  border-color: teal transparent teal transparent;\n  -webkit-animation: MOUdBZX8lTj3X7bNrpdcGA\\=\\= 1.2s linear infinite;\n          animation: MOUdBZX8lTj3X7bNrpdcGA\\=\\= 1.2s linear infinite;\n}\n@-webkit-keyframes MOUdBZX8lTj3X7bNrpdcGA\\=\\= {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n@keyframes MOUdBZX8lTj3X7bNrpdcGA\\=\\= {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"spinner": "MOUdBZX8lTj3X7bNrpdcGA=="
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
@@ -10681,6 +19184,972 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
+
+/***/ }),
+
+/***/ "./public/images/communicate.webp":
+/*!****************************************!*\
+  !*** ./public/images/communicate.webp ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/communicate.webp?ea63686527abe0010318ebd7adc97b15");
+
+/***/ }),
+
+/***/ "./public/images/custom.webp":
+/*!***********************************!*\
+  !*** ./public/images/custom.webp ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/custom.webp?00dbf102cb3ccbdb79cfcb9c4f9b1be9");
+
+/***/ }),
+
+/***/ "./public/images/enjoy.webp":
+/*!**********************************!*\
+  !*** ./public/images/enjoy.webp ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/enjoy.webp?ef6865677114d04a6c5222ecec73d585");
+
+/***/ }),
+
+/***/ "./public/images/icon.webp":
+/*!*********************************!*\
+  !*** ./public/images/icon.webp ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/icon.webp?48815e90d4840e538548850a0610818b");
+
+/***/ }),
+
+/***/ "./public/images/main_1.webp":
+/*!***********************************!*\
+  !*** ./public/images/main_1.webp ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/main_1.webp?0f719f92f78b63990d1fc6f099566786");
+
+/***/ }),
+
+/***/ "./public/images/main_2.webp":
+/*!***********************************!*\
+  !*** ./public/images/main_2.webp ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/main_2.webp?c80f8b8122713cb997c4c7a17e5dce4d");
+
+/***/ }),
+
+/***/ "./public/images/map.webp":
+/*!********************************!*\
+  !*** ./public/images/map.webp ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/map.webp?4c56661e9bdb0249d7bea2be902936a3");
+
+/***/ }),
+
+/***/ "./public/images/other.webp":
+/*!**********************************!*\
+  !*** ./public/images/other.webp ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/other.webp?051a79241cad2ca7d7f0c6155cf56298");
+
+/***/ }),
+
+/***/ "./public/images/solo.webp":
+/*!*********************************!*\
+  !*** ./public/images/solo.webp ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/solo.webp?747596ed4c423af40358cc0d2af5b233");
+
+/***/ }),
+
+/***/ "./public/images/touring.webp":
+/*!************************************!*\
+  !*** ./public/images/touring.webp ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/touring.webp?638b402eb1bb393ccef382da79e21a43");
+
+/***/ }),
+
+/***/ "./node_modules/history/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/history/index.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Action": () => (/* binding */ Action),
+/* harmony export */   "createBrowserHistory": () => (/* binding */ createBrowserHistory),
+/* harmony export */   "createHashHistory": () => (/* binding */ createHashHistory),
+/* harmony export */   "createMemoryHistory": () => (/* binding */ createMemoryHistory),
+/* harmony export */   "createPath": () => (/* binding */ createPath),
+/* harmony export */   "parsePath": () => (/* binding */ parsePath)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+
+
+/**
+ * Actions represent the type of change to a location value.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#action
+ */
+var Action;
+
+(function (Action) {
+  /**
+   * A POP indicates a change to an arbitrary index in the history stack, such
+   * as a back or forward navigation. It does not describe the direction of the
+   * navigation, only that the current index changed.
+   *
+   * Note: This is the default action for newly created history objects.
+   */
+  Action["Pop"] = "POP";
+  /**
+   * A PUSH indicates a new entry being added to the history stack, such as when
+   * a link is clicked and a new page loads. When this happens, all subsequent
+   * entries in the stack are lost.
+   */
+
+  Action["Push"] = "PUSH";
+  /**
+   * A REPLACE indicates the entry at the current index in the history stack
+   * being replaced by a new one.
+   */
+
+  Action["Replace"] = "REPLACE";
+})(Action || (Action = {}));
+
+var readOnly =  true ? function (obj) {
+  return Object.freeze(obj);
+} : 0;
+
+function warning(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== 'undefined') console.warn(message);
+
+    try {
+      // Welcome to debugging history!
+      //
+      // This error is thrown as a convenience so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message); // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+}
+
+var BeforeUnloadEventType = 'beforeunload';
+var HashChangeEventType = 'hashchange';
+var PopStateEventType = 'popstate';
+/**
+ * Browser history stores the location in regular URLs. This is the standard for
+ * most web apps, but it requires some configuration on the server to ensure you
+ * serve the same app at multiple URLs.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
+ */
+
+function createBrowserHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var _options = options,
+      _options$window = _options.window,
+      window = _options$window === void 0 ? document.defaultView : _options$window;
+  var globalHistory = window.history;
+
+  function getIndexAndLocation() {
+    var _window$location = window.location,
+        pathname = _window$location.pathname,
+        search = _window$location.search,
+        hash = _window$location.hash;
+    var state = globalHistory.state || {};
+    return [state.idx, readOnly({
+      pathname: pathname,
+      search: search,
+      hash: hash,
+      state: state.usr || null,
+      key: state.key || 'default'
+    })];
+  }
+
+  var blockedPopTx = null;
+
+  function handlePop() {
+    if (blockedPopTx) {
+      blockers.call(blockedPopTx);
+      blockedPopTx = null;
+    } else {
+      var nextAction = Action.Pop;
+
+      var _getIndexAndLocation = getIndexAndLocation(),
+          nextIndex = _getIndexAndLocation[0],
+          nextLocation = _getIndexAndLocation[1];
+
+      if (blockers.length) {
+        if (nextIndex != null) {
+          var delta = index - nextIndex;
+
+          if (delta) {
+            // Revert the POP
+            blockedPopTx = {
+              action: nextAction,
+              location: nextLocation,
+              retry: function retry() {
+                go(delta * -1);
+              }
+            };
+            go(delta);
+          }
+        } else {
+          // Trying to POP to a location with no index. We did not create
+          // this location, so we can't effectively block the navigation.
+           true ? warning(false, // TODO: Write up a doc that explains our blocking strategy in
+          // detail and link to it here so people can understand better what
+          // is going on and how to avoid it.
+          "You are trying to block a POP navigation to a location that was not " + "created by the history library. The block will fail silently in " + "production, but in general you should do all navigation with the " + "history library (instead of using window.history.pushState directly) " + "to avoid this situation.") : 0;
+        }
+      } else {
+        applyTx(nextAction);
+      }
+    }
+  }
+
+  window.addEventListener(PopStateEventType, handlePop);
+  var action = Action.Pop;
+
+  var _getIndexAndLocation2 = getIndexAndLocation(),
+      index = _getIndexAndLocation2[0],
+      location = _getIndexAndLocation2[1];
+
+  var listeners = createEvents();
+  var blockers = createEvents();
+
+  if (index == null) {
+    index = 0;
+    globalHistory.replaceState((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, globalHistory.state, {
+      idx: index
+    }), '');
+  }
+
+  function createHref(to) {
+    return typeof to === 'string' ? to : createPath(to);
+  } // state defaults to `null` because `window.history.state` does
+
+
+  function getNextLocation(to, state) {
+    if (state === void 0) {
+      state = null;
+    }
+
+    return readOnly((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      pathname: location.pathname,
+      hash: '',
+      search: ''
+    }, typeof to === 'string' ? parsePath(to) : to, {
+      state: state,
+      key: createKey()
+    }));
+  }
+
+  function getHistoryStateAndUrl(nextLocation, index) {
+    return [{
+      usr: nextLocation.state,
+      key: nextLocation.key,
+      idx: index
+    }, createHref(nextLocation)];
+  }
+
+  function allowTx(action, location, retry) {
+    return !blockers.length || (blockers.call({
+      action: action,
+      location: location,
+      retry: retry
+    }), false);
+  }
+
+  function applyTx(nextAction) {
+    action = nextAction;
+
+    var _getIndexAndLocation3 = getIndexAndLocation();
+
+    index = _getIndexAndLocation3[0];
+    location = _getIndexAndLocation3[1];
+    listeners.call({
+      action: action,
+      location: location
+    });
+  }
+
+  function push(to, state) {
+    var nextAction = Action.Push;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      push(to, state);
+    }
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      var _getHistoryStateAndUr = getHistoryStateAndUrl(nextLocation, index + 1),
+          historyState = _getHistoryStateAndUr[0],
+          url = _getHistoryStateAndUr[1]; // TODO: Support forced reloading
+      // try...catch because iOS limits us to 100 pushState calls :/
+
+
+      try {
+        globalHistory.pushState(historyState, '', url);
+      } catch (error) {
+        // They are going to lose state here, but there is no real
+        // way to warn them about it since the page will refresh...
+        window.location.assign(url);
+      }
+
+      applyTx(nextAction);
+    }
+  }
+
+  function replace(to, state) {
+    var nextAction = Action.Replace;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      replace(to, state);
+    }
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      var _getHistoryStateAndUr2 = getHistoryStateAndUrl(nextLocation, index),
+          historyState = _getHistoryStateAndUr2[0],
+          url = _getHistoryStateAndUr2[1]; // TODO: Support forced reloading
+
+
+      globalHistory.replaceState(historyState, '', url);
+      applyTx(nextAction);
+    }
+  }
+
+  function go(delta) {
+    globalHistory.go(delta);
+  }
+
+  var history = {
+    get action() {
+      return action;
+    },
+
+    get location() {
+      return location;
+    },
+
+    createHref: createHref,
+    push: push,
+    replace: replace,
+    go: go,
+    back: function back() {
+      go(-1);
+    },
+    forward: function forward() {
+      go(1);
+    },
+    listen: function listen(listener) {
+      return listeners.push(listener);
+    },
+    block: function block(blocker) {
+      var unblock = blockers.push(blocker);
+
+      if (blockers.length === 1) {
+        window.addEventListener(BeforeUnloadEventType, promptBeforeUnload);
+      }
+
+      return function () {
+        unblock(); // Remove the beforeunload listener so the document may
+        // still be salvageable in the pagehide event.
+        // See https://html.spec.whatwg.org/#unloading-documents
+
+        if (!blockers.length) {
+          window.removeEventListener(BeforeUnloadEventType, promptBeforeUnload);
+        }
+      };
+    }
+  };
+  return history;
+}
+/**
+ * Hash history stores the location in window.location.hash. This makes it ideal
+ * for situations where you don't want to send the location to the server for
+ * some reason, either because you do cannot configure it or the URL space is
+ * reserved for something else.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
+ */
+
+function createHashHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var _options2 = options,
+      _options2$window = _options2.window,
+      window = _options2$window === void 0 ? document.defaultView : _options2$window;
+  var globalHistory = window.history;
+
+  function getIndexAndLocation() {
+    var _parsePath = parsePath(window.location.hash.substr(1)),
+        _parsePath$pathname = _parsePath.pathname,
+        pathname = _parsePath$pathname === void 0 ? '/' : _parsePath$pathname,
+        _parsePath$search = _parsePath.search,
+        search = _parsePath$search === void 0 ? '' : _parsePath$search,
+        _parsePath$hash = _parsePath.hash,
+        hash = _parsePath$hash === void 0 ? '' : _parsePath$hash;
+
+    var state = globalHistory.state || {};
+    return [state.idx, readOnly({
+      pathname: pathname,
+      search: search,
+      hash: hash,
+      state: state.usr || null,
+      key: state.key || 'default'
+    })];
+  }
+
+  var blockedPopTx = null;
+
+  function handlePop() {
+    if (blockedPopTx) {
+      blockers.call(blockedPopTx);
+      blockedPopTx = null;
+    } else {
+      var nextAction = Action.Pop;
+
+      var _getIndexAndLocation4 = getIndexAndLocation(),
+          nextIndex = _getIndexAndLocation4[0],
+          nextLocation = _getIndexAndLocation4[1];
+
+      if (blockers.length) {
+        if (nextIndex != null) {
+          var delta = index - nextIndex;
+
+          if (delta) {
+            // Revert the POP
+            blockedPopTx = {
+              action: nextAction,
+              location: nextLocation,
+              retry: function retry() {
+                go(delta * -1);
+              }
+            };
+            go(delta);
+          }
+        } else {
+          // Trying to POP to a location with no index. We did not create
+          // this location, so we can't effectively block the navigation.
+           true ? warning(false, // TODO: Write up a doc that explains our blocking strategy in
+          // detail and link to it here so people can understand better
+          // what is going on and how to avoid it.
+          "You are trying to block a POP navigation to a location that was not " + "created by the history library. The block will fail silently in " + "production, but in general you should do all navigation with the " + "history library (instead of using window.history.pushState directly) " + "to avoid this situation.") : 0;
+        }
+      } else {
+        applyTx(nextAction);
+      }
+    }
+  }
+
+  window.addEventListener(PopStateEventType, handlePop); // popstate does not fire on hashchange in IE 11 and old (trident) Edge
+  // https://developer.mozilla.org/de/docs/Web/API/Window/popstate_event
+
+  window.addEventListener(HashChangeEventType, function () {
+    var _getIndexAndLocation5 = getIndexAndLocation(),
+        nextLocation = _getIndexAndLocation5[1]; // Ignore extraneous hashchange events.
+
+
+    if (createPath(nextLocation) !== createPath(location)) {
+      handlePop();
+    }
+  });
+  var action = Action.Pop;
+
+  var _getIndexAndLocation6 = getIndexAndLocation(),
+      index = _getIndexAndLocation6[0],
+      location = _getIndexAndLocation6[1];
+
+  var listeners = createEvents();
+  var blockers = createEvents();
+
+  if (index == null) {
+    index = 0;
+    globalHistory.replaceState((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, globalHistory.state, {
+      idx: index
+    }), '');
+  }
+
+  function getBaseHref() {
+    var base = document.querySelector('base');
+    var href = '';
+
+    if (base && base.getAttribute('href')) {
+      var url = window.location.href;
+      var hashIndex = url.indexOf('#');
+      href = hashIndex === -1 ? url : url.slice(0, hashIndex);
+    }
+
+    return href;
+  }
+
+  function createHref(to) {
+    return getBaseHref() + '#' + (typeof to === 'string' ? to : createPath(to));
+  }
+
+  function getNextLocation(to, state) {
+    if (state === void 0) {
+      state = null;
+    }
+
+    return readOnly((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      pathname: location.pathname,
+      hash: '',
+      search: ''
+    }, typeof to === 'string' ? parsePath(to) : to, {
+      state: state,
+      key: createKey()
+    }));
+  }
+
+  function getHistoryStateAndUrl(nextLocation, index) {
+    return [{
+      usr: nextLocation.state,
+      key: nextLocation.key,
+      idx: index
+    }, createHref(nextLocation)];
+  }
+
+  function allowTx(action, location, retry) {
+    return !blockers.length || (blockers.call({
+      action: action,
+      location: location,
+      retry: retry
+    }), false);
+  }
+
+  function applyTx(nextAction) {
+    action = nextAction;
+
+    var _getIndexAndLocation7 = getIndexAndLocation();
+
+    index = _getIndexAndLocation7[0];
+    location = _getIndexAndLocation7[1];
+    listeners.call({
+      action: action,
+      location: location
+    });
+  }
+
+  function push(to, state) {
+    var nextAction = Action.Push;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      push(to, state);
+    }
+
+     true ? warning(nextLocation.pathname.charAt(0) === '/', "Relative pathnames are not supported in hash history.push(" + JSON.stringify(to) + ")") : 0;
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      var _getHistoryStateAndUr3 = getHistoryStateAndUrl(nextLocation, index + 1),
+          historyState = _getHistoryStateAndUr3[0],
+          url = _getHistoryStateAndUr3[1]; // TODO: Support forced reloading
+      // try...catch because iOS limits us to 100 pushState calls :/
+
+
+      try {
+        globalHistory.pushState(historyState, '', url);
+      } catch (error) {
+        // They are going to lose state here, but there is no real
+        // way to warn them about it since the page will refresh...
+        window.location.assign(url);
+      }
+
+      applyTx(nextAction);
+    }
+  }
+
+  function replace(to, state) {
+    var nextAction = Action.Replace;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      replace(to, state);
+    }
+
+     true ? warning(nextLocation.pathname.charAt(0) === '/', "Relative pathnames are not supported in hash history.replace(" + JSON.stringify(to) + ")") : 0;
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      var _getHistoryStateAndUr4 = getHistoryStateAndUrl(nextLocation, index),
+          historyState = _getHistoryStateAndUr4[0],
+          url = _getHistoryStateAndUr4[1]; // TODO: Support forced reloading
+
+
+      globalHistory.replaceState(historyState, '', url);
+      applyTx(nextAction);
+    }
+  }
+
+  function go(delta) {
+    globalHistory.go(delta);
+  }
+
+  var history = {
+    get action() {
+      return action;
+    },
+
+    get location() {
+      return location;
+    },
+
+    createHref: createHref,
+    push: push,
+    replace: replace,
+    go: go,
+    back: function back() {
+      go(-1);
+    },
+    forward: function forward() {
+      go(1);
+    },
+    listen: function listen(listener) {
+      return listeners.push(listener);
+    },
+    block: function block(blocker) {
+      var unblock = blockers.push(blocker);
+
+      if (blockers.length === 1) {
+        window.addEventListener(BeforeUnloadEventType, promptBeforeUnload);
+      }
+
+      return function () {
+        unblock(); // Remove the beforeunload listener so the document may
+        // still be salvageable in the pagehide event.
+        // See https://html.spec.whatwg.org/#unloading-documents
+
+        if (!blockers.length) {
+          window.removeEventListener(BeforeUnloadEventType, promptBeforeUnload);
+        }
+      };
+    }
+  };
+  return history;
+}
+/**
+ * Memory history stores the current location in memory. It is designed for use
+ * in stateful non-browser environments like tests and React Native.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#creatememoryhistory
+ */
+
+function createMemoryHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var _options3 = options,
+      _options3$initialEntr = _options3.initialEntries,
+      initialEntries = _options3$initialEntr === void 0 ? ['/'] : _options3$initialEntr,
+      initialIndex = _options3.initialIndex;
+  var entries = initialEntries.map(function (entry) {
+    var location = readOnly((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      pathname: '/',
+      search: '',
+      hash: '',
+      state: null,
+      key: createKey()
+    }, typeof entry === 'string' ? parsePath(entry) : entry));
+     true ? warning(location.pathname.charAt(0) === '/', "Relative pathnames are not supported in createMemoryHistory({ initialEntries }) (invalid entry: " + JSON.stringify(entry) + ")") : 0;
+    return location;
+  });
+  var index = clamp(initialIndex == null ? entries.length - 1 : initialIndex, 0, entries.length - 1);
+  var action = Action.Pop;
+  var location = entries[index];
+  var listeners = createEvents();
+  var blockers = createEvents();
+
+  function createHref(to) {
+    return typeof to === 'string' ? to : createPath(to);
+  }
+
+  function getNextLocation(to, state) {
+    if (state === void 0) {
+      state = null;
+    }
+
+    return readOnly((0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      pathname: location.pathname,
+      search: '',
+      hash: ''
+    }, typeof to === 'string' ? parsePath(to) : to, {
+      state: state,
+      key: createKey()
+    }));
+  }
+
+  function allowTx(action, location, retry) {
+    return !blockers.length || (blockers.call({
+      action: action,
+      location: location,
+      retry: retry
+    }), false);
+  }
+
+  function applyTx(nextAction, nextLocation) {
+    action = nextAction;
+    location = nextLocation;
+    listeners.call({
+      action: action,
+      location: location
+    });
+  }
+
+  function push(to, state) {
+    var nextAction = Action.Push;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      push(to, state);
+    }
+
+     true ? warning(location.pathname.charAt(0) === '/', "Relative pathnames are not supported in memory history.push(" + JSON.stringify(to) + ")") : 0;
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      index += 1;
+      entries.splice(index, entries.length, nextLocation);
+      applyTx(nextAction, nextLocation);
+    }
+  }
+
+  function replace(to, state) {
+    var nextAction = Action.Replace;
+    var nextLocation = getNextLocation(to, state);
+
+    function retry() {
+      replace(to, state);
+    }
+
+     true ? warning(location.pathname.charAt(0) === '/', "Relative pathnames are not supported in memory history.replace(" + JSON.stringify(to) + ")") : 0;
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      entries[index] = nextLocation;
+      applyTx(nextAction, nextLocation);
+    }
+  }
+
+  function go(delta) {
+    var nextIndex = clamp(index + delta, 0, entries.length - 1);
+    var nextAction = Action.Pop;
+    var nextLocation = entries[nextIndex];
+
+    function retry() {
+      go(delta);
+    }
+
+    if (allowTx(nextAction, nextLocation, retry)) {
+      index = nextIndex;
+      applyTx(nextAction, nextLocation);
+    }
+  }
+
+  var history = {
+    get index() {
+      return index;
+    },
+
+    get action() {
+      return action;
+    },
+
+    get location() {
+      return location;
+    },
+
+    createHref: createHref,
+    push: push,
+    replace: replace,
+    go: go,
+    back: function back() {
+      go(-1);
+    },
+    forward: function forward() {
+      go(1);
+    },
+    listen: function listen(listener) {
+      return listeners.push(listener);
+    },
+    block: function block(blocker) {
+      return blockers.push(blocker);
+    }
+  };
+  return history;
+} ////////////////////////////////////////////////////////////////////////////////
+// UTILS
+////////////////////////////////////////////////////////////////////////////////
+
+function clamp(n, lowerBound, upperBound) {
+  return Math.min(Math.max(n, lowerBound), upperBound);
+}
+
+function promptBeforeUnload(event) {
+  // Cancel the event.
+  event.preventDefault(); // Chrome (and legacy IE) requires returnValue to be set.
+
+  event.returnValue = '';
+}
+
+function createEvents() {
+  var handlers = [];
+  return {
+    get length() {
+      return handlers.length;
+    },
+
+    push: function push(fn) {
+      handlers.push(fn);
+      return function () {
+        handlers = handlers.filter(function (handler) {
+          return handler !== fn;
+        });
+      };
+    },
+    call: function call(arg) {
+      handlers.forEach(function (fn) {
+        return fn && fn(arg);
+      });
+    }
+  };
+}
+
+function createKey() {
+  return Math.random().toString(36).substr(2, 8);
+}
+/**
+ * Creates a string URL path from the given pathname, search, and hash components.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createpath
+ */
+
+
+function createPath(_ref) {
+  var _ref$pathname = _ref.pathname,
+      pathname = _ref$pathname === void 0 ? '/' : _ref$pathname,
+      _ref$search = _ref.search,
+      search = _ref$search === void 0 ? '' : _ref$search,
+      _ref$hash = _ref.hash,
+      hash = _ref$hash === void 0 ? '' : _ref$hash;
+  if (search && search !== '?') pathname += search.charAt(0) === '?' ? search : '?' + search;
+  if (hash && hash !== '#') pathname += hash.charAt(0) === '#' ? hash : '#' + hash;
+  return pathname;
+}
+/**
+ * Parses a string URL path into its separate pathname, search, and hash components.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#parsepath
+ */
+
+function parsePath(path) {
+  var parsedPath = {};
+
+  if (path) {
+    var hashIndex = path.indexOf('#');
+
+    if (hashIndex >= 0) {
+      parsedPath.hash = path.substr(hashIndex);
+      path = path.substr(0, hashIndex);
+    }
+
+    var searchIndex = path.indexOf('?');
+
+    if (searchIndex >= 0) {
+      parsedPath.search = path.substr(searchIndex);
+      path = path.substr(0, searchIndex);
+    }
+
+    if (path) {
+      parsedPath.pathname = path;
+    }
+  }
+
+  return parsedPath;
+}
+
+
+//# sourceMappingURL=index.js.map
+
 
 /***/ }),
 
@@ -54529,6 +63998,1416 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-router-dom/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-router-dom/index.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "MemoryRouter": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.MemoryRouter),
+/* harmony export */   "Navigate": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Navigate),
+/* harmony export */   "NavigationType": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_2__.Action),
+/* harmony export */   "Outlet": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Outlet),
+/* harmony export */   "Route": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Route),
+/* harmony export */   "Router": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Router),
+/* harmony export */   "Routes": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.Routes),
+/* harmony export */   "UNSAFE_LocationContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.UNSAFE_LocationContext),
+/* harmony export */   "UNSAFE_NavigationContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.UNSAFE_NavigationContext),
+/* harmony export */   "UNSAFE_RouteContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.UNSAFE_RouteContext),
+/* harmony export */   "createPath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_2__.createPath),
+/* harmony export */   "createRoutesFromChildren": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.createRoutesFromChildren),
+/* harmony export */   "generatePath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.generatePath),
+/* harmony export */   "matchPath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.matchPath),
+/* harmony export */   "matchRoutes": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.matchRoutes),
+/* harmony export */   "parsePath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_2__.parsePath),
+/* harmony export */   "renderMatches": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.renderMatches),
+/* harmony export */   "resolvePath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.resolvePath),
+/* harmony export */   "useHref": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useHref),
+/* harmony export */   "useInRouterContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useInRouterContext),
+/* harmony export */   "useLocation": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useLocation),
+/* harmony export */   "useMatch": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useMatch),
+/* harmony export */   "useNavigate": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useNavigate),
+/* harmony export */   "useNavigationType": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useNavigationType),
+/* harmony export */   "useOutlet": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useOutlet),
+/* harmony export */   "useOutletContext": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useOutletContext),
+/* harmony export */   "useParams": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useParams),
+/* harmony export */   "useResolvedPath": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useResolvedPath),
+/* harmony export */   "useRoutes": () => (/* reexport safe */ react_router__WEBPACK_IMPORTED_MODULE_1__.useRoutes),
+/* harmony export */   "BrowserRouter": () => (/* binding */ BrowserRouter),
+/* harmony export */   "HashRouter": () => (/* binding */ HashRouter),
+/* harmony export */   "Link": () => (/* binding */ Link),
+/* harmony export */   "NavLink": () => (/* binding */ NavLink),
+/* harmony export */   "createSearchParams": () => (/* binding */ createSearchParams),
+/* harmony export */   "unstable_HistoryRouter": () => (/* binding */ HistoryRouter),
+/* harmony export */   "useLinkClickHandler": () => (/* binding */ useLinkClickHandler),
+/* harmony export */   "useSearchParams": () => (/* binding */ useSearchParams)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router */ "./node_modules/history/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js");
+/**
+ * React Router DOM v6.3.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+
+
+
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+const _excluded = ["onClick", "reloadDocument", "replace", "state", "target", "to"],
+      _excluded2 = ["aria-current", "caseSensitive", "className", "end", "style", "to", "children"];
+
+function warning(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== "undefined") console.warn(message);
+
+    try {
+      // Welcome to debugging React Router!
+      //
+      // This error is thrown as a convenience so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message); // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+} ////////////////////////////////////////////////////////////////////////////////
+// COMPONENTS
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * A `<Router>` for use in web browsers. Provides the cleanest URLs.
+ */
+function BrowserRouter(_ref) {
+  let {
+    basename,
+    children,
+    window
+  } = _ref;
+  let historyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+
+  if (historyRef.current == null) {
+    historyRef.current = (0,react_router__WEBPACK_IMPORTED_MODULE_2__.createBrowserHistory)({
+      window
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router__WEBPACK_IMPORTED_MODULE_1__.Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * A `<Router>` for use in web browsers. Stores the location in the hash
+ * portion of the URL so it is not sent to the server.
+ */
+function HashRouter(_ref2) {
+  let {
+    basename,
+    children,
+    window
+  } = _ref2;
+  let historyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+
+  if (historyRef.current == null) {
+    historyRef.current = (0,react_router__WEBPACK_IMPORTED_MODULE_2__.createHashHistory)({
+      window
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router__WEBPACK_IMPORTED_MODULE_1__.Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * A `<Router>` that accepts a pre-instantiated history object. It's important
+ * to note that using your own history object is highly discouraged and may add
+ * two versions of the history library to your bundles unless you use the same
+ * version of the history library that React Router uses internally.
+ */
+function HistoryRouter(_ref3) {
+  let {
+    basename,
+    children,
+    history
+  } = _ref3;
+  const [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router__WEBPACK_IMPORTED_MODULE_1__.Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+if (true) {
+  HistoryRouter.displayName = "unstable_HistoryRouter";
+}
+
+function isModifiedEvent(event) {
+  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+}
+
+/**
+ * The public API for rendering a history-aware <a>.
+ */
+const Link = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function LinkWithRef(_ref4, ref) {
+  let {
+    onClick,
+    reloadDocument,
+    replace = false,
+    state,
+    target,
+    to
+  } = _ref4,
+      rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
+
+  let href = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useHref)(to);
+  let internalOnClick = useLinkClickHandler(to, {
+    replace,
+    state,
+    target
+  });
+
+  function handleClick(event) {
+    if (onClick) onClick(event);
+
+    if (!event.defaultPrevented && !reloadDocument) {
+      internalOnClick(event);
+    }
+  }
+
+  return (
+    /*#__PURE__*/
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", _extends({}, rest, {
+      href: href,
+      onClick: handleClick,
+      ref: ref,
+      target: target
+    }))
+  );
+});
+
+if (true) {
+  Link.displayName = "Link";
+}
+
+/**
+ * A <Link> wrapper that knows if it's "active" or not.
+ */
+const NavLink = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function NavLinkWithRef(_ref5, ref) {
+  let {
+    "aria-current": ariaCurrentProp = "page",
+    caseSensitive = false,
+    className: classNameProp = "",
+    end = false,
+    style: styleProp,
+    to,
+    children
+  } = _ref5,
+      rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
+
+  let location = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useLocation)();
+  let path = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useResolvedPath)(to);
+  let locationPathname = location.pathname;
+  let toPathname = path.pathname;
+
+  if (!caseSensitive) {
+    locationPathname = locationPathname.toLowerCase();
+    toPathname = toPathname.toLowerCase();
+  }
+
+  let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(toPathname.length) === "/";
+  let ariaCurrent = isActive ? ariaCurrentProp : undefined;
+  let className;
+
+  if (typeof classNameProp === "function") {
+    className = classNameProp({
+      isActive
+    });
+  } else {
+    // If the className prop is not a function, we use a default `active`
+    // class for <NavLink />s that are active. In v5 `active` was the default
+    // value for `activeClassName`, but we are removing that API and can still
+    // use the old default behavior for a cleaner upgrade path and keep the
+    // simple styling rules working as they currently do.
+    className = [classNameProp, isActive ? "active" : null].filter(Boolean).join(" ");
+  }
+
+  let style = typeof styleProp === "function" ? styleProp({
+    isActive
+  }) : styleProp;
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Link, _extends({}, rest, {
+    "aria-current": ariaCurrent,
+    className: className,
+    ref: ref,
+    style: style,
+    to: to
+  }), typeof children === "function" ? children({
+    isActive
+  }) : children);
+});
+
+if (true) {
+  NavLink.displayName = "NavLink";
+} ////////////////////////////////////////////////////////////////////////////////
+// HOOKS
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Handles the click behavior for router `<Link>` components. This is useful if
+ * you need to create custom `<Link>` components with the same click behavior we
+ * use in our exported `<Link>`.
+ */
+
+
+function useLinkClickHandler(to, _temp) {
+  let {
+    target,
+    replace: replaceProp,
+    state
+  } = _temp === void 0 ? {} : _temp;
+  let navigate = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
+  let location = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useLocation)();
+  let path = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useResolvedPath)(to);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(event => {
+    if (event.button === 0 && ( // Ignore everything but left clicks
+    !target || target === "_self") && // Let browser handle "target=_blank" etc.
+    !isModifiedEvent(event) // Ignore clicks with modifier keys
+    ) {
+      event.preventDefault(); // If the URL hasn't changed, a regular <a> will do a replace instead of
+      // a push, so do the same here.
+
+      let replace = !!replaceProp || (0,react_router__WEBPACK_IMPORTED_MODULE_2__.createPath)(location) === (0,react_router__WEBPACK_IMPORTED_MODULE_2__.createPath)(path);
+      navigate(to, {
+        replace,
+        state
+      });
+    }
+  }, [location, navigate, path, replaceProp, state, target, to]);
+}
+/**
+ * A convenient wrapper for reading and writing search parameters via the
+ * URLSearchParams interface.
+ */
+
+function useSearchParams(defaultInit) {
+   true ? warning(typeof URLSearchParams !== "undefined", "You cannot use the `useSearchParams` hook in a browser that does not " + "support the URLSearchParams API. If you need to support Internet " + "Explorer 11, we recommend you load a polyfill such as " + "https://github.com/ungap/url-search-params\n\n" + "If you're unsure how to load polyfills, we recommend you check out " + "https://polyfill.io/v3/ which provides some recommendations about how " + "to load polyfills only for users that need them, instead of for every " + "user.") : 0;
+  let defaultSearchParamsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(createSearchParams(defaultInit));
+  let location = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useLocation)();
+  let searchParams = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+    let searchParams = createSearchParams(location.search);
+
+    for (let key of defaultSearchParamsRef.current.keys()) {
+      if (!searchParams.has(key)) {
+        defaultSearchParamsRef.current.getAll(key).forEach(value => {
+          searchParams.append(key, value);
+        });
+      }
+    }
+
+    return searchParams;
+  }, [location.search]);
+  let navigate = (0,react_router__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
+  let setSearchParams = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((nextInit, navigateOptions) => {
+    navigate("?" + createSearchParams(nextInit), navigateOptions);
+  }, [navigate]);
+  return [searchParams, setSearchParams];
+}
+
+/**
+ * Creates a URLSearchParams object using the given initializer.
+ *
+ * This is identical to `new URLSearchParams(init)` except it also
+ * supports arrays as values in the object form of the initializer
+ * instead of just strings. This is convenient when you need multiple
+ * values for a given key, but don't want to use an array initializer.
+ *
+ * For example, instead of:
+ *
+ *   let searchParams = new URLSearchParams([
+ *     ['sort', 'name'],
+ *     ['sort', 'price']
+ *   ]);
+ *
+ * you can do:
+ *
+ *   let searchParams = createSearchParams({
+ *     sort: ['name', 'price']
+ *   });
+ */
+function createSearchParams(init) {
+  if (init === void 0) {
+    init = "";
+  }
+
+  return new URLSearchParams(typeof init === "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key) => {
+    let value = init[key];
+    return memo.concat(Array.isArray(value) ? value.map(v => [key, v]) : [[key, value]]);
+  }, []));
+}
+
+
+//# sourceMappingURL=index.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/react-router/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/react-router/index.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NavigationType": () => (/* reexport safe */ history__WEBPACK_IMPORTED_MODULE_0__.Action),
+/* harmony export */   "createPath": () => (/* reexport safe */ history__WEBPACK_IMPORTED_MODULE_0__.createPath),
+/* harmony export */   "parsePath": () => (/* reexport safe */ history__WEBPACK_IMPORTED_MODULE_0__.parsePath),
+/* harmony export */   "MemoryRouter": () => (/* binding */ MemoryRouter),
+/* harmony export */   "Navigate": () => (/* binding */ Navigate),
+/* harmony export */   "Outlet": () => (/* binding */ Outlet),
+/* harmony export */   "Route": () => (/* binding */ Route),
+/* harmony export */   "Router": () => (/* binding */ Router),
+/* harmony export */   "Routes": () => (/* binding */ Routes),
+/* harmony export */   "UNSAFE_LocationContext": () => (/* binding */ LocationContext),
+/* harmony export */   "UNSAFE_NavigationContext": () => (/* binding */ NavigationContext),
+/* harmony export */   "UNSAFE_RouteContext": () => (/* binding */ RouteContext),
+/* harmony export */   "createRoutesFromChildren": () => (/* binding */ createRoutesFromChildren),
+/* harmony export */   "generatePath": () => (/* binding */ generatePath),
+/* harmony export */   "matchPath": () => (/* binding */ matchPath),
+/* harmony export */   "matchRoutes": () => (/* binding */ matchRoutes),
+/* harmony export */   "renderMatches": () => (/* binding */ renderMatches),
+/* harmony export */   "resolvePath": () => (/* binding */ resolvePath),
+/* harmony export */   "useHref": () => (/* binding */ useHref),
+/* harmony export */   "useInRouterContext": () => (/* binding */ useInRouterContext),
+/* harmony export */   "useLocation": () => (/* binding */ useLocation),
+/* harmony export */   "useMatch": () => (/* binding */ useMatch),
+/* harmony export */   "useNavigate": () => (/* binding */ useNavigate),
+/* harmony export */   "useNavigationType": () => (/* binding */ useNavigationType),
+/* harmony export */   "useOutlet": () => (/* binding */ useOutlet),
+/* harmony export */   "useOutletContext": () => (/* binding */ useOutletContext),
+/* harmony export */   "useParams": () => (/* binding */ useParams),
+/* harmony export */   "useResolvedPath": () => (/* binding */ useResolvedPath),
+/* harmony export */   "useRoutes": () => (/* binding */ useRoutes)
+/* harmony export */ });
+/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! history */ "./node_modules/history/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/**
+ * React Router v6.3.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+
+
+
+const NavigationContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)(null);
+
+if (true) {
+  NavigationContext.displayName = "Navigation";
+}
+
+const LocationContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)(null);
+
+if (true) {
+  LocationContext.displayName = "Location";
+}
+
+const RouteContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)({
+  outlet: null,
+  matches: []
+});
+
+if (true) {
+  RouteContext.displayName = "Route";
+}
+
+function invariant(cond, message) {
+  if (!cond) throw new Error(message);
+}
+function warning(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== "undefined") console.warn(message);
+
+    try {
+      // Welcome to debugging React Router!
+      //
+      // This error is thrown as a convenience so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message); // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+}
+const alreadyWarned = {};
+function warningOnce(key, cond, message) {
+  if (!cond && !alreadyWarned[key]) {
+    alreadyWarned[key] = true;
+     true ? warning(false, message) : 0;
+  }
+}
+
+/**
+ * Returns a path with params interpolated.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#generatepath
+ */
+function generatePath(path, params) {
+  if (params === void 0) {
+    params = {};
+  }
+
+  return path.replace(/:(\w+)/g, (_, key) => {
+    !(params[key] != null) ?  true ? invariant(false, "Missing \":" + key + "\" param") : 0 : void 0;
+    return params[key];
+  }).replace(/\/*\*$/, _ => params["*"] == null ? "" : params["*"].replace(/^\/*/, "/"));
+}
+/**
+ * A RouteMatch contains info about how a route matched a URL.
+ */
+
+/**
+ * Matches the given routes to a location and returns the match data.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#matchroutes
+ */
+function matchRoutes(routes, locationArg, basename) {
+  if (basename === void 0) {
+    basename = "/";
+  }
+
+  let location = typeof locationArg === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(locationArg) : locationArg;
+  let pathname = stripBasename(location.pathname || "/", basename);
+
+  if (pathname == null) {
+    return null;
+  }
+
+  let branches = flattenRoutes(routes);
+  rankRouteBranches(branches);
+  let matches = null;
+
+  for (let i = 0; matches == null && i < branches.length; ++i) {
+    matches = matchRouteBranch(branches[i], pathname);
+  }
+
+  return matches;
+}
+
+function flattenRoutes(routes, branches, parentsMeta, parentPath) {
+  if (branches === void 0) {
+    branches = [];
+  }
+
+  if (parentsMeta === void 0) {
+    parentsMeta = [];
+  }
+
+  if (parentPath === void 0) {
+    parentPath = "";
+  }
+
+  routes.forEach((route, index) => {
+    let meta = {
+      relativePath: route.path || "",
+      caseSensitive: route.caseSensitive === true,
+      childrenIndex: index,
+      route
+    };
+
+    if (meta.relativePath.startsWith("/")) {
+      !meta.relativePath.startsWith(parentPath) ?  true ? invariant(false, "Absolute route path \"" + meta.relativePath + "\" nested under path " + ("\"" + parentPath + "\" is not valid. An absolute child route path ") + "must start with the combined path of all its parent routes.") : 0 : void 0;
+      meta.relativePath = meta.relativePath.slice(parentPath.length);
+    }
+
+    let path = joinPaths([parentPath, meta.relativePath]);
+    let routesMeta = parentsMeta.concat(meta); // Add the children before adding this route to the array so we traverse the
+    // route tree depth-first and child routes appear before their parents in
+    // the "flattened" version.
+
+    if (route.children && route.children.length > 0) {
+      !(route.index !== true) ?  true ? invariant(false, "Index routes must not have child routes. Please remove " + ("all child routes from route path \"" + path + "\".")) : 0 : void 0;
+      flattenRoutes(route.children, branches, routesMeta, path);
+    } // Routes without a path shouldn't ever match by themselves unless they are
+    // index routes, so don't add them to the list of possible branches.
+
+
+    if (route.path == null && !route.index) {
+      return;
+    }
+
+    branches.push({
+      path,
+      score: computeScore(path, route.index),
+      routesMeta
+    });
+  });
+  return branches;
+}
+
+function rankRouteBranches(branches) {
+  branches.sort((a, b) => a.score !== b.score ? b.score - a.score // Higher score first
+  : compareIndexes(a.routesMeta.map(meta => meta.childrenIndex), b.routesMeta.map(meta => meta.childrenIndex)));
+}
+
+const paramRe = /^:\w+$/;
+const dynamicSegmentValue = 3;
+const indexRouteValue = 2;
+const emptySegmentValue = 1;
+const staticSegmentValue = 10;
+const splatPenalty = -2;
+
+const isSplat = s => s === "*";
+
+function computeScore(path, index) {
+  let segments = path.split("/");
+  let initialScore = segments.length;
+
+  if (segments.some(isSplat)) {
+    initialScore += splatPenalty;
+  }
+
+  if (index) {
+    initialScore += indexRouteValue;
+  }
+
+  return segments.filter(s => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+}
+
+function compareIndexes(a, b) {
+  let siblings = a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]);
+  return siblings ? // If two routes are siblings, we should try to match the earlier sibling
+  // first. This allows people to have fine-grained control over the matching
+  // behavior by simply putting routes with identical paths in the order they
+  // want them tried.
+  a[a.length - 1] - b[b.length - 1] : // Otherwise, it doesn't really make sense to rank non-siblings by index,
+  // so they sort equally.
+  0;
+}
+
+function matchRouteBranch(branch, pathname) {
+  let {
+    routesMeta
+  } = branch;
+  let matchedParams = {};
+  let matchedPathname = "/";
+  let matches = [];
+
+  for (let i = 0; i < routesMeta.length; ++i) {
+    let meta = routesMeta[i];
+    let end = i === routesMeta.length - 1;
+    let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
+    let match = matchPath({
+      path: meta.relativePath,
+      caseSensitive: meta.caseSensitive,
+      end
+    }, remainingPathname);
+    if (!match) return null;
+    Object.assign(matchedParams, match.params);
+    let route = meta.route;
+    matches.push({
+      params: matchedParams,
+      pathname: joinPaths([matchedPathname, match.pathname]),
+      pathnameBase: normalizePathname(joinPaths([matchedPathname, match.pathnameBase])),
+      route
+    });
+
+    if (match.pathnameBase !== "/") {
+      matchedPathname = joinPaths([matchedPathname, match.pathnameBase]);
+    }
+  }
+
+  return matches;
+}
+/**
+ * A PathPattern is used to match on some portion of a URL pathname.
+ */
+
+
+/**
+ * Performs pattern matching on a URL pathname and returns information about
+ * the match.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#matchpath
+ */
+function matchPath(pattern, pathname) {
+  if (typeof pattern === "string") {
+    pattern = {
+      path: pattern,
+      caseSensitive: false,
+      end: true
+    };
+  }
+
+  let [matcher, paramNames] = compilePath(pattern.path, pattern.caseSensitive, pattern.end);
+  let match = pathname.match(matcher);
+  if (!match) return null;
+  let matchedPathname = match[0];
+  let pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1");
+  let captureGroups = match.slice(1);
+  let params = paramNames.reduce((memo, paramName, index) => {
+    // We need to compute the pathnameBase here using the raw splat value
+    // instead of using params["*"] later because it will be decoded then
+    if (paramName === "*") {
+      let splatValue = captureGroups[index] || "";
+      pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
+    }
+
+    memo[paramName] = safelyDecodeURIComponent(captureGroups[index] || "", paramName);
+    return memo;
+  }, {});
+  return {
+    params,
+    pathname: matchedPathname,
+    pathnameBase,
+    pattern
+  };
+}
+
+function compilePath(path, caseSensitive, end) {
+  if (caseSensitive === void 0) {
+    caseSensitive = false;
+  }
+
+  if (end === void 0) {
+    end = true;
+  }
+
+   true ? warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), "Route path \"" + path + "\" will be treated as if it were " + ("\"" + path.replace(/\*$/, "/*") + "\" because the `*` character must ") + "always follow a `/` in the pattern. To get rid of this warning, " + ("please change the route path to \"" + path.replace(/\*$/, "/*") + "\".")) : 0;
+  let paramNames = [];
+  let regexpSource = "^" + path.replace(/\/*\*?$/, "") // Ignore trailing / and /*, we'll handle it below
+  .replace(/^\/*/, "/") // Make sure it has a leading /
+  .replace(/[\\.*+^$?{}|()[\]]/g, "\\$&") // Escape special regex chars
+  .replace(/:(\w+)/g, (_, paramName) => {
+    paramNames.push(paramName);
+    return "([^\\/]+)";
+  });
+
+  if (path.endsWith("*")) {
+    paramNames.push("*");
+    regexpSource += path === "*" || path === "/*" ? "(.*)$" // Already matched the initial /, just match the rest
+    : "(?:\\/(.+)|\\/*)$"; // Don't include the / in params["*"]
+  } else {
+    regexpSource += end ? "\\/*$" // When matching to the end, ignore trailing slashes
+    : // Otherwise, match a word boundary or a proceeding /. The word boundary restricts
+    // parent routes to matching only their own words and nothing more, e.g. parent
+    // route "/home" should not match "/home2".
+    // Additionally, allow paths starting with `.`, `-`, `~`, and url-encoded entities,
+    // but do not consume the character in the matched path so they can match against
+    // nested paths.
+    "(?:(?=[.~-]|%[0-9A-F]{2})|\\b|\\/|$)";
+  }
+
+  let matcher = new RegExp(regexpSource, caseSensitive ? undefined : "i");
+  return [matcher, paramNames];
+}
+
+function safelyDecodeURIComponent(value, paramName) {
+  try {
+    return decodeURIComponent(value);
+  } catch (error) {
+     true ? warning(false, "The value for the URL param \"" + paramName + "\" will not be decoded because" + (" the string \"" + value + "\" is a malformed URL segment. This is probably") + (" due to a bad percent encoding (" + error + ").")) : 0;
+    return value;
+  }
+}
+/**
+ * Returns a resolved path object relative to the given pathname.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#resolvepath
+ */
+
+
+function resolvePath(to, fromPathname) {
+  if (fromPathname === void 0) {
+    fromPathname = "/";
+  }
+
+  let {
+    pathname: toPathname,
+    search = "",
+    hash = ""
+  } = typeof to === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(to) : to;
+  let pathname = toPathname ? toPathname.startsWith("/") ? toPathname : resolvePathname(toPathname, fromPathname) : fromPathname;
+  return {
+    pathname,
+    search: normalizeSearch(search),
+    hash: normalizeHash(hash)
+  };
+}
+
+function resolvePathname(relativePath, fromPathname) {
+  let segments = fromPathname.replace(/\/+$/, "").split("/");
+  let relativeSegments = relativePath.split("/");
+  relativeSegments.forEach(segment => {
+    if (segment === "..") {
+      // Keep the root "" segment so the pathname starts at /
+      if (segments.length > 1) segments.pop();
+    } else if (segment !== ".") {
+      segments.push(segment);
+    }
+  });
+  return segments.length > 1 ? segments.join("/") : "/";
+}
+
+function resolveTo(toArg, routePathnames, locationPathname) {
+  let to = typeof toArg === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(toArg) : toArg;
+  let toPathname = toArg === "" || to.pathname === "" ? "/" : to.pathname; // If a pathname is explicitly provided in `to`, it should be relative to the
+  // route context. This is explained in `Note on `<Link to>` values` in our
+  // migration guide from v5 as a means of disambiguation between `to` values
+  // that begin with `/` and those that do not. However, this is problematic for
+  // `to` values that do not provide a pathname. `to` can simply be a search or
+  // hash string, in which case we should assume that the navigation is relative
+  // to the current location's pathname and *not* the route pathname.
+
+  let from;
+
+  if (toPathname == null) {
+    from = locationPathname;
+  } else {
+    let routePathnameIndex = routePathnames.length - 1;
+
+    if (toPathname.startsWith("..")) {
+      let toSegments = toPathname.split("/"); // Each leading .. segment means "go up one route" instead of "go up one
+      // URL segment".  This is a key difference from how <a href> works and a
+      // major reason we call this a "to" value instead of a "href".
+
+      while (toSegments[0] === "..") {
+        toSegments.shift();
+        routePathnameIndex -= 1;
+      }
+
+      to.pathname = toSegments.join("/");
+    } // If there are more ".." segments than parent routes, resolve relative to
+    // the root / URL.
+
+
+    from = routePathnameIndex >= 0 ? routePathnames[routePathnameIndex] : "/";
+  }
+
+  let path = resolvePath(to, from); // Ensure the pathname has a trailing slash if the original to value had one.
+
+  if (toPathname && toPathname !== "/" && toPathname.endsWith("/") && !path.pathname.endsWith("/")) {
+    path.pathname += "/";
+  }
+
+  return path;
+}
+function getToPathname(to) {
+  // Empty strings should be treated the same as / paths
+  return to === "" || to.pathname === "" ? "/" : typeof to === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(to).pathname : to.pathname;
+}
+function stripBasename(pathname, basename) {
+  if (basename === "/") return pathname;
+
+  if (!pathname.toLowerCase().startsWith(basename.toLowerCase())) {
+    return null;
+  }
+
+  let nextChar = pathname.charAt(basename.length);
+
+  if (nextChar && nextChar !== "/") {
+    // pathname does not start with basename/
+    return null;
+  }
+
+  return pathname.slice(basename.length) || "/";
+}
+const joinPaths = paths => paths.join("/").replace(/\/\/+/g, "/");
+const normalizePathname = pathname => pathname.replace(/\/+$/, "").replace(/^\/*/, "/");
+
+const normalizeSearch = search => !search || search === "?" ? "" : search.startsWith("?") ? search : "?" + search;
+
+const normalizeHash = hash => !hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash;
+
+/**
+ * Returns the full href for the given "to" value. This is useful for building
+ * custom links that are also accessible and preserve right-click behavior.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usehref
+ */
+
+function useHref(to) {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useHref() may be used only in the context of a <Router> component.") : 0 : void 0;
+  let {
+    basename,
+    navigator
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(NavigationContext);
+  let {
+    hash,
+    pathname,
+    search
+  } = useResolvedPath(to);
+  let joinedPathname = pathname;
+
+  if (basename !== "/") {
+    let toPathname = getToPathname(to);
+    let endsWithSlash = toPathname != null && toPathname.endsWith("/");
+    joinedPathname = pathname === "/" ? basename + (endsWithSlash ? "/" : "") : joinPaths([basename, pathname]);
+  }
+
+  return navigator.createHref({
+    pathname: joinedPathname,
+    search,
+    hash
+  });
+}
+/**
+ * Returns true if this component is a descendant of a <Router>.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useinroutercontext
+ */
+
+function useInRouterContext() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(LocationContext) != null;
+}
+/**
+ * Returns the current location object, which represents the current URL in web
+ * browsers.
+ *
+ * Note: If you're using this it may mean you're doing some of your own
+ * "routing" in your app, and we'd like to know what your use case is. We may
+ * be able to provide something higher-level to better suit your needs.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#uselocation
+ */
+
+function useLocation() {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useLocation() may be used only in the context of a <Router> component.") : 0 : void 0;
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(LocationContext).location;
+}
+/**
+ * Returns the current navigation action which describes how the router came to
+ * the current location, either by a pop, push, or replace on the history stack.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usenavigationtype
+ */
+
+function useNavigationType() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(LocationContext).navigationType;
+}
+/**
+ * Returns true if the URL for the given "to" value matches the current URL.
+ * This is useful for components that need to know "active" state, e.g.
+ * <NavLink>.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usematch
+ */
+
+function useMatch(pattern) {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useMatch() may be used only in the context of a <Router> component.") : 0 : void 0;
+  let {
+    pathname
+  } = useLocation();
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => matchPath(pattern, pathname), [pathname, pattern]);
+}
+/**
+ * The interface for the navigate() function returned from useNavigate().
+ */
+
+/**
+ * Returns an imperative method for changing the location. Used by <Link>s, but
+ * may also be used by other elements to change the location.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usenavigate
+ */
+function useNavigate() {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useNavigate() may be used only in the context of a <Router> component.") : 0 : void 0;
+  let {
+    basename,
+    navigator
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(NavigationContext);
+  let {
+    matches
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext);
+  let {
+    pathname: locationPathname
+  } = useLocation();
+  let routePathnamesJson = JSON.stringify(matches.map(match => match.pathnameBase));
+  let activeRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(false);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    activeRef.current = true;
+  });
+  let navigate = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (to, options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+     true ? warning(activeRef.current, "You should call navigate() in a React.useEffect(), not when " + "your component is first rendered.") : 0;
+    if (!activeRef.current) return;
+
+    if (typeof to === "number") {
+      navigator.go(to);
+      return;
+    }
+
+    let path = resolveTo(to, JSON.parse(routePathnamesJson), locationPathname);
+
+    if (basename !== "/") {
+      path.pathname = joinPaths([basename, path.pathname]);
+    }
+
+    (!!options.replace ? navigator.replace : navigator.push)(path, options.state);
+  }, [basename, navigator, routePathnamesJson, locationPathname]);
+  return navigate;
+}
+const OutletContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)(null);
+/**
+ * Returns the context (if provided) for the child route at this level of the route
+ * hierarchy.
+ * @see https://reactrouter.com/docs/en/v6/api#useoutletcontext
+ */
+
+function useOutletContext() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(OutletContext);
+}
+/**
+ * Returns the element for the child route at this level of the route
+ * hierarchy. Used internally by <Outlet> to render child routes.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useoutlet
+ */
+
+function useOutlet(context) {
+  let outlet = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext).outlet;
+
+  if (outlet) {
+    return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(OutletContext.Provider, {
+      value: context
+    }, outlet);
+  }
+
+  return outlet;
+}
+/**
+ * Returns an object of key/value pairs of the dynamic params from the current
+ * URL that were matched by the route path.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useparams
+ */
+
+function useParams() {
+  let {
+    matches
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext);
+  let routeMatch = matches[matches.length - 1];
+  return routeMatch ? routeMatch.params : {};
+}
+/**
+ * Resolves the pathname of the given `to` value against the current location.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useresolvedpath
+ */
+
+function useResolvedPath(to) {
+  let {
+    matches
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext);
+  let {
+    pathname: locationPathname
+  } = useLocation();
+  let routePathnamesJson = JSON.stringify(matches.map(match => match.pathnameBase));
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname), [to, routePathnamesJson, locationPathname]);
+}
+/**
+ * Returns the element of the route that matched the current location, prepared
+ * with the correct context to render the remainder of the route tree. Route
+ * elements in the tree must render an <Outlet> to render their child route's
+ * element.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useroutes
+ */
+
+function useRoutes(routes, locationArg) {
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useRoutes() may be used only in the context of a <Router> component.") : 0 : void 0;
+  let {
+    matches: parentMatches
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(RouteContext);
+  let routeMatch = parentMatches[parentMatches.length - 1];
+  let parentParams = routeMatch ? routeMatch.params : {};
+  let parentPathname = routeMatch ? routeMatch.pathname : "/";
+  let parentPathnameBase = routeMatch ? routeMatch.pathnameBase : "/";
+  let parentRoute = routeMatch && routeMatch.route;
+
+  if (true) {
+    // You won't get a warning about 2 different <Routes> under a <Route>
+    // without a trailing *, but this is a best-effort warning anyway since we
+    // cannot even give the warning unless they land at the parent route.
+    //
+    // Example:
+    //
+    // <Routes>
+    //   {/* This route path MUST end with /* because otherwise
+    //       it will never match /blog/post/123 */}
+    //   <Route path="blog" element={<Blog />} />
+    //   <Route path="blog/feed" element={<BlogFeed />} />
+    // </Routes>
+    //
+    // function Blog() {
+    //   return (
+    //     <Routes>
+    //       <Route path="post/:id" element={<Post />} />
+    //     </Routes>
+    //   );
+    // }
+    let parentPath = parentRoute && parentRoute.path || "";
+    warningOnce(parentPathname, !parentRoute || parentPath.endsWith("*"), "You rendered descendant <Routes> (or called `useRoutes()`) at " + ("\"" + parentPathname + "\" (under <Route path=\"" + parentPath + "\">) but the ") + "parent route path has no trailing \"*\". This means if you navigate " + "deeper, the parent won't match anymore and therefore the child " + "routes will never render.\n\n" + ("Please change the parent <Route path=\"" + parentPath + "\"> to <Route ") + ("path=\"" + (parentPath === "/" ? "*" : parentPath + "/*") + "\">."));
+  }
+
+  let locationFromContext = useLocation();
+  let location;
+
+  if (locationArg) {
+    var _parsedLocationArg$pa;
+
+    let parsedLocationArg = typeof locationArg === "string" ? (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(locationArg) : locationArg;
+    !(parentPathnameBase === "/" || ((_parsedLocationArg$pa = parsedLocationArg.pathname) == null ? void 0 : _parsedLocationArg$pa.startsWith(parentPathnameBase))) ?  true ? invariant(false, "When overriding the location using `<Routes location>` or `useRoutes(routes, location)`, " + "the location pathname must begin with the portion of the URL pathname that was " + ("matched by all parent routes. The current pathname base is \"" + parentPathnameBase + "\" ") + ("but pathname \"" + parsedLocationArg.pathname + "\" was given in the `location` prop.")) : 0 : void 0;
+    location = parsedLocationArg;
+  } else {
+    location = locationFromContext;
+  }
+
+  let pathname = location.pathname || "/";
+  let remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/";
+  let matches = matchRoutes(routes, {
+    pathname: remainingPathname
+  });
+
+  if (true) {
+     true ? warning(parentRoute || matches != null, "No routes matched location \"" + location.pathname + location.search + location.hash + "\" ") : 0;
+     true ? warning(matches == null || matches[matches.length - 1].route.element !== undefined, "Matched leaf route at location \"" + location.pathname + location.search + location.hash + "\" does not have an element. " + "This means it will render an <Outlet /> with a null value by default resulting in an \"empty\" page.") : 0;
+  }
+
+  return _renderMatches(matches && matches.map(match => Object.assign({}, match, {
+    params: Object.assign({}, parentParams, match.params),
+    pathname: joinPaths([parentPathnameBase, match.pathname]),
+    pathnameBase: match.pathnameBase === "/" ? parentPathnameBase : joinPaths([parentPathnameBase, match.pathnameBase])
+  })), parentMatches);
+}
+function _renderMatches(matches, parentMatches) {
+  if (parentMatches === void 0) {
+    parentMatches = [];
+  }
+
+  if (matches == null) return null;
+  return matches.reduceRight((outlet, match, index) => {
+    return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(RouteContext.Provider, {
+      children: match.route.element !== undefined ? match.route.element : outlet,
+      value: {
+        outlet,
+        matches: parentMatches.concat(matches.slice(0, index + 1))
+      }
+    });
+  }, null);
+}
+
+/**
+ * A <Router> that stores all entries in memory.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#memoryrouter
+ */
+function MemoryRouter(_ref) {
+  let {
+    basename,
+    children,
+    initialEntries,
+    initialIndex
+  } = _ref;
+  let historyRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
+
+  if (historyRef.current == null) {
+    historyRef.current = (0,history__WEBPACK_IMPORTED_MODULE_0__.createMemoryHistory)({
+      initialEntries,
+      initialIndex
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * Changes the current location.
+ *
+ * Note: This API is mostly useful in React.Component subclasses that are not
+ * able to use hooks. In functional components, we recommend you use the
+ * `useNavigate` hook instead.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#navigate
+ */
+function Navigate(_ref2) {
+  let {
+    to,
+    replace,
+    state
+  } = _ref2;
+  !useInRouterContext() ?  true ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of
+  // the router loaded. We can help them understand how to avoid that.
+  "<Navigate> may be used only in the context of a <Router> component.") : 0 : void 0;
+   true ? warning(!(0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(NavigationContext).static, "<Navigate> must not be used on the initial render in a <StaticRouter>. " + "This is a no-op, but you should modify your code so the <Navigate> is " + "only ever rendered in response to some user interaction or state change.") : 0;
+  let navigate = useNavigate();
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    navigate(to, {
+      replace,
+      state
+    });
+  });
+  return null;
+}
+
+/**
+ * Renders the child route's element, if there is one.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#outlet
+ */
+function Outlet(props) {
+  return useOutlet(props.context);
+}
+
+/**
+ * Declares an element that should be rendered at a certain URL path.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#route
+ */
+function Route(_props) {
+    true ? invariant(false, "A <Route> is only ever to be used as the child of <Routes> element, " + "never rendered directly. Please wrap your <Route> in a <Routes>.") : 0 ;
+}
+
+/**
+ * Provides location context for the rest of the app.
+ *
+ * Note: You usually won't render a <Router> directly. Instead, you'll render a
+ * router that is more specific to your environment such as a <BrowserRouter>
+ * in web browsers or a <StaticRouter> for server rendering.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#router
+ */
+function Router(_ref3) {
+  let {
+    basename: basenameProp = "/",
+    children = null,
+    location: locationProp,
+    navigationType = history__WEBPACK_IMPORTED_MODULE_0__.Action.Pop,
+    navigator,
+    static: staticProp = false
+  } = _ref3;
+  !!useInRouterContext() ?  true ? invariant(false, "You cannot render a <Router> inside another <Router>." + " You should never have more than one in your app.") : 0 : void 0;
+  let basename = normalizePathname(basenameProp);
+  let navigationContext = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => ({
+    basename,
+    navigator,
+    static: staticProp
+  }), [basename, navigator, staticProp]);
+
+  if (typeof locationProp === "string") {
+    locationProp = (0,history__WEBPACK_IMPORTED_MODULE_0__.parsePath)(locationProp);
+  }
+
+  let {
+    pathname = "/",
+    search = "",
+    hash = "",
+    state = null,
+    key = "default"
+  } = locationProp;
+  let location = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => {
+    let trailingPathname = stripBasename(pathname, basename);
+
+    if (trailingPathname == null) {
+      return null;
+    }
+
+    return {
+      pathname: trailingPathname,
+      search,
+      hash,
+      state,
+      key
+    };
+  }, [basename, pathname, search, hash, state, key]);
+   true ? warning(location != null, "<Router basename=\"" + basename + "\"> is not able to match the URL " + ("\"" + pathname + search + hash + "\" because it does not start with the ") + "basename, so the <Router> won't render anything.") : 0;
+
+  if (location == null) {
+    return null;
+  }
+
+  return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(NavigationContext.Provider, {
+    value: navigationContext
+  }, /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(LocationContext.Provider, {
+    children: children,
+    value: {
+      location,
+      navigationType
+    }
+  }));
+}
+
+/**
+ * A container for a nested tree of <Route> elements that renders the branch
+ * that best matches the current location.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#routes
+ */
+function Routes(_ref4) {
+  let {
+    children,
+    location
+  } = _ref4;
+  return useRoutes(createRoutesFromChildren(children), location);
+} ///////////////////////////////////////////////////////////////////////////////
+// UTILS
+///////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Creates a route config from a React "children" object, which is usually
+ * either a `<Route>` element or an array of them. Used internally by
+ * `<Routes>` to create a route config from its children.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#createroutesfromchildren
+ */
+
+function createRoutesFromChildren(children) {
+  let routes = [];
+  react__WEBPACK_IMPORTED_MODULE_1__.Children.forEach(children, element => {
+    if (! /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.isValidElement)(element)) {
+      // Ignore non-elements. This allows people to more easily inline
+      // conditionals in their route config.
+      return;
+    }
+
+    if (element.type === react__WEBPACK_IMPORTED_MODULE_1__.Fragment) {
+      // Transparently support React.Fragment and its children.
+      routes.push.apply(routes, createRoutesFromChildren(element.props.children));
+      return;
+    }
+
+    !(element.type === Route) ?  true ? invariant(false, "[" + (typeof element.type === "string" ? element.type : element.type.name) + "] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>") : 0 : void 0;
+    let route = {
+      caseSensitive: element.props.caseSensitive,
+      element: element.props.element,
+      index: element.props.index,
+      path: element.props.path
+    };
+
+    if (element.props.children) {
+      route.children = createRoutesFromChildren(element.props.children);
+    }
+
+    routes.push(route);
+  });
+  return routes;
+}
+/**
+ * Renders the result of `matchRoutes()` into a React element.
+ */
+
+function renderMatches(matches) {
+  return _renderMatches(matches);
+}
+
+
+//# sourceMappingURL=index.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/react/cjs/react-jsx-runtime.development.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/react/cjs/react-jsx-runtime.development.js ***!
@@ -59214,6 +70093,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./resources/v2/js/components/ui/LoadingSpinner.module.css":
+/*!*****************************************************************!*\
+  !*** ./resources/v2/js/components/ui/LoadingSpinner.module.css ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_LoadingSpinner_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./LoadingSpinner.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/v2/js/components/ui/LoadingSpinner.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_LoadingSpinner_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_LoadingSpinner_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -59490,6 +70399,37 @@ module.exports = function (list, options) {
     lastIdentifiers = newLastIdentifiers;
   };
 };
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _extends)
+/* harmony export */ });
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
 
 /***/ }),
 

@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const dotenvExpand = require('dotenv-expand');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 mix.js('resources/js/app.js', 'public/js')
@@ -30,3 +31,6 @@ mix.js('resources/js/app.js', 'public/js')
     //         })
     //     ]
     // });
+    
+// .env.devの読み込み
+dotenvExpand(require('dotenv').config({ path: './.env.dev'/*, debug: true*/ }));
