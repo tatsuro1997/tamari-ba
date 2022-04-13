@@ -4,6 +4,7 @@ import Layout from './components/layout/Layout';
 import Inquiry from "./pages/Inquiry";
 import RoadDetail from "./pages/RoadDetail";
 import Roads from "./pages/Roads";
+import TermsOfService from "./pages/TermsOfService";
 import Welcome from './pages/Welcome';
 
 
@@ -15,6 +16,8 @@ function App() {
                     <Route path="v2/welcome" element={<Welcome />} />
                     <Route path="v2/roads" element={<Roads />} />
                     <Route path="v2/roads/:roadId" element={<RoadDetail />} />
+                    <Route path="inquiry" element={<Inquiry />} />
+                    <Route path="terms_of_service" element={<TermsOfService />} />
                     <Route path="inquiry" element={<Inquiry />} />
                 </Routes>
             </Layout>
