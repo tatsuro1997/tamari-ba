@@ -20,7 +20,7 @@ const MainNavigation = () => {
                         <Link to="v2/bikes">バイクの投稿</Link>
                     </li>
                     <li className="nav-content">
-                        <Link to="v2/borads">ツーリング掲示板</Link>
+                        <Link to="v2/boards">ツーリング掲示板</Link>
                     </li>
                 </ul>
                 {/* <ul className="flex">
