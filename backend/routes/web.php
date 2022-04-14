@@ -82,6 +82,11 @@ Route::get('/terms_of_service', [WelcomeController::class, 'Terms_Of_Service'])-
 Route::get('/privacy_policy', [WelcomeController::class, 'Privacy_Policy'])->name('privacy_policy');
 Route::post('/roads_import', [RoadController::class, 'import'])->name('import');
 
+
+require __DIR__.'/auth.php';
+
+Auth::routes();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 # v2
