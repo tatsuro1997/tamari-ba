@@ -1,10 +1,10 @@
 const AboutItem = (props) => {
     return (
         <div className="mt-20">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+            <h1 className="lg:text-3xl text-6xl font-medium title-font mb-4 text-gray-900">
                 {props.title}
             </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+            <p className="lg:w-2/3 lg:text-lg text-3xl mx-auto leading-relaxed">
                 {props.description}
             </p>
             {props.image &&

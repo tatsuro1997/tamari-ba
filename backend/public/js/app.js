@@ -12919,10 +12919,10 @@ var AboutItem = function AboutItem(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: "mt-20",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-      className: "sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900",
+      className: "lg:text-3xl text-6xl font-medium title-font mb-4 text-gray-900",
       children: props.title
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-      className: "lg:w-2/3 mx-auto leading-relaxed text-base",
+      className: "lg:w-2/3 lg:text-lg text-3xl mx-auto leading-relaxed",
       children: props.description
     }), props.image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
       className: "w-80 h-80 mx-auto",
