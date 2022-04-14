@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import LoadingSpinner from "../ui/LoadingSpiner";
 
 const containerStyle = {
-    width: "50%",
-    height: "sm:max-h-80 max-h-52",
+    width: "100%",
+    height: "50%",
 };
 
 const BASE_POSITION = {

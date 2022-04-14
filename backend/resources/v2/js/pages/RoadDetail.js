@@ -23,9 +23,9 @@ const RoadDetail = () => {
 
     return (
         <section>
-            <div className="flex">
+            <div className="text-center mx-auto w-full lg:w-1/2">
                 <img
-                    className="lazyload w-full md:w-1/2 sm:max-h-80 max-h-52 mx-auto bg-cover"
+                    className="lazyload w-full bg-cover"
                     loading="lazy"
                     src={road.filename}
                     alt="road_image"
@@ -33,8 +33,8 @@ const RoadDetail = () => {
                 <Map lat={road.latitude} lng={road.longitude} />
             </div>
             <div className="flex justify-around mt-4">
-                <h3 className="title-font text-lg font-medium text-gray-900 mb-3">{road.title}</h3>
-                <p className="leading-relaxed">{road.created_at}</p>
+                <h3 className="title-font lg:text-lg text-4xl font-medium text-gray-900 mb-3">{road.title}</h3>
+                <p className="leading-relaxed lg:text-lg text-xl">{road.created_at}</p>
             </div>
         </section>
     );

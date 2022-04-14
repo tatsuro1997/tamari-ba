@@ -13540,8 +13540,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var containerStyle = {
-  width: "50%",
-  height: "sm:max-h-80 max-h-52"
+  width: "100%",
+  height: "50%"
 };
 var BASE_POSITION = {
   lat: 35.6585769,
@@ -14096,9 +14096,9 @@ var RoadDetail = function RoadDetail() {
   }, [roadId]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "flex",
+      className: "text-center mx-auto w-full lg:w-1/2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-        className: "lazyload w-full md:w-1/2 sm:max-h-80 max-h-52 mx-auto bg-cover",
+        className: "lazyload w-full bg-cover",
         loading: "lazy",
         src: road.filename,
         alt: "road_image"
@@ -14109,10 +14109,10 @@ var RoadDetail = function RoadDetail() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "flex justify-around mt-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-        className: "title-font text-lg font-medium text-gray-900 mb-3",
+        className: "title-font lg:text-lg text-4xl font-medium text-gray-900 mb-3",
         children: road.title
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "leading-relaxed",
+        className: "leading-relaxed lg:text-lg text-xl",
         children: road.created_at
       })]
     })]
