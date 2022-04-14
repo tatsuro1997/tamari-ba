@@ -5,13 +5,13 @@ import icon from '../../../../../public/images/icon.webp'
 const MainNavigation = () => {
     return (
         <header className="w-full h-20 flex justify-between bg-white p-4">
-            <div className='flex w-1/4'>
+            <div className='flex lg:w-1/4 w-1/3'>
                 <img loading="lazy" width="50" height="50" src={icon} alt="icon" className="lazyload h-14 sm:mr-4 sm:pb-2" />
                 <Link to="v2/welcome">
-                    <button className="text-2xl icon-color font-bold leading-10">Tamari-Ba</button>
+                    <button className="lg:text-3xl text-4xl icon-color font-bold leading-10">Tamari-Ba</button>
                 </Link>
             </div>
-            <nav className="w-3/4 flex justify-between leading-8">
+            <nav className="lg:w-3/4 w-2/3 flex justify-between leading-8">
                 <ul className="flex">
                     <li className="mr-4 nav-content">
                         <Link to="v2/roads">道の投稿</Link>
