@@ -8,15 +8,15 @@ const RoadItem = (props) => {
             <div key={props.id}>
                 <Link to={`/v2/roads/${props.id}`}>
                     <img
-                        className="lazyload w-full sm:max-h-60 max-h-52 mx-auto bg-cover"
+                        className="lazyload w-full lg:max-h-60 max-h-80 mx-auto bg-cover"
                         src={props.filename}
                     />
                 </Link>
                 <div className="p-6">
-                    <h2 className="text-left title-font text-lg font-medium text-gray-900 mb-3">
+                    <h2 className="text-left title-font lg:text-lg text-4xl font-medium text-gray-900 mb-3">
                         {props.title}
                     </h2>
-                    <div className="flex justify-end">
+                    <div className="flex justify-end lg:text-lg text-xl">
                         <div className="leading-relaxed text-right">
                             {props.created_at}
                         </div>
