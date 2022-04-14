@@ -12743,6 +12743,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   }.lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }.lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }.lg\:font-bold {
+    font-weight: 700;
   }
 }@media (min-width: 1280px) {.xl\:w-3\/4 {
     width: 75%;
