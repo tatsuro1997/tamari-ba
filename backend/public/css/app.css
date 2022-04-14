@@ -12239,6 +12239,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.75rem;
 }.pr-4 {
   padding-right: 1rem;
+}.pb-6 {
+  padding-bottom: 1.5rem;
+}.pb-8 {
+  padding-bottom: 2rem;
+}.pb-10 {
+  padding-bottom: 2.5rem;
 }.text-left {
   text-align: left;
 }.text-center {
@@ -12746,6 +12752,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }.lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }.lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }.lg\:font-bold {
     font-weight: 700;
   }
