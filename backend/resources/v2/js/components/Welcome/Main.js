@@ -12,13 +12,13 @@ const Main = (props) => {
                 <div className="container px-5 py-16 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
                         <div>
-                            <h1 className="sm:text-3xl lg:text-5xl font-medium title-font mb-4 text-gray-900">最近の投稿</h1>
-                            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Tamari-Baでは全国のバイカーの愛車やおすすめスポットやコアな道を知ることができます。</p>
+                            <h1 className="text-6xl lg:text-5xl font-medium title-font mb-4 text-gray-900">最近の投稿</h1>
+                            <p className="lg:w-2/3 lg:text-lg text-3xl mx-auto leading-relaxed">Tamari-Baでは全国のバイカーの愛車やおすすめスポットやコアな道を知ることができます。</p>
                         </div>
                         <RoadList roads={props.roads}/>
                         <div className="mt-20 bg-orange-300 py-10">
-                            <h1 className="sm:text-3xl text-2xl font-bold title-font mb-4 text-gray-900">Tamari-Baに参加する</h1>
-                            <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-black">あなたの愛車やおすすめスポットを投稿してTamari-Baを充実させていきましょう!</p>
+                            <h1 className="text-3xl lg:text-xl font-bold title-font mb-4 text-gray-900">Tamari-Baに参加する</h1>
+                            <p className="lg:w-2/3 lg:text-lg text-2xl mx-auto leading-relaxed text-black">あなたの愛車やおすすめスポットを投稿してTamari-Baを充実させていきましょう!</p>
                         </div>
                     </div>
                 </div>

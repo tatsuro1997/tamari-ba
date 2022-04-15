@@ -1,10 +1,12 @@
 import MainNavigation from "./MainNavigation";
 import ShowWelcomeSwiper from "../Welcome/ShowWelcomeSwiper";
 import Footer from "./Footer";
+import Menu from "./Menu";
 
 const Layout = (props) => {
     return (
         <div>
+            <Menu right width={500} />
             <MainNavigation />
             <ShowWelcomeSwiper />
             <div className="py-12">
