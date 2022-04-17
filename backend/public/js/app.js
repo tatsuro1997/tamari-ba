@@ -14216,14 +14216,20 @@ var Roads = function Roads() {
       loadedRoads = _useState2[0],
       setLoadedRoads = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
-      searchKeyword = _useState4[0],
-      updateSearchKeyword = _useState4[1];
+      filteredRoads = _useState4[0],
+      setFilteredRoads = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      searchKeyword = _useState6[0],
+      updateSearchKeyword = _useState6[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     axios.get('/api/roads').then(function (res) {
       setLoadedRoads(res.data.data);
+      setFilteredRoads(res.data.data);
     })["catch"](function (e) {
       console.log(e);
     });
@@ -14233,11 +14239,15 @@ var Roads = function Roads() {
     updateSearchKeyword(event.target.value);
     var value = event.target.value.toLowerCase();
     var result = [];
-    console.log(value);
-    result = loadedRoads.filter(function (road) {
-      return road.title.includes(value);
-    });
-    setLoadedRoads(result);
+
+    if (value !== '') {
+      result = loadedRoads.filter(function (road) {
+        return road.title.includes(value);
+      });
+      setFilteredRoads(result);
+    } else {
+      setFilteredRoads(loadedRoads);
+    }
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -14252,7 +14262,7 @@ var Roads = function Roads() {
         onChange: searchChangeHandler
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_roads_RoadList__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      roads: loadedRoads,
+      roads: filteredRoads,
       searchKeyword: searchKeyword
     })]
   });

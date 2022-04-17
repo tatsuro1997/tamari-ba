@@ -4,6 +4,7 @@ import RoadList from "../components/roads/RoadList";
 
 const Roads = () => {
     const [loadedRoads, setLoadedRoads] = useState([]);
+    const [filteredRoads, setFilteredRoads] = useState([]);
     const [searchKeyword, updateSearchKeyword] = useState('');
 
     useEffect(
@@ -12,6 +13,7 @@ const Roads = () => {
                     .get('/api/roads')
                     .then((res) => {
                         setLoadedRoads(res.data.data);
+                        setFilteredRoads(res.data.data)
                     })
                     .catch((e) => {
                         console.log(e);
@@ -22,12 +24,15 @@ const Roads = () => {
         updateSearchKeyword(event.target.value);
         let value = event.target.value.toLowerCase();
         let result = [];
-        console.log(value);
 
-        result = loadedRoads.filter((road) => {
-            return road.title.includes(value);
-        });
-        setLoadedRoads(result);
+        if (value !== '') {
+            result = loadedRoads.filter((road) => {
+                return road.title.includes(value);
+            });
+            setFilteredRoads(result);
+        } else {
+            setFilteredRoads(loadedRoads);
+        }
     }
 
     return (
@@ -42,7 +47,7 @@ const Roads = () => {
                 />
             </div>
             <RoadList
-                roads={loadedRoads}
+                roads={filteredRoads}
                 searchKeyword={searchKeyword}
             />
         </Fragment>
