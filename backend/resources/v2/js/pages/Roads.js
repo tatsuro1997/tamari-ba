@@ -37,13 +37,13 @@ const Roads = () => {
 
     return (
         <Fragment>
-            <div>
-                <label htmlFor="search-keyword">Search</label>
+            <div className='w-1/2 mx-auto'>
                 <input
                     id="search-keyword"
                     type="text"
                     placeholder={"検索"}
                     onChange={searchChangeHandler}
+                    className="search"
                 />
             </div>
             <RoadList
