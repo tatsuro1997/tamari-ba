@@ -11,6 +11,7 @@ const RoadList = (props) => {
                     title={road.title}
                     filename={road.filename}
                     user_name={road.user_name}
+                    description={road.description}
                     created_at={road.created_at}
                     updated_at={road.updated_at}
                 />
