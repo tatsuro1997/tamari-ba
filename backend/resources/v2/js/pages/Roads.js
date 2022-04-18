@@ -49,7 +49,7 @@ const Roads = () => {
                 <input
                     id="search-keyword"
                     type="text"
-                    placeholder={"検索"}
+                    placeholder={"北海道, 東京, 沖縄, ビーナスライン, スカイライン"}
                     onChange={searchChangeHandler}
                     className="search"
                 />

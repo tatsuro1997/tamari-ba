@@ -14331,7 +14331,7 @@ var Roads = function Roads() {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
         id: "search-keyword",
         type: "text",
-        placeholder: "検索",
+        placeholder: "北海道, 東京, 沖縄, ビーナスライン, スカイライン",
         onChange: searchChangeHandler,
         className: "search"
       })
