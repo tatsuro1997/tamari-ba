@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
 import RoadList from "../components/roads/RoadList";
+import { PrefectureEnum } from './PrefectureEnum';
 
 const Roads = () => {
     const [loadedRoads, setLoadedRoads] = useState([]);
@@ -27,7 +28,14 @@ const Roads = () => {
 
         if (value !== '') {
             result = loadedRoads.filter((road) => {
-                return road.title.includes(value);
+                const PrefectireId = PrefectureEnum()[value];
+
+                switch (true) {
+                    case road.title.includes(value):
+                        return value;
+                    case road.prefecture_id === Number(PrefectireId):
+                        return value;
+                }
             });
             setFilteredRoads(result);
         } else {
