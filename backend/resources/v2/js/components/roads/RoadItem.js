@@ -11,7 +11,8 @@ const RoadItem = (props) => {
                     { !props.filename &&
                         <img
                             className="lazyload w-full lg:max-h-60 max-h-80 mx-auto bg-cover"
-                            src={noImage} />
+                            src={noImage}
+                        />
                     }
                     <img
                         className="lazyload w-full lg:max-h-60 max-h-80 mx-auto bg-cover"
