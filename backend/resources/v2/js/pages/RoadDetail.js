@@ -42,9 +42,15 @@ const RoadDetail = () => {
                 }
                 <Map lat={road.latitude} lng={road.longitude} />
             </div>
-            <div className="flex justify-around mt-4">
-                <h3 className="title-font lg:text-lg text-4xl font-medium text-gray-900 mb-3">{road.title}</h3>
-                <p className="leading-relaxed lg:text-lg text-xl">{road.created_at}</p>
+            <div className="mt-4">
+                <h3 className="title-font lg:text-xl text-4xl font-medium text-gray-900 mb-3">{road.title}</h3>
+                <div class="flex justify-between">
+                    <p class="leading-relaxed mb-3 px-4 lg:text-lg text-2xl">{ road.description}</p>
+                    <div">
+                        <p className="leading-relaxed lg:text-lg text-xl text-gray-600">{road.updated_at}</p>
+                        <p className="leading-relaxed lg:text-lg text-xl text-gray-600 text-right">{road.user_name}</p>
+                    </div>
+                </div>
             </div>
         </section>
     );

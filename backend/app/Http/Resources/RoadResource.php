@@ -21,9 +21,10 @@ class RoadResource extends JsonResource
             'longitude' => $this->longitude,
             'prefecture_id' => $this->prefecture_id,
             'description' => $this-> description,
-            'user_id' => $this->user_id,
+            'user_name' => $this->user->name,
             'filename' => $this->filename,
-            'created_at' => $this->created_at->format('Y/m/d')
+            'created_at' => $this->created_at->format('Y/m/d'),
+            'updated_at' => $this->updated_at->format('Y/m/d')
         ];
     }
 }

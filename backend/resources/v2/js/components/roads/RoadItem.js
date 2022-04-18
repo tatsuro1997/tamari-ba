@@ -25,9 +25,11 @@ const RoadItem = (props) => {
                     </h2>
                     <div className="flex justify-end lg:text-lg text-xl">
                         <div className="leading-relaxed text-right">
-                            {props.created_at}
+                            {props.updated_at}
                         </div>
-                        <div className="leading-relaxed text-right ml-2">投稿者名</div>
+                        <div className="leading-relaxed text-right ml-2">
+                            {props.user_name}
+                        </div>
                     </div>
                 </div>
             </div>
