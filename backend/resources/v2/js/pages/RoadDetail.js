@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import Map from "../components/roads/Map";
+import noImage from '../../../../public/images/no_image.webp';
 
 const RoadDetail = () => {
     const { roadId } = useParams();
@@ -24,12 +26,20 @@ const RoadDetail = () => {
     return (
         <section>
             <div className="text-center mx-auto w-full lg:w-1/2">
-                <img
-                    className="lazyload w-full bg-cover"
-                    loading="lazy"
-                    src={road.filename}
-                    alt="road_image"
-                />
+                {!road.filename
+                    ?
+                        <img
+                            className="lazyload w-full bg-cover"
+                            src={noImage}
+                        />
+                    :
+                        <img
+                            className="lazyload w-full bg-cover"
+                            loading="lazy"
+                            src={road.filename}
+                            alt="road_image"
+                        />
+                }
                 <Map lat={road.latitude} lng={road.longitude} />
             </div>
             <div className="flex justify-around mt-4">

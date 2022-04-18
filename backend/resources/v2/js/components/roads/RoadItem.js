@@ -1,12 +1,19 @@
 import { Link } from 'react-router-dom';
 
 import Card from "../ui/Card";
+import noImage from '../../../../../public/images/no_image.webp';
 
 const RoadItem = (props) => {
     return (
         <Card>
             <div key={props.id}>
                 <Link to={`/v2/roads/${props.id}`}>
+                    { !props.filename &&
+                        <img
+                            className="lazyload w-full lg:max-h-60 max-h-80 mx-auto bg-cover"
+                            src={noImage}
+                        />
+                    }
                     <img
                         className="lazyload w-full lg:max-h-60 max-h-80 mx-auto bg-cover"
                         src={props.filename}
