@@ -46,7 +46,7 @@ const RoadDetail = () => {
                 <h3 className="title-font lg:text-xl text-4xl font-medium text-gray-900 mb-3">{road.title}</h3>
                 <div class="flex justify-between">
                     <p class="leading-relaxed mb-3 px-4 lg:text-lg text-2xl">{ road.description}</p>
-                    <div">
+                    <div>
                         <p className="leading-relaxed lg:text-lg text-xl text-gray-600">{road.updated_at}</p>
                         <p className="leading-relaxed lg:text-lg text-xl text-gray-600 text-right">{road.user_name}</p>
                     </div>
