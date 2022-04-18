@@ -10,7 +10,9 @@ const RoadList = (props) => {
                     id={road.id}
                     title={road.title}
                     filename={road.filename}
+                    user_name={road.user_name}
                     created_at={road.created_at}
+                    updated_at={road.updated_at}
                 />
             ))}
         </Container>

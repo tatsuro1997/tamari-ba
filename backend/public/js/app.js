@@ -13691,10 +13691,10 @@ var RoadItem = function RoadItem(props) {
           className: "flex justify-end lg:text-lg text-xl",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "leading-relaxed text-right",
-            children: props.created_at
+            children: props.updated_at
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "leading-relaxed text-right ml-2",
-            children: "\u6295\u7A3F\u8005\u540D"
+            children: props.user_name
           })]
         })]
       })]
@@ -13731,7 +13731,9 @@ var RoadList = function RoadList(props) {
         id: road.id,
         title: road.title,
         filename: road.filename,
-        created_at: road.created_at
+        user_name: road.user_name,
+        created_at: road.created_at,
+        updated_at: road.updated_at
       }, road.id);
     })
   });
