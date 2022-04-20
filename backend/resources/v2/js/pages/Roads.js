@@ -14,7 +14,7 @@ const Roads = () => {
                     .get('/api/roads')
                     .then((res) => {
                         setLoadedRoads(res.data.data);
-                        setFilteredRoads(res.data.data)
+                        setFilteredRoads(res.data.data);
                     })
                     .catch((e) => {
                         console.log(e);

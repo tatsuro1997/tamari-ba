@@ -1,5 +1,7 @@
 import Container from "../ui/ListContainer";
 import RoadItem from "./RoadItem";
+import Paginate from "../ui/Paginate";
+// import PaginatedItems from "../ui/Paginate";
 
 const RoadList = (props) => {
     return (
@@ -16,6 +18,8 @@ const RoadList = (props) => {
                     updated_at={road.updated_at}
                 />
             ))}
+            <Paginate roadsPerPage={4} roads={props.roads} />
+            {/* <PaginatedItems itemsPerPage={4} /> */}
         </Container>
     );
 };
