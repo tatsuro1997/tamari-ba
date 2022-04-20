@@ -14892,7 +14892,9 @@ function Welcome() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Welcome_Main__WEBPACK_IMPORTED_MODULE_1__["default"], {
       abouts: ABOUT_DATA,
       purposes: PURPOSE_DATA,
-      roads: LoadedRoads
+      roads: LoadedRoads.sort(function (a, b) {
+        return a.updated_at > b.updated_at ? -1 : 1;
+      })
     })
   });
 }
