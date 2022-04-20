@@ -16,9 +16,9 @@ const MainNavigation = () => {
                     <li className="mr-4 nav-content">
                         <Link to="v2/roads">道の投稿</Link>
                     </li>
-                    <li className="mr-4 nav-content">
+                    {/* <li className="mr-4 nav-content">
                         <Link to="v2/bikes">バイクの投稿</Link>
-                    </li>
+                    </li> */}
                     <li className="nav-content">
                         <Link to="v2/boards">ツーリング掲示板</Link>
                     </li>

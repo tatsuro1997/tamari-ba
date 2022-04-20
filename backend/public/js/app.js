@@ -13491,12 +13491,6 @@ var MainNavigation = function MainNavigation() {
             children: "\u9053\u306E\u6295\u7A3F"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-          className: "mr-4 nav-content",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-            to: "v2/bikes",
-            children: "\u30D0\u30A4\u30AF\u306E\u6295\u7A3F"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
           className: "nav-content",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
             to: "v2/boards",
@@ -13543,16 +13537,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_burger_menu__WEBPACK_IMPORTED_MODULE_1__.slide, _objectSpread(_objectSpread({}, props), {}, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
       to: "/v2/welcome",
-      className: "menu-item mb-4 nav-content",
+      className: "menu-item mb-10 nav-content",
       children: "\u30DB\u30FC\u30E0"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
       to: "v2/roads",
-      className: "menu-item mb-4 nav-content",
+      className: "menu-item mb-10 nav-content",
       children: "\u9053\u306E\u6295\u7A3F"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-      to: "v2/bikes",
-      className: "menu-item mb-4 nav-content",
-      children: "\u30D0\u30A4\u30AF\u306E\u6295\u7A3F"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
       to: "/v2/boards",
       className: "menu-item nav-content",
