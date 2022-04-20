@@ -23,7 +23,7 @@ const RoadItem = (props) => {
                     <h2 className="text-left title-font lg:text-lg text-4xl font-medium text-gray-900 mb-3">
                         {props.title}
                     </h2>
-                    <div className="flex justify-end lg:text-lg text-xl">
+                    <div className="flex justify-end lg:text-base text-xl text-gray-600">
                         <div className="leading-relaxed text-right">
                             {props.updated_at}
                         </div>
