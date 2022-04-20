@@ -13759,7 +13759,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-paginate */ "./node_modules/react-paginate/dist/react-paginate.js");
 /* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_paginate__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _RoadList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RoadList */ "./resources/v2/js/components/roads/RoadList.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _ui_LoadingSpiner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ui/LoadingSpiner */ "./resources/v2/js/components/ui/LoadingSpiner.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -13779,8 +13780,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var RoadsPaginate = function RoadsPaginate(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       currentRoads = _useState2[0],
       setCurrentRoads = _useState2[1];
@@ -13818,11 +13820,14 @@ var RoadsPaginate = function RoadsPaginate(props) {
     setroadOffset(newOffset);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [currentRoads && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_RoadList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [currentRoads.length === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "text-center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ui_LoadingSpiner__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    }), currentRoads && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_RoadList__WEBPACK_IMPORTED_MODULE_2__["default"], {
       roads: currentRoads,
       searchKeyword: props.searchKeyword
-    }), !location.pathname.match(/welcome/) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_1___default()), {
+    }), !location.pathname.match(/welcome/) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_1___default()), {
       onPageChange: handlePageClick,
       pageRangeDisplayed: 5,
       pageCount: pageCount,

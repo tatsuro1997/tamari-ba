@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 
 import RoadList from './RoadList';
+import LoadingSpinner from '../ui/LoadingSpiner';
 
 const RoadsPaginate = (props) => {
-    const [currentRoads, setCurrentRoads] = useState(null);
+    const [currentRoads, setCurrentRoads] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [roadOffset, setroadOffset] = useState(0);
     const [roads, setRoads] = useState([]);
@@ -34,6 +35,7 @@ const RoadsPaginate = (props) => {
 
     return (
         <>
+            {currentRoads.length===0 && <div className="text-center"><LoadingSpinner /></div>}
             {currentRoads && <RoadList
                 roads={currentRoads}
                 searchKeyword={props.searchKeyword}
