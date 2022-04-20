@@ -14485,7 +14485,9 @@ var Roads = function Roads() {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_roads_RoadsPaginate__WEBPACK_IMPORTED_MODULE_1__["default"], {
       roadsPerPage: 12,
-      roads: filteredRoads,
+      roads: filteredRoads.sort(function (a, b) {
+        return a.updated_at > b.updated_at ? -1 : 1;
+      }),
       searchKeyword: searchKeyword
     })]
   });

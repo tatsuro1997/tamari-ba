@@ -56,7 +56,11 @@ const Roads = () => {
             </div>
             <RoadsPaginate
                 roadsPerPage={12}
-                roads={filteredRoads}
+                roads={
+                    filteredRoads.sort(function (a, b) {
+                        return (a.updated_at > b.updated_at) ? -1 : 1;
+                    })
+                }
                 searchKeyword={searchKeyword}
             />
         </>
