@@ -1,6 +1,6 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import RoadList from "../components/roads/RoadList";
+import RoadsPaginate from '../components/roads/RoadsPaginate';
 import { PrefectureEnum } from './PrefectureEnum';
 
 const Roads = () => {
@@ -14,7 +14,7 @@ const Roads = () => {
                     .get('/api/roads')
                     .then((res) => {
                         setLoadedRoads(res.data.data);
-                        setFilteredRoads(res.data.data)
+                        setFilteredRoads(res.data.data);
                     })
                     .catch((e) => {
                         console.log(e);
@@ -44,7 +44,7 @@ const Roads = () => {
     }
 
     return (
-        <Fragment>
+        <>
             <div className='w-1/2 mx-auto'>
                 <input
                     id="search-keyword"
@@ -54,11 +54,12 @@ const Roads = () => {
                     className="search"
                 />
             </div>
-            <RoadList
+            <RoadsPaginate
+                roadsPerPage={4}
                 roads={filteredRoads}
                 searchKeyword={searchKeyword}
             />
-        </Fragment>
+        </>
     )
 };
 

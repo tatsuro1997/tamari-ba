@@ -100,3 +100,36 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .search {
     @apply w-full lg:h-10 h-14 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 lg:text-base text-xl outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
 }
+
+
+/* RoadsPagenation */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 20px 10px;
+}
+
+.page-item,
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 30px;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+}
+
+.page-item {
+    color: #364f6b;
+}
+
+.page-item.active {
+  color: #fff;
+  border: solid #364f6b;
+  background-color: #364f6b;
+}
