@@ -13463,9 +13463,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var MainNavigation = function MainNavigation() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("header", {
-    className: "w-full lg:h-20 h-28 flex justify-between bg-white p-4",
+    className: "w-full lg:h-20 h-24 flex justify-between bg-white p-4",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "flex lg:w-1/4 w-1/3",
+      className: "flex lg:w-1/4 w-1/2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
         loading: "lazy",
         width: "50",
@@ -13476,7 +13476,7 @@ var MainNavigation = function MainNavigation() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
         to: "v2/welcome",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-          className: "lg:text-3xl text-5xl icon-color font-bold leading-10",
+          className: "lg:text-3xl text-6xl icon-color font-bold leading-10 mt-2",
           children: "Tamari-Ba"
         })
       })]
@@ -13494,7 +13494,7 @@ var MainNavigation = function MainNavigation() {
           className: "nav-content",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
             to: "v2/boards",
-            children: "\u30C4\u30FC\u30EA\u30F3\u30B0\u63B2\u793A\u677F"
+            children: "\u30B3\u30DF\u30E5\u30CB\u30C6\u30A3"
           })
         })]
       })
@@ -13546,7 +13546,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
       to: "/v2/boards",
       className: "menu-item nav-content",
-      children: "\u30C4\u30FC\u30EA\u30F3\u30B0\u63B2\u793A\u677F"
+      children: "\u30B3\u30DF\u30E5\u30CB\u30C6\u30A3"
     })]
   }));
 });

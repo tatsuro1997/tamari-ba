@@ -18,7 +18,7 @@ export default props => {
             </Link> */}
 
             <Link to="/v2/boards" className="menu-item nav-content" >
-                ツーリング掲示板
+                コミュニティ
             </Link>
         </Menu>
     );
