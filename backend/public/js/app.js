@@ -13719,31 +13719,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ui_ListContainer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/ListContainer */ "./resources/v2/js/components/ui/ListContainer.js");
 /* harmony import */ var _RoadItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RoadItem */ "./resources/v2/js/components/roads/RoadItem.js");
-/* harmony import */ var _ui_Paginate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ui/Paginate */ "./resources/v2/js/components/ui/Paginate.js");
+/* harmony import */ var _ui_RoadsPaginate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ui/RoadsPaginate */ "./resources/v2/js/components/ui/RoadsPaginate.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
-
- // import PaginatedItems from "../ui/Paginate";
 
 
 
 
 var RoadList = function RoadList(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_ui_ListContainer__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    children: [props.roads.map(function (road) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_RoadItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        id: road.id,
-        title: road.title,
-        filename: road.filename,
-        user_name: road.user_name,
-        description: road.description,
-        created_at: road.created_at,
-        updated_at: road.updated_at
-      }, road.id);
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_Paginate__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_ListContainer__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_RoadsPaginate__WEBPACK_IMPORTED_MODULE_2__["default"], {
       roadsPerPage: 4,
       roads: props.roads
-    })]
+    })
   });
 };
 
@@ -13833,10 +13821,10 @@ var LoadingSpinner = function LoadingSpinner() {
 
 /***/ }),
 
-/***/ "./resources/v2/js/components/ui/Paginate.js":
-/*!***************************************************!*\
-  !*** ./resources/v2/js/components/ui/Paginate.js ***!
-  \***************************************************/
+/***/ "./resources/v2/js/components/ui/RoadsPaginate.js":
+/*!********************************************************!*\
+  !*** ./resources/v2/js/components/ui/RoadsPaginate.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13868,7 +13856,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Paginate = function Paginate(props) {
+var RoadsPaginate = function RoadsPaginate(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
       currentRoads = _useState2[0],
@@ -13930,7 +13918,7 @@ var Paginate = function Paginate(props) {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Paginate);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RoadsPaginate);
 
 /***/ }),
 

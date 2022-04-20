@@ -3,7 +3,7 @@ import ReactPaginate from 'react-paginate';
 
 import RoadItem from '../roads/RoadItem';
 
-const Paginate = (props) => {
+const RoadsPaginate = (props) => {
     const [currentRoads, setCurrentRoads] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     const [roadOffset, setroadOffset] = useState(0);
@@ -59,4 +59,4 @@ const Paginate = (props) => {
     );
 };
 
-    export default Paginate;
+    export default RoadsPaginate;
