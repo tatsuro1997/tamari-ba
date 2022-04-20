@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 
-import RoadItem from '../roads/RoadItem';
+import RoadList from './RoadList';
 
 const RoadsPaginate = (props) => {
     const [currentRoads, setCurrentRoads] = useState(null);
@@ -34,20 +34,10 @@ const RoadsPaginate = (props) => {
 
     return (
         <>
-            <div className='flex flex-wrap'>
-                {currentRoads && currentRoads.map(road => (
-                    <RoadItem
-                        key={road.id}
-                        id={road.id}
-                        title={road.title}
-                        filename={road.filename}
-                        user_name={road.user_name}
-                        description={road.description}
-                        created_at={road.created_at}
-                        updated_at={road.updated_at}
-                    />
-                ))}
-            </div>
+            {currentRoads && <RoadList
+                roads={currentRoads}
+                searchKeyword={props.searchKeyword}
+            />}
             {!location.pathname.match(/welcome/) &&
                 <ReactPaginate
                     onPageChange={handlePageClick}

@@ -1,11 +1,21 @@
 import Container from "../ui/ListContainer";
 import RoadItem from "./RoadItem";
-import RoadsPaginate from "../ui/RoadsPaginate";
 
 const RoadList = (props) => {
     return (
         <Container>
-            <RoadsPaginate roadsPerPage={4} roads={props.roads} />
+            {props.roads.map(road => (
+                <RoadItem
+                    key={road.id}
+                    id={road.id}
+                    title={road.title}
+                    filename={road.filename}
+                    user_name={road.user_name}
+                    description={road.description}
+                    created_at={road.created_at}
+                    updated_at={road.updated_at}
+                />
+            ))}
         </Container>
     );
 };

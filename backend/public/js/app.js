@@ -13719,18 +13719,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ui_ListContainer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/ListContainer */ "./resources/v2/js/components/ui/ListContainer.js");
 /* harmony import */ var _RoadItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RoadItem */ "./resources/v2/js/components/roads/RoadItem.js");
-/* harmony import */ var _ui_RoadsPaginate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ui/RoadsPaginate */ "./resources/v2/js/components/ui/RoadsPaginate.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 var RoadList = function RoadList(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_ListContainer__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ui_RoadsPaginate__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      roadsPerPage: 4,
-      roads: props.roads
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ui_ListContainer__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: props.roads.map(function (road) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_RoadItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        id: road.id,
+        title: road.title,
+        filename: road.filename,
+        user_name: road.user_name,
+        description: road.description,
+        created_at: road.created_at,
+        updated_at: road.updated_at
+      }, road.id);
     })
   });
 };
@@ -13739,92 +13744,10 @@ var RoadList = function RoadList(props) {
 
 /***/ }),
 
-/***/ "./resources/v2/js/components/ui/Card.js":
-/*!***********************************************!*\
-  !*** ./resources/v2/js/components/ui/Card.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-var Card = function Card(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "p-4 lg:w-1/3 w-full",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
-      className: "w-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden",
-      children: props.children
-    })
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
-
-/***/ }),
-
-/***/ "./resources/v2/js/components/ui/ListContainer.js":
-/*!********************************************************!*\
-  !*** ./resources/v2/js/components/ui/ListContainer.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-var Container = function Container(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "container px-5 py-8 mx-auto",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ul", {
-      className: "-m-4",
-      children: props.children
-    })
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Container);
-
-/***/ }),
-
-/***/ "./resources/v2/js/components/ui/LoadingSpiner.js":
-/*!********************************************************!*\
-  !*** ./resources/v2/js/components/ui/LoadingSpiner.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _LoadingSpinner_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LoadingSpinner.module.css */ "./resources/v2/js/components/ui/LoadingSpinner.module.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-var LoadingSpinner = function LoadingSpinner() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: _LoadingSpinner_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].spinner
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoadingSpinner);
-
-/***/ }),
-
-/***/ "./resources/v2/js/components/ui/RoadsPaginate.js":
-/*!********************************************************!*\
-  !*** ./resources/v2/js/components/ui/RoadsPaginate.js ***!
-  \********************************************************/
+/***/ "./resources/v2/js/components/roads/RoadsPaginate.js":
+/*!***********************************************************!*\
+  !*** ./resources/v2/js/components/roads/RoadsPaginate.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13835,7 +13758,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-paginate */ "./node_modules/react-paginate/dist/react-paginate.js");
 /* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_paginate__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _roads_RoadItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../roads/RoadItem */ "./resources/v2/js/components/roads/RoadItem.js");
+/* harmony import */ var _RoadList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RoadList */ "./resources/v2/js/components/roads/RoadList.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -13896,19 +13819,9 @@ var RoadsPaginate = function RoadsPaginate(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "flex flex-wrap",
-      children: currentRoads && currentRoads.map(function (road) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_roads_RoadItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          id: road.id,
-          title: road.title,
-          filename: road.filename,
-          user_name: road.user_name,
-          description: road.description,
-          created_at: road.created_at,
-          updated_at: road.updated_at
-        }, road.id);
-      })
+    children: [currentRoads && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_RoadList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      roads: currentRoads,
+      searchKeyword: props.searchKeyword
     }), !location.pathname.match(/welcome/) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_1___default()), {
       onPageChange: handlePageClick,
       pageRangeDisplayed: 5,
@@ -13946,6 +13859,88 @@ var RoadsPaginate = function RoadsPaginate(props) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RoadsPaginate);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/ui/Card.js":
+/*!***********************************************!*\
+  !*** ./resources/v2/js/components/ui/Card.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var Card = function Card(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "p-4 lg:w-1/3 w-full",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+      className: "w-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden",
+      children: props.children
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/ui/ListContainer.js":
+/*!********************************************************!*\
+  !*** ./resources/v2/js/components/ui/ListContainer.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var Container = function Container(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "container px-5 py-8 mx-auto",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ul", {
+      className: "flex flex-wrap -m-4",
+      children: props.children
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Container);
+
+/***/ }),
+
+/***/ "./resources/v2/js/components/ui/LoadingSpiner.js":
+/*!********************************************************!*\
+  !*** ./resources/v2/js/components/ui/LoadingSpiner.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _LoadingSpinner_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LoadingSpinner.module.css */ "./resources/v2/js/components/ui/LoadingSpinner.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var LoadingSpinner = function LoadingSpinner() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: _LoadingSpinner_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].spinner
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoadingSpinner);
 
 /***/ }),
 
@@ -14403,7 +14398,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_roads_RoadList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/roads/RoadList */ "./resources/v2/js/components/roads/RoadList.js");
+/* harmony import */ var _components_roads_RoadsPaginate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/roads/RoadsPaginate */ "./resources/v2/js/components/roads/RoadsPaginate.js");
 /* harmony import */ var _PrefectureEnum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PrefectureEnum */ "./resources/v2/js/pages/PrefectureEnum.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -14417,6 +14412,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -14472,7 +14468,7 @@ var Roads = function Roads() {
     }
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "w-1/2 mx-auto",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
@@ -14482,7 +14478,8 @@ var Roads = function Roads() {
         onChange: searchChangeHandler,
         className: "search"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_roads_RoadList__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_roads_RoadsPaginate__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      roadsPerPage: 4,
       roads: filteredRoads,
       searchKeyword: searchKeyword
     })]
