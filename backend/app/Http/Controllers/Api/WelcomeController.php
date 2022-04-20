@@ -11,6 +11,6 @@ class WelcomeController extends Controller
 {
     public function getRoads()
     {
-        return RoadResource::collection(Road::all()->take(3));
+        return RoadResource::collection(Road::all()->sortByDesc('updated_at')->take(3));
     }
 }
