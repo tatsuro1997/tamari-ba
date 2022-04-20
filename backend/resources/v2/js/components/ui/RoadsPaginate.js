@@ -34,26 +34,47 @@ const RoadsPaginate = (props) => {
 
     return (
         <>
-            {currentRoads && currentRoads.map(road => (
-                <RoadItem
-                    key={road.id}
-                    id={road.id}
-                    title={road.title}
-                    filename={road.filename}
-                    user_name={road.user_name}
-                    description={road.description}
-                    created_at={road.created_at}
-                    updated_at={road.updated_at}
-                />
-            ))}
+            <div className='flex flex-wrap'>
+                {currentRoads && currentRoads.map(road => (
+                    <RoadItem
+                        key={road.id}
+                        id={road.id}
+                        title={road.title}
+                        filename={road.filename}
+                        user_name={road.user_name}
+                        description={road.description}
+                        created_at={road.created_at}
+                        updated_at={road.updated_at}
+                    />
+                ))}
+            </div>
             <ReactPaginate
-                breakLabel="..."
-                nextLabel="next >"
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={5}
                 pageCount={pageCount}
-                previousLabel="< previous"
                 renderOnZeroPageCount={null}
+
+                containerClassName="pagination justify-center" // ul(pagination本体)
+                pageClassName="page-item" // li
+                pageLinkClassName="page-link rounded-full" // a
+                activeClassName="active" // active.li
+                activeLinkClassName="active" // active.li < a
+
+                // 戻る・進む関連
+                previousClassName="page-item" // li
+                nextClassName="page-item" // li
+                previousLabel={'<'} // a
+                previousLinkClassName="previous-link"
+                nextLabel={'>'} // a
+                nextLinkClassName="next-link"
+
+                // 先頭 or 末尾に行ったときにそれ以上戻れ(進め)なくする
+                disabledClassName="disabled-button d-none"
+
+                // 中間ページの省略表記関連
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
             />
         </>
     );
