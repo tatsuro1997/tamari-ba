@@ -11771,6 +11771,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }.ml-3 {
   margin-left: 0.75rem;
 }.-ml-px {
@@ -11883,6 +11886,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 0.25rem;
 }.h-1\/2 {
   height: 50%;
+}.h-3 {
+  height: 0.75rem;
+}.h-32 {
+  height: 8rem;
+}.h-2 {
+  height: 0.5rem;
+}.h-28 {
+  height: 7rem;
 }.max-h-52 {
   max-height: 13rem;
 }.max-h-80 {
@@ -12312,6 +12323,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25;
 }.leading-10 {
   line-height: 2.5rem;
+}.leading-6 {
+  line-height: 1.5rem;
 }.tracking-widest {
   letter-spacing: 0.1em;
 }.tracking-wider {
@@ -12706,6 +12719,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 100%;
   }.lg\:h-screen {
     height: 100vh;
+  }.lg\:h-20 {
+    height: 5rem;
   }.lg\:max-h-60 {
     max-height: 15rem;
   }.lg\:w-1\/2 {
