@@ -1,7 +1,7 @@
 export const PrefectureEnum = () => {
     return (
         {
-            "北海": 1,
+            "北海道": 1,
             "青森": 2,
             "岩手": 3,
             "宮城": 4,
