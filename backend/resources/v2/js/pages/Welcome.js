@@ -105,11 +105,7 @@ function Welcome() {
             <Main
                 abouts={ABOUT_DATA}
                 purposes={PURPOSE_DATA}
-                roads={
-                    LoadedRoads.sort(function (a, b) {
-                        return (a.updated_at > b.updated_at) ? -1 : 1;
-                    })
-                }
+                roads={LoadedRoads}
             />
         </Fragment>
     )
