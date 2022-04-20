@@ -13909,7 +13909,7 @@ var RoadsPaginate = function RoadsPaginate(props) {
           updated_at: road.updated_at
         }, road.id);
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_1___default()), {
+    }), !location.pathname.match(/welcome/) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_1___default()), {
       onPageChange: handlePageClick,
       pageRangeDisplayed: 5,
       pageCount: pageCount,
