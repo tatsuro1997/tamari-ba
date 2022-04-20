@@ -14484,7 +14484,7 @@ var Roads = function Roads() {
         className: "search"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_roads_RoadsPaginate__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      roadsPerPage: 4,
+      roadsPerPage: 12,
       roads: filteredRoads,
       searchKeyword: searchKeyword
     })]

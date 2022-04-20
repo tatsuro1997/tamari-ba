@@ -55,7 +55,7 @@ const Roads = () => {
                 />
             </div>
             <RoadsPaginate
-                roadsPerPage={4}
+                roadsPerPage={12}
                 roads={filteredRoads}
                 searchKeyword={searchKeyword}
             />
