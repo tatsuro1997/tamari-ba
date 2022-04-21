@@ -27,4 +27,8 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('road/{roadId}', [RoadController::class, 'getRoad']);
 });
 
+Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
+    return $request->user();
+});
+
 // Route::get('roads', [RoadController::class, 'index']);
