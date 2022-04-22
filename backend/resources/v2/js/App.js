@@ -8,6 +8,8 @@ import Board from "./pages/Board";
 import Inquiry from "./pages/Inquiry";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/login";
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
                     <Route path="inquiry" element={<Inquiry />} />
                     <Route path="terms_of_service" element={<TermsOfService />} />
                     <Route path="privacy_policy" element={<PrivacyPolicy />} />
+                    <Route path="v2/register" element={<Register />} />
+                    <Route path="v2/login" element={<Login />} />
                 </Routes>
             </Layout>
         </div>
