@@ -11839,6 +11839,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: block;
 }.inline-block {
   display: inline-block;
+}.inline {
+  display: inline;
 }.flex {
   display: flex;
 }.inline-flex {
@@ -12312,6 +12314,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25;
 }.leading-10 {
   line-height: 2.5rem;
+}.leading-6 {
+  line-height: 1.5rem;
 }.tracking-widest {
   letter-spacing: 0.1em;
 }.tracking-wider {
@@ -12661,6 +12665,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: block;
   }.md\:flex {
     display: flex;
+  }.md\:hidden {
+    display: none;
   }.md\:h-14 {
     height: 3.5rem;
   }.md\:min-h-screen {
@@ -12701,8 +12707,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 5rem;
   }.lg\:block {
     display: block;
+  }.lg\:inline-block {
+    display: inline-block;
+  }.lg\:inline {
+    display: inline;
   }.lg\:flex {
     display: flex;
+  }.lg\:hidden {
+    display: none;
   }.lg\:h-14 {
     height: 3.5rem;
   }.lg\:h-full {
