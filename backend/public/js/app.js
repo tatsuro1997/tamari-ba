@@ -14360,9 +14360,9 @@ var RoadDetail = function RoadDetail() {
         className: "title-font lg:text-xl text-4xl font-medium text-gray-900 mb-3",
         children: road.title
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        "class": "flex justify-between",
+        className: "flex justify-between",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          "class": "leading-relaxed mb-3 px-4 lg:text-lg text-2xl",
+          className: "leading-relaxed mb-3 px-4 lg:text-lg text-2xl",
           children: road.description
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
