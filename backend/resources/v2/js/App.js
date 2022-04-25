@@ -15,10 +15,10 @@ function App() {
         <div>
             <Layout>
                 <Routes>
-                    <Route path="v2/welcome" element={<Welcome />} />
-                    <Route path="v2/roads" element={<Roads />} />
-                    <Route path="v2/roads/:roadId" element={<RoadDetail />} />
-                    <Route path="v2/boards" element={<Board />} />
+                    <Route path="/" element={<Welcome />} />
+                    <Route path="roads" element={<Roads />} />
+                    <Route path="roads/:roadId" element={<RoadDetail />} />
+                    <Route path="boards" element={<Board />} />
                     <Route path="inquiry" element={<Inquiry />} />
                     <Route path="terms_of_service" element={<TermsOfService />} />
                     <Route path="privacy_policy" element={<PrivacyPolicy />} />
