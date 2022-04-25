@@ -1,8 +1,47 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
+import axios from 'axios';
+import swal from 'sweetalert';
 import icon from '../../../../../public/images/icon.webp'
 
 const MainNavigation = () => {
+    const navigate = useNavigate();
+
+    const logoutSubmit = (e) => {
+        e.preventDefault();
+
+        axios.post(`/api/logout`).then(res => {
+            if (res.data.status === 200) {
+                localStorage.removeItem('auth_token', res.data.token);
+                localStorage.removeItem('auth_name', res.data.username);
+                swal("ログアウトしました", res.data.message, "success");
+                navigate('/');
+                location.reload();
+            }
+        });
+    }
+
+    var AuthButtons = '';
+
+    if (!localStorage.getItem('auth_token')) {
+        AuthButtons = (
+            <>
+                <li className="mr-4 nav-login">
+                    <Link to="/login">ログイン</Link>
+                </li>
+                <li className="nav-signin-button">
+                    <Link to="/register">Tamari-Baに参加</Link>
+                </li>
+            </>
+        );
+    } else {
+        AuthButtons = (
+            <li className="mr-4 nav-login">
+                <button onClick={logoutSubmit}>ログアウト</button>
+            </li>
+        );
+    }
+
     return (
         <header className="w-full lg:h-20 h-24 flex justify-between bg-white p-4">
             <div className='flex lg:w-1/4 w-1/2'>
@@ -23,13 +62,8 @@ const MainNavigation = () => {
                         <Link to="v2/boards">コミュニティ</Link>
                     </li>
                 </ul>
-                <ul className="flex">
-                    <li className="mr-4 nav-login">
-                        <Link to="v2/login">ログイン</Link>
-                    </li>
-                    <li className="nav-signin-button">
-                        <Link to="v2/register">Tamari-Baに参加</Link>
-                    </li>
+                <ul className="flex sm:hidden lg:inline-block">
+                    {AuthButtons}
                 </ul>
             </nav>
         </header>
