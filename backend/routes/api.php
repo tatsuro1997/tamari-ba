@@ -26,5 +26,3 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('roads', [RoadController::class, 'getRoads']);
     Route::get('road/{roadId}', [RoadController::class, 'getRoad']);
 });
-
-// Route::get('roads', [RoadController::class, 'index']);
