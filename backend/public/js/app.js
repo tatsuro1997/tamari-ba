@@ -13007,7 +13007,7 @@ var Button = function Button() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
     className: "p-2 w-full",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-      to: "/v2/roads",
+      to: "roads",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
         className: "flex lg:font-bold mx-auto text-black bg-orange-400 border-0 py-4 px-10 focus:outline-none hover:bg-orange-500 rounded-full lg:text-lg text-3xl",
         children: "Tamari-Ba\u3092\u306F\u3058\u3081\u308B"
@@ -13031,6 +13031,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _roads_RoadList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../roads/RoadList */ "./resources/v2/js/components/roads/RoadList.js");
 /* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button */ "./resources/v2/js/components/Welcome/Button.js");
 /* harmony import */ var _Purpose_PurposeList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Purpose/PurposeList */ "./resources/v2/js/components/Welcome/Purpose/PurposeList.js");
@@ -13043,7 +13044,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var Main = function Main(props) {
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
+
+  var handleClick = function handleClick() {
+    navigate("roads");
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "p-3 bg-white",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_About_AboutList__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -13064,8 +13072,11 @@ var Main = function Main(props) {
               className: "lg:w-2/3 lg:text-lg text-3xl mx-auto leading-relaxed",
               children: "Tamari-Ba\u3067\u306F\u5168\u56FD\u306E\u30D0\u30A4\u30AB\u30FC\u306E\u611B\u8ECA\u3084\u304A\u3059\u3059\u3081\u30B9\u30DD\u30C3\u30C8\u3084\u30B3\u30A2\u306A\u9053\u3092\u77E5\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u3002"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_roads_RoadList__WEBPACK_IMPORTED_MODULE_0__["default"], {
-            roads: props.roads
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            onClick: handleClick,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_roads_RoadList__WEBPACK_IMPORTED_MODULE_0__["default"], {
+              roads: props.roads
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "mt-20 bg-orange-300 py-10",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
@@ -13670,7 +13681,7 @@ var RoadItem = function RoadItem(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ui_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-        to: "roads/".concat(props.id),
+        to: "".concat(props.id),
         children: [!props.filename && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           className: "lazyload w-full lg:max-h-60 max-h-80 mx-auto bg-cover",
           src: _public_images_no_image_webp__WEBPACK_IMPORTED_MODULE_1__["default"]

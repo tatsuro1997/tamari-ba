@@ -7,7 +7,7 @@ const RoadItem = (props) => {
     return (
         <Card>
             <div key={props.id}>
-                <Link to={`roads/${props.id}`}>
+                <Link to={`${props.id}`}>
                     { !props.filename &&
                         <img
                             className="lazyload w-full lg:max-h-60 max-h-80 mx-auto bg-cover"
