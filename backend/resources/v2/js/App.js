@@ -8,6 +8,7 @@ import Board from "./pages/Board";
 import Inquiry from "./pages/Inquiry";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import NoMatch from "./pages/NoMatch";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                     <Route path="inquiry" element={<Inquiry />} />
                     <Route path="terms_of_service" element={<TermsOfService />} />
                     <Route path="privacy_policy" element={<PrivacyPolicy />} />
+                    <Route path="*" element={<NoMatch />} />
                 </Routes>
             </Layout>
         </div>
