@@ -13584,7 +13584,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _ui_LoadingSpiner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ui/LoadingSpiner */ "./resources/v2/js/components/ui/LoadingSpiner.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -13622,6 +13621,10 @@ var Map = function Map(props) {
       center = _useState4[0],
       setCenter = _useState4[1];
 
+  if (isNaN(center.lat) || isNaN(center.lng)) {
+    setCenter(BASE_POSITION);
+  }
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var timer = setTimeout(function () {
       if (!isShowMarker) {
@@ -13637,7 +13640,7 @@ var Map = function Map(props) {
     };
   }, [center, setIsShowMarker]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.LoadScript, {
-    googleMapsApiKey: process.env.MIX_GOOGLE_MAP_API_KEY,
+    googleMapsApiKey: "AIzaSyA2tlchreYbSYH5E0qgkrWt6yNF8FgnkO8",
     children: [!isShowMarker && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "text-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ui_LoadingSpiner__WEBPACK_IMPORTED_MODULE_1__["default"], {})
