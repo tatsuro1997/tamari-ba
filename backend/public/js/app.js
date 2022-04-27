@@ -13621,6 +13621,10 @@ var Map = function Map(props) {
       center = _useState4[0],
       setCenter = _useState4[1];
 
+  if (isNaN(center.lat) || isNaN(center.lng)) {
+    setCenter(BASE_POSITION);
+  }
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var timer = setTimeout(function () {
       if (!isShowMarker) {

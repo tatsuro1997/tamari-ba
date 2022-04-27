@@ -17,6 +17,10 @@ const Map = (props) => {
     const [isShowMarker, setIsShowMarker] = useState(false);
     const [center, setCenter] = useState(BASE_POSITION);
 
+    if (isNaN(center.lat) || isNaN(center.lng)) {
+        setCenter(BASE_POSITION);
+    }
+
     useEffect(() => {
         const timer = setTimeout(() => {
             if (!isShowMarker) {
