@@ -26,23 +26,23 @@ use App\Http\Controllers\InquiryController;
 
 // Route::get('/', [WelcomeController::class, 'welcome'])->name('welcome');
 
-// Route::resource('bikes', BikeController::class)
-//     ->middleware('auth:users')
-//     ->except(['index', 'show']);
-// Route::get('bikes', [BikeController::class, 'index'])->name('bikes.index');
-// Route::get('bikes/{bike}', [BikeController::class, 'show'])->name('bikes.show');
+Route::resource('bikes', BikeController::class)
+    ->middleware('auth:users')
+    ->except(['index', 'show']);
+Route::get('bikes', [BikeController::class, 'index'])->name('bikes.index');
+Route::get('bikes/{bike}', [BikeController::class, 'show'])->name('bikes.show');
 
-// Route::resource('roads', RoadController::class)
-//     ->middleware('auth:users')
-//     ->except(['index', 'show']);
-// Route::get('roads', [RoadController::class, 'index'])->name('roads.index');
-// Route::get('roads/{road}', [RoadController::class, 'show'])->name('roads.show');
+Route::resource('roads', RoadController::class)
+    ->middleware('auth:users')
+    ->except(['index', 'show']);
+Route::get('roads', [RoadController::class, 'index'])->name('roads.index');
+Route::get('roads/{road}', [RoadController::class, 'show'])->name('roads.show');
 
-// Route::resource('boards', BoardController::class)
-//     ->middleware('auth:users')
-//     ->except(['index', 'show']);
-// Route::get('boards', [BoardController::class, 'index'])->name('boards.index');
-// Route::get('boards/{board}', [BoardController::class, 'show'])->name('boards.show');
+Route::resource('boards', BoardController::class)
+    ->middleware('auth:users')
+    ->except(['index', 'show']);
+Route::get('boards', [BoardController::class, 'index'])->name('boards.index');
+Route::get('boards/{board}', [BoardController::class, 'show'])->name('boards.show');
 
 // Route::resource('bike.comment', BikeCommentsController::class)
 //     ->middleware('auth:users')
@@ -56,12 +56,12 @@ use App\Http\Controllers\InquiryController;
 // ->middleware('auth:users')
 // ->only(['store', 'destroy']);
 
-// Route::prefix('users')
-//     ->middleware('auth:users')->group(function () {
-//         Route::get('profile/{user:uid}', [UsersController::class, 'Profile'])->name('profile');
-//         Route::get('{user:uid}/edit', [UsersController::class, 'Edit'])->name('edit');
-//         Route::put('update/{user:uid}', [UsersController::class, 'Update'])->name('update');
-//     });
+Route::prefix('users')
+    ->middleware('auth:users')->group(function () {
+        Route::get('profile/{user:uid}', [UsersController::class, 'Profile'])->name('profile');
+        Route::get('{user:uid}/edit', [UsersController::class, 'Edit'])->name('edit');
+        Route::put('update/{user:uid}', [UsersController::class, 'Update'])->name('update');
+    });
 
 // Route::group(['middleware' => ['auth']], function () {
 //     Route::post('road_like', [RoadController::class, 'Like'])->name('road.like');
@@ -75,12 +75,12 @@ use App\Http\Controllers\InquiryController;
 //     return view('user.dashboard');
 // })->middleware(['auth:users'])->name('dashboard');
 
-// Route::get('/inquiry', [InquiryController::class, 'Inquiry'])->name('inquiry');
-// Route::post('/send_inquiry', [InquiryController::class, 'Send_Inquiry'])->name('send.inquiry');
+Route::get('/inquiry', [InquiryController::class, 'Inquiry'])->name('inquiry');
+Route::post('/send_inquiry', [InquiryController::class, 'Send_Inquiry'])->name('send.inquiry');
 
-// Route::get('/terms_of_service', [WelcomeController::class, 'Terms_Of_Service'])->name('terms_of_service');
-// Route::get('/privacy_policy', [WelcomeController::class, 'Privacy_Policy'])->name('privacy_policy');
-// Route::post('/roads_import', [RoadController::class, 'import'])->name('import');
+Route::get('/terms_of_service', [WelcomeController::class, 'Terms_Of_Service'])->name('terms_of_service');
+Route::get('/privacy_policy', [WelcomeController::class, 'Privacy_Policy'])->name('privacy_policy');
+Route::post('/roads_import', [RoadController::class, 'import'])->name('import');
 
 
 require __DIR__.'/auth.php';
