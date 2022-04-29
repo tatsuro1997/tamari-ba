@@ -35,7 +35,7 @@ Route::get('bikes/{bike}', [BikeController::class, 'show'])->name('bikes.show');
 Route::resource('roads', RoadController::class)
     ->middleware('auth:users')
     ->except(['index', 'show']);
-Route::get('roads', [RoadController::class, 'index'])->name('roads.index');
+// Route::get('roads', [RoadController::class, 'index'])->name('roads.index');
 Route::get('roads/{road}', [RoadController::class, 'show'])->name('roads.show');
 
 Route::resource('boards', BoardController::class)
@@ -43,6 +43,19 @@ Route::resource('boards', BoardController::class)
     ->except(['index', 'show']);
 Route::get('boards', [BoardController::class, 'index'])->name('boards.index');
 Route::get('boards/{board}', [BoardController::class, 'show'])->name('boards.show');
+
+Route::prefix('users')
+->middleware('auth:users')->group(function () {
+    Route::get('profile/{user:uid}', [UsersController::class, 'Profile'])->name('profile');
+    Route::get('{user:uid}/edit', [UsersController::class, 'Edit'])->name('edit');
+    Route::put('update/{user:uid}', [UsersController::class, 'Update'])->name('update');
+});
+
+# v2
+Route::get('/{any}', function () {
+    return view('v2.welcome');
+})->where('any', '.*');
+
 
 // Route::resource('bike.comment', BikeCommentsController::class)
 //     ->middleware('auth:users')
@@ -55,13 +68,6 @@ Route::get('boards/{board}', [BoardController::class, 'show'])->name('boards.sho
 // Route::resource('board.comment', BoardCommentsController::class)
 // ->middleware('auth:users')
 // ->only(['store', 'destroy']);
-
-Route::prefix('users')
-    ->middleware('auth:users')->group(function () {
-        Route::get('profile/{user:uid}', [UsersController::class, 'Profile'])->name('profile');
-        Route::get('{user:uid}/edit', [UsersController::class, 'Edit'])->name('edit');
-        Route::put('update/{user:uid}', [UsersController::class, 'Update'])->name('update');
-    });
 
 // Route::group(['middleware' => ['auth']], function () {
 //     Route::post('road_like', [RoadController::class, 'Like'])->name('road.like');
@@ -89,9 +95,9 @@ require __DIR__.'/auth.php';
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-# v2
-// Route::get('v2/welcome', [WelcomeController::class, 'v2_welcome'])->name('v2_welcome');
+// # v2
+// // Route::get('v2/welcome', [WelcomeController::class, 'v2_welcome'])->name('v2_welcome');
 
-Route::get('/{any}', function () {
-    return view('v2.welcome');
-})->where('any', '.*');
+// Route::get('/{any}', function () {
+//     return view('v2.welcome');
+// })->where('any', '.*');
