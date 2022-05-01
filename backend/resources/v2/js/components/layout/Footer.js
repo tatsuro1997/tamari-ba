@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="text-gray-600 body-font">
             <div className="w-full sm:py-10 mx-auto sm:flex sm:justify-around">
                 <div className="ml-4 text-center">
-                    <Link to="v2/welcome">
+                    <Link to="/">
                         <div className='flex'>
                             <img loading="lazy" width="50" height="50" src={icon} alt="icon" className="lazyload h-14 sm:mr-4 sm:pb-2" />
                             <div className="text-2xl icon-color font-bold leading-10">Tamari-Ba</div>

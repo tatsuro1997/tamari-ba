@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 import Map from "../components/roads/Map";
 import noImage from '../../../../public/images/no_image.webp';
@@ -25,6 +26,13 @@ const RoadDetail = () => {
 
     return (
         <section>
+            <Helmet>
+                <title>{road.title}</title>
+                <meta
+                    name="description"
+                    content={road.description}
+                />
+            </Helmet>
             <div className="text-center mx-auto w-full lg:w-1/2">
                 {!road.filename
                     ?
@@ -44,8 +52,8 @@ const RoadDetail = () => {
             </div>
             <div className="mt-4">
                 <h3 className="title-font lg:text-xl text-4xl font-medium text-gray-900 mb-3">{road.title}</h3>
-                <div class="flex justify-between">
-                    <p class="leading-relaxed mb-3 px-4 lg:text-lg text-2xl">{ road.description}</p>
+                <div className="flex justify-between">
+                    <p className="leading-relaxed mb-3 px-4 lg:text-lg text-2xl">{ road.description}</p>
                     <div>
                         <p className="leading-relaxed lg:text-lg text-xl text-gray-600">{road.updated_at}</p>
                         <p className="leading-relaxed lg:text-lg text-xl text-gray-600 text-right">{road.user_name}</p>

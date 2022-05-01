@@ -141,9 +141,11 @@ class RoadController extends Controller
             }
         }
 
-        return redirect()
-            ->route('user.roads.index')
-            ->with(['message' => '道の投稿を更新しました。', 'status' => 'info']);
+        return redirect()->to('/');
+
+        // return redirect()
+        //     ->route('user.roads.index')
+        //     ->with(['message' => '道の投稿を更新しました。', 'status' => 'info']);
     }
 
 

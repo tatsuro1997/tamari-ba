@@ -10,6 +10,7 @@ import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import NoMatch from "./pages/NoMatch";
 
 import axios from 'axios';
 
@@ -28,15 +29,16 @@ function App() {
         <div>
             <Layout>
                 <Routes>
-                    <Route path="v2/welcome" element={<Welcome />} />
-                    <Route path="v2/roads" element={<Roads />} />
-                    <Route path="v2/roads/:roadId" element={<RoadDetail />} />
-                    <Route path="v2/boards" element={<Board />} />
+                    <Route path="/" element={<Welcome />} />
+                    <Route path="roads" element={<Roads />} />
+                    <Route path="roads/:roadId" element={<RoadDetail />} />
+                    <Route path="boards" element={<Board />} />
                     <Route path="inquiry" element={<Inquiry />} />
                     <Route path="terms_of_service" element={<TermsOfService />} />
                     <Route path="privacy_policy" element={<PrivacyPolicy />} />
                     <Route path="register" element={<Register />} />
                     <Route path="login" element={<Login />} />
+                    <Route path="*" element={<NoMatch />} />
                 </Routes>
             </Layout>
         </div>
