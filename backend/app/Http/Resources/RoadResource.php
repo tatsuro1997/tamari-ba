@@ -24,7 +24,8 @@ class RoadResource extends JsonResource
             'user_name' => $this->user->name,
             'filename' => $this->filename,
             'created_at' => $this->created_at->format('Y/m/d'),
-            'updated_at' => $this->updated_at->format('Y/m/d')
+            'updated_at' => $this->updated_at->format('Y/m/d'),
+            'road_likes' => $this->roadLikes->count(),
         ];
     }
 }
