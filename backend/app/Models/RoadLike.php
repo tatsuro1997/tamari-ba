@@ -11,6 +11,11 @@ class RoadLike extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'road_id',
+        'user_id',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

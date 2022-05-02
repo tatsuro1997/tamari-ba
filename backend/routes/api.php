@@ -25,6 +25,7 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('welcome', [WelcomeController::class, 'getRoads']);
     Route::get('roads', [RoadController::class, 'getRoads']);
     Route::get('road/{roadId}', [RoadController::class, 'getRoad']);
+    Route::post('road_like', [RoadController::class, 'createRoadLike']);
 });
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
