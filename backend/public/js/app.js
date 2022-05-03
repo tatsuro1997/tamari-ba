@@ -14140,27 +14140,29 @@ var RoadItem = function RoadItem(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       like = _useState2[0],
-      setLike = _useState2[1]; // useEffect(
+      setLike = _useState2[1]; // let roadId = {
+  //     'id': props.id,
+  // };
+  // useEffect(
   //     () => {
   //         axios
-  //             . patch('/api/road_like')
+  //             .get('/api/road_like', roadId)
   //             .then((res) => {
-  //                 setRoad(res.data.data[0]);
+  //                 console.log(res.data);
+  //                 setLike(res.data);
   //             })
   //             .catch((e) => {
   //                 console.log(e);
   //             })
-  //     }, [roadId]);
+  //     }, []
+  // );
 
-
-  var userId = {
-    'id': 1
-  };
 
   var likeHandler = function likeHandler() {
-    axios.post('/api/road_like', userId).then(function () {
-      setLike(true);
-      console.log("test");
+    axios.post('/api/road_like', roadId).then(function (res) {
+      console.log('likehandler');
+      console.log(res.data);
+      setLike(res.data);
     })["catch"](function (e) {
       console.log(e);
     });
@@ -14168,7 +14170,7 @@ var RoadItem = function RoadItem(props) {
 
   var likeButton;
 
-  if (like) {
+  if (like === true) {
     likeButton = "行きたい済み";
   } else {
     likeButton = "行きたい";

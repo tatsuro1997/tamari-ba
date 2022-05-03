@@ -7,28 +7,32 @@ import noImage from '../../../../../public/images/no_image.webp';
 const RoadItem = (props) => {
     const [like, setLike] = useState(false);
 
-        // useEffect(
+    // let roadId = {
+    //     'id': props.id,
+    // };
+
+    // useEffect(
     //     () => {
     //         axios
-    //             . patch('/api/road_like')
+    //             .get('/api/road_like', roadId)
     //             .then((res) => {
-    //                 setRoad(res.data.data[0]);
+    //                 console.log(res.data);
+    //                 setLike(res.data);
     //             })
     //             .catch((e) => {
     //                 console.log(e);
     //             })
-    //     }, [roadId]);
+    //     }, []
+    // );
 
-    let userId = {
-        'id': 1,
-    };
 
     const likeHandler = () => {
         axios
-            .post('/api/road_like', userId)
-            .then(() => {
-                setLike(true);
-                console.log("test");
+            .post('/api/road_like', roadId)
+            .then((res) => {
+                console.log('likehandler');
+                console.log(res.data);
+                setLike(res.data);
             })
             .catch((e) => {
                 console.log(e);
@@ -38,7 +42,7 @@ const RoadItem = (props) => {
 
     let likeButton;
 
-    if (like) {
+    if (like===true) {
         likeButton = "行きたい済み"
     } else {
         likeButton = "行きたい"

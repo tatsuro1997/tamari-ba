@@ -21,14 +21,35 @@ class RoadController extends Controller
         return RoadResource::collection(Road::all()->where('id', $id));
     }
 
-    public function createRoadLike(Request $request)
+    // public function getRoadLike(Request $request)
+    // {
+    //     // dd($request->id);
+    //     $exist = RoadLike::where('user_id', 1)->where('road_id', $request->id)->get();
+    //     // dd($exist);
+
+    //     if (!$exist->isEmpty()) {
+    //         return 'true';
+    //     } else {
+    //         return 'false';
+    //     }
+    // }
+
+    public function toggleRoadLike(Request $request)
     {
-        $road = Road::findOrFail($request->id);
-        $user = Auth::user();
-        RoadLike::create([
-            'road_id' => $road->id,
-            'user_id' => 1,
-        ]);
-        return redirect("/");
+        $exist = RoadLike::where('user_id', 1)->where('road_id', $request->id)->get();
+
+        $uid = 1;
+        $road_id = $request->id;
+
+        if (!$exist->isEmpty()) {
+            RoadLike::where('road_id', $road_id)->where('user_id', $uid)->delete();
+            return 'false';
+        } else {
+            RoadLike::create([
+                'road_id' => $road_id,
+                'user_id' => $uid,
+            ]);
+            return 'true';
+        }
     }
 }
