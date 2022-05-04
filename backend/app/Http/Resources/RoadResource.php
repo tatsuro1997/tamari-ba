@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\RoadLike;
 
 class RoadResource extends JsonResource
 {
@@ -14,6 +15,7 @@ class RoadResource extends JsonResource
      */
     public function toArray($request)
     {
+        $like = new RoadLike();
         return [
             'id' => $this->id,
             'title' => $this->title,
@@ -25,7 +27,8 @@ class RoadResource extends JsonResource
             'filename' => $this->filename,
             'created_at' => $this->created_at->format('Y/m/d'),
             'updated_at' => $this->updated_at->format('Y/m/d'),
-            'road_likes' => $this->roadLikes->count(),
+            'road_likes_count' => $this->roadLikes->count(),
+            'road_like' => $like->like_exist(1, $this->id),
         ];
     }
 }

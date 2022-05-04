@@ -21,19 +21,6 @@ class RoadController extends Controller
         return RoadResource::collection(Road::all()->where('id', $id));
     }
 
-    // public function getRoadLike(Request $request)
-    // {
-    //     // dd($request->id);
-    //     $exist = RoadLike::where('user_id', 1)->where('road_id', $request->id)->get();
-    //     // dd($exist);
-
-    //     if (!$exist->isEmpty()) {
-    //         return 'true';
-    //     } else {
-    //         return 'false';
-    //     }
-    // }
-
     public function toggleRoadLike(Request $request)
     {
         $exist = RoadLike::where('user_id', 1)->where('road_id', $request->id)->get();

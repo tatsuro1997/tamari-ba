@@ -14137,31 +14137,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var RoadItem = function RoadItem(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       like = _useState2[0],
-      setLike = _useState2[1]; // let roadId = {
-  //     'id': props.id,
-  // };
-  // useEffect(
-  //     () => {
-  //         axios
-  //             .get('/api/road_like', roadId)
-  //             .then((res) => {
-  //                 console.log(res.data);
-  //                 setLike(res.data);
-  //             })
-  //             .catch((e) => {
-  //                 console.log(e);
-  //             })
-  //     }, []
-  // );
+      setLike = _useState2[1];
 
+  var roadId = {
+    'id': props.id
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setLike(props.road_like);
+  }, []);
 
   var likeHandler = function likeHandler() {
     axios.post('/api/road_like', roadId).then(function (res) {
-      console.log('likehandler');
-      console.log(res.data);
       setLike(res.data);
     })["catch"](function (e) {
       console.log(e);
@@ -14242,7 +14231,8 @@ var RoadList = function RoadList(props) {
         user_name: road.user_name,
         description: road.description,
         created_at: road.created_at,
-        updated_at: road.updated_at
+        updated_at: road.updated_at,
+        road_like: road.road_like
       }, road.id);
     })
   });

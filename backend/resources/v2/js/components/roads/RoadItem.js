@@ -5,33 +5,20 @@ import Card from "../ui/Card";
 import noImage from '../../../../../public/images/no_image.webp';
 
 const RoadItem = (props) => {
-    const [like, setLike] = useState(false);
+    const [like, setLike] = useState('');
 
-    // let roadId = {
-    //     'id': props.id,
-    // };
+    let roadId = {
+        'id': props.id,
+    };
 
-    // useEffect(
-    //     () => {
-    //         axios
-    //             .get('/api/road_like', roadId)
-    //             .then((res) => {
-    //                 console.log(res.data);
-    //                 setLike(res.data);
-    //             })
-    //             .catch((e) => {
-    //                 console.log(e);
-    //             })
-    //     }, []
-    // );
-
+    useEffect(() => {
+        setLike(props.road_like)
+    }, [])
 
     const likeHandler = () => {
         axios
             .post('/api/road_like', roadId)
             .then((res) => {
-                console.log('likehandler');
-                console.log(res.data);
                 setLike(res.data);
             })
             .catch((e) => {
@@ -39,10 +26,9 @@ const RoadItem = (props) => {
             })
     }
 
-
     let likeButton;
 
-    if (like===true) {
+    if (like === true ) {
         likeButton = "行きたい済み"
     } else {
         likeButton = "行きたい"
