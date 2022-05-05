@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import Card from "../ui/Card";
 import noImage from '../../../../../public/images/no_image.webp';
@@ -29,9 +31,9 @@ const RoadItem = (props) => {
     let likeButton;
 
     if (like === true ) {
-        likeButton = "行きたい済み"
+        likeButton = <div className='text-red-600'><FontAwesomeIcon icon={faHeart} size="lg" /></div>
     } else {
-        likeButton = "行きたい"
+        likeButton = <div><FontAwesomeIcon icon={faHeart} size="lg" /></div>
     }
 
     return (
@@ -50,12 +52,14 @@ const RoadItem = (props) => {
                     />
                 </Link>
                 <div className="p-6">
-                    <h2 className="text-left title-font lg:text-lg text-4xl font-medium text-gray-900 mb-3">
-                        {props.title}
-                    </h2>
-                    <button onClick={likeHandler}>
-                        {likeButton}
-                    </button>
+                    <div className='flex justify-between'>
+                        <h2 className="text-left title-font lg:text-lg text-4xl font-medium text-gray-900 mb-3">
+                            {props.title}
+                        </h2>
+                        <button onClick={likeHandler}>
+                            {likeButton}
+                        </button>
+                    </div>
                     <div className="flex justify-end lg:text-base text-xl text-gray-600">
                         <div className="leading-relaxed text-right">
                             {props.updated_at}

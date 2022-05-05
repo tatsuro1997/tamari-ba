@@ -11923,6 +11923,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 7rem;
 }.w-2\/3 {
   width: 66.666667%;
+}.w-2 {
+  width: 0.5rem;
 }.w-80 {
   width: 20rem;
 }.min-w-0 {
