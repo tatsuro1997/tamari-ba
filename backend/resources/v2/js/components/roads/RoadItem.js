@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,6 +8,7 @@ import noImage from '../../../../../public/images/no_image.webp';
 
 const RoadItem = (props) => {
     const [like, setLike] = useState('');
+    const navigate = useNavigate();
 
     let roadId = {
         'id': props.id,
@@ -18,14 +19,18 @@ const RoadItem = (props) => {
     }, [])
 
     const likeHandler = () => {
-        axios
-            .post('/api/road_like', roadId)
-            .then((res) => {
-                setLike(res.data);
-            })
-            .catch((e) => {
-                console.log(e);
-            })
+        if (!localStorage.getItem('auth_token')) {
+            navigate("/login");
+        } else {
+            axios
+                .post('/api/road_like', roadId)
+                .then((res) => {
+                    setLike(res.data);
+                })
+                .catch((e) => {
+                    console.log(e);
+                })
+        }
     }
 
     let likeButton;
