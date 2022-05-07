@@ -16,6 +16,8 @@ class RoadResource extends JsonResource
     public function toArray($request)
     {
         $like = new RoadLike();
+        $uid = $request->uid;
+
         return [
             'id' => $this->id,
             'title' => $this->title,
@@ -28,7 +30,7 @@ class RoadResource extends JsonResource
             'created_at' => $this->created_at->format('Y/m/d'),
             'updated_at' => $this->updated_at->format('Y/m/d'),
             'road_likes_count' => $this->roadLikes->count(),
-            'road_like' => $like->like_exist(1, $this->id),
+            'road_like' => $like->like_exist($uid, $this->id),
         ];
     }
 }

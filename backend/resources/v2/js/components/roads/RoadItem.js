@@ -8,10 +8,21 @@ import noImage from '../../../../../public/images/no_image.webp';
 
 const RoadItem = (props) => {
     const [like, setLike] = useState('');
+    const [uid, setUid] = useState('')
     const navigate = useNavigate();
 
-    let roadId = {
+    useEffect(() => {
+        axios
+            .get('/api/user').then((res) => {
+            setUid(res.data.id);
+        }).catch(() => {
+            navigate('/login');
+        })
+    }, [])
+
+    let likeData = {
         'id': props.id,
+        'uid': uid,
     };
 
     useEffect(() => {
@@ -20,10 +31,10 @@ const RoadItem = (props) => {
 
     const likeHandler = () => {
         if (!localStorage.getItem('auth_token')) {
-            navigate("/login");
+            navigate('/login');
         } else {
             axios
-                .post('/api/road_like', roadId)
+                .post('/api/road_like', likeData)
                 .then((res) => {
                     setLike(res.data);
                 })
