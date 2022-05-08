@@ -8,10 +8,15 @@ const Roads = () => {
     const [filteredRoads, setFilteredRoads] = useState([]);
     const [searchKeyword, updateSearchKeyword] = useState('');
 
-    useEffect(
-        () => {
+    useEffect(() => {
+        axios
+            .get('/api/user').then((res) => {
                 axios
-                    .get('/api/roads')
+                    .get('/api/roads', {
+                        params: {
+                            uid: res.data.id
+                        }
+                    })
                     .then((res) => {
                         setLoadedRoads(res.data.data);
                         setFilteredRoads(res.data.data);
@@ -19,7 +24,10 @@ const Roads = () => {
                     .catch((e) => {
                         console.log(e);
                     })
-        }, []);
+            }).catch(() => {
+                navigate('/login');
+            })
+    }, [])
 
     const searchChangeHandler = event => {
         updateSearchKeyword(event.target.value);
