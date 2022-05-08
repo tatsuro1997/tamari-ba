@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import RoadsPaginate from '../components/roads/RoadsPaginate';
 import { PrefectureEnum } from './PrefectureEnum';
@@ -8,26 +9,44 @@ const Roads = () => {
     const [filteredRoads, setFilteredRoads] = useState([]);
     const [searchKeyword, updateSearchKeyword] = useState('');
 
-    useEffect(() => {
-        axios
-            .get('/api/user').then((res) => {
-                axios
-                    .get('/api/roads', {
-                        params: {
-                            uid: res.data.id
-                        }
-                    })
-                    .then((res) => {
-                        setLoadedRoads(res.data.data);
-                        setFilteredRoads(res.data.data);
-                    })
-                    .catch((e) => {
-                        console.log(e);
-                    })
-            }).catch(() => {
-                navigate('/login');
-            })
-    }, [])
+    const navigate = useNavigate();
+
+    if (localStorage.getItem('auth_token')) {
+        useEffect(() => {
+            axios
+                .get('/api/user').then((res) => {
+                    axios
+                        .get('/api/roads', {
+                            params: {
+                                uid: res.data.id
+                            }
+                        })
+                        .then((res) => {
+                            setLoadedRoads(res.data.data);
+                            setFilteredRoads(res.data.data);
+                        })
+                        .catch((e) => {
+                            console.log(e);
+                        })
+                }).catch(() => {
+                    navigate('/login');
+                })
+        }, [])
+    }
+
+    if (!localStorage.getItem('auth_token')) {
+        useEffect(() => {
+            axios
+                .get('/api/roads')
+                .then((res) => {
+                    setLoadedRoads(res.data.data);
+                    setFilteredRoads(res.data.data);
+                })
+                .catch((e) => {
+                    console.log(e);
+                })
+        }, [])
+    }
 
     const searchChangeHandler = event => {
         updateSearchKeyword(event.target.value);

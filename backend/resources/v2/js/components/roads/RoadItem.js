@@ -11,14 +11,16 @@ const RoadItem = (props) => {
     const [uid, setUid] = useState('')
     const navigate = useNavigate();
 
-    useEffect(() => {
-        axios
-            .get('/api/user').then((res) => {
-            setUid(res.data.id);
-        }).catch(() => {
-            navigate('/login');
-        })
-    }, [])
+    if (localStorage.getItem('auth_token')) {
+        useEffect(() => {
+            axios
+                .get('/api/user').then((res) => {
+                setUid(res.data.id);
+            }).catch(() => {
+                navigate('/login');
+            })
+        }, [])
+    }
 
     let likeData = {
         'id': props.id,
