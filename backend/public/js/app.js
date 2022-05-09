@@ -13634,11 +13634,11 @@ var Map = function Map(props) {
         });
         setIsShowMarker(true);
       }
-    }, 1000);
+    }, 800);
     return function () {
       clearTimeout(timer);
     };
-  }, [center, setIsShowMarker]);
+  }, [props]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.LoadScript, {
     googleMapsApiKey: "AIzaSyA2tlchreYbSYH5E0qgkrWt6yNF8FgnkO8",
     children: [!isShowMarker && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
