@@ -5,7 +5,7 @@ import LoadingSpinner from "../ui/LoadingSpiner";
 
 const containerStyle = {
     width: "100%",
-    height: "50%",
+    height: "25vh",
 };
 
 const BASE_POSITION = {
@@ -39,7 +39,7 @@ const Map = (props) => {
             { isShowMarker && <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={13}
+                zoom={15}
             >
                  <Marker position={center} />
             </GoogleMap>}
