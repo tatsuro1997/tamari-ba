@@ -27,11 +27,11 @@ const Map = (props) => {
                 setCenter({ lat: props.lat, lng: props.lng });
                 setIsShowMarker(true);
             }
-        }, 1000);
+        }, 800);
         return () => {
             clearTimeout(timer);
         };
-    }, [center, setIsShowMarker])
+    }, [props])
 
     return (
         <LoadScript googleMapsApiKey={process.env.MIX_GOOGLE_MAP_API_KEY}>
