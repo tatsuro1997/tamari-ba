@@ -13603,7 +13603,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var containerStyle = {
   width: "100%",
-  height: "50%"
+  height: "25vh"
 };
 var BASE_POSITION = {
   lat: 35.6585769,
@@ -13647,7 +13647,7 @@ var Map = function Map(props) {
     }), isShowMarker && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.GoogleMap, {
       mapContainerStyle: containerStyle,
       center: center,
-      zoom: 13,
+      zoom: 15,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_3__.Marker, {
         position: center
       })
