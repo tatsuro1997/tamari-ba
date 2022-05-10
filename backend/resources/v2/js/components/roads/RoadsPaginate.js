@@ -19,7 +19,7 @@ const RoadsPaginate = (props) => {
     useEffect(() => {
         // Fetch roads from another resources.
         const endOffset = roadOffset + roadsPerPage;
-        console.log(`Loading roads from ${roadOffset} to ${endOffset}`);
+        // console.log(`Loading roads from ${roadOffset} to ${endOffset}`);
         setCurrentRoads(roads.slice(roadOffset, endOffset));
         setPageCount(Math.ceil(roads.length / roadsPerPage));
     }, [roadOffset, roadsPerPage, roads]);

@@ -13818,8 +13818,8 @@ var RoadsPaginate = function RoadsPaginate(props) {
   }, [props.roads]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     // Fetch roads from another resources.
-    var endOffset = roadOffset + roadsPerPage;
-    console.log("Loading roads from ".concat(roadOffset, " to ").concat(endOffset));
+    var endOffset = roadOffset + roadsPerPage; // console.log(`Loading roads from ${roadOffset} to ${endOffset}`);
+
     setCurrentRoads(roads.slice(roadOffset, endOffset));
     setPageCount(Math.ceil(roads.length / roadsPerPage));
   }, [roadOffset, roadsPerPage, roads]); // Invoke when user click to request another page.
@@ -14418,8 +14418,7 @@ var RoadDetail = function RoadDetail() {
   var query = "/".concat(roadId);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     axios.get('/api/road' + query).then(function (res) {
-      setRoad(res.data.data[0]);
-      console.log(res.data.data[0]);
+      setRoad(res.data.data[0]); // console.log(res.data.data[0]);
     })["catch"](function (e) {
       console.log(e);
     });

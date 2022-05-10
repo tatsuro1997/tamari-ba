@@ -18,7 +18,7 @@ const RoadDetail = () => {
                 .get('/api/road' + query)
                 .then((res) => {
                     setRoad(res.data.data[0]);
-                    console.log(res.data.data[0]);
+                    // console.log(res.data.data[0]);
                 })
                 .catch((e) => {
                     console.log(e);
