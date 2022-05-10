@@ -11835,6 +11835,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2rem;
 }.mb-12 {
   margin-bottom: 3rem;
+}.mr-10 {
+  margin-right: 2.5rem;
 }.block {
   display: block;
 }.inline-block {

@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import Map from "../components/roads/Map";
 import noImage from '../../../../public/images/no_image.webp';
+import BackButton from "../components/ui/BackButton";
 
 const RoadDetail = () => {
     const { roadId } = useParams();
@@ -33,6 +34,7 @@ const RoadDetail = () => {
                     content={road.description}
                 />
             </Helmet>
+            <BackButton />
             <div className="text-center mx-auto w-full lg:w-1/2">
                 {!road.filename
                     ?
