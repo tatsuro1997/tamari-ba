@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import axios from 'axios';
 import swal from 'sweetalert';
@@ -6,6 +7,7 @@ import icon from '../../../../../public/images/icon.webp'
 
 const MainNavigation = () => {
     const navigate = useNavigate();
+    const [uid, setUid] = useState('');
 
     const logoutSubmit = (e) => {
         e.preventDefault();
@@ -19,6 +21,13 @@ const MainNavigation = () => {
                 location.reload();
             }
         });
+    }
+
+    if (localStorage.getItem('auth_token')) {
+        axios
+            .get('/api/user').then((res) => {
+                setUid(res.data.id);
+            })
     }
 
     var AuthButtons = '';
@@ -36,9 +45,14 @@ const MainNavigation = () => {
         );
     } else {
         AuthButtons = (
-            <li className="mr-4 nav-login">
-                <button onClick={logoutSubmit}>ログアウト</button>
-            </li>
+            <>
+                <li className="mr-4 nav-login">
+                    <button onClick={logoutSubmit}>ログアウト</button>
+                </li>
+                <li className="mr-4 nav-login">
+                    <Link to={/users/+`${uid}`}>お気に入り一覧</Link>
+                </li>
+            </>
         );
     }
 

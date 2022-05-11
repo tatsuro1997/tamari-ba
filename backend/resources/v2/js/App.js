@@ -11,6 +11,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import NoMatch from "./pages/NoMatch";
+import UserPage from "./pages/UserPage";
 
 import axios from 'axios';
 
@@ -33,6 +34,7 @@ function App() {
                     <Route path="roads" element={<Roads />} />
                     <Route path="roads/:roadId" element={<RoadDetail />} />
                     <Route path="boards" element={<Board />} />
+                    <Route path="users/:userId" element={<UserPage />} />
                     <Route path="inquiry" element={<Inquiry />} />
                     <Route path="terms_of_service" element={<TermsOfService />} />
                     <Route path="privacy_policy" element={<PrivacyPolicy />} />
