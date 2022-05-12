@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import RoadsPaginate from '../components/roads/RoadsPaginate';
+import Search from '../components/ui/Search';
 import { PrefectureEnum } from './PrefectureEnum';
 
 const Roads = () => {
@@ -45,6 +46,7 @@ const Roads = () => {
 
     return (
         <>
+            <Search />
             <div className='w-1/2 mx-auto'>
                 <input
                     id="search-keyword"
