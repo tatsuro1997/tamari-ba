@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { slide as Menu } from "react-burger-menu";
 
@@ -7,6 +7,7 @@ import swal from 'sweetalert';
 
 export default props => {
     const navigate = useNavigate();
+    const [uid, setUid] = useState('');
 
     const logoutSubmit = (e) => {
         e.preventDefault();
@@ -22,17 +23,24 @@ export default props => {
         });
     }
 
-    var AuthButtons = '';
+    if (localStorage.getItem('auth_token')) {
+        axios
+            .get('/api/user').then((res) => {
+                setUid(res.data.id);
+            })
+    }
+
+    let AuthButtons = '';
 
     if (!localStorage.getItem('auth_token')) {
         AuthButtons = (
-            <Link to="/login" className="bm-item menu-item mb-10 nav-content">ログイン</Link>
+            <Link to="/login" className="bm-item menu-item my-10 nav-content">ログイン</Link>
         );
     } else {
         AuthButtons = (
-            <li className="bm-item menu-item mb-10 nav-content">
-                <button onClick={logoutSubmit}>ログアウト</button>
-            </li>
+                <div className="bm-item menu-item my-10 nav-content">
+                    <button onClick={logoutSubmit}>ログアウト</button>
+                </div>
         );
     }
 
@@ -55,6 +63,10 @@ export default props => {
             </Link>
 
             {AuthButtons}
+
+            {localStorage.getItem('auth_token') && <div className="mr-4 bm-item menu-item mb-10 nav-content">
+                <Link to={/users/ + `${uid}`}>お気に入り一覧</Link>
+            </div>}
 
             <Link
                 to="/register"

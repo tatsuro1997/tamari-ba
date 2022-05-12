@@ -11771,6 +11771,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }.ml-3 {
   margin-left: 0.75rem;
 }.-ml-px {
@@ -11835,6 +11838,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2rem;
 }.mb-12 {
   margin-bottom: 3rem;
+}.mr-10 {
+  margin-right: 2.5rem;
 }.block {
   display: block;
 }.inline-block {
@@ -11923,8 +11928,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 7rem;
 }.w-2\/3 {
   width: 66.666667%;
-}.w-2 {
-  width: 0.5rem;
 }.w-80 {
   width: 20rem;
 }.min-w-0 {
