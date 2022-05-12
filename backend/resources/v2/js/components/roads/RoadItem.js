@@ -8,17 +8,17 @@ import noImage from '../../../../../public/images/no_image.webp';
 
 const RoadItem = (props) => {
     const [like, setLike] = useState('');
-    const [uid, setUid] = useState('')
+    const [uid, setUid] = useState('');
     const navigate = useNavigate();
 
     if (localStorage.getItem('auth_token')) {
         useEffect(() => {
             axios
                 .get('/api/user').then((res) => {
-                setUid(res.data.id);
-            }).catch(() => {
-                navigate('/login');
-            })
+                    setUid(res.data.id);
+                }).catch(() => {
+                    navigate('/login');
+                })
         }, [])
     }
 

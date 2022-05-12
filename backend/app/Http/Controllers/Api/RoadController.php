@@ -38,4 +38,17 @@ class RoadController extends Controller
             return 'true';
         }
     }
+
+    public function getRoadLikes(Request $request)
+    {
+        $uid = $request->uid;
+
+        $roadLikes = RoadLike::all()->where('user_id', $uid);
+
+        $roadLikes =  $roadLikes->map(function ($roadLike) {
+            return RoadResource::collection(Road::all()->where('id', $roadLike->road_id))->first();
+        });
+
+        return $roadLikes;
+    }
 }
