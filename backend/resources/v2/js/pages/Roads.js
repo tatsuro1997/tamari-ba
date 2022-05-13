@@ -44,9 +44,11 @@ const Roads = () => {
         }
     }
 
+    const PREFECTURE = PrefectureEnum();
+
     return (
         <>
-            <Search />
+            <Search keyword={PREFECTURE} />
             <div className='w-1/2 mx-auto'>
                 <input
                     id="search-keyword"
