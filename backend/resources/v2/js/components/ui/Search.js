@@ -20,7 +20,8 @@ const Search = (props) => {
 
         setCheckedItems({
             ...checkedItems,
-            [event.target.value]: event.target.checked
+            [event.target.id]: event.target.checked
+            // [event.target.value]: event.target.checked
         })
 
         console.log('checkedItems:', checkedItems)
@@ -30,10 +31,24 @@ const Search = (props) => {
         event.preventDefault();
 
         const dataPushArray = Object.entries(checkedItems).reduce((pre, [key, value]) => {
-            value && pre.push(key)
+            value && pre.push(Number(key) + 1)
             return pre
         }, [])
         console.log("dataPushArray:", dataPushArray)
+
+        axios
+            .get('/api/search_roads', {
+                params: {
+                    search: dataPushArray
+                }
+            })
+            .then((res) => {
+                setLoadedRoads(res.data.data);
+                setFilteredRoads(res.data.data);
+            })
+            .catch((e) => {
+                console.log(e);
+            })
     };
 
     return (

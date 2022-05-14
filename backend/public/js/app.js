@@ -14073,7 +14073,7 @@ var Search = function Search(props) {
   var handleChange = function handleChange(event) {
     console.log(event.target.id);
     console.log(event.target.checked);
-    setCheckedItems(_objectSpread(_objectSpread({}, checkedItems), {}, _defineProperty({}, event.target.value, event.target.checked)));
+    setCheckedItems(_objectSpread(_objectSpread({}, checkedItems), {}, _defineProperty({}, event.target.id, event.target.checked)));
     console.log('checkedItems:', checkedItems);
   };
 
@@ -14084,10 +14084,20 @@ var Search = function Search(props) {
           key = _ref2[0],
           value = _ref2[1];
 
-      value && pre.push(key);
+      value && pre.push(Number(key) + 1);
       return pre;
     }, []);
     console.log("dataPushArray:", dataPushArray);
+    axios.get('/api/search_roads', {
+      params: {
+        search: dataPushArray
+      }
+    }).then(function (res) {
+      setLoadedRoads(res.data.data);
+      setFilteredRoads(res.data.data);
+    })["catch"](function (e) {
+      console.log(e);
+    });
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
