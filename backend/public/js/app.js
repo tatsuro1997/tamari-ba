@@ -13824,14 +13824,12 @@ var RoadsPaginate = function RoadsPaginate(props) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     // Fetch roads from another resources.
     var endOffset = roadOffset + roadsPerPage;
-    console.log("Loading roads from ".concat(roadOffset, " to ").concat(endOffset));
     setCurrentRoads(roads.slice(roadOffset, endOffset));
     setPageCount(Math.ceil(roads.length / roadsPerPage));
   }, [roadOffset, roadsPerPage, roads]); // Invoke when user click to request another page.
 
   var handlePageClick = function handlePageClick(event) {
     var newOffset = event.selected * roadsPerPage % roads.length;
-    console.log("User requested page number ".concat(event.selected, ", which is offset ").concat(newOffset));
     setroadOffset(newOffset);
   };
 
@@ -13840,8 +13838,7 @@ var RoadsPaginate = function RoadsPaginate(props) {
       className: "text-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ui_LoadingSpiner__WEBPACK_IMPORTED_MODULE_3__["default"], {})
     }), currentRoads && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_RoadList__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      roads: currentRoads,
-      searchKeyword: props.searchKeyword
+      roads: currentRoads
     }), !location.pathname.match(/welcome/) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_1___default()), {
       onPageChange: handlePageClick,
       pageRangeDisplayed: 5,
@@ -14659,11 +14656,6 @@ var Roads = function Roads() {
       filteredRoads = _useState4[0],
       setFilteredRoads = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-      _useState6 = _slicedToArray(_useState5, 2),
-      searchKeyword = _useState6[0],
-      updateSearchKeyword = _useState6[1];
-
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     axios.get('/api/roads').then(function (res) {
       setLoadedRoads(res.data.data);
@@ -14674,7 +14666,6 @@ var Roads = function Roads() {
   }, []);
 
   var searchChangeHandler = function searchChangeHandler(event) {
-    updateSearchKeyword(event.target.value);
     var value = event.target.value.toLowerCase();
     var result = [];
 
@@ -14713,8 +14704,7 @@ var Roads = function Roads() {
       roadsPerPage: 12,
       roads: filteredRoads.sort(function (a, b) {
         return a.updated_at > b.updated_at ? -1 : 1;
-      }),
-      searchKeyword: searchKeyword
+      })
     })]
   });
 };

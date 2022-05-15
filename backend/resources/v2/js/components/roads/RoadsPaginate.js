@@ -19,7 +19,6 @@ const RoadsPaginate = (props) => {
     useEffect(() => {
         // Fetch roads from another resources.
         const endOffset = roadOffset + roadsPerPage;
-        console.log(`Loading roads from ${roadOffset} to ${endOffset}`);
         setCurrentRoads(roads.slice(roadOffset, endOffset));
         setPageCount(Math.ceil(roads.length / roadsPerPage));
     }, [roadOffset, roadsPerPage, roads]);
@@ -27,9 +26,6 @@ const RoadsPaginate = (props) => {
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
         const newOffset = (event.selected * roadsPerPage) % roads.length;
-        console.log(
-            `User requested page number ${event.selected}, which is offset ${newOffset}`
-        );
         setroadOffset(newOffset);
     };
 
@@ -38,7 +34,6 @@ const RoadsPaginate = (props) => {
             {currentRoads.length===0 && <div className="text-center"><LoadingSpinner /></div>}
             {currentRoads && <RoadList
                 roads={currentRoads}
-                searchKeyword={props.searchKeyword}
             />}
             {!location.pathname.match(/welcome/) &&
                 <ReactPaginate

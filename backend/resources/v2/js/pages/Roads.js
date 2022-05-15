@@ -7,7 +7,6 @@ import { PrefectureEnum } from './PrefectureEnum';
 const Roads = () => {
     const [loadedRoads, setLoadedRoads] = useState([]);
     const [filteredRoads, setFilteredRoads] = useState([]);
-    const [searchKeyword, updateSearchKeyword] = useState('');
 
     useEffect(
         () => {
@@ -23,7 +22,6 @@ const Roads = () => {
         }, []);
 
     const searchChangeHandler = event => {
-        updateSearchKeyword(event.target.value);
         let value = event.target.value.toLowerCase();
         let result = [];
 
@@ -65,7 +63,6 @@ const Roads = () => {
                         return (a.updated_at > b.updated_at) ? -1 : 1;
                     })
                 }
-                searchKeyword={searchKeyword}
             />
         </>
     )
