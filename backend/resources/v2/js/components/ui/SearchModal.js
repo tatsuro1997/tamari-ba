@@ -1,10 +1,13 @@
+
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Modal from "./Modal";
 
-const Search = (props) => {
+const SearchModal = (props) => {
     const [searchIsShown, setSearchIsShown] = useState(false);
     const [checkedItems, setCheckedItems] = useState({});
+    const navigate = useNavigate();
 
     const showSearchHandler = () => {
         setSearchIsShown(true);
@@ -15,16 +18,10 @@ const Search = (props) => {
     };
 
     const handleChange = (event) => {
-        console.log(event.target.id);
-        console.log(event.target.checked);
-
         setCheckedItems({
             ...checkedItems,
             [event.target.id]: event.target.checked
-            // [event.target.value]: event.target.checked
         })
-
-        console.log('checkedItems:', checkedItems)
     };
 
     const searchSubmit = (event) => {
@@ -34,21 +31,9 @@ const Search = (props) => {
             value && pre.push(Number(key) + 1)
             return pre
         }, [])
-        console.log("dataPushArray:", dataPushArray)
 
-        axios
-            .get('/api/search_roads', {
-                params: {
-                    search: dataPushArray
-                }
-            })
-            .then((res) => {
-                setLoadedRoads(res.data.data);
-                setFilteredRoads(res.data.data);
-            })
-            .catch((e) => {
-                console.log(e);
-            })
+        hideSearchHandler;
+        navigate('/roads/search', { state: { data: dataPushArray } });
     };
 
     return (
@@ -82,4 +67,4 @@ const Search = (props) => {
     );
 };
 
-export default Search;
+export default SearchModal;
