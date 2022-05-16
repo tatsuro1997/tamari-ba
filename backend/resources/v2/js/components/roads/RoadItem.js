@@ -11,25 +11,25 @@ const RoadItem = (props) => {
     const [uid, setUid] = useState('');
     const navigate = useNavigate();
 
-    if (localStorage.getItem('auth_token')) {
-        useEffect(() => {
-            axios
-                .get('/api/user').then((res) => {
-                    setUid(res.data.id);
-                }).catch(() => {
-                    navigate('/login');
-                })
-        }, [])
-    }
+    useEffect(() => {
+        setLike(props.road_like)
+    }, [])
+
+    useEffect(() => {
+        if (localStorage.getItem('auth_token')) {
+        axios
+            .get('/api/user').then((res) => {
+                setUid(res.data.id);
+            }).catch(() => {
+                navigate('/');
+            })
+        }
+    }, [])
 
     let likeData = {
         'id': props.id,
         'uid': uid,
     };
-
-    useEffect(() => {
-        setLike(props.road_like)
-    }, [])
 
     const likeHandler = () => {
         if (!localStorage.getItem('auth_token')) {
