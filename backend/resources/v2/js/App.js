@@ -12,6 +12,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import NoMatch from "./pages/NoMatch";
 import UserPage from "./pages/UserPage";
+import Search from "./pages/Search";
 
 import axios from 'axios';
 
@@ -33,6 +34,7 @@ function App() {
                     <Route path="/" element={<Welcome />} />
                     <Route path="roads" element={<Roads />} />
                     <Route path="roads/:roadId" element={<RoadDetail />} />
+                    <Route path="roads/search" element={<Search />} />
                     <Route path="boards" element={<Board />} />
                     <Route path="users/:userId" element={<UserPage />} />
                     <Route path="inquiry" element={<Inquiry />} />

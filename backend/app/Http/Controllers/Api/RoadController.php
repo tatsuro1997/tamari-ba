@@ -51,4 +51,11 @@ class RoadController extends Controller
 
         return $roadLikes;
     }
+
+    public function searchRoads(Request $request)
+    {
+        foreach ($request->input('search') as $prefecture_id) {
+            return RoadResource::collection(Road::all()->where('prefecture_id', $prefecture_id));
+        }
+    }
 }
