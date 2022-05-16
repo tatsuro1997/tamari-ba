@@ -6,7 +6,9 @@ import Menu from "./Menu";
 const Layout = (props) => {
     return (
         <div>
-            <Menu right width={500} />
+            <div className="inline-block lg:hidden">
+                <Menu right width={500} />
+            </div>
             <MainNavigation />
             <ShowWelcomeSwiper />
             <div className="py-12">
