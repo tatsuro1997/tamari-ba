@@ -54,8 +54,8 @@ class RoadController extends Controller
 
     public function searchRoads(Request $request)
     {
-        foreach ($request->input('search') as $prefecture_id) {
-            return RoadResource::collection(Road::all()->where('prefecture_id', $prefecture_id));
-        }
+        $prefecture_ids = $request->input('search');
+
+        return RoadResource::collection(Road::all()->whereIn('prefecture_id', $prefecture_ids));
     }
 }
