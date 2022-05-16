@@ -87,6 +87,7 @@ const PURPOSE_DATA = [
 function Welcome() {
 
     const [LoadedRoads, setLoadedRoads] = useState([]);
+    let abortCtrl = new AbortController();
 
     useEffect(
         () => {
@@ -98,6 +99,10 @@ function Welcome() {
                 .catch((e) => {
                     console.log(e);
                 })
+
+                return () => {
+                    abortCtrl.abort()
+                }
         }, []);
 
     return (

@@ -11,6 +11,11 @@ class RoadLike extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'road_id',
+        'user_id',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -22,7 +27,7 @@ class RoadLike extends Model
     }
 
     //いいねが既にされているかを確認
-    public function like_exist($id, $road_id)
+    public static function like_exist($id, $road_id)
     {
         //Likesテーブルのレコードにユーザーidと投稿idが一致するものを取得
         $exist = RoadLike::where('user_id', $id)->where('road_id', $road_id)->get();

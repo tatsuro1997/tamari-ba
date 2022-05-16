@@ -178,6 +178,7 @@ return [
         App\Providers\SampleServiceProvider::class,
         App\Providers\SlackServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
 
     ],
 
