@@ -33,7 +33,8 @@ const RoadsPaginate = (props) => {
 
     return (
         <>
-            {currentRoads.length===0 && <div className="text-center"><LoadingSpinner /></div>}
+            {currentRoads.length === 0 && <div className="text-center"><LoadingSpinner /></div>}
+            {currentRoads.length === 0 && <div className="text-center">まだ投稿がありません。。。</div>}
             {currentRoads && <RoadList
                 roads={currentRoads}
             />}

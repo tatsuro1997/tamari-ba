@@ -45,7 +45,7 @@ class RoadController extends Controller
 
         $roadLikes = RoadLike::all()->where('user_id', $uid);
 
-        $roadLikes =  $roadLikes->map(function ($roadLike) {
+        $roadLikes = $roadLikes->map(function ($roadLike) {
             return RoadResource::collection(Road::all()->where('id', $roadLike->road_id))->first();
         });
 

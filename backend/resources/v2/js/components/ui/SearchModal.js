@@ -41,7 +41,7 @@ const SearchModal = (props) => {
             {searchIsShown &&
                 <Modal onClose={hideSearchHandler} >
                     <form onSubmit={searchSubmit}>
-                        <div className="text-3xl lg:text-lg font-bold text-center my-6 lg:mt-2">エリア絞り込み</div>
+                        <div className="text-3xl lg:text-lg font-bold text-center my-6 lg:my-2">エリア絞り込み</div>
                         <hr className="my-2" />
                         <div className="px-4 text-4xl lg:text-lg">
                             {Object.keys(props.keyword).map((val, index) => (

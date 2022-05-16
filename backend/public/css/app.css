@@ -12725,6 +12725,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }@media (min-width: 1024px) {.lg\:top-72 {
     top: 18rem;
+  }.lg\:my-2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }.lg\:mt-10 {
     margin-top: 2.5rem;
   }.lg\:mt-20 {
@@ -12805,3 +12808,4 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 75%;
   }
 }
+
