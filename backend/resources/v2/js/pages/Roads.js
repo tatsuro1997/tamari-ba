@@ -48,6 +48,7 @@ const Roads = () => {
         <>
             <SearchModal keyword={PREFECTURE} />
             <div className='w-1/2 mx-auto'>
+                <label>ワード検索</label>
                 <input
                     id="search-keyword"
                     type="text"
@@ -57,12 +58,7 @@ const Roads = () => {
                 />
             </div>
             <RoadsPaginate
-                roadsPerPage={12}
-                roads={
-                    filteredRoads.sort(function (a, b) {
-                        return (a.updated_at > b.updated_at) ? -1 : 1;
-                    })
-                }
+                roads={filteredRoads}
             />
         </>
     )

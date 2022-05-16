@@ -13817,19 +13817,21 @@ var RoadsPaginate = function RoadsPaginate(props) {
       roads = _useState8[0],
       setRoads = _useState8[1];
 
-  var roadsPerPage = props.roadsPerPage;
+  var ROADSPERPAGE = 12;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    setRoads(props.roads);
+    setRoads(props.roads.sort(function (a, b) {
+      return a.updated_at > b.updated_at ? -1 : 1;
+    }));
   }, [props.roads]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     // Fetch roads from another resources.
-    var endOffset = roadOffset + roadsPerPage;
+    var endOffset = roadOffset + ROADSPERPAGE;
     setCurrentRoads(roads.slice(roadOffset, endOffset));
-    setPageCount(Math.ceil(roads.length / roadsPerPage));
-  }, [roadOffset, roadsPerPage, roads]); // Invoke when user click to request another page.
+    setPageCount(Math.ceil(roads.length / ROADSPERPAGE));
+  }, [roadOffset, ROADSPERPAGE, roads]); // Invoke when user click to request another page.
 
   var handlePageClick = function handlePageClick(event) {
-    var newOffset = event.selected * roadsPerPage % roads.length;
+    var newOffset = event.selected * ROADSPERPAGE % roads.length;
     setroadOffset(newOffset);
   };
 
@@ -14090,7 +14092,7 @@ var SearchModal = function SearchModal(props) {
       value && pre.push(Number(key) + 1);
       return pre;
     }, []);
-    hideSearchHandler;
+    hideSearchHandler();
     navigate('/roads/search', {
       state: {
         data: dataPushArray
@@ -14124,7 +14126,7 @@ var SearchModal = function SearchModal(props) {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
       onClick: showSearchHandler,
-      children: "\u691C\u7D22"
+      children: "\u90FD\u9053\u5E9C\u770C\u3067\u691C\u7D22"
     })]
   });
 };
@@ -14691,20 +14693,19 @@ var Roads = function Roads() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_SearchModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
       keyword: PREFECTURE
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "w-1/2 mx-auto",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+        children: "\u30EF\u30FC\u30C9\u691C\u7D22"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
         id: "search-keyword",
         type: "text",
         placeholder: "北海道, 東京, 沖縄, ビーナスライン, スカイライン",
         onChange: searchChangeHandler,
         className: "search"
-      })
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_roads_RoadsPaginate__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      roadsPerPage: 12,
-      roads: filteredRoads.sort(function (a, b) {
-        return a.updated_at > b.updated_at ? -1 : 1;
-      })
+      roads: filteredRoads
     })]
   });
 };
@@ -14725,11 +14726,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _components_roads_RoadsPaginate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/roads/RoadsPaginate */ "./resources/v2/js/components/roads/RoadsPaginate.js");
-/* harmony import */ var _components_ui_SearchModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ui/SearchModal */ "./resources/v2/js/components/ui/SearchModal.js");
-/* harmony import */ var _PrefectureEnum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PrefectureEnum */ "./resources/v2/js/pages/PrefectureEnum.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _Roads__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Roads */ "./resources/v2/js/pages/Roads.js");
+/* harmony import */ var _components_roads_RoadsPaginate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/roads/RoadsPaginate */ "./resources/v2/js/components/roads/RoadsPaginate.js");
+/* harmony import */ var _components_ui_SearchModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ui/SearchModal */ "./resources/v2/js/components/ui/SearchModal.js");
+/* harmony import */ var _PrefectureEnum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PrefectureEnum */ "./resources/v2/js/pages/PrefectureEnum.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -14750,10 +14752,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var PREFECTURE = (0,_PrefectureEnum__WEBPACK_IMPORTED_MODULE_3__.PrefectureEnum)();
+
+var PREFECTURE = (0,_PrefectureEnum__WEBPACK_IMPORTED_MODULE_4__.PrefectureEnum)();
 
 var Search = function Search() {
-  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useLocation)();
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)();
   var data = location.state.data;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
@@ -14772,14 +14775,11 @@ var Search = function Search() {
       console.log(e);
     });
   }, [data]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_ui_SearchModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ui_SearchModal__WEBPACK_IMPORTED_MODULE_3__["default"], {
       keyword: PREFECTURE
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_roads_RoadsPaginate__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      roadsPerPage: 12,
-      roads: searchedRoads.sort(function (a, b) {
-        return a.updated_at > b.updated_at ? -1 : 1;
-      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_roads_RoadsPaginate__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      roads: searchedRoads
     })]
   });
 };

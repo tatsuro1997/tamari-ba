@@ -10,22 +10,24 @@ const RoadsPaginate = (props) => {
     const [roadOffset, setroadOffset] = useState(0);
     const [roads, setRoads] = useState([]);
 
-    const roadsPerPage = props.roadsPerPage;
+    const ROADSPERPAGE = 12;
 
     useEffect(() => {
-        setRoads(props.roads);
+        setRoads(props.roads.sort(function (a, b) {
+            return (a.updated_at > b.updated_at) ? -1 : 1;
+        }));
     }, [props.roads])
 
     useEffect(() => {
         // Fetch roads from another resources.
-        const endOffset = roadOffset + roadsPerPage;
+        const endOffset = roadOffset + ROADSPERPAGE;
         setCurrentRoads(roads.slice(roadOffset, endOffset));
-        setPageCount(Math.ceil(roads.length / roadsPerPage));
-    }, [roadOffset, roadsPerPage, roads]);
+        setPageCount(Math.ceil(roads.length / ROADSPERPAGE));
+    }, [roadOffset, ROADSPERPAGE, roads]);
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
-        const newOffset = (event.selected * roadsPerPage) % roads.length;
+        const newOffset = (event.selected * ROADSPERPAGE) % roads.length;
         setroadOffset(newOffset);
     };
 

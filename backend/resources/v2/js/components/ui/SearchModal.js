@@ -32,7 +32,7 @@ const SearchModal = (props) => {
             return pre
         }, [])
 
-        hideSearchHandler;
+        hideSearchHandler();
         navigate('/roads/search', { state: { data: dataPushArray } });
     };
 
@@ -62,7 +62,7 @@ const SearchModal = (props) => {
                     </form>
                 </Modal>
             }
-            <button onClick={showSearchHandler}>検索</button>
+            <button onClick={showSearchHandler}>都道府県で検索</button>
         </>
     );
 };
