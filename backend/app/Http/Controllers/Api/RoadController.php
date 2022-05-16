@@ -49,7 +49,8 @@ class RoadController extends Controller
             return RoadResource::collection(Road::all()->where('id', $roadLike->road_id))->first();
         });
 
-        return $roadLikes;
+        $roadLikes = $roadLikes->values();
+        return $roadLikes->all();
     }
 
     public function searchRoads(Request $request)
