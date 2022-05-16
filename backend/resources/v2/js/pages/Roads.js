@@ -48,11 +48,10 @@ const Roads = () => {
         <>
             <SearchModal keyword={PREFECTURE} />
             <div className='w-1/2 mx-auto'>
-                <label>ワード検索</label>
                 <input
                     id="search-keyword"
                     type="text"
-                    placeholder={"北海道, 東京, 沖縄, ビーナスライン, スカイライン"}
+                    placeholder={"ワード検索 : 北海道, 東京, 沖縄, ビーナスライン, スカイライン"}
                     onChange={searchChangeHandler}
                     className="search"
                 />
