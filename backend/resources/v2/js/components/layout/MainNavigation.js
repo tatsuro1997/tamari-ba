@@ -4,7 +4,7 @@ import icon from '../../../../../public/images/icon.webp'
 
 const MainNavigation = () => {
     return (
-        <header className="w-full lg:h-20 h-24 flex justify-between bg-white p-4">
+        <header className="w-full lg:h-20 h-24 flex justify-between bg-white p-4 border-b">
             <div className='flex lg:w-1/4 w-1/2'>
                 <img loading="lazy" width="50" height="50" src={icon} alt="icon" className="lazyload h-14 sm:mr-4 sm:pb-2" />
                 <Link to="/">
