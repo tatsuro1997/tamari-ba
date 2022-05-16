@@ -17,22 +17,6 @@ $app = new Illuminate\Foundation\Application(
 
 /*
 |--------------------------------------------------------------------------
-| 環境によって読み込む.envファイル切り替え
-|--------------------------------------------------------------------------
-*/
-
-switch ($_SERVER['SERVER_NAME'] ?? 'localhost') {
-    case 'localhost':
-        $app->loadEnvironmentFrom('.env.dev');
-        break;
-    case 'tamari-ba.com':
-        $app->loadEnvironmentFrom('.env');
-        break;
-}
-
-
-/*
-|--------------------------------------------------------------------------
 | Bind Important Interfaces
 |--------------------------------------------------------------------------
 |
