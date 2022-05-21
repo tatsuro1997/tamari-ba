@@ -1,61 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import axios from 'axios';
-import swal from 'sweetalert';
 import icon from '../../../../../public/images/icon.webp'
 
 const MainNavigation = () => {
-    const navigate = useNavigate();
-    const [uid, setUid] = useState('');
-
-    const logoutSubmit = (e) => {
-        e.preventDefault();
-
-        axios.post(`/api/logout`).then(res => {
-            if (res.data.status === 200) {
-                localStorage.removeItem('auth_token', res.data.token);
-                localStorage.removeItem('auth_name', res.data.username);
-                swal("ログアウトしました", res.data.message, "success");
-                navigate('/');
-                location.reload();
-            }
-        });
-    }
-
-    if (localStorage.getItem('auth_token')) {
-        axios
-            .get('/api/user').then((res) => {
-                setUid(res.data.id);
-            })
-    }
-
-    var AuthButtons = '';
-
-    if (!localStorage.getItem('auth_token')) {
-        AuthButtons = (
-            <>
-                <li className="mr-4 nav-login">
-                    <Link to="/login">ログイン</Link>
-                </li>
-                <li className="nav-signin-button">
-                    <Link to="/register">Tamari-Baに参加</Link>
-                </li>
-            </>
-        );
-    } else {
-        AuthButtons = (
-            <>
-                <li className="mr-4 nav-login">
-                    <button onClick={logoutSubmit}>ログアウト</button>
-                </li>
-                <li className="mr-4 nav-login">
-                    <Link to={/users/+`${uid}`}>お気に入り一覧</Link>
-                </li>
-            </>
-        );
-    }
-
     return (
         <header className="w-full lg:h-20 h-24 flex justify-between bg-white p-4 border-b">
             <div className='flex lg:w-1/4 w-1/2'>
@@ -76,9 +23,14 @@ const MainNavigation = () => {
                         <Link to="boards">コミュニティ</Link>
                     </li>
                 </ul>
-                <ul className="flex sm:hidden lg:inline-block">
-                    {AuthButtons}
-                </ul>
+                {/* <ul className="flex">
+                    <li className="mr-4 nav-login">
+                        <Link to="v2/login">ログイン</Link>
+                    </li>
+                    <li className="nav-signin-button">
+                        <Link to="v2/register">Tamari-Baに参加</Link>
+                    </li>
+                </ul> */}
             </nav>
         </header>
     );

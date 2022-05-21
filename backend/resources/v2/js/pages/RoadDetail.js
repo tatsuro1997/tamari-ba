@@ -59,7 +59,6 @@ const RoadDetail = () => {
                     <div>
                         <p className="leading-relaxed lg:text-lg text-xl text-gray-600">{road.updated_at}</p>
                         <p className="leading-relaxed lg:text-lg text-xl text-gray-600 text-right">{road.user_name}</p>
-                        <p className="leading-relaxed lg:text-lg text-xl text-gray-600 text-right">{road.road_likes}</p>
                     </div>
                 </div>
             </div>
