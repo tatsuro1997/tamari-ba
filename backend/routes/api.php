@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\WelcomeController;
 use App\Http\Controllers\Api\RoadController;
-use App\Http\Controllers\Api\AuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,18 +25,5 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('welcome', [WelcomeController::class, 'getRoads']);
     Route::get('roads', [RoadController::class, 'getRoads']);
     Route::get('road/{roadId}', [RoadController::class, 'getRoad']);
-    Route::post('road_like', [RoadController::class, 'toggleRoadLike']);
-    Route::get('road_likes', [RoadController::class, 'getRoadLikes']);
-});
-
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::post('register', [AuthController::class, 'register']);
-Route::post('login', [AuthController::class, 'login']);
-
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('logout', [AuthController::class, 'logout']);
     Route::get('search_roads', [RoadController::class, 'searchRoads']);
 });

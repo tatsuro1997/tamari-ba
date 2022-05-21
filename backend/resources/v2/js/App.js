@@ -8,23 +8,9 @@ import Board from "./pages/Board";
 import Inquiry from "./pages/Inquiry";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
 import NoMatch from "./pages/NoMatch";
-import UserPage from "./pages/UserPage";
 import Search from "./pages/Search";
 
-import axios from 'axios';
-
-axios.defaults.baseURL = "http://localhost:8080/";
-axios.defaults.headers.post['Content-Type'] = 'application/json';
-axios.defaults.headers.post['Accept'] = 'application/json';
-axios.defaults.withCredentials = true;
-axios.interceptors.request.use(function (config) {
-    const token = localStorage.getItem('auth_token');
-    config.headers.Authorization = token ? `Bearer ${token}` : '';
-    return config;
-});
 
 function App() {
     return (
@@ -36,12 +22,9 @@ function App() {
                     <Route path="roads/:roadId" element={<RoadDetail />} />
                     <Route path="roads/search" element={<Search />} />
                     <Route path="boards" element={<Board />} />
-                    <Route path="users/:userId" element={<UserPage />} />
                     <Route path="inquiry" element={<Inquiry />} />
                     <Route path="terms_of_service" element={<TermsOfService />} />
                     <Route path="privacy_policy" element={<PrivacyPolicy />} />
-                    <Route path="register" element={<Register />} />
-                    <Route path="login" element={<Login />} />
                     <Route path="*" element={<NoMatch />} />
                 </Routes>
             </Layout>

@@ -14,7 +14,6 @@ const RoadList = (props) => {
                     description={road.description}
                     created_at={road.created_at}
                     updated_at={road.updated_at}
-                    road_like={road.road_like}
                 />
             ))}
         </Container>
